@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aoeng.degu"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.aoeng.degu.ui.HomeUI"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.Chapter1UI" />
+        <activity android:name=".ui.FrameUI" />
+        <activity android:name=".ui.MergeView" />
+        <activity android:name=".ui.WidgetUI" />
+        <activity android:name=".ui.DataSaveUI" />
+        <activity android:name=".ui.PreferenceUI" />
+        <activity android:name=".ui.FileSaveDataUI" />
+        <activity android:name=".ui.FileSaveDataSDUI" />
+        <activity android:name=".ui.FileCompressionUI" />
+        <activity android:name=".ui.SqlLiteDBUI" />
+        <activity android:name=".ui.uis.UIsUI" />
+        <activity android:name=".ui.uis.ActionUI" >
+            <intent-filter>
+                <action android:name="com.aoeng.degu.ui.uis.ACTION_UIS" />
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.uis.Action2UI" >
+            <intent-filter>
+                <action android:name="com.aoeng.degu.ui.uis.ACTION_UIS" />
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <data android:mimeType="audio/*" />
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.uis.GroupMainUI" />
+        <activity android:name=".ui.uis.Group1UI" />
+        <activity android:name=".ui.uis.Group2UI" />
+        <activity android:name=".ui.uis.Group3UI" />
+
+        <service
+            android:name=".receiver.ShortMessageReceiver"
+            android:enabled="true"
+            android:permission="android.permission.BROADCAST_SMS" >
+            <intent-filter android:priority="2147483647" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".receiver.InCallReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.PHONE_STATE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".receiver.OutCallReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTCOMING_CALL" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".receiver.StartUpReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".receiver.ReceiverUI" />
+        <activity android:name=".ui.cp.ContentProviderUI" >
+        </activity>
+
+        <provider
+            android:name=".contentprovider.RegionContentProvider"
+            android:authorities="com.aoeng.degu.permission.regionContentprovider"
+            android:permission="com.aoeng.degu.permission.regionContentprovider.REGION" >
+        </provider>
+
+        <service
+            android:name=".services.BaseServices"
+            android:enabled="true" />
+        <service
+            android:name=".services.BindServices"
+            android:enabled="true" />
+
+        <activity android:name=".ui.services.ServiceUI" />
+
+        <service android:name=".aidl.AidlService" >
+            <intent-filter>
+                <action android:name="com.aoeng.degu.aidl.IMyService" />
+            </intent-filter>
+        </service>
+        <service android:name=".aidl.ProductService" >
+            <intent-filter>
+                <action android:name="com.aoeng.degu.aidl.ProductService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ui.wv.WebViewUI" />
+        <activity android:name=".ui.wv.SimpleWebViewUI" />
+        <activity android:name=".ui.nt.NetWorkUI" />
+    </application>
+
+    <permission
+        android:name="com.aoeng.degu.permission.regionContentprovider.REGION"
+        android:protectionLevel="normal" />
+
+</manifest>
