@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnUICall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="直接打电话" />
+
+    <Button
+        android:id="@+id/btnUICallDial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="将电话号码传入拨号程序" />
+
+    <Button
+        android:id="@+id/btnUIOpenDial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开拨号程序" />
+
+    <Button
+        android:id="@+id/btnUISufferInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="浏览网页" />
+
+    <Button
+        android:id="@+id/btnUIEmailTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="向Email 客户端传递 Email 地址" />
+
+    <Button
+        android:id="@+id/btnUISendEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="向Email:zhangshch2008@qq.com 发送邮件" />
+
+    <Button
+        android:id="@+id/btnUIContects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看联系人" />
+
+    <Button
+        android:id="@+id/btnUISysSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示系统设置页面" />
+
+    <Button
+        android:id="@+id/btnUIWifiSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示 WIFI 设置页面" />
+
+    <Button
+        android:id="@+id/btnUIAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动音频处理程序" />
+
+</LinearLayout>
