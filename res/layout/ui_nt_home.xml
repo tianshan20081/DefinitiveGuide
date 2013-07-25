@@ -15,6 +15,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="ScanServerPort" />
+
+        <Button
+            android:id="@+id/btnWifiIP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="WifiIP" />
     </LinearLayout>
 
     <LinearLayout
@@ -33,7 +40,80 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="ScanServerPort" />
+            android:text="MessageSend" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/etPhoneIP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:editable="false" />
+
+        <EditText
+            android:id="@+id/etPhonePort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnGetPhoneAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PhoneIP" />
+
+        <Button
+            android:id="@+id/btnStartPhoneShare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Shared" />
+
+        <Button
+            android:id="@+id/btnStopPhoneShare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="StopShared" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnOpenBlueTooth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="OpenBlueTooth" />
+
+        <Button
+            android:id="@+id/btnOpenBlueTooth2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="OpenBlueTooth" />
+
+        <Button
+            android:id="@+id/btnCloseBlueTooth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CloseBlueTooth" />
     </LinearLayout>
 
 </LinearLayout>
