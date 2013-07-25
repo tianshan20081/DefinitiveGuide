@@ -15,7 +15,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="ScanServerPort" />
-<<<<<<< HEAD
 
         <Button
             android:id="@+id/btnWifiIP"
@@ -23,8 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="WifiIP" />
-=======
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +40,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-<<<<<<< HEAD
             android:text="MessageSend" />
     </LinearLayout>
 
@@ -118,9 +114,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="CloseBlueTooth" />
-=======
-            android:text="ScanServerPort" />
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
     </LinearLayout>
 
 </LinearLayout>

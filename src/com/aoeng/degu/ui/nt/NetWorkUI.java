@@ -2,15 +2,11 @@ package com.aoeng.degu.ui.nt;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-<<<<<<< HEAD
 import java.io.IOException;
-=======
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-<<<<<<< HEAD
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.NetworkInterface;
@@ -29,15 +25,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
-=======
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
-
-import android.app.Activity;
-import android.os.Bundle;
-import android.os.Handler;
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,11 +35,8 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.utils.ViewUtils;
 
 public class NetWorkUI extends Activity implements OnClickListener {
-<<<<<<< HEAD
 	private static final String TAG = NetWorkUI.class.getName().toUpperCase();
 	private BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-=======
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
 
 	private Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
@@ -61,15 +45,12 @@ public class NetWorkUI extends Activity implements OnClickListener {
 	};
 	private Button btnScanServerPort;
 	private EditText etClientInfo;
-<<<<<<< HEAD
 	private EditText etPhoneIP;
 	private EditText etPhonePort;
 	private Button btnStartPhoneShare;
 	private Button btnStopPhoneShare;
 
 	protected ServerSocket serverSocket;
-=======
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +62,6 @@ public class NetWorkUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnScanServerPort).setOnClickListener(this);
 		etClientInfo = (EditText) this.findViewById(R.id.etClientInfo);
 		this.findViewById(R.id.btnSendMsgFromClient).setOnClickListener(this);
-<<<<<<< HEAD
 		this.findViewById(R.id.btnWifiIP).setOnClickListener(this);
 
 		etPhoneIP = (EditText) this.findViewById(R.id.etPhoneIP);
@@ -96,15 +76,12 @@ public class NetWorkUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnOpenBlueTooth).setOnClickListener(this);
 		this.findViewById(R.id.btnOpenBlueTooth2).setOnClickListener(this);
 		this.findViewById(R.id.btnCloseBlueTooth).setOnClickListener(this);
-=======
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-<<<<<<< HEAD
 		case R.id.btnOpenBlueTooth:
 			if (!bluetoothAdapter.isEnabled()) {
 				Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -227,8 +204,6 @@ public class NetWorkUI extends Activity implements OnClickListener {
 				e1.printStackTrace();
 			}
 			break;
-=======
->>>>>>> 67545196558795e3f79b534a677955e5cd616e98
 		case R.id.btnSendMsgFromClient:
 			String msg = etClientInfo.getText().toString().trim();
 			if (TextUtils.isEmpty(msg)) {
