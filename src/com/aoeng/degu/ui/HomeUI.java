@@ -8,7 +8,9 @@ import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.receiver.ReceiverUI;
+import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
+import com.aoeng.degu.ui.jni.JNIHomeUI;
 import com.aoeng.degu.ui.nt.NetWorkUI;
 import com.aoeng.degu.ui.services.ServiceUI;
 import com.aoeng.degu.ui.uis.GroupMainUI;
@@ -34,6 +36,10 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnServices).setOnClickListener(this);
 		this.findViewById(R.id.btnNetWork).setOnClickListener(this);
 		this.findViewById(R.id.btnWebView).setOnClickListener(this);
+
+		this.findViewById(R.id.btnJNI).setOnClickListener(this);
+		this.findViewById(R.id.btnCoordinates).setOnClickListener(this);
+
 	}
 
 	@Override
@@ -41,6 +47,14 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnCoordinates:
+			intent = new Intent(this, CoordinatesUI.class);
+			startActivity(intent);
+			break;
+		case R.id.btnJNI:
+			intent = new Intent(this, JNIHomeUI.class);
+			startActivity(intent);
+			break;
 		case R.id.btnWebView:
 			intent = new Intent(this, WebViewUI.class);
 			startActivity(intent);

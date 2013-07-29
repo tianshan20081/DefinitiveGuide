@@ -17,4 +17,28 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="scrollViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="baseLy">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="lyVerticalStyle" parent="baseLy">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="lyHorizontalStyle" parent="baseLy">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="btnStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 </resources>
