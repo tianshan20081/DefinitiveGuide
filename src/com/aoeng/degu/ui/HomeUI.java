@@ -40,6 +40,8 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnJNI).setOnClickListener(this);
 		this.findViewById(R.id.btnCoordinates).setOnClickListener(this);
 
+		this.findViewById(R.id.btnCustomerUI).setOnClickListener(this);
+
 	}
 
 	@Override
@@ -104,6 +106,11 @@ public class HomeUI extends Activity implements OnClickListener {
 			break;
 		case R.id.dataSave:
 			intent = new Intent(this, DataSaveUI.class);
+			startActivity(intent);
+			break;
+		case R.id.btnCustomerUI:
+			// 自定义控件
+			intent = new Intent(HomeUI.this, CustomerViewUI.class);
 			startActivity(intent);
 			break;
 		}

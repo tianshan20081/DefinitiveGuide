@@ -23,7 +23,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -139,6 +139,8 @@
         <activity android:name=".ui.nt.NetWorkUI" />
         <activity android:name=".ui.jni.JNIHomeUI" />
         <activity android:name=".ui.cd.CoordinatesUI" />
+        <activity android:name=".ui.CustomerViewUI" />
+        <activity android:name=".ui.cv.BidirSlidingUI" />
     </application>
 
     <permission
