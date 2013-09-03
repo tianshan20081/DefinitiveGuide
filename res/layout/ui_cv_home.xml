@@ -24,6 +24,33 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="BidirSliding" />
+
+                <Button
+                    android:id="@+id/btnPhotoWall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PhotoWall" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnContacts1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Contacts1" />
+
+                <Button
+                    android:id="@+id/btnContacts2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Contacts2" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -141,6 +141,9 @@
         <activity android:name=".ui.cd.CoordinatesUI" />
         <activity android:name=".ui.CustomerViewUI" />
         <activity android:name=".ui.cv.BidirSlidingUI" />
+        <activity android:name=".ui.cv.PhotoWallUI" />
+        <activity android:name=".ui.cv.ContactsUI" />
+        <activity android:name=".ui.cv.Contacts2UI" />
     </application>
 
     <permission
