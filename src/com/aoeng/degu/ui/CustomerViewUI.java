@@ -13,6 +13,7 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.ui.cv.BidirSlidingUI;
 import com.aoeng.degu.ui.cv.Contacts2UI;
 import com.aoeng.degu.ui.cv.ContactsUI;
+import com.aoeng.degu.ui.cv.PhotoSmall2BigUI;
 import com.aoeng.degu.ui.cv.PhotoWall2CacheUI;
 import com.aoeng.degu.ui.cv.PhotoWallUI;
 import com.aoeng.degu.ui.cv.PhotoWaterFallUI;
@@ -39,6 +40,7 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnContacts2).setOnClickListener(this);
 		this.findViewById(R.id.btnPhotoWall2Cache).setOnClickListener(this);
 		this.findViewById(R.id.btnPhotoWaterfall).setOnClickListener(this);
+		this.findViewById(R.id.btnIconSmall2Big).setOnClickListener(this);
 
 	}
 
@@ -52,6 +54,11 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnIconSmall2Big:
+			// 点击头像，下载大图片
+			intent = new Intent(CustomerViewUI.this, PhotoSmall2BigUI.class);
+			startActivity(intent);
+			break;
 		case R.id.btnBiDirSlid:
 			intent = new Intent(CustomerViewUI.this, BidirSlidingUI.class);
 			startActivity(intent);
