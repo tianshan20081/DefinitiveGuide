@@ -5,6 +5,7 @@ package com.aoeng.degu.utils.cv;
 
 import com.aoeng.degu.R;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -18,8 +19,9 @@ public class BigImageLoadingDialog extends Dialog {
 	/**
 	 * @param context
 	 */
-	public BigImageLoadingDialog(Context context) {
+	public BigImageLoadingDialog(Activity context) {
 		super(context, R.style.bigImageLoadingStyle);
+		setOwnerActivity(context);
 		// TODO Auto-generated constructor stub
 	}
 
