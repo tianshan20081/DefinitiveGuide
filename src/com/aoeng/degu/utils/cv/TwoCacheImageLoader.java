@@ -39,7 +39,9 @@ public class TwoCacheImageLoader {
 	/*
 	 * 一级缓存的最大空间
 	 */
-	private static final int MAX_MEMORY = (int) (Runtime.getRuntime().maxMemory() / 10);
+	// private static final int MAX_MEMORY = (int)
+	// (Runtime.getRuntime().maxMemory() / 10);
+	private static final int MAX_MEMORY = 10;
 	/*
 	 * 定时清理缓存
 	 */
@@ -268,7 +270,7 @@ public class TwoCacheImageLoader {
 	class ImageLoadTask extends AsyncTask<Object, Void, Bitmap> {
 
 		private String url;
-		private ArrayAdapter<String> adapter;
+		private BaseAdapter adapter;
 
 		/*
 		 * (non-Javadoc)
@@ -279,7 +281,7 @@ public class TwoCacheImageLoader {
 		protected Bitmap doInBackground(Object... params) {
 			// TODO Auto-generated method stub
 			url = (String) params[0];
-			adapter = (ArrayAdapter<String>) params[1];
+			adapter = (BaseAdapter) params[1];
 			Bitmap bitmap = downloadImageFromInternet(url);
 			return bitmap;
 		}

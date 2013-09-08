@@ -99,4 +99,12 @@ public class PhotoWallTwoCacheAdapter extends BaseAdapter {
 		return convertView;
 	}
 
+	/**
+	 * @param b
+	 */
+	public void setFlagBusy(boolean isBusy) {
+		// TODO Auto-generated method stub
+		this.mbusy = isBusy;
+	}
+
 }

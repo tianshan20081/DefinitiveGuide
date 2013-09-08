@@ -10,6 +10,7 @@ import java.util.Set;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.ImagesURL;
+import com.aoeng.degu.utils.ViewUtils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -30,6 +31,7 @@ import android.widget.ImageView;
  * @Email [zhangshch2008@gmail.com]
  */
 public class PhotoWallAdapter extends ArrayAdapter<String> implements OnScrollListener {
+	private static final String TAG = PhotoWallAdapter.class.getName().toUpperCase();
 	/*
 	 * 记录所有正在下载或等待下载的任务
 	 */
@@ -69,7 +71,8 @@ public class PhotoWallAdapter extends ArrayAdapter<String> implements OnScrollLi
 		taskCollection = new HashSet<BitmapWorkerTask>();
 		// 获取应用程序最大可用内存
 		int maxMemory = (int) Runtime.getRuntime().maxMemory();
-		int cacheSize = maxMemory / 8;
+		ViewUtils.log(TAG, "Runtime.getRuntime().maxMemory()----->" + Runtime.getRuntime().maxMemory());
+		int cacheSize = maxMemory / 20;
 		// 设置图片缓存大小为程序可用内存的 1/8
 		mMemoryCache = new LruCache<String, Bitmap>(cacheSize) {
 			/*
