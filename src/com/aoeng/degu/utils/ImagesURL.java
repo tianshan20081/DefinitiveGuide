@@ -7,7 +7,7 @@ package com.aoeng.degu.utils;
  * @author [Aoeng Zhang] @datatime Sep 3, 2013:9:26:00 AM
  * @Email [zhangshch2008@gmail.com] Sep 3, 2013
  */
-public class Images {
+public class ImagesURL {
 
 	public final static String[] imageThumbUrls = new String[] { "https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s160-c/A%252520Photographer.jpg",
 			"https://lh4.googleusercontent.com/--dq8niRp7W4/URquVgmXvgI/AAAAAAAAAbs/-gnuLQfNnBA/s160-c/A%252520Song%252520of%252520Ice%252520and%252520Fire.jpg",

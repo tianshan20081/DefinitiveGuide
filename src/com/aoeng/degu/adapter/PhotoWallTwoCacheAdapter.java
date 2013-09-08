@@ -7,6 +7,8 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.utils.cv.TwoCacheImageLoader;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.provider.MediaStore.Images;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ public class PhotoWallTwoCacheAdapter extends BaseAdapter {
 	private Context context;
 	private String[] urls;
 	private TwoCacheImageLoader imageLoader;
+	private boolean mbusy;
 
 	public PhotoWallTwoCacheAdapter(Context context, String[] urls) {
 		this.context = context;
@@ -49,7 +52,7 @@ public class PhotoWallTwoCacheAdapter extends BaseAdapter {
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
-		return null;
+		return position;
 	}
 
 	/*
@@ -72,16 +75,28 @@ public class PhotoWallTwoCacheAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		ImageView imageView;
+		ImageView imageView = null;
 		if (convertView == null) {
 			convertView = LayoutInflater.from(context).inflate(R.layout.ui_cv_pthoto2cache_item, null);
 			imageView = (ImageView) convertView.findViewById(R.id.imPotoTwoCache);
 			convertView.setTag(imageView);
 
-		}else {
-			
+		} else {
+			imageView = (ImageView) convertView.getTag();
 		}
-		return null;
+		String url = urls[position % urls.length];
+		if (!mbusy) {
+			imageLoader.loadImage(url, this, imageView);
+		} else {
+			Bitmap bitmap = imageLoader.getBitmapFromCache(url);
+			if (null != bitmap) {
+				imageView.setImageBitmap(bitmap);
+			} else {
+				imageView.setBackgroundResource(R.drawable.ic_launcher);
+			}
+
+		}
+		return convertView;
 	}
 
 }

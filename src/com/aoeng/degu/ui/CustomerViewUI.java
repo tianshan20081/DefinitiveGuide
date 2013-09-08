@@ -7,6 +7,7 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.ui.cv.BidirSlidingUI;
 import com.aoeng.degu.ui.cv.Contacts2UI;
 import com.aoeng.degu.ui.cv.ContactsUI;
+import com.aoeng.degu.ui.cv.PhotoWall2CacheUI;
 import com.aoeng.degu.ui.cv.PhotoWallUI;
 
 import android.app.Activity;
@@ -38,6 +39,7 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnPhotoWall).setOnClickListener(this);
 		this.findViewById(R.id.btnContacts1).setOnClickListener(this);
 		this.findViewById(R.id.btnContacts2).setOnClickListener(this);
+		this.findViewById(R.id.btnPhotoWall2Cache).setOnClickListener(this);
 
 	}
 
@@ -65,6 +67,10 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnContacts2:
 			intent = new Intent(CustomerViewUI.this, Contacts2UI.class);
+			startActivity(intent);
+			break;
+		case R.id.btnPhotoWall2Cache:
+			intent = new Intent(CustomerViewUI.this, PhotoWall2CacheUI.class);
 			startActivity(intent);
 			break;
 		}

@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Images;
+import com.aoeng.degu.utils.ImagesURL;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -201,7 +201,7 @@ public class PhotoWallAdapter extends ArrayAdapter<String> implements OnScrollLi
 		// TODO Auto-generated method stub
 		try {
 			for (int i = firstVisiableItem; i < firstVisiableItem + visiableItemCount; i++) {
-				String imageUrl = Images.imageThumbUrls[i];
+				String imageUrl = ImagesURL.imageThumbUrls[i];
 				Bitmap bitmap = getBitmapFromMemoryCache(imageUrl);
 				if (bitmap == null) {
 					BitmapWorkerTask task = new BitmapWorkerTask();

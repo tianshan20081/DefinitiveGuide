@@ -144,6 +144,7 @@
         <activity android:name=".ui.cv.PhotoWallUI" />
         <activity android:name=".ui.cv.ContactsUI" />
         <activity android:name=".ui.cv.Contacts2UI" />
+        <activity android:name=".ui.cv.PhotoWall2CacheUI" />
     </application>
 
     <permission

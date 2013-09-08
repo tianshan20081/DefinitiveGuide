@@ -5,7 +5,7 @@ package com.aoeng.degu.ui.cv;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.adapter.PhotoWallAdapter;
-import com.aoeng.degu.utils.Images;
+import com.aoeng.degu.utils.ImagesURL;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -32,7 +32,7 @@ public class PhotoWallUI extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ui_cv_photowall);
 		mPhotoWall = (GridView) findViewById(R.id.photo_wall);
-		adapter = new PhotoWallAdapter(this, 0, Images.imageThumbUrls, mPhotoWall);
+		adapter = new PhotoWallAdapter(this, 0, ImagesURL.imageThumbUrls, mPhotoWall);
 		mPhotoWall.setAdapter(adapter);
 	}
 
