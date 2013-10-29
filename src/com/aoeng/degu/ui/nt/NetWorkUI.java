@@ -88,6 +88,12 @@ public class NetWorkUI extends Activity implements OnClickListener {
 		tvPhoneInfo = (TextView)this.findViewById(R.id.tvPhoneInfo);
 		
 		this.findViewById(R.id.btnWebService).setOnClickListener(this);
+		
+		
+		StringUtils.isEmpty("");
+		
+		
+		
 	}
 
 	@Override
@@ -120,7 +126,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 				this.findViewById(R.id.btnOpenBlueTooth).setEnabled(false);
 				this.findViewById(R.id.btnOpenBlueTooth2).setEnabled(false);
 			} else {
-				StringUtils.isEmpty("");
+				
 			}
 
 			break;
