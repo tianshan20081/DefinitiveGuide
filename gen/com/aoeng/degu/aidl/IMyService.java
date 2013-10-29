@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /home/paynet/androidWork/github/DefinitiveGuide/src/com/aoeng/degu/aidl/IMyService.aidl
+ * Original file: /home/paynet/git/DefinitiveGuide/src/com/aoeng/degu/aidl/IMyService.aidl
  */
 package com.aoeng.degu.aidl;
 public interface IMyService extends android.os.IInterface

@@ -11,6 +11,7 @@ import com.aoeng.degu.receiver.ReceiverUI;
 import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
 import com.aoeng.degu.ui.jni.JNIHomeUI;
+import com.aoeng.degu.ui.lvs.ListViewsUI;
 import com.aoeng.degu.ui.nt.NetWorkUI;
 import com.aoeng.degu.ui.services.ServiceUI;
 import com.aoeng.degu.ui.uis.GroupMainUI;
@@ -41,6 +42,7 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnCoordinates).setOnClickListener(this);
 
 		this.findViewById(R.id.btnCustomerUI).setOnClickListener(this);
+		this.findViewById(R.id.btnListViews).setOnClickListener(this);
 
 	}
 
@@ -49,6 +51,10 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnListViews:
+			intent = new Intent(HomeUI.this, ListViewsUI.class);
+			startActivity(intent);
+			break ;
 		case R.id.btnCoordinates:
 			intent = new Intent(this, CoordinatesUI.class);
 			startActivity(intent);

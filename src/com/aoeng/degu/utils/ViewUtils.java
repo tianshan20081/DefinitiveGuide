@@ -1,5 +1,6 @@
 package com.aoeng.degu.utils;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 import android.view.Gravity;
@@ -21,6 +22,22 @@ public class ViewUtils {
 
 	public static void log(String tag, String msg) {
 		Log.i(tag, msg);
+	}
+
+	public static ProgressDialog getPro(Context context,String msg) {
+		// TODO Auto-generated method stub
+		ProgressDialog dialog = new ProgressDialog(context);
+		dialog.setCancelable(false);
+		dialog.setMessage(msg);
+		dialog.show();
+		
+		return dialog;
+	}
+	public static void dismiss(ProgressDialog dialog){
+		if (null != dialog) {
+			dialog.dismiss();
+			dialog = null ;
+		}
 	}
 
 }

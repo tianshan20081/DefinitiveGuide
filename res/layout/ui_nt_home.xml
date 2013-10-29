@@ -116,4 +116,31 @@
             android:text="CloseBlueTooth" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="Please Input phone number "
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/btnWebService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="獲取" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvPhoneInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Get Phone info by WebService " />
+
 </LinearLayout>

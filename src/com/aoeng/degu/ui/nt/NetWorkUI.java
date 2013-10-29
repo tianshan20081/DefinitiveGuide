@@ -18,10 +18,14 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
@@ -30,6 +34,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.ViewUtils;
@@ -51,6 +56,8 @@ public class NetWorkUI extends Activity implements OnClickListener {
 	private Button btnStopPhoneShare;
 
 	protected ServerSocket serverSocket;
+	private EditText etPhone;
+	private TextView tvPhoneInfo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,12 +83,26 @@ public class NetWorkUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnOpenBlueTooth).setOnClickListener(this);
 		this.findViewById(R.id.btnOpenBlueTooth2).setOnClickListener(this);
 		this.findViewById(R.id.btnCloseBlueTooth).setOnClickListener(this);
+
+		etPhone = (EditText) this.findViewById(R.id.etPhone);
+		tvPhoneInfo = (TextView)this.findViewById(R.id.tvPhoneInfo);
+		
+		this.findViewById(R.id.btnWebService).setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnWebService://通过 WebService 获取得到 手机号码对数第
+			
+			String phone = etPhone.getText().toString().trim();
+			if (null == phone || "".equals(phone)) {
+				toast("请输入正确的手记号吗");
+				return ;
+			}
+//			getPhoneInfo(phone);
+			break;
 		case R.id.btnOpenBlueTooth:
 			if (!bluetoothAdapter.isEnabled()) {
 				Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -99,7 +120,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 				this.findViewById(R.id.btnOpenBlueTooth).setEnabled(false);
 				this.findViewById(R.id.btnOpenBlueTooth2).setEnabled(false);
 			} else {
-
+				StringUtils.isEmpty("");
 			}
 
 			break;
@@ -242,6 +263,73 @@ public class NetWorkUI extends Activity implements OnClickListener {
 		default:
 			break;
 		}
+	}
+
+	/*
+	private void getPhoneInfo(String phone) {
+		// TODO Auto-generated method stub
+		new AsyncTask<Void, Void, Void>() {
+			private ProgressDialog dialog;
+
+			protected void onPreExecute() {
+				dialog = ViewUtils.getPro(NetWorkUI.this,"數據加載中...");
+				dialog.show();
+			};
+
+			@Override
+			protected Void doInBackground(Void... params) {
+				// TODO Auto-generated method stub
+				String nameSpace = "http://phone.centen.com";
+				String methodName = "LoginCertification";
+				String endPoint = "http://192.168.0.94:83/phoneService/services/PhoneWebService";
+				  
+				String soapAction = "http://phone.centen.com/LoginCertification";
+				
+				// 指定WebService的命名空间和调用的方法名
+				SoapObject rpc = new SoapObject(nameSpace, methodName);
+
+
+				// 设置需调用WebService接口需要传入的两个参数mobileCode、userId
+				rpc.addProperty("userId", "系统管理员");
+				rpc.addProperty("psw", "123");
+
+
+				// 生成调用WebService方法的SOAP请求信息,并指定SOAP的版本
+				SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER10);
+
+
+				envelope.bodyOut = rpc;
+				// 设置是否调用的是dotNet开发的WebService
+				envelope.dotNet = false;
+				// 等价于envelope.bodyOut = rpc;
+				envelope.setOutputSoapObject(rpc);
+
+
+				HttpTransportSE transport = new HttpTransportSE(endPoint);
+				try {
+				// 调用WebService
+				transport.call(soapAction, envelope);
+				} catch (Exception e) {
+				e.printStackTrace();
+				}
+				// 获取返回的数据
+				SoapObject object = (SoapObject) envelope.bodyIn;
+				// 获取返回的结果
+				String result = object.getProperty(0).toString();
+
+				System.err.println(">>>>>>>>>>>>>"+result);
+				return null;
+			}
+			protected void onPostExecute(Void result) {
+				ViewUtils.dismiss(dialog);
+				tvPhoneInfo.setText(text);
+			};
+		}.execute(null);
+	}
+*/
+	private void toast(String msg) {
+		// TODO Auto-generated method stub
+		ViewUtils.toastCenter(NetWorkUI.this, msg, true);
 	}
 
 	class ScanPorts extends Thread {

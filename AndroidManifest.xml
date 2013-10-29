@@ -147,6 +147,13 @@
         <activity android:name=".ui.cv.PhotoWall2CacheUI" />
         <activity android:name=".ui.cv.PhotoWaterFallUI" />
         <activity android:name=".ui.cv.PhotoSmall2BigUI" />
+        <activity android:name=".ui.lvs.ListViewsUI" />
+        <activity android:name=".ui.lvs.NormalListViewUI" />
+        <activity android:name=".ui.lvs.PagesListViewUI" />
+        
+        
+        
+        
         <activity
             android:name=".ui.cv.BigImageShowerUI"
             android:theme="@style/ImageScale" />
