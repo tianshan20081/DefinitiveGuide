@@ -147,6 +147,11 @@
         <activity android:name=".ui.cv.PhotoWall2CacheUI" />
         <activity android:name=".ui.cv.PhotoWaterFallUI" />
         <activity android:name=".ui.cv.PhotoSmall2BigUI" />
+        <activity android:name=".ui.cv.TabsByGroupUI" />
+        <activity android:name=".ui.cv.OneView" />
+        <activity android:name=".ui.cv.TwoView" />
+        <activity android:name=".ui.cv.ThreeView" />
+        <activity android:name=".ui.cv.FourView" />
         <activity android:name=".ui.lvs.ListViewsUI" />
         <activity android:name=".ui.lvs.NormalListViewUI" />
         <activity android:name=".ui.lvs.PagesListViewUI" />

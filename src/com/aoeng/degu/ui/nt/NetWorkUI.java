@@ -90,9 +90,6 @@ public class NetWorkUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnWebService).setOnClickListener(this);
 		
 		
-		StringUtils.isEmpty("");
-		
-		
 		
 	}
 

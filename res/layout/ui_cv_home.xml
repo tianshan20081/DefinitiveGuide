@@ -86,9 +86,12 @@
                     android:text="IconSmall2Big" />
 
                 <Button
+                    android:id="@+id/btnTabsByGroupUI"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1" 
+                    android:text="TabsByGroupUI"
+                    />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

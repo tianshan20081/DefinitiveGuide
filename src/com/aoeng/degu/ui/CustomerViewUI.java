@@ -17,6 +17,7 @@ import com.aoeng.degu.ui.cv.PhotoSmall2BigUI;
 import com.aoeng.degu.ui.cv.PhotoWall2CacheUI;
 import com.aoeng.degu.ui.cv.PhotoWallUI;
 import com.aoeng.degu.ui.cv.PhotoWaterFallUI;
+import com.aoeng.degu.ui.cv.TabsByGroupUI;
 
 /**
  * @author [Aoeng Zhang] @datatime Sep 2, 2013:4:24:12 PM
@@ -41,6 +42,7 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnPhotoWall2Cache).setOnClickListener(this);
 		this.findViewById(R.id.btnPhotoWaterfall).setOnClickListener(this);
 		this.findViewById(R.id.btnIconSmall2Big).setOnClickListener(this);
+		this.findViewById(R.id.btnTabsByGroupUI).setOnClickListener(this);
 
 	}
 
@@ -54,6 +56,11 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnTabsByGroupUI:
+			// 通过 GroupActivity 实现 tabs
+			intent = new Intent(CustomerViewUI.this, TabsByGroupUI.class);
+			startActivity(intent);
+			break;
 		case R.id.btnIconSmall2Big:
 			// 点击头像，下载大图片
 			intent = new Intent(CustomerViewUI.this, PhotoSmall2BigUI.class);
