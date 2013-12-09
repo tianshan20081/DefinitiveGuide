@@ -19,6 +19,15 @@ public class SimpleWebViewUI extends Activity {
 
 		String url = "http://www.beijing.com.cn/";
 		wvSimple = (WebView) this.findViewById(R.id.wvSimple);
+		
+		if(URLUtil.isHttpsUrl(url)){
+			//请求链接 为 https 访问时
+			
+		}else if(URLUtil.isHttpUrl(url)){
+			//请求访问为HTTP 访问
+			
+		}
+		
 		if (URLUtil.isNetworkUrl(url)) {
 			wvSimple.loadUrl(url);
 		}
