@@ -103,7 +103,7 @@ public class BigImageShowerUI extends Activity {
 				}
 
 			}
-		}.execute(null);
+		}.execute();
 
 		// new Handler().postDelayed(new Runnable() {
 		//
