@@ -4,8 +4,9 @@
     <string name="app_name">DefinitiveGuide</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-   <string name="border_top">Border Top</string>
+    <string name="border_top">Border Top</string>
     <string name="border_bottom">Border Bottom</string>
     <string name="image_url">Image Url</string>
+    <string name="menu_settings">Settings</string>
 
 </resources>

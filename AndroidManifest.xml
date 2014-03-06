@@ -29,7 +29,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
             android:name="com.aoeng.degu.ui.HomeUI"
             android:label="@string/app_name" >
@@ -155,10 +155,10 @@
         <activity android:name=".ui.lvs.ListViewsUI" />
         <activity android:name=".ui.lvs.NormalListViewUI" />
         <activity android:name=".ui.lvs.PagesListViewUI" />
-        
-        
-        
-        
+        <activity android:name=".ui.logins.LoginUIs" />
+        <activity android:name=".ui.logins.LoginQQSplashUI" />
+        <activity android:name=".ui.logins.LoginQQUI" />
+        <activity android:name=".ui.logins.MainQQActivity" />
         <activity
             android:name=".ui.cv.BigImageShowerUI"
             android:theme="@style/ImageScale" />
