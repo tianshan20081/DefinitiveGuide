@@ -155,6 +155,9 @@
         <activity android:name=".ui.lvs.ListViewsUI" />
         <activity android:name=".ui.lvs.NormalListViewUI" />
         <activity android:name=".ui.lvs.PagesListViewUI" />
+        <!-- 下拉刷新 -->
+        <activity android:name=".ui.lvs.ReflashListUI" />
+        <activity android:name=".ui.lvs.RefreshScrollUI" />
         <activity android:name=".ui.logins.LoginUIs" />
         <activity android:name=".ui.logins.LoginQQSplashUI" />
         <activity android:name=".ui.logins.LoginQQUI" />

@@ -17,20 +17,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
-                <Button 
+
+                <Button
                     android:id="@+id/lvNormal"
-                    android:layout_height="wrap_content"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="NormalListView"
-                    />
-                 <Button 
-                     android:id="@+id/lvPages"
                     android:layout_height="wrap_content"
-                    android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="PagesListView"
-                    />
+                    android:text="NormalListView" />
+
+                <Button
+                    android:id="@+id/lvPages"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PagesListView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnLv01"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="下拉刷新" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
