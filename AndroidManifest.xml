@@ -24,6 +24,12 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -50,6 +56,7 @@
         <activity android:name=".ui.FileCompressionUI" />
         <activity android:name=".ui.SqlLiteDBUI" />
         <activity android:name=".ui.uis.UIsUI" />
+        <activity android:name=".ui.LocationsUI" />
         <activity android:name=".ui.uis.ActionUI" >
             <intent-filter>
                 <action android:name="com.aoeng.degu.ui.uis.ACTION_UIS" />
@@ -158,6 +165,7 @@
         <!-- 下拉刷新 -->
         <activity android:name=".ui.lvs.ReflashListUI" />
         <activity android:name=".ui.lvs.RefreshScrollUI" />
+        <activity android:name=".ui.lvs.PullToRefreshUI" />
         <activity android:name=".ui.logins.LoginUIs" />
         <activity android:name=".ui.logins.LoginQQSplashUI" />
         <activity android:name=".ui.logins.LoginQQUI" />

@@ -9,6 +9,7 @@ package com.aoeng.degu;
 
 public final class Manifest {
     public static final class permission {
+        public static final String BAIDU_LOCATION_SERVICE="android.permission.BAIDU_LOCATION_SERVICE";
         public static final String REGION="com.aoeng.degu.permission.regionContentprovider.REGION";
     }
 }

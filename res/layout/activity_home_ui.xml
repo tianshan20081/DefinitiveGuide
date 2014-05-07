@@ -186,10 +186,11 @@
                     android:text="LoginUIs" />
 
                 <Button
+                    android:id="@+id/btnLocations"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Empty" />
+                    android:text="Location" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
