@@ -46,6 +46,7 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnListViews).setOnClickListener(this);
 
 		this.findViewById(R.id.btnLoginUIs).setOnClickListener(this);
+		this.findViewById(R.id.btnLocations).setOnClickListener(this);
 
 	}
 
@@ -54,6 +55,9 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnLocations:
+			intent = new Intent(HomeUI.this, LocationsUI.class);
+			break;
 		case R.id.btnListViews:
 			intent = new Intent(HomeUI.this, ListViewsUI.class);
 			break;
