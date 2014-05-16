@@ -162,6 +162,8 @@
         <activity android:name=".ui.lvs.ListViewsUI" />
         <activity android:name=".ui.lvs.NormalListViewUI" />
         <activity android:name=".ui.lvs.PagesListViewUI" />
+        <!-- PinnedHeaderExpandableListView -->
+        <activity android:name=".ui.lvs.ExpandLvUI" />
         <!-- 下拉刷新 -->
         <activity android:name=".ui.lvs.ReflashListUI" />
         <activity android:name=".ui.lvs.RefreshScrollUI" />

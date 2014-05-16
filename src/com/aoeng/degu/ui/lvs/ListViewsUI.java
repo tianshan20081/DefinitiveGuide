@@ -26,6 +26,7 @@ public class ListViewsUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.lvPages).setOnClickListener(this);
 		this.findViewById(R.id.btnLv01).setOnClickListener(this);
 		this.findViewById(R.id.btnLv02).setOnClickListener(this);
+		this.findViewById(R.id.btnExpandLv).setOnClickListener(this);
 
 	}
 
@@ -44,6 +45,9 @@ public class ListViewsUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnLv02:
 			startActivity(new Intent(ListViewsUI.this, PullToRefreshUI.class));
+			break;
+		case R.id.btnExpandLv:
+			startActivity(new Intent(ListViewsUI.this, ExpandLvUI.class));
 			break;
 		}
 	}
