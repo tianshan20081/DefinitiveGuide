@@ -168,6 +168,10 @@
         <activity android:name=".ui.lvs.ReflashListUI" />
         <activity android:name=".ui.lvs.RefreshScrollUI" />
         <activity android:name=".ui.lvs.PullToRefreshUI" />
+        <!-- 左右滑动删除 item -->
+        <activity android:name=".ui.lvs.MovingDelItemLvUI" />
+        <!-- 下拉刷新,上拉加载更多 -->
+        <activity android:name=".ui.lvs.UpDownLvUI" />
         <activity android:name=".ui.logins.LoginUIs" />
         <activity android:name=".ui.logins.LoginQQSplashUI" />
         <activity android:name=".ui.logins.LoginQQUI" />
