@@ -10,6 +10,7 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.receiver.ReceiverUI;
 import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
+import com.aoeng.degu.ui.imgs.ImageViewsUI;
 import com.aoeng.degu.ui.jni.JNIHomeUI;
 import com.aoeng.degu.ui.logins.LoginUIs;
 import com.aoeng.degu.ui.lvs.ListViewsUI;
@@ -47,6 +48,8 @@ public class HomeUI extends Activity implements OnClickListener {
 
 		this.findViewById(R.id.btnLoginUIs).setOnClickListener(this);
 		this.findViewById(R.id.btnLocations).setOnClickListener(this);
+
+		this.findViewById(R.id.btnImgs).setOnClickListener(this);
 
 	}
 
@@ -114,6 +117,9 @@ public class HomeUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnLoginUIs:
 			intent = new Intent(HomeUI.this, LoginUIs.class);
+			break ;
+		case R.id.btnImgs:
+			intent = new Intent(HomeUI.this, ImageViewsUI.class);
 			break ;
 		}
 		

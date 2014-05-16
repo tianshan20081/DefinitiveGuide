@@ -502,5 +502,6 @@
     <color name="grey21">#363636</color>
     <color name="gold">#b89766</color>
     <!-- GViewPager的End -->
-
+<color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
 </resources>

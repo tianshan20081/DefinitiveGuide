@@ -179,6 +179,11 @@
         <activity
             android:name=".ui.cv.BigImageShowerUI"
             android:theme="@style/ImageScale" />
+        <!-- 圖片展示 -->
+        <activity android:name="com.aoeng.degu.ui.imgs.ImageViewsUI" />
+        <!-- 圆形图片 -->
+        <activity android:name="com.aoeng.degu.ui.imgs.CircleImgUI" />
+        <activity android:name="com.aoeng.degu.ui.imgs.CustomShapeImgUI" />
     </application>
 
     <permission
