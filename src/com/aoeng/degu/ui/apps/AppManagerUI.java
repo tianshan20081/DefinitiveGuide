@@ -27,7 +27,7 @@ public class AppManagerUI extends Activity implements OnClickListener {
 		
 		this.findViewById(R.id.btnAllApps).setOnClickListener(this);
 		this.findViewById(R.id.btnSysApps).setOnClickListener(this);
-		this.findViewById(R.id.btnUserApps).setOnClickListener(this);
+		this.findViewById(R.id.btnAppSize).setOnClickListener(this);
 	}
 
 	/* (non-Javadoc)
@@ -43,8 +43,8 @@ public class AppManagerUI extends Activity implements OnClickListener {
 		case R.id.btnSysApps:
 			startActivity(new Intent(this, SysAppsUI.class));
 			break;
-		case R.id.btnUserApps:
-			
+		case R.id.btnAppSize:
+			startActivity(new Intent(this, AppSizeUI.class));
 			break;
 
 		default:

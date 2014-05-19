@@ -25,9 +25,9 @@
         <LinearLayout style="@style/lyItem" >
 
             <Button
-                android:id="@+id/btnUserApps"
+                android:id="@+id/btnAppSize"
                 style="@style/btnItem"
-                android:text="显示用户应用程序" />
+                android:text="获取应用程序大小" />
 
             <Button style="@style/btnItem" />
         </LinearLayout>
