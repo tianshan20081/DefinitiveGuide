@@ -1,0 +1,151 @@
+/**
+ * 
+ */
+package com.aoeng.degu.ui.apps;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.zip.Inflater;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.domain.AppInfo;
+
+/**
+ * May 19, 2014 9:58:41 AM
+ * 
+ */
+@SuppressLint("NewApi")
+public class AllAppUI extends Activity {
+	private ListView lvAllApps;
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.ui_apps_manager_all);
+		lvAllApps = (ListView) this.findViewById(R.id.lvAllApps);
+
+		PackageManager pm = getPackageManager();
+		List<ApplicationInfo> infos = pm
+				.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
+
+		if (null != infos && infos.size() > 0) {
+			List<AppInfo> appInfos = new ArrayList<AppInfo>();
+			for (ApplicationInfo info : infos) {
+				AppInfo appInfo = new AppInfo();
+				appInfo.setIcon(info.loadIcon(pm));
+				appInfo.setLabel((String) info.loadLabel(pm));
+				appInfo.setPackageName(info.packageName);
+				appInfo.setName(info.name);
+				appInfos.add(appInfo);
+			}
+			lvAllApps.setAdapter(new AppInfoAdapter(this, appInfos));
+		} else {
+			return;
+		}
+
+	}
+
+	private class AppInfoAdapter extends BaseAdapter {
+		private Context context;
+		private List<AppInfo> infos;
+
+		public AppInfoAdapter(Context context, List<AppInfo> infos) {
+			super();
+			this.context = context;
+			this.infos = infos;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getCount()
+		 */
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return infos.size();
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getItem(int)
+		 */
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return infos.get(position);
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getItemId(int)
+		 */
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see android.widget.Adapter#getView(int, android.view.View, android.view.ViewGroup)
+		 */
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			ViewHolder holder;
+			if (null != convertView) {
+				holder = (ViewHolder) convertView.getTag();
+			} else {
+				LayoutInflater inflater = LayoutInflater.from(context);
+				convertView = inflater.inflate(R.layout.ui_apps_manager_all_item, null);
+				holder = new ViewHolder();
+				holder.imIcon = (ImageView) convertView.findViewById(R.id.imIcon);
+				holder.tvName = (TextView) convertView.findViewById(R.id.tvName);
+				holder.tvPackageName = (TextView) convertView.findViewById(R.id.tvPackageName);
+				holder.tvLable = (TextView) convertView.findViewById(R.id.tvLable);
+				convertView.setTag(holder);
+			}
+			AppInfo info = infos.get(position);
+			holder.tvName.setText(info.getName());
+			holder.tvLable.setText(info.getLabel());
+			holder.tvPackageName.setText(info.getPackageName());
+			holder.imIcon.setBackground(info.getIcon());
+			return convertView;
+		}
+
+	}
+
+	private static class ViewHolder {
+		TextView tvName;
+		TextView tvPackageName;
+		TextView tvLable;
+		ImageView imIcon;
+
+	}
+}
