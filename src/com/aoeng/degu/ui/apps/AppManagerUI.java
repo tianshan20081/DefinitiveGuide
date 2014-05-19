@@ -41,7 +41,7 @@ public class AppManagerUI extends Activity implements OnClickListener {
 			startActivity(new Intent(this, AllAppUI.class));
 			break;
 		case R.id.btnSysApps:
-			
+			startActivity(new Intent(this, SysAppsUI.class));
 			break;
 		case R.id.btnUserApps:
 			

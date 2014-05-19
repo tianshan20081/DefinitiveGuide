@@ -6,13 +6,12 @@ package com.aoeng.degu.ui.apps;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.R.integer;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,13 +27,12 @@ import com.aoeng.degu.domain.AppInfo;
 import com.aoeng.degu.utils.Logger;
 
 /**
- * May 19, 2014 9:58:41 AM
+ * May 19, 2014 1:35:23 PM
  * 
  */
-@SuppressLint("NewApi")
-public class AllAppUI extends Activity {
-	private static final String TAG = AllAppUI.class.getName();
-	private ListView lvAllApps;
+public class SysAppsUI extends Activity {
+	private static final String TAG = SysAppsUI.class.getName();
+	private ListView lvSysApps;
 
 	/*
 	 * (non-Javadoc)
@@ -46,50 +44,33 @@ public class AllAppUI extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.ui_apps_manager_all);
-		lvAllApps = (ListView) this.findViewById(R.id.lvAllApps);
+		setContentView(R.layout.ui_apps_manager_sys);
 
-		PackageManager pm = getPackageManager();
-		List<ApplicationInfo> infos = pm
-				.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
-		// GET_UNINSTALLED_PACKAGES代表已删除，但还有安装目录的
+		lvSysApps = (ListView) this.findViewById(R.id.lvSysApps);
 
-		List<PackageInfo> packageInfos = pm.getInstalledPackages(0);
-		if (null == packageInfos || packageInfos.size() == 0) {
+		PackageManager pm = this.getPackageManager();
+		Intent intent = new Intent(Intent.ACTION_MAIN, null);
+		intent.addCategory(Intent.CATEGORY_LAUNCHER);
+		// 通过查询，获得所有ResolveInfo对象.
+		List<ResolveInfo> resolveInfos = pm.queryIntentActivities(intent,
+				PackageManager.MATCH_DEFAULT_ONLY);
+		if (null == resolveInfos || resolveInfos.size() == 0) {
 			return;
 		}
-		for (PackageInfo p : packageInfos) {
-			if ((p.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
-				// 非系统应用
-				String name = p.applicationInfo.name;
-				int versionCode = p.versionCode;
-				String versionName = p.versionName;
-				String label = (String) p.applicationInfo.loadLabel(pm);
-				Drawable icon = p.applicationInfo.loadIcon(pm);
-				String packageName = p.packageName;
-			} else {
-				// 系统应用　　　　　　　　
-			}
+		List<AppInfo> appInfos = new ArrayList<AppInfo>();
+		for (ResolveInfo reInfo : resolveInfos) {
+			AppInfo info = new AppInfo();
+			info.setName(reInfo.activityInfo.name); // 获得该应用程序的启动Activity的name
+			info.setPackageName(reInfo.activityInfo.packageName); // 获得应用程序的包名
+			info.setLabel((String) reInfo.loadLabel(pm)); // 获得应用程序的Label
+			info.setIcon(reInfo.loadIcon(pm)); // 获得应用程序图标
+			appInfos.add(info);
+			Logger.i(TAG, info.toString());
 		}
-
-		if (null != infos && infos.size() > 0) {
-			List<AppInfo> appInfos = new ArrayList<AppInfo>();
-			for (ApplicationInfo info : infos) {
-				AppInfo appInfo = new AppInfo();
-				appInfo.setIcon(info.loadIcon(pm));
-				appInfo.setLabel((String) info.loadLabel(pm));
-				appInfo.setPackageName(info.packageName);
-				appInfo.setName(info.name);
-				appInfos.add(appInfo);
-				Logger.i(TAG, appInfo.toString());
-			}
-			lvAllApps.setAdapter(new AppInfoAdapter(this, appInfos));
-		} else {
-			return;
-		}
-
+		lvSysApps.setAdapter(new AppInfoAdapter(this, appInfos));
 	}
 
+	@SuppressLint("NewApi")
 	private class AppInfoAdapter extends BaseAdapter {
 		private Context context;
 		private List<AppInfo> infos;
@@ -161,6 +142,7 @@ public class AllAppUI extends Activity {
 			holder.imIcon.setBackground(info.getIcon());
 			return convertView;
 		}
+
 	}
 
 	private static class ViewHolder {
@@ -168,6 +150,5 @@ public class AllAppUI extends Activity {
 		TextView tvPackageName;
 		TextView tvLable;
 		ImageView imIcon;
-
 	}
 }

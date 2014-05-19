@@ -19,7 +19,7 @@
             <Button
                 android:id="@+id/btnSysApps"
                 style="@style/btnItem"
-                android:text="显示系統应用程序" />
+                android:text="系統应用程序" />
         </LinearLayout>
 
         <LinearLayout style="@style/lyItem" >

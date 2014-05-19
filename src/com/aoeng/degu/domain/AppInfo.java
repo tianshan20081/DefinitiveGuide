@@ -98,5 +98,14 @@ public class AppInfo {
 		this.icon = icon;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "AppInfo [name=" + name + ", packageName=" + packageName + ", label=" + label
+				+ ", icon=" + icon + "]";
+	}
+
 
 }
