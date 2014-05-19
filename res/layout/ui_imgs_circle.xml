@@ -4,5 +4,5 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.hdodenhof.circleimageview.sample.MainActivity"
+    tools:context="com.aoeng.degu.ui.imgs.CircleImgUI"
     tools:ignore="MergeRootFrame" />

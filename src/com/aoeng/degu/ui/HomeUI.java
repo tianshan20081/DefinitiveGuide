@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.receiver.ReceiverUI;
+import com.aoeng.degu.ui.apps.AppManagerUI;
 import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
 import com.aoeng.degu.ui.imgs.ImageViewsUI;
@@ -50,6 +51,7 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnLocations).setOnClickListener(this);
 
 		this.findViewById(R.id.btnImgs).setOnClickListener(this);
+		this.findViewById(R.id.btnApp).setOnClickListener(this);
 
 	}
 
@@ -113,16 +115,19 @@ public class HomeUI extends Activity implements OnClickListener {
 		case R.id.btnCustomerUI:
 			// 自定义控件
 			intent = new Intent(HomeUI.this, CustomerViewUI.class);
-			
+
 			break;
 		case R.id.btnLoginUIs:
 			intent = new Intent(HomeUI.this, LoginUIs.class);
-			break ;
+			break;
 		case R.id.btnImgs:
 			intent = new Intent(HomeUI.this, ImageViewsUI.class);
-			break ;
+			break;
+		case R.id.btnApp:// 应用程序管理
+			intent = new Intent(HomeUI.this, AppManagerUI.class);
+			break;
 		}
-		
+
 		startActivity(intent);
 
 	}

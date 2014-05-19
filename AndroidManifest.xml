@@ -180,10 +180,15 @@
             android:name=".ui.cv.BigImageShowerUI"
             android:theme="@style/ImageScale" />
         <!-- 圖片展示 -->
-        <activity android:name="com.aoeng.degu.ui.imgs.ImageViewsUI" />
+        <activity android:name=".ui.imgs.ImageViewsUI" />
         <!-- 圆形图片 -->
-        <activity android:name="com.aoeng.degu.ui.imgs.CircleImgUI" />
-        <activity android:name="com.aoeng.degu.ui.imgs.CustomShapeImgUI" />
+        <activity android:name=".ui.imgs.CircleImgUI" />
+        <!-- 多种图形展示界面 -->
+        <activity android:name=".ui.imgs.CustomShapeImgUI" />
+        <!-- 應用程序管理界面 -->
+        <activity android:name=".ui.apps.AppManagerUI" />
+        <!-- 所有應用程序 -->
+        <activity android:name=".ui.apps.AllAppUI" />
     </application>
 
     <permission
