@@ -1,0 +1,1175 @@
+android.support.v4.app.BackStackState
+android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.Fragment$SavedState
+android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentActivity
+android.support.v4.app.FragmentManagerState
+android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentState
+android.support.v4.app.FragmentState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentTabHost
+android.support.v4.app.FragmentTabHost: FragmentTabHost(android.content.Context,android.util.AttributeSet)
+android.support.v4.app.FragmentTabHost: void setOnTabChangedListener(android.widget.TabHost$OnTabChangeListener)
+android.support.v4.app.FragmentTabHost$SavedState
+android.support.v4.app.FragmentTabHost$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.content.FileProvider
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status[] values()
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String)
+android.support.v4.view.PagerTabStrip
+android.support.v4.view.PagerTabStrip: PagerTabStrip(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColor(int)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColorResource(int)
+android.support.v4.view.PagerTabStrip: int getTabIndicatorColor()
+android.support.v4.view.PagerTabStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.PagerTabStrip: void setBackgroundColor(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundResource(int)
+android.support.v4.view.PagerTabStrip: void setDrawFullUnderline(boolean)
+android.support.v4.view.PagerTabStrip: boolean getDrawFullUnderline()
+android.support.v4.view.PagerTabStrip: int getMinHeight()
+android.support.v4.view.PagerTitleStrip
+android.support.v4.view.PagerTitleStrip: void setSingleLineAllCaps(android.widget.TextView)
+android.support.v4.view.PagerTitleStrip: PagerTitleStrip(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.PagerTitleStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTitleStrip: int getTextSpacing()
+android.support.v4.view.PagerTitleStrip: void setNonPrimaryAlpha(float)
+android.support.v4.view.PagerTitleStrip: void setTextColor(int)
+android.support.v4.view.PagerTitleStrip: void setGravity(int)
+android.support.v4.view.PagerTitleStrip: int getMinHeight()
+android.support.v4.view.ViewPager
+android.support.v4.view.ViewPager: ViewPager(android.content.Context)
+android.support.v4.view.ViewPager: ViewPager(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager: void setScrollState(int)
+android.support.v4.view.ViewPager: void setAdapter(android.support.v4.view.PagerAdapter)
+android.support.v4.view.ViewPager: android.support.v4.view.PagerAdapter getAdapter()
+android.support.v4.view.ViewPager: void setOnAdapterChangeListener(android.support.v4.view.ViewPager$OnAdapterChangeListener)
+android.support.v4.view.ViewPager: int getClientWidth()
+android.support.v4.view.ViewPager: void setCurrentItem(int)
+android.support.v4.view.ViewPager: int getCurrentItem()
+android.support.v4.view.ViewPager: void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)
+android.support.v4.view.ViewPager: void setChildrenDrawingOrderEnabledCompat(boolean)
+android.support.v4.view.ViewPager: int getOffscreenPageLimit()
+android.support.v4.view.ViewPager: void setOffscreenPageLimit(int)
+android.support.v4.view.ViewPager: void setPageMargin(int)
+android.support.v4.view.ViewPager: int getPageMargin()
+android.support.v4.view.ViewPager: void setPageMarginDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.ViewPager: void setPageMarginDrawable(int)
+android.support.v4.view.ViewPager: void setScrollingCacheEnabled(boolean)
+android.support.v4.view.ViewPager$LayoutParams
+android.support.v4.view.ViewPager$LayoutParams: ViewPager$LayoutParams(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager$SavedState
+android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.DrawerLayout
+android.support.v4.widget.DrawerLayout: DrawerLayout(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.DrawerLayout: DrawerLayout(android.content.Context,android.util.AttributeSet,int)
+android.support.v4.widget.DrawerLayout: void setScrimColor(int)
+android.support.v4.widget.DrawerLayout: void setDrawerListener(android.support.v4.widget.DrawerLayout$DrawerListener)
+android.support.v4.widget.DrawerLayout: void setDrawerLockMode(int)
+android.support.v4.widget.DrawerLayout$LayoutParams
+android.support.v4.widget.DrawerLayout$LayoutParams: DrawerLayout$LayoutParams(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.DrawerLayout$SavedState
+android.support.v4.widget.DrawerLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SlidingPaneLayout
+android.support.v4.widget.SlidingPaneLayout: SlidingPaneLayout(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.SlidingPaneLayout: SlidingPaneLayout(android.content.Context,android.util.AttributeSet,int)
+android.support.v4.widget.SlidingPaneLayout: void setParallaxDistance(int)
+android.support.v4.widget.SlidingPaneLayout: int getParallaxDistance()
+android.support.v4.widget.SlidingPaneLayout: void setSliderFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getSliderFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setCoveredFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getCoveredFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setPanelSlideListener(android.support.v4.widget.SlidingPaneLayout$PanelSlideListener)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawable(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResource(int)
+android.support.v4.widget.SlidingPaneLayout$LayoutParams
+android.support.v4.widget.SlidingPaneLayout$LayoutParams: SlidingPaneLayout$LayoutParams(android.content.Context,android.util.AttributeSet)
+android.support.v4.widget.SlidingPaneLayout$SavedState
+android.support.v4.widget.SlidingPaneLayout$SavedState: android.os.Parcelable$Creator CREATOR
+com.android.volley.Request$Priority: com.android.volley.Request$Priority[] values()
+com.android.volley.Request$Priority: com.android.volley.Request$Priority valueOf(java.lang.String)
+com.android.volley.toolbox.NetworkImageView
+com.android.volley.toolbox.NetworkImageView: NetworkImageView(android.content.Context,android.util.AttributeSet)
+com.android.volley.toolbox.NetworkImageView: NetworkImageView(android.content.Context,android.util.AttributeSet,int)
+com.android.volley.toolbox.NetworkImageView: void setDefaultImageResId(int)
+com.android.volley.toolbox.NetworkImageView: void setErrorImageResId(int)
+com.aoeng.degu.R$anim: int fade
+com.aoeng.degu.R$anim: int head_in
+com.aoeng.degu.R$anim: int head_out
+com.aoeng.degu.R$attr: int border_color
+com.aoeng.degu.R$attr: int border_width
+com.aoeng.degu.R$attr: int shape
+com.aoeng.degu.R$attr: int svg_raw_resource
+com.aoeng.degu.R$color: int CustomedTabWidget
+com.aoeng.degu.R$color: int Grey
+com.aoeng.degu.R$color: int LightGray
+com.aoeng.degu.R$color: int add_troop_member_bg
+com.aoeng.degu.R$color: int aliceblue
+com.aoeng.degu.R$color: int alpha
+com.aoeng.degu.R$color: int alpha_00
+com.aoeng.degu.R$color: int antiquewhite
+com.aoeng.degu.R$color: int aqua
+com.aoeng.degu.R$color: int aquamarine
+com.aoeng.degu.R$color: int azure
+com.aoeng.degu.R$color: int background
+com.aoeng.degu.R$color: int beige
+com.aoeng.degu.R$color: int bg_default
+com.aoeng.degu.R$color: int bisque
+com.aoeng.degu.R$color: int black
+com.aoeng.degu.R$color: int blanchedalmond
+com.aoeng.degu.R$color: int blank_color
+com.aoeng.degu.R$color: int blue
+com.aoeng.degu.R$color: int blueviolet
+com.aoeng.degu.R$color: int bocop_dialog_bg
+com.aoeng.degu.R$color: int brown
+com.aoeng.degu.R$color: int burlywood
+com.aoeng.degu.R$color: int button_selected
+com.aoeng.degu.R$color: int button_unselected
+com.aoeng.degu.R$color: int cadetblue
+com.aoeng.degu.R$color: int chartreuse
+com.aoeng.degu.R$color: int chat_background
+com.aoeng.degu.R$color: int chat_close_bg
+com.aoeng.degu.R$color: int chat_close_press
+com.aoeng.degu.R$color: int chat_contact
+com.aoeng.degu.R$color: int chat_edit_bg
+com.aoeng.degu.R$color: int chat_edit_bg_press
+com.aoeng.degu.R$color: int chat_edit_bg_solid
+com.aoeng.degu.R$color: int chat_emotion_unit_bg_solid
+com.aoeng.degu.R$color: int chat_emotion_unit_bg_stroke
+com.aoeng.degu.R$color: int chat_emotion_unit_press
+com.aoeng.degu.R$color: int chat_extra_item_bg_solid
+com.aoeng.degu.R$color: int chat_friend_item_bg_solid
+com.aoeng.degu.R$color: int chat_friend_item_bg_stroke
+com.aoeng.degu.R$color: int chat_friend_text_bg
+com.aoeng.degu.R$color: int chat_history_msg_text
+com.aoeng.degu.R$color: int chat_history_time_text
+com.aoeng.degu.R$color: int chat_list_header_bg
+com.aoeng.degu.R$color: int chat_list_header_bg_press
+com.aoeng.degu.R$color: int chat_list_header_text
+com.aoeng.degu.R$color: int chat_message_tip_bg
+com.aoeng.degu.R$color: int chat_message_tip_num
+com.aoeng.degu.R$color: int chat_message_tip_text
+com.aoeng.degu.R$color: int chat_self_item_bg_solid
+com.aoeng.degu.R$color: int chat_self_item_bg_stroke
+com.aoeng.degu.R$color: int chat_self_text_bg
+com.aoeng.degu.R$color: int chat_send_bg
+com.aoeng.degu.R$color: int chat_send_press
+com.aoeng.degu.R$color: int chat_text
+com.aoeng.degu.R$color: int chat_time
+com.aoeng.degu.R$color: int chat_title_bg
+com.aoeng.degu.R$color: int chat_title_name
+com.aoeng.degu.R$color: int chat_win_title_bg
+com.aoeng.degu.R$color: int chocolate
+com.aoeng.degu.R$color: int color_bai
+com.aoeng.degu.R$color: int color_bai_8
+com.aoeng.degu.R$color: int color_cihei
+com.aoeng.degu.R$color: int color_divider
+com.aoeng.degu.R$color: int color_divider_for_contactlist_lower
+com.aoeng.degu.R$color: int color_divider_for_friendlist_groupview
+com.aoeng.degu.R$color: int color_divider_for_friendlist_lower
+com.aoeng.degu.R$color: int color_divider_for_friendlist_upper
+com.aoeng.degu.R$color: int color_divider_for_recentlist_lower
+com.aoeng.degu.R$color: int color_divider_for_recentlist_upper
+com.aoeng.degu.R$color: int color_divider_for_trooplist
+com.aoeng.degu.R$color: int color_divider_lbs_filter
+com.aoeng.degu.R$color: int color_hei
+com.aoeng.degu.R$color: int color_hei_8
+com.aoeng.degu.R$color: int color_lan
+com.aoeng.degu.R$color: int color_qianhui
+com.aoeng.degu.R$color: int color_qianlan
+com.aoeng.degu.R$color: int color_shenhui
+com.aoeng.degu.R$color: int color_zhonghui
+com.aoeng.degu.R$color: int color_zuiqianhui
+com.aoeng.degu.R$color: int coral
+com.aoeng.degu.R$color: int cornflowerblue
+com.aoeng.degu.R$color: int cornsilk
+com.aoeng.degu.R$color: int crimson
+com.aoeng.degu.R$color: int cyan
+com.aoeng.degu.R$color: int dark
+com.aoeng.degu.R$color: int darkblue
+com.aoeng.degu.R$color: int darkcyan
+com.aoeng.degu.R$color: int darkgoldenrod
+com.aoeng.degu.R$color: int darkgray
+com.aoeng.degu.R$color: int darkgreen
+com.aoeng.degu.R$color: int darkgrey
+com.aoeng.degu.R$color: int darkkhaki
+com.aoeng.degu.R$color: int darkmagenta
+com.aoeng.degu.R$color: int darkolivegreen
+com.aoeng.degu.R$color: int darkorange
+com.aoeng.degu.R$color: int darkorchid
+com.aoeng.degu.R$color: int darkred
+com.aoeng.degu.R$color: int darksalmon
+com.aoeng.degu.R$color: int darkseagreen
+com.aoeng.degu.R$color: int darkslateblue
+com.aoeng.degu.R$color: int darkslategray
+com.aoeng.degu.R$color: int darkslategrey
+com.aoeng.degu.R$color: int darkturquoise
+com.aoeng.degu.R$color: int darkviolet
+com.aoeng.degu.R$color: int deeppink
+com.aoeng.degu.R$color: int deepskyblue
+com.aoeng.degu.R$color: int dimgray
+com.aoeng.degu.R$color: int dimgrey
+com.aoeng.degu.R$color: int dodgerblue
+com.aoeng.degu.R$color: int durationtext
+com.aoeng.degu.R$color: int extrainfo
+com.aoeng.degu.R$color: int fifteen_trans_black
+com.aoeng.degu.R$color: int firebrick
+com.aoeng.degu.R$color: int floralwhite
+com.aoeng.degu.R$color: int forestgreen
+com.aoeng.degu.R$color: int fuchsia
+com.aoeng.degu.R$color: int gainsboro
+com.aoeng.degu.R$color: int ghostwhite
+com.aoeng.degu.R$color: int gold
+com.aoeng.degu.R$color: int goldenrod
+com.aoeng.degu.R$color: int gray
+com.aoeng.degu.R$color: int gray_2
+com.aoeng.degu.R$color: int green
+com.aoeng.degu.R$color: int greenyellow
+com.aoeng.degu.R$color: int grey
+com.aoeng.degu.R$color: int grey21
+com.aoeng.degu.R$color: int headerFore
+com.aoeng.degu.R$color: int higtlight
+com.aoeng.degu.R$color: int honeydew
+com.aoeng.degu.R$color: int hotpink
+com.aoeng.degu.R$color: int indianred
+com.aoeng.degu.R$color: int indigo
+com.aoeng.degu.R$color: int info_panel_bg
+com.aoeng.degu.R$color: int ivory
+com.aoeng.degu.R$color: int khaki
+com.aoeng.degu.R$color: int lavender
+com.aoeng.degu.R$color: int lavenderblush
+com.aoeng.degu.R$color: int lawngreen
+com.aoeng.degu.R$color: int layout1
+com.aoeng.degu.R$color: int leba_spacing_bg
+com.aoeng.degu.R$color: int lemonchiffon
+com.aoeng.degu.R$color: int light
+com.aoeng.degu.R$color: int light_orange
+com.aoeng.degu.R$color: int lightblue
+com.aoeng.degu.R$color: int lightcoral
+com.aoeng.degu.R$color: int lightcyan
+com.aoeng.degu.R$color: int lightgoldenrodyellow
+com.aoeng.degu.R$color: int lightgray
+com.aoeng.degu.R$color: int lightgreen
+com.aoeng.degu.R$color: int lightgrey
+com.aoeng.degu.R$color: int lightpink
+com.aoeng.degu.R$color: int lightsalmon
+com.aoeng.degu.R$color: int lightseagreen
+com.aoeng.degu.R$color: int lightskyblue
+com.aoeng.degu.R$color: int lightslategray
+com.aoeng.degu.R$color: int lightslategrey
+com.aoeng.degu.R$color: int lightsteelblue
+com.aoeng.degu.R$color: int lightyellow
+com.aoeng.degu.R$color: int lime
+com.aoeng.degu.R$color: int limegreen
+com.aoeng.degu.R$color: int linen
+com.aoeng.degu.R$color: int list_contact_prompt_line
+com.aoeng.degu.R$color: int list_item_bg
+com.aoeng.degu.R$color: int list_item_bg_focus
+com.aoeng.degu.R$color: int list_item_bg_for_friendlist
+com.aoeng.degu.R$color: int list_item_focus_for_friendlist
+com.aoeng.degu.R$color: int list_item_focus_for_troop
+com.aoeng.degu.R$color: int list_item_line
+com.aoeng.degu.R$color: int list_item_press
+com.aoeng.degu.R$color: int login_background
+com.aoeng.degu.R$color: int login_color0
+com.aoeng.degu.R$color: int login_color1
+com.aoeng.degu.R$color: int lucensy
+com.aoeng.degu.R$color: int magenta
+com.aoeng.degu.R$color: int maroon
+com.aoeng.degu.R$color: int mediumaquamarine
+com.aoeng.degu.R$color: int mediumblue
+com.aoeng.degu.R$color: int mediumorchid
+com.aoeng.degu.R$color: int mediumpurple
+com.aoeng.degu.R$color: int mediumseagreen
+com.aoeng.degu.R$color: int mediumslateblue
+com.aoeng.degu.R$color: int mediumspringgreen
+com.aoeng.degu.R$color: int mediumturquoise
+com.aoeng.degu.R$color: int mediumvioletred
+com.aoeng.degu.R$color: int midnightblue
+com.aoeng.degu.R$color: int mintcream
+com.aoeng.degu.R$color: int mistyrose
+com.aoeng.degu.R$color: int moccasin
+com.aoeng.degu.R$color: int navajowhite
+com.aoeng.degu.R$color: int navy
+com.aoeng.degu.R$color: int no_auto_reply_normal
+com.aoeng.degu.R$color: int no_auto_reply_press
+com.aoeng.degu.R$color: int no_search_result_text
+com.aoeng.degu.R$color: int nonchat_contact
+com.aoeng.degu.R$color: int oldlace
+com.aoeng.degu.R$color: int olive
+com.aoeng.degu.R$color: int olivedrab
+com.aoeng.degu.R$color: int orange
+com.aoeng.degu.R$color: int orangered
+com.aoeng.degu.R$color: int orchid
+com.aoeng.degu.R$color: int p_bg
+com.aoeng.degu.R$color: int p_text1
+com.aoeng.degu.R$color: int p_text2
+com.aoeng.degu.R$color: int palegoldenrod
+com.aoeng.degu.R$color: int palegreen
+com.aoeng.degu.R$color: int paleturquoise
+com.aoeng.degu.R$color: int palevioletred
+com.aoeng.degu.R$color: int papayawhip
+com.aoeng.degu.R$color: int peachpuff
+com.aoeng.degu.R$color: int peru
+com.aoeng.degu.R$color: int pink
+com.aoeng.degu.R$color: int plum
+com.aoeng.degu.R$color: int powderblue
+com.aoeng.degu.R$color: int purple
+com.aoeng.degu.R$color: int qq_normal
+com.aoeng.degu.R$color: int rbm_item_text_color
+com.aoeng.degu.R$color: int rbm_menu_background
+com.aoeng.degu.R$color: int recent_emo_nothing
+com.aoeng.degu.R$color: int recent_msg
+com.aoeng.degu.R$color: int recent_ptt_msg
+com.aoeng.degu.R$color: int red
+com.aoeng.degu.R$color: int rosybrown
+com.aoeng.degu.R$color: int royalblue
+com.aoeng.degu.R$color: int saddlebrown
+com.aoeng.degu.R$color: int salmon
+com.aoeng.degu.R$color: int sandybrown
+com.aoeng.degu.R$color: int sc_black
+com.aoeng.degu.R$color: int sc_button_selected
+com.aoeng.degu.R$color: int sc_button_unselected
+com.aoeng.degu.R$color: int sc_chat_background
+com.aoeng.degu.R$color: int sc_chat_contact
+com.aoeng.degu.R$color: int sc_chat_text
+com.aoeng.degu.R$color: int sc_chat_time
+com.aoeng.degu.R$color: int sc_gray
+com.aoeng.degu.R$color: int sc_hometab_text
+com.aoeng.degu.R$color: int sc_hometab_text_s
+com.aoeng.degu.R$color: int sc_homtlist_bg
+com.aoeng.degu.R$color: int sc_info_btn_press
+com.aoeng.degu.R$color: int sc_loading
+com.aoeng.degu.R$color: int sc_login_background
+com.aoeng.degu.R$color: int sc_login_title_bg
+com.aoeng.degu.R$color: int sc_mainactivity_bg
+com.aoeng.degu.R$color: int sc_msg_list_content
+com.aoeng.degu.R$color: int sc_msg_list_time
+com.aoeng.degu.R$color: int sc_name
+com.aoeng.degu.R$color: int sc_nameselect
+com.aoeng.degu.R$color: int sc_nonchat_contact
+com.aoeng.degu.R$color: int sc_red
+com.aoeng.degu.R$color: int sc_transparent
+com.aoeng.degu.R$color: int sc_transparent_background
+com.aoeng.degu.R$color: int sc_transparent_black
+com.aoeng.degu.R$color: int sc_white
+com.aoeng.degu.R$color: int sc_window_background
+com.aoeng.degu.R$color: int screenshot_normal
+com.aoeng.degu.R$color: int screenshot_pressed
+com.aoeng.degu.R$color: int scrollbar_tbumb_bg
+com.aoeng.degu.R$color: int seagreen
+com.aoeng.degu.R$color: int seashell
+com.aoeng.degu.R$color: int setting_bg
+com.aoeng.degu.R$color: int setting_gray
+com.aoeng.degu.R$color: int setting_text1
+com.aoeng.degu.R$color: int setting_text2
+com.aoeng.degu.R$color: int sienna
+com.aoeng.degu.R$color: int silver
+com.aoeng.degu.R$color: int skyblue
+com.aoeng.degu.R$color: int slateblue
+com.aoeng.degu.R$color: int slategray
+com.aoeng.degu.R$color: int slategrey
+com.aoeng.degu.R$color: int snow
+com.aoeng.degu.R$color: int springgreen
+com.aoeng.degu.R$color: int sqqname
+com.aoeng.degu.R$color: int steelblue
+com.aoeng.degu.R$color: int system_item_bg_read
+com.aoeng.degu.R$color: int system_item_bg_unread
+com.aoeng.degu.R$color: int system_item_name_read
+com.aoeng.degu.R$color: int system_item_name_unread
+com.aoeng.degu.R$color: int tab_button_color
+com.aoeng.degu.R$color: int tag_btn_bg1
+com.aoeng.degu.R$color: int tag_btn_bg2
+com.aoeng.degu.R$color: int tag_btn_bg3
+com.aoeng.degu.R$color: int tag_btn_bg4
+com.aoeng.degu.R$color: int tag_btn_bg5
+com.aoeng.degu.R$color: int tag_textview
+com.aoeng.degu.R$color: int tag_textview1
+com.aoeng.degu.R$color: int tag_textview2
+com.aoeng.degu.R$color: int tag_textview3
+com.aoeng.degu.R$color: int tan
+com.aoeng.degu.R$color: int teal
+com.aoeng.degu.R$color: int textColor
+com.aoeng.degu.R$color: int text_drag_refresh_big
+com.aoeng.degu.R$color: int text_drag_refresh_small
+com.aoeng.degu.R$color: int text_gray
+com.aoeng.degu.R$color: int text_net_err
+com.aoeng.degu.R$color: int text_net_err_refetch
+com.aoeng.degu.R$color: int textfield_unselected
+com.aoeng.degu.R$color: int texttitlecolor
+com.aoeng.degu.R$color: int thirty_trans_eee
+com.aoeng.degu.R$color: int thirty_transparent_black
+com.aoeng.degu.R$color: int thistle
+com.aoeng.degu.R$color: int titelblue
+com.aoeng.degu.R$color: int title
+com.aoeng.degu.R$color: int title_bg
+com.aoeng.degu.R$color: int tomato
+com.aoeng.degu.R$color: int traffic_bg
+com.aoeng.degu.R$color: int traffic_data
+com.aoeng.degu.R$color: int traffic_txt
+com.aoeng.degu.R$color: int trans
+com.aoeng.degu.R$color: int translucency
+com.aoeng.degu.R$color: int transparent
+com.aoeng.degu.R$color: int transparentBlack
+com.aoeng.degu.R$color: int transparent_background
+com.aoeng.degu.R$color: int turquoise
+com.aoeng.degu.R$color: int twenty_transparent_black
+com.aoeng.degu.R$color: int video_bg_color
+com.aoeng.degu.R$color: int video_button_press
+com.aoeng.degu.R$color: int video_button_release
+com.aoeng.degu.R$color: int video_dlg_cover_color
+com.aoeng.degu.R$color: int video_edge_color
+com.aoeng.degu.R$color: int violet
+com.aoeng.degu.R$color: int wheat
+com.aoeng.degu.R$color: int white
+com.aoeng.degu.R$color: int whitesmoke
+com.aoeng.degu.R$color: int window_bg
+com.aoeng.degu.R$color: int yellow
+com.aoeng.degu.R$dimen: int activity_horizontal_margin
+com.aoeng.degu.R$dimen: int activity_vertical_margin
+com.aoeng.degu.R$dimen: int base_padding
+com.aoeng.degu.R$drawable: int a
+com.aoeng.degu.R$drawable: int a_z
+com.aoeng.degu.R$drawable: int a_z_click
+com.aoeng.degu.R$drawable: int app_bg
+com.aoeng.degu.R$drawable: int bg_tab_call_log_normal
+com.aoeng.degu.R$drawable: int bg_tab_call_log_pressed
+com.aoeng.degu.R$drawable: int bg_tab_contact_normal
+com.aoeng.degu.R$drawable: int bg_tab_contact_pressed
+com.aoeng.degu.R$drawable: int bg_tab_dial_normal
+com.aoeng.degu.R$drawable: int bg_tab_dial_pressed
+com.aoeng.degu.R$drawable: int bg_tab_sms_normal
+com.aoeng.degu.R$drawable: int bg_tab_sms_pressed
+com.aoeng.degu.R$drawable: int bottom
+com.aoeng.degu.R$drawable: int checkbox_bg1
+com.aoeng.degu.R$drawable: int child_bg
+com.aoeng.degu.R$drawable: int collapse
+com.aoeng.degu.R$drawable: int common_listview_headview_red_arrow
+com.aoeng.degu.R$drawable: int custom_progressbar
+com.aoeng.degu.R$drawable: int default_bg
+com.aoeng.degu.R$drawable: int delete_default_qq_avatar
+com.aoeng.degu.R$drawable: int delete_holder_bg
+com.aoeng.degu.R$drawable: int delete_icon_normal
+com.aoeng.degu.R$drawable: int delete_item_point_bg
+com.aoeng.degu.R$drawable: int delete_left_trash_can
+com.aoeng.degu.R$drawable: int delete_list_item_bg
+com.aoeng.degu.R$drawable: int delete_wechat_icon
+com.aoeng.degu.R$drawable: int empty_photo
+com.aoeng.degu.R$drawable: int expanded
+com.aoeng.degu.R$drawable: int frame_button_background
+com.aoeng.degu.R$drawable: int frame_button_nopressbg
+com.aoeng.degu.R$drawable: int hugh
+com.aoeng.degu.R$drawable: int ic_launcher
+com.aoeng.degu.R$drawable: int ic_pulltorefresh_arrow
+com.aoeng.degu.R$drawable: int icon
+com.aoeng.degu.R$drawable: int item_bg
+com.aoeng.degu.R$drawable: int pull_to_refresh_header_background
+com.aoeng.degu.R$drawable: int pulltorefresh_down_arrow
+com.aoeng.degu.R$drawable: int pulltorefresh_up_arrow
+com.aoeng.degu.R$drawable: int qq
+com.aoeng.degu.R$drawable: int qq_addfriend_icon
+com.aoeng.degu.R$drawable: int qq_addgroups_button
+com.aoeng.degu.R$drawable: int qq_addgroups_button_press
+com.aoeng.degu.R$drawable: int qq_chat_bottom_send_pressed
+com.aoeng.degu.R$drawable: int qq_chat_send_button_bg
+com.aoeng.degu.R$drawable: int qq_checkbox_selected
+com.aoeng.degu.R$drawable: int qq_checkbox_selected_press
+com.aoeng.degu.R$drawable: int qq_checkbox_unselect
+com.aoeng.degu.R$drawable: int qq_checkbox_unselect_press
+com.aoeng.degu.R$drawable: int qq_login_bg
+com.aoeng.degu.R$drawable: int qq_login_button_nor
+com.aoeng.degu.R$drawable: int qq_login_button_press
+com.aoeng.degu.R$drawable: int qq_login_input
+com.aoeng.degu.R$drawable: int qq_login_input_arrow
+com.aoeng.degu.R$drawable: int qq_login_input_arrow1
+com.aoeng.degu.R$drawable: int qq_login_input_close
+com.aoeng.degu.R$drawable: int qq_login_more
+com.aoeng.degu.R$drawable: int qq_login_more_up
+com.aoeng.degu.R$drawable: int qq_login_moremenu_back
+com.aoeng.degu.R$drawable: int qq_login_pic
+com.aoeng.degu.R$drawable: int qq_login_reg_normal
+com.aoeng.degu.R$drawable: int qq_meitu
+com.aoeng.degu.R$drawable: int qq_no_group
+com.aoeng.degu.R$drawable: int qq_onlinestatus_online
+com.aoeng.degu.R$drawable: int qq_progressbar
+com.aoeng.degu.R$drawable: int qq_shape_dialog
+com.aoeng.degu.R$drawable: int qq_splash
+com.aoeng.degu.R$drawable: int qq_text_color
+com.aoeng.degu.R$drawable: int refresh_arrow_down
+com.aoeng.degu.R$drawable: int refresh_arrow_up
+com.aoeng.degu.R$drawable: int sample_1
+com.aoeng.degu.R$drawable: int sample_2
+com.aoeng.degu.R$drawable: int sample_3
+com.aoeng.degu.R$drawable: int sample_4
+com.aoeng.degu.R$drawable: int sample_5
+com.aoeng.degu.R$drawable: int sample_6
+com.aoeng.degu.R$drawable: int section_toast
+com.aoeng.degu.R$drawable: int selector_group
+com.aoeng.degu.R$drawable: int selector_item
+com.aoeng.degu.R$drawable: int top
+com.aoeng.degu.R$drawable: int xiaohei
+com.aoeng.degu.R$drawable: int xiaohei_big
+com.aoeng.degu.R$id: int TextView1
+com.aoeng.degu.R$id: int accept_accounts
+com.aoeng.degu.R$id: int accept_troopmsg
+com.aoeng.degu.R$id: int action_settings
+com.aoeng.degu.R$id: int address
+com.aoeng.degu.R$id: int age
+com.aoeng.degu.R$id: int alphabetButton
+com.aoeng.degu.R$id: int auto_save_password
+com.aoeng.degu.R$id: int bidir_sliding_layout
+com.aoeng.degu.R$id: int body
+com.aoeng.degu.R$id: int bodylayout
+com.aoeng.degu.R$id: int bottomlist
+com.aoeng.degu.R$id: int btn1
+com.aoeng.degu.R$id: int btn2
+com.aoeng.degu.R$id: int btn3
+com.aoeng.degu.R$id: int btn4
+com.aoeng.degu.R$id: int btn5
+com.aoeng.degu.R$id: int btnAllApps
+com.aoeng.degu.R$id: int btnAllBoadcast
+com.aoeng.degu.R$id: int btnAntidex2Jar
+com.aoeng.degu.R$id: int btnApp
+com.aoeng.degu.R$id: int btnAppSize
+com.aoeng.degu.R$id: int btnBaiduLocation
+com.aoeng.degu.R$id: int btnBiDirSlid
+com.aoeng.degu.R$id: int btnBindService
+com.aoeng.degu.R$id: int btnCircleImg
+com.aoeng.degu.R$id: int btnCities
+com.aoeng.degu.R$id: int btnCitiesByProvinceName
+com.aoeng.degu.R$id: int btnCityInfoById
+com.aoeng.degu.R$id: int btnCityInfoByName
+com.aoeng.degu.R$id: int btnClearBroadcast
+com.aoeng.degu.R$id: int btnClearServices
+com.aoeng.degu.R$id: int btnCloseBlueTooth
+com.aoeng.degu.R$id: int btnCom
+com.aoeng.degu.R$id: int btnComMore
+com.aoeng.degu.R$id: int btnContacts1
+com.aoeng.degu.R$id: int btnContacts2
+com.aoeng.degu.R$id: int btnContectsInfo
+com.aoeng.degu.R$id: int btnContentProvider
+com.aoeng.degu.R$id: int btnCoord
+com.aoeng.degu.R$id: int btnCoordinates
+com.aoeng.degu.R$id: int btnCopyFileToSD
+com.aoeng.degu.R$id: int btnCustomerUI
+com.aoeng.degu.R$id: int btnDeCom
+com.aoeng.degu.R$id: int btnDeComMore
+com.aoeng.degu.R$id: int btnExpandLv
+com.aoeng.degu.R$id: int btnGetData
+com.aoeng.degu.R$id: int btnGetPhoneAddress
+com.aoeng.degu.R$id: int btnGroupUI
+com.aoeng.degu.R$id: int btnIconSmall2Big
+com.aoeng.degu.R$id: int btnImgs
+com.aoeng.degu.R$id: int btnJNI
+com.aoeng.degu.R$id: int btnListViews
+com.aoeng.degu.R$id: int btnLocations
+com.aoeng.degu.R$id: int btnLoginQQ
+com.aoeng.degu.R$id: int btnLoginUIs
+com.aoeng.degu.R$id: int btnLv01
+com.aoeng.degu.R$id: int btnLv02
+com.aoeng.degu.R$id: int btnMovingDel
+com.aoeng.degu.R$id: int btnNetWork
+com.aoeng.degu.R$id: int btnOpenBlueTooth
+com.aoeng.degu.R$id: int btnOpenBlueTooth2
+com.aoeng.degu.R$id: int btnOpenUI
+com.aoeng.degu.R$id: int btnPhotoWall
+com.aoeng.degu.R$id: int btnPhotoWall2Cache
+com.aoeng.degu.R$id: int btnPhotoWaterfall
+com.aoeng.degu.R$id: int btnProguard
+com.aoeng.degu.R$id: int btnReceiver
+com.aoeng.degu.R$id: int btnRegBroad
+com.aoeng.degu.R$id: int btnSaveData
+com.aoeng.degu.R$id: int btnScanServerPort
+com.aoeng.degu.R$id: int btnScreenRegisterReceiver
+com.aoeng.degu.R$id: int btnScreenUnRegisterReceiver
+com.aoeng.degu.R$id: int btnSecurity
+com.aoeng.degu.R$id: int btnSendBroadcast
+com.aoeng.degu.R$id: int btnSendMsgFromClient
+com.aoeng.degu.R$id: int btnServices
+com.aoeng.degu.R$id: int btnShapeImg
+com.aoeng.degu.R$id: int btnShowImg
+com.aoeng.degu.R$id: int btnSimpleWebView
+com.aoeng.degu.R$id: int btnSmsInfo
+com.aoeng.degu.R$id: int btnSmsRegisterReceiver
+com.aoeng.degu.R$id: int btnSmsUnRegisterReceiver
+com.aoeng.degu.R$id: int btnSqlLiteDb
+com.aoeng.degu.R$id: int btnStartPhoneShare
+com.aoeng.degu.R$id: int btnStartService
+com.aoeng.degu.R$id: int btnStopPhoneShare
+com.aoeng.degu.R$id: int btnStopService
+com.aoeng.degu.R$id: int btnSysApps
+com.aoeng.degu.R$id: int btnSysLocation
+com.aoeng.degu.R$id: int btnSystemUI
+com.aoeng.degu.R$id: int btnTabsByGroupUI
+com.aoeng.degu.R$id: int btnUIAudio
+com.aoeng.degu.R$id: int btnUICall
+com.aoeng.degu.R$id: int btnUICallDial
+com.aoeng.degu.R$id: int btnUIContects
+com.aoeng.degu.R$id: int btnUIEmailTo
+com.aoeng.degu.R$id: int btnUIOpenDial
+com.aoeng.degu.R$id: int btnUISendEmail
+com.aoeng.degu.R$id: int btnUISufferInternet
+com.aoeng.degu.R$id: int btnUISysSetting
+com.aoeng.degu.R$id: int btnUIWifiSetting
+com.aoeng.degu.R$id: int btnUnBindService
+com.aoeng.degu.R$id: int btnUpDownLv
+com.aoeng.degu.R$id: int btnUserUI
+com.aoeng.degu.R$id: int btnWebService
+com.aoeng.degu.R$id: int btnWebView
+com.aoeng.degu.R$id: int btnWifiIP
+com.aoeng.degu.R$id: int buton1
+com.aoeng.degu.R$id: int button1
+com.aoeng.degu.R$id: int button_clear
+com.aoeng.degu.R$id: int changetext
+com.aoeng.degu.R$id: int chapter1
+com.aoeng.degu.R$id: int chapter2
+com.aoeng.degu.R$id: int circle
+com.aoeng.degu.R$id: int clearData
+com.aoeng.degu.R$id: int contacts_list_view
+com.aoeng.degu.R$id: int container
+com.aoeng.degu.R$id: int content
+com.aoeng.degu.R$id: int contentList
+com.aoeng.degu.R$id: int cursor
+com.aoeng.degu.R$id: int dataSave
+com.aoeng.degu.R$id: int delete
+com.aoeng.degu.R$id: int etClientInfo
+com.aoeng.degu.R$id: int etDataInfo
+com.aoeng.degu.R$id: int etPhone
+com.aoeng.degu.R$id: int etPhoneIP
+com.aoeng.degu.R$id: int etPhonePort
+com.aoeng.degu.R$id: int expandablelist
+com.aoeng.degu.R$id: int faceimage
+com.aoeng.degu.R$id: int fileCompression
+com.aoeng.degu.R$id: int fileSaveData
+com.aoeng.degu.R$id: int fileSaveDataSD
+com.aoeng.degu.R$id: int first_column
+com.aoeng.degu.R$id: int fmContent
+com.aoeng.degu.R$id: int four
+com.aoeng.degu.R$id: int fridenttext
+com.aoeng.degu.R$id: int getData
+com.aoeng.degu.R$id: int getObjectData
+com.aoeng.degu.R$id: int gridview
+com.aoeng.degu.R$id: int group
+com.aoeng.degu.R$id: int grouptext
+com.aoeng.degu.R$id: int head
+com.aoeng.degu.R$id: int header
+com.aoeng.degu.R$id: int headlayout
+com.aoeng.degu.R$id: int hide_login
+com.aoeng.degu.R$id: int holder
+com.aoeng.degu.R$id: int icon
+com.aoeng.degu.R$id: int imIcon
+com.aoeng.degu.R$id: int imPic
+com.aoeng.degu.R$id: int imPotoTwoCache
+com.aoeng.degu.R$id: int image
+com.aoeng.degu.R$id: int imageView1
+com.aoeng.degu.R$id: int imgApp
+com.aoeng.degu.R$id: int indicator
+com.aoeng.degu.R$id: int input
+com.aoeng.degu.R$id: int input2
+com.aoeng.degu.R$id: int ivImageBig
+com.aoeng.degu.R$id: int ivSmallIcon
+com.aoeng.degu.R$id: int iv_listview_header_down_arrow
+com.aoeng.degu.R$id: int left_menu
+com.aoeng.degu.R$id: int linear_root
+com.aoeng.degu.R$id: int list
+com.aoeng.degu.R$id: int loadmore_layout
+com.aoeng.degu.R$id: int loadmore_progress
+com.aoeng.degu.R$id: int loadmore_text
+com.aoeng.degu.R$id: int loginbutton
+com.aoeng.degu.R$id: int lottery_list
+com.aoeng.degu.R$id: int lvAllApps
+com.aoeng.degu.R$id: int lvAppSize
+com.aoeng.degu.R$id: int lvContectsInfo
+com.aoeng.degu.R$id: int lvNormal
+com.aoeng.degu.R$id: int lvPages
+com.aoeng.degu.R$id: int lvPhotoWall2Cache
+com.aoeng.degu.R$id: int lvSysApps
+com.aoeng.degu.R$id: int lyBody
+com.aoeng.degu.R$id: int lyBottom
+com.aoeng.degu.R$id: int lyHeader
+com.aoeng.degu.R$id: int menu_settings
+com.aoeng.degu.R$id: int mergeView
+com.aoeng.degu.R$id: int more_bottom
+com.aoeng.degu.R$id: int more_image
+com.aoeng.degu.R$id: int more_text
+com.aoeng.degu.R$id: int morehidebottom
+com.aoeng.degu.R$id: int msg
+com.aoeng.degu.R$id: int my_scroll_view
+com.aoeng.degu.R$id: int name
+com.aoeng.degu.R$id: int name_layout
+com.aoeng.degu.R$id: int nametext
+com.aoeng.degu.R$id: int one
+com.aoeng.degu.R$id: int parent
+com.aoeng.degu.R$id: int password
+com.aoeng.degu.R$id: int pbImageLoading
+com.aoeng.degu.R$id: int pb_listview_header_progress
+com.aoeng.degu.R$id: int photo
+com.aoeng.degu.R$id: int photo_wall
+com.aoeng.degu.R$id: int prefActivity
+com.aoeng.degu.R$id: int progress
+com.aoeng.degu.R$id: int pull_to_refresh_image
+com.aoeng.degu.R$id: int pull_to_refresh_progress
+com.aoeng.degu.R$id: int pull_to_refresh_text
+com.aoeng.degu.R$id: int pull_to_refresh_updated_at
+com.aoeng.degu.R$id: int rectangle
+com.aoeng.degu.R$id: int refresh_hint
+com.aoeng.degu.R$id: int refresh_listview
+com.aoeng.degu.R$id: int refresh_root
+com.aoeng.degu.R$id: int refresh_time
+com.aoeng.degu.R$id: int regist
+com.aoeng.degu.R$id: int relative
+com.aoeng.degu.R$id: int right_menu
+com.aoeng.degu.R$id: int saveData
+com.aoeng.degu.R$id: int saveObjectData
+com.aoeng.degu.R$id: int scroll_view_root
+com.aoeng.degu.R$id: int searchEditText
+com.aoeng.degu.R$id: int second_column
+com.aoeng.degu.R$id: int section_toast_layout
+com.aoeng.degu.R$id: int section_toast_text
+com.aoeng.degu.R$id: int silence_login
+com.aoeng.degu.R$id: int sort_key
+com.aoeng.degu.R$id: int sort_key_layout
+com.aoeng.degu.R$id: int speaktext
+com.aoeng.degu.R$id: int stateimage
+com.aoeng.degu.R$id: int sticky_layout
+com.aoeng.degu.R$id: int svg
+com.aoeng.degu.R$id: int text1
+com.aoeng.degu.R$id: int third_column
+com.aoeng.degu.R$id: int three
+com.aoeng.degu.R$id: int time
+com.aoeng.degu.R$id: int title
+com.aoeng.degu.R$id: int title_layout
+com.aoeng.degu.R$id: int tv01
+com.aoeng.degu.R$id: int tv02
+com.aoeng.degu.R$id: int tv03
+com.aoeng.degu.R$id: int tvAntidex2Jareg
+com.aoeng.degu.R$id: int tvAppLabel
+com.aoeng.degu.R$id: int tvBatteryInfo
+com.aoeng.degu.R$id: int tvDataInfo
+com.aoeng.degu.R$id: int tvLabel
+com.aoeng.degu.R$id: int tvLable
+com.aoeng.degu.R$id: int tvLoad
+com.aoeng.degu.R$id: int tvLocationInfo
+com.aoeng.degu.R$id: int tvName
+com.aoeng.degu.R$id: int tvPackageName
+com.aoeng.degu.R$id: int tvPhoneInfo
+com.aoeng.degu.R$id: int tvPhoneNO
+com.aoeng.degu.R$id: int tvPkgName
+com.aoeng.degu.R$id: int tvSmsInfo
+com.aoeng.degu.R$id: int tv_listview_header_last_update_time
+com.aoeng.degu.R$id: int tv_listview_header_state
+com.aoeng.degu.R$id: int tvcachesize
+com.aoeng.degu.R$id: int tvcodesize
+com.aoeng.degu.R$id: int tvdatasize
+com.aoeng.degu.R$id: int tvtotalsize
+com.aoeng.degu.R$id: int two
+com.aoeng.degu.R$id: int vPager
+com.aoeng.degu.R$id: int view_content
+com.aoeng.degu.R$id: int weibolist
+com.aoeng.degu.R$id: int widget
+com.aoeng.degu.R$id: int wvSimple
+com.aoeng.degu.R$layout: int activity_home_ui
+com.aoeng.degu.R$layout: int child
+com.aoeng.degu.R$layout: int dialog_imageloading
+com.aoeng.degu.R$layout: int four
+com.aoeng.degu.R$layout: int group
+com.aoeng.degu.R$layout: int one
+com.aoeng.degu.R$layout: int qq_dialog_layout
+com.aoeng.degu.R$layout: int qqtab_1
+com.aoeng.degu.R$layout: int qqtab_2
+com.aoeng.degu.R$layout: int qqtab_3
+com.aoeng.degu.R$layout: int qqtab_4
+com.aoeng.degu.R$layout: int three
+com.aoeng.degu.R$layout: int two
+com.aoeng.degu.R$layout: int ui_app_manager_all_size_dialog
+com.aoeng.degu.R$layout: int ui_app_manager_all_size_item
+com.aoeng.degu.R$layout: int ui_apps_manager_all
+com.aoeng.degu.R$layout: int ui_apps_manager_all_item
+com.aoeng.degu.R$layout: int ui_apps_manager_all_size
+com.aoeng.degu.R$layout: int ui_apps_manager_home
+com.aoeng.degu.R$layout: int ui_apps_manager_sys
+com.aoeng.degu.R$layout: int ui_base
+com.aoeng.degu.R$layout: int ui_cd_home
+com.aoeng.degu.R$layout: int ui_chap1
+com.aoeng.degu.R$layout: int ui_cp_home
+com.aoeng.degu.R$layout: int ui_cp_sms_item
+com.aoeng.degu.R$layout: int ui_cv_bidirslid
+com.aoeng.degu.R$layout: int ui_cv_bigimage_shower
+com.aoeng.degu.R$layout: int ui_cv_contacts
+com.aoeng.degu.R$layout: int ui_cv_contacts2
+com.aoeng.degu.R$layout: int ui_cv_contacts_item
+com.aoeng.degu.R$layout: int ui_cv_home
+com.aoeng.degu.R$layout: int ui_cv_photosmall2big
+com.aoeng.degu.R$layout: int ui_cv_photowall
+com.aoeng.degu.R$layout: int ui_cv_photowall_item
+com.aoeng.degu.R$layout: int ui_cv_photowaterfall
+com.aoeng.degu.R$layout: int ui_cv_pthoto2cache
+com.aoeng.degu.R$layout: int ui_cv_pthoto2cache_item
+com.aoeng.degu.R$layout: int ui_cv_tabsbygroupui
+com.aoeng.degu.R$layout: int ui_data_file
+com.aoeng.degu.R$layout: int ui_data_sd
+com.aoeng.degu.R$layout: int ui_data_sp
+com.aoeng.degu.R$layout: int ui_data_sqlite
+com.aoeng.degu.R$layout: int ui_file_comm
+com.aoeng.degu.R$layout: int ui_imgs_circle
+com.aoeng.degu.R$layout: int ui_imgs_circle_fragment_main
+com.aoeng.degu.R$layout: int ui_imgs_home
+com.aoeng.degu.R$layout: int ui_imgs_shap
+com.aoeng.degu.R$layout: int ui_jni_home
+com.aoeng.degu.R$layout: int ui_locations
+com.aoeng.degu.R$layout: int ui_logins
+com.aoeng.degu.R$layout: int ui_logins_qq_login
+com.aoeng.degu.R$layout: int ui_logins_qq_main
+com.aoeng.degu.R$layout: int ui_logins_qq_splash
+com.aoeng.degu.R$layout: int ui_lvs_expand
+com.aoeng.degu.R$layout: int ui_lvs_home
+com.aoeng.degu.R$layout: int ui_lvs_moving_del
+com.aoeng.degu.R$layout: int ui_lvs_moving_del_item
+com.aoeng.degu.R$layout: int ui_lvs_moving_del_slide_view_merge
+com.aoeng.degu.R$layout: int ui_lvs_rf_loadmore_footer
+com.aoeng.degu.R$layout: int ui_lvs_rf_pull_to_refresh
+com.aoeng.degu.R$layout: int ui_lvs_rf_pull_to_refresh_header
+com.aoeng.degu.R$layout: int ui_lvs_rf_top_item
+com.aoeng.degu.R$layout: int ui_lvs_rflv
+com.aoeng.degu.R$layout: int ui_lvs_scroll
+com.aoeng.degu.R$layout: int ui_lvs_up_down_more
+com.aoeng.degu.R$layout: int ui_lvs_up_down_more_refresh_footer
+com.aoeng.degu.R$layout: int ui_lvs_up_down_more_refresh_header
+com.aoeng.degu.R$layout: int ui_nt_home
+com.aoeng.degu.R$layout: int ui_recevice_sms
+com.aoeng.degu.R$layout: int ui_security_antidex2jar
+com.aoeng.degu.R$layout: int ui_security_home
+com.aoeng.degu.R$layout: int ui_security_proguard
+com.aoeng.degu.R$layout: int ui_service_home
+com.aoeng.degu.R$layout: int ui_uis
+com.aoeng.degu.R$layout: int ui_uis_action
+com.aoeng.degu.R$layout: int ui_uis_group_1
+com.aoeng.degu.R$layout: int ui_uis_group_2
+com.aoeng.degu.R$layout: int ui_uis_group_3
+com.aoeng.degu.R$layout: int ui_uis_group_main
+com.aoeng.degu.R$layout: int ui_views
+com.aoeng.degu.R$layout: int ui_viewsmergeview
+com.aoeng.degu.R$layout: int ui_wigets
+com.aoeng.degu.R$layout: int ui_wv_home
+com.aoeng.degu.R$layout: int ui_wv_simplewv
+com.aoeng.degu.R$menu: int home_ui
+com.aoeng.degu.R$menu: int ui_qq
+com.aoeng.degu.R$raw: int shape_5
+com.aoeng.degu.R$raw: int shape_circle_2
+com.aoeng.degu.R$raw: int shape_flower
+com.aoeng.degu.R$raw: int shape_heart
+com.aoeng.degu.R$raw: int shape_star
+com.aoeng.degu.R$raw: int shape_star_2
+com.aoeng.degu.R$raw: int shape_star_3
+com.aoeng.degu.R$string: int URL_HOST
+com.aoeng.degu.R$string: int action_settings
+com.aoeng.degu.R$string: int app_name
+com.aoeng.degu.R$string: int border_bottom
+com.aoeng.degu.R$string: int border_top
+com.aoeng.degu.R$string: int hello_world
+com.aoeng.degu.R$string: int image_url
+com.aoeng.degu.R$string: int loading_label
+com.aoeng.degu.R$string: int loadmore_label
+com.aoeng.degu.R$string: int menu_settings
+com.aoeng.degu.R$string: int net_error
+com.aoeng.degu.R$string: int pull_to_refresh_pull_label
+com.aoeng.degu.R$string: int pull_to_refresh_refreshing_label
+com.aoeng.degu.R$string: int pull_to_refresh_release_label
+com.aoeng.degu.R$string: int pull_to_refresh_tap_label
+com.aoeng.degu.R$string: int pull_to_refresh_updated_at_label
+com.aoeng.degu.R$style: int AnimHead
+com.aoeng.degu.R$style: int AppBaseTheme
+com.aoeng.degu.R$style: int AppTheme
+com.aoeng.degu.R$style: int ImageScale
+com.aoeng.degu.R$style: int baseLy
+com.aoeng.degu.R$style: int bigImageLoadingStyle
+com.aoeng.degu.R$style: int btnItem
+com.aoeng.degu.R$style: int btnStyle
+com.aoeng.degu.R$style: int dialog
+com.aoeng.degu.R$style: int lyHorizontalStyle
+com.aoeng.degu.R$style: int lyItem
+com.aoeng.degu.R$style: int lyVerticalStyle
+com.aoeng.degu.R$style: int scrollViewStyle
+com.aoeng.degu.R$styleable: int[] CircleImageView
+com.aoeng.degu.R$styleable: int CircleImageView_border_color
+com.aoeng.degu.R$styleable: int CircleImageView_border_width
+com.aoeng.degu.R$styleable: int[] CustomShapeImageView
+com.aoeng.degu.R$styleable: int CustomShapeImageView_shape
+com.aoeng.degu.R$styleable: int CustomShapeImageView_svg_raw_resource
+com.aoeng.degu.R$xml: int preference_setting
+com.aoeng.degu.aidl.AidlService
+com.aoeng.degu.aidl.AidlService: AidlService()
+com.aoeng.degu.aidl.Product
+com.aoeng.degu.aidl.Product: android.os.Parcelable$Creator CREATOR
+com.aoeng.degu.aidl.ProductService
+com.aoeng.degu.aidl.ProductService: ProductService()
+com.aoeng.degu.application.DGApplication
+com.aoeng.degu.application.DGApplication: DGApplication()
+com.aoeng.degu.contentprovider.RegionContentProvider
+com.aoeng.degu.contentprovider.RegionContentProvider: RegionContentProvider()
+com.aoeng.degu.receiver.CustomerReceiver
+com.aoeng.degu.receiver.InCallReceiver
+com.aoeng.degu.receiver.InCallReceiver: InCallReceiver()
+com.aoeng.degu.receiver.OutCallReceiver
+com.aoeng.degu.receiver.OutCallReceiver: OutCallReceiver()
+com.aoeng.degu.receiver.ReceiverUI
+com.aoeng.degu.receiver.ReceiverUI: ReceiverUI()
+com.aoeng.degu.receiver.ReceiverUI: void onClick(android.view.View)
+com.aoeng.degu.receiver.ScreenOnOffReceiver
+com.aoeng.degu.receiver.ShortMessageReceiver
+com.aoeng.degu.receiver.ShortMessageReceiver: ShortMessageReceiver()
+com.aoeng.degu.receiver.StartUpReceiver
+com.aoeng.degu.receiver.StartUpReceiver: StartUpReceiver()
+com.aoeng.degu.services.BaseServices
+com.aoeng.degu.services.BaseServices: BaseServices()
+com.aoeng.degu.services.BindServices
+com.aoeng.degu.services.BindServices: BindServices()
+com.aoeng.degu.ui.BaseUI
+com.aoeng.degu.ui.BaseUI: BaseUI()
+com.aoeng.degu.ui.BaseUI: void setContentView(android.view.View)
+com.aoeng.degu.ui.Chapter1UI
+com.aoeng.degu.ui.Chapter1UI: Chapter1UI()
+com.aoeng.degu.ui.Chapter1UI: void onClick_DrawRandomCircle(android.view.View)
+com.aoeng.degu.ui.Chapter1UI: void onClick_Clear(android.view.View)
+com.aoeng.degu.ui.CustomerViewUI
+com.aoeng.degu.ui.CustomerViewUI: CustomerViewUI()
+com.aoeng.degu.ui.CustomerViewUI: void onClick(android.view.View)
+com.aoeng.degu.ui.DataSaveUI
+com.aoeng.degu.ui.DataSaveUI: DataSaveUI()
+com.aoeng.degu.ui.DataSaveUI: void onClick(android.view.View)
+com.aoeng.degu.ui.FileCompressionUI
+com.aoeng.degu.ui.FileCompressionUI: FileCompressionUI()
+com.aoeng.degu.ui.FileCompressionUI: void onClick(android.view.View)
+com.aoeng.degu.ui.FileSaveDataSDUI
+com.aoeng.degu.ui.FileSaveDataSDUI: FileSaveDataSDUI()
+com.aoeng.degu.ui.FileSaveDataSDUI: void onClick(android.view.View)
+com.aoeng.degu.ui.FileSaveDataUI
+com.aoeng.degu.ui.FileSaveDataUI: FileSaveDataUI()
+com.aoeng.degu.ui.FileSaveDataUI: void onClick(android.view.View)
+com.aoeng.degu.ui.FrameUI
+com.aoeng.degu.ui.FrameUI: FrameUI()
+com.aoeng.degu.ui.FrameUI: void onClick(android.view.View)
+com.aoeng.degu.ui.HomeUI
+com.aoeng.degu.ui.HomeUI: HomeUI()
+com.aoeng.degu.ui.HomeUI: void onClick(android.view.View)
+com.aoeng.degu.ui.LocationsUI
+com.aoeng.degu.ui.LocationsUI: LocationsUI()
+com.aoeng.degu.ui.LocationsUI: void onClick(android.view.View)
+com.aoeng.degu.ui.MergeView
+com.aoeng.degu.ui.MergeView: MergeView()
+com.aoeng.degu.ui.PreferenceUI
+com.aoeng.degu.ui.PreferenceUI: PreferenceUI()
+com.aoeng.degu.ui.SqlLiteDBUI
+com.aoeng.degu.ui.SqlLiteDBUI: SqlLiteDBUI()
+com.aoeng.degu.ui.WidgetUI
+com.aoeng.degu.ui.WidgetUI: WidgetUI()
+com.aoeng.degu.ui.apps.AllAppUI
+com.aoeng.degu.ui.apps.AllAppUI: AllAppUI()
+com.aoeng.degu.ui.apps.AppManagerUI
+com.aoeng.degu.ui.apps.AppManagerUI: AppManagerUI()
+com.aoeng.degu.ui.apps.AppManagerUI: void onClick(android.view.View)
+com.aoeng.degu.ui.apps.AppSizeUI
+com.aoeng.degu.ui.apps.AppSizeUI: AppSizeUI()
+com.aoeng.degu.ui.apps.SysAppsUI
+com.aoeng.degu.ui.apps.SysAppsUI: SysAppsUI()
+com.aoeng.degu.ui.cd.CoordinatesUI
+com.aoeng.degu.ui.cd.CoordinatesUI: CoordinatesUI()
+com.aoeng.degu.ui.cd.CoordinatesUI: void onClick(android.view.View)
+com.aoeng.degu.ui.cp.ContentProviderUI
+com.aoeng.degu.ui.cp.ContentProviderUI: ContentProviderUI()
+com.aoeng.degu.ui.cp.ContentProviderUI: void onClick(android.view.View)
+com.aoeng.degu.ui.cv.BidirSlidingUI
+com.aoeng.degu.ui.cv.BidirSlidingUI: BidirSlidingUI()
+com.aoeng.degu.ui.cv.BigImageShowerUI
+com.aoeng.degu.ui.cv.BigImageShowerUI: BigImageShowerUI()
+com.aoeng.degu.ui.cv.Contacts2UI
+com.aoeng.degu.ui.cv.Contacts2UI: Contacts2UI()
+com.aoeng.degu.ui.cv.ContactsUI
+com.aoeng.degu.ui.cv.ContactsUI: ContactsUI()
+com.aoeng.degu.ui.cv.FourView
+com.aoeng.degu.ui.cv.FourView: FourView()
+com.aoeng.degu.ui.cv.OneView
+com.aoeng.degu.ui.cv.OneView: OneView()
+com.aoeng.degu.ui.cv.PhotoSmall2BigUI
+com.aoeng.degu.ui.cv.PhotoSmall2BigUI: PhotoSmall2BigUI()
+com.aoeng.degu.ui.cv.PhotoWall2CacheUI
+com.aoeng.degu.ui.cv.PhotoWall2CacheUI: PhotoWall2CacheUI()
+com.aoeng.degu.ui.cv.PhotoWallUI
+com.aoeng.degu.ui.cv.PhotoWallUI: PhotoWallUI()
+com.aoeng.degu.ui.cv.PhotoWaterFallUI
+com.aoeng.degu.ui.cv.PhotoWaterFallUI: PhotoWaterFallUI()
+com.aoeng.degu.ui.cv.TabsByGroupUI
+com.aoeng.degu.ui.cv.TabsByGroupUI: TabsByGroupUI()
+com.aoeng.degu.ui.cv.ThreeView
+com.aoeng.degu.ui.cv.ThreeView: ThreeView()
+com.aoeng.degu.ui.cv.TwoView
+com.aoeng.degu.ui.cv.TwoView: TwoView()
+com.aoeng.degu.ui.cv.views.BidirSlidingView
+com.aoeng.degu.ui.cv.views.BidirSlidingView: BidirSlidingView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.ui.cv.views.BidirSlidingView: void setScrollEvent(android.view.View)
+com.aoeng.degu.ui.cv.views.BidirSlidingView: int getScrollVelocity()
+com.aoeng.degu.ui.cv.views.PhotoWaterFallScrollView
+com.aoeng.degu.ui.cv.views.PhotoWaterFallScrollView: PhotoWaterFallScrollView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.ui.imgs.CircleImgUI
+com.aoeng.degu.ui.imgs.CircleImgUI: CircleImgUI()
+com.aoeng.degu.ui.imgs.CustomShapeImgUI
+com.aoeng.degu.ui.imgs.CustomShapeImgUI: CustomShapeImgUI()
+com.aoeng.degu.ui.imgs.ImageViewsUI
+com.aoeng.degu.ui.imgs.ImageViewsUI: ImageViewsUI()
+com.aoeng.degu.ui.imgs.ImageViewsUI: void onClick(android.view.View)
+com.aoeng.degu.ui.jni.JNIHomeUI
+com.aoeng.degu.ui.jni.JNIHomeUI: JNIHomeUI()
+com.aoeng.degu.ui.logins.LoginQQSplashUI
+com.aoeng.degu.ui.logins.LoginQQSplashUI: LoginQQSplashUI()
+com.aoeng.degu.ui.logins.LoginQQUI
+com.aoeng.degu.ui.logins.LoginQQUI: LoginQQUI()
+com.aoeng.degu.ui.logins.LoginQQUI: void onClick(android.view.View)
+com.aoeng.degu.ui.logins.LoginUIs
+com.aoeng.degu.ui.logins.LoginUIs: LoginUIs()
+com.aoeng.degu.ui.logins.LoginUIs: void onClick(android.view.View)
+com.aoeng.degu.ui.logins.MainQQActivity
+com.aoeng.degu.ui.logins.MainQQActivity: MainQQActivity()
+com.aoeng.degu.ui.lvs.ExpandLvUI
+com.aoeng.degu.ui.lvs.ExpandLvUI: ExpandLvUI()
+com.aoeng.degu.ui.lvs.ListViewsUI
+com.aoeng.degu.ui.lvs.ListViewsUI: ListViewsUI()
+com.aoeng.degu.ui.lvs.ListViewsUI: void onClick(android.view.View)
+com.aoeng.degu.ui.lvs.MovingDelItemLvUI
+com.aoeng.degu.ui.lvs.MovingDelItemLvUI: MovingDelItemLvUI()
+com.aoeng.degu.ui.lvs.MovingDelItemLvUI: void onClick(android.view.View)
+com.aoeng.degu.ui.lvs.NLPullRefreshView
+com.aoeng.degu.ui.lvs.NLPullRefreshView: NLPullRefreshView(android.content.Context)
+com.aoeng.degu.ui.lvs.NLPullRefreshView: NLPullRefreshView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.ui.lvs.NLPullRefreshView: void setRefreshText(java.lang.String)
+com.aoeng.degu.ui.lvs.NLPullRefreshView: void setRefreshTime(java.lang.String)
+com.aoeng.degu.ui.lvs.NLPullRefreshView: void setRefreshListener(com.aoeng.degu.ui.lvs.NLPullRefreshView$RefreshListener)
+com.aoeng.degu.ui.lvs.NLPullRefreshView$Status: com.aoeng.degu.ui.lvs.NLPullRefreshView$Status[] values()
+com.aoeng.degu.ui.lvs.NLPullRefreshView$Status: com.aoeng.degu.ui.lvs.NLPullRefreshView$Status valueOf(java.lang.String)
+com.aoeng.degu.ui.lvs.NormalListViewUI
+com.aoeng.degu.ui.lvs.NormalListViewUI: NormalListViewUI()
+com.aoeng.degu.ui.lvs.PagesListViewUI
+com.aoeng.degu.ui.lvs.PagesListViewUI: PagesListViewUI()
+com.aoeng.degu.ui.lvs.PullToRefreshListView
+com.aoeng.degu.ui.lvs.PullToRefreshListView: PullToRefreshListView(android.content.Context)
+com.aoeng.degu.ui.lvs.PullToRefreshListView: PullToRefreshListView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.ui.lvs.PullToRefreshListView: PullToRefreshListView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.ui.lvs.PullToRefreshListView: void setAdapter(android.widget.ListAdapter)
+com.aoeng.degu.ui.lvs.PullToRefreshListView: void setOnScrollListener(android.widget.AbsListView$OnScrollListener)
+com.aoeng.degu.ui.lvs.PullToRefreshListView: void setOnRefreshListener(com.aoeng.degu.ui.lvs.PullToRefreshListView$OnRefreshListener)
+com.aoeng.degu.ui.lvs.PullToRefreshListView: void setLastUpdated(java.lang.CharSequence)
+com.aoeng.degu.ui.lvs.PullToRefreshUI
+com.aoeng.degu.ui.lvs.PullToRefreshUI: PullToRefreshUI()
+com.aoeng.degu.ui.lvs.ReflashListUI
+com.aoeng.degu.ui.lvs.ReflashListUI: ReflashListUI()
+com.aoeng.degu.ui.lvs.RefreshScrollUI
+com.aoeng.degu.ui.lvs.RefreshScrollUI: RefreshScrollUI()
+com.aoeng.degu.ui.lvs.UpDownLvUI
+com.aoeng.degu.ui.lvs.UpDownLvUI: UpDownLvUI()
+com.aoeng.degu.ui.nt.NetWorkUI
+com.aoeng.degu.ui.nt.NetWorkUI: NetWorkUI()
+com.aoeng.degu.ui.nt.NetWorkUI: void onClick(android.view.View)
+com.aoeng.degu.ui.nt.VolleyUI
+com.aoeng.degu.ui.security.Antidex2JarUI
+com.aoeng.degu.ui.security.Antidex2JarUI: Antidex2JarUI()
+com.aoeng.degu.ui.security.Antidex2JarUI: void onClick(android.view.View)
+com.aoeng.degu.ui.security.ProguardUI
+com.aoeng.degu.ui.security.ProguardUI: void onClick(android.view.View)
+com.aoeng.degu.ui.security.SecurityUI
+com.aoeng.degu.ui.security.SecurityUI: SecurityUI()
+com.aoeng.degu.ui.security.SecurityUI: void onClick(android.view.View)
+com.aoeng.degu.ui.services.ServiceUI
+com.aoeng.degu.ui.services.ServiceUI: ServiceUI()
+com.aoeng.degu.ui.services.ServiceUI: void onClick(android.view.View)
+com.aoeng.degu.ui.uis.Action2UI
+com.aoeng.degu.ui.uis.Action2UI: Action2UI()
+com.aoeng.degu.ui.uis.ActionUI
+com.aoeng.degu.ui.uis.ActionUI: ActionUI()
+com.aoeng.degu.ui.uis.ActionUI: void onClick(android.view.View)
+com.aoeng.degu.ui.uis.Group1UI
+com.aoeng.degu.ui.uis.Group1UI: Group1UI()
+com.aoeng.degu.ui.uis.Group1UI: void onClickGU1(android.view.View)
+com.aoeng.degu.ui.uis.Group2UI
+com.aoeng.degu.ui.uis.Group2UI: Group2UI()
+com.aoeng.degu.ui.uis.Group2UI: void onClickGU2(android.view.View)
+com.aoeng.degu.ui.uis.Group3UI
+com.aoeng.degu.ui.uis.Group3UI: Group3UI()
+com.aoeng.degu.ui.uis.Group3UI: void onClickGU3(android.view.View)
+com.aoeng.degu.ui.uis.GroupMainUI
+com.aoeng.degu.ui.uis.GroupMainUI: GroupMainUI()
+com.aoeng.degu.ui.uis.GroupMainUI: void onClickBottom(android.view.View)
+com.aoeng.degu.ui.uis.UIsUI
+com.aoeng.degu.ui.uis.UIsUI: UIsUI()
+com.aoeng.degu.ui.uis.UIsUI: void onClick(android.view.View)
+com.aoeng.degu.ui.wv.SimpleWebViewUI
+com.aoeng.degu.ui.wv.SimpleWebViewUI: SimpleWebViewUI()
+com.aoeng.degu.ui.wv.WebViewUI
+com.aoeng.degu.ui.wv.WebViewUI: WebViewUI()
+com.aoeng.degu.ui.wv.WebViewUI: void onClick(android.view.View)
+com.aoeng.degu.utils.NetUtil$Status: com.aoeng.degu.utils.NetUtil$Status[] values()
+com.aoeng.degu.utils.NetUtil$Status: com.aoeng.degu.utils.NetUtil$Status valueOf(java.lang.String)
+com.aoeng.degu.views.BaseImageView
+com.aoeng.degu.views.BaseImageView: BaseImageView(android.content.Context)
+com.aoeng.degu.views.BaseImageView: BaseImageView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.BaseImageView: BaseImageView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.BaseImageView: android.graphics.Bitmap getBitmap()
+com.aoeng.degu.views.CircleImageView
+com.aoeng.degu.views.CircleImageView: CircleImageView(android.content.Context)
+com.aoeng.degu.views.CircleImageView: CircleImageView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.CircleImageView: CircleImageView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.CircleImageView: android.graphics.Bitmap getBitmap()
+com.aoeng.degu.views.CustomShapeImageView
+com.aoeng.degu.views.CustomShapeImageView: CustomShapeImageView(android.content.Context)
+com.aoeng.degu.views.CustomShapeImageView: CustomShapeImageView(android.content.Context,int,int,int)
+com.aoeng.degu.views.CustomShapeImageView: CustomShapeImageView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.CustomShapeImageView: CustomShapeImageView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.CustomShapeImageView: android.graphics.Bitmap getBitmap()
+com.aoeng.degu.views.CustomShapeSquareImageView
+com.aoeng.degu.views.CustomShapeSquareImageView: CustomShapeSquareImageView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.CustomShapeSquareImageView: CustomShapeSquareImageView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.ListViewCompat
+com.aoeng.degu.views.ListViewCompat: ListViewCompat(android.content.Context)
+com.aoeng.degu.views.ListViewCompat: ListViewCompat(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.ListViewCompat: ListViewCompat(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.PinnedHeaderExpandableListView
+com.aoeng.degu.views.PinnedHeaderExpandableListView: PinnedHeaderExpandableListView(android.content.Context)
+com.aoeng.degu.views.PinnedHeaderExpandableListView: PinnedHeaderExpandableListView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.PinnedHeaderExpandableListView: PinnedHeaderExpandableListView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.PinnedHeaderExpandableListView: void setOnScrollListener(android.widget.AbsListView$OnScrollListener)
+com.aoeng.degu.views.PinnedHeaderExpandableListView: void setOnHeaderUpdateListener(com.aoeng.degu.views.PinnedHeaderExpandableListView$OnHeaderUpdateListener)
+com.aoeng.degu.views.RectangleImageView
+com.aoeng.degu.views.RectangleImageView: RectangleImageView(android.content.Context)
+com.aoeng.degu.views.RectangleImageView: RectangleImageView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.RectangleImageView: RectangleImageView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.RectangleImageView: android.graphics.Bitmap getBitmap()
+com.aoeng.degu.views.RefreshLV
+com.aoeng.degu.views.RefreshLV: RefreshLV(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.RefreshLV: java.lang.String getLastUpdateTime()
+com.aoeng.degu.views.RefreshLV: void setOnRefreshListener(com.aoeng.degu.ui.lvs.UpDownLvUI$OnRefreshListener)
+com.aoeng.degu.views.RefreshLV$DisplayMode: com.aoeng.degu.views.RefreshLV$DisplayMode[] values()
+com.aoeng.degu.views.RefreshLV$DisplayMode: com.aoeng.degu.views.RefreshLV$DisplayMode valueOf(java.lang.String)
+com.aoeng.degu.views.SlideView
+com.aoeng.degu.views.SlideView: SlideView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.SlideView: void setButtonText(java.lang.CharSequence)
+com.aoeng.degu.views.SlideView: void setContentView(android.view.View)
+com.aoeng.degu.views.SlideView: void setOnSlideListener(com.aoeng.degu.views.SlideView$OnSlideListener)
+com.aoeng.degu.views.StickyLayout
+com.aoeng.degu.views.StickyLayout: StickyLayout(android.content.Context)
+com.aoeng.degu.views.StickyLayout: StickyLayout(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.StickyLayout: StickyLayout(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.StickyLayout: void setOnGiveUpTouchEventListener(com.aoeng.degu.views.StickyLayout$OnGiveUpTouchEventListener)
+com.aoeng.degu.views.StickyLayout: void setHeaderHeight(int)
+com.aoeng.degu.views.SvgImageView
+com.aoeng.degu.views.SvgImageView: SvgImageView(android.content.Context)
+com.aoeng.degu.views.SvgImageView: SvgImageView(android.content.Context,android.util.AttributeSet)
+com.aoeng.degu.views.SvgImageView: SvgImageView(android.content.Context,android.util.AttributeSet,int)
+com.aoeng.degu.views.SvgImageView: android.graphics.Bitmap getBitmap()
+com.baidu.location.Jni
+com.baidu.location.Jni: java.lang.String a(byte[],int)
+com.baidu.location.Jni: java.lang.String b(double,double,int,int)
+com.baidu.location.f
+com.baidu.location.i$b
+org.apache.commons.lang3.JavaVersion: org.apache.commons.lang3.JavaVersion[] values()
+org.apache.commons.lang3.JavaVersion: org.apache.commons.lang3.JavaVersion valueOf(java.lang.String)
+org.apache.commons.lang3.Range$ComparableComparator: org.apache.commons.lang3.Range$ComparableComparator[] values()
+org.apache.commons.lang3.Range$ComparableComparator: org.apache.commons.lang3.Range$ComparableComparator valueOf(java.lang.String)
+org.apache.commons.lang3.text.translate.NumericEntityUnescaper$OPTION: org.apache.commons.lang3.text.translate.NumericEntityUnescaper$OPTION[] values()
+org.apache.commons.lang3.text.translate.NumericEntityUnescaper$OPTION: org.apache.commons.lang3.text.translate.NumericEntityUnescaper$OPTION valueOf(java.lang.String)

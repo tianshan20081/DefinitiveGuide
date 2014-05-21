@@ -26,13 +26,14 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
 
     <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
 
     <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
 
     <application
+        android:name="com.aoeng.degu.application.DGApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -193,6 +194,11 @@
         <activity android:name=".ui.apps.SysAppsUI" />
         <!-- 获取应用程序大小 -->
         <activity android:name=".ui.apps.AppSizeUI" />
+        <!-- 反编译 -->
+        <activity android:name=".ui.security.SecurityUI" />
+        <activity android:name=".ui.security.Antidex2JarUI" />
+        <!-- 代码混淆 -->
+        <activity android:name=".ui.security.ProguardUI" />
     </application>
 
     <permission

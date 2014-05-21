@@ -79,8 +79,7 @@ public class AppSizeUI extends Activity implements OnItemClickListener {
 			e.printStackTrace();
 		}
 
-		infater = (LayoutInflater) AppSizeUI.this
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		infater = (LayoutInflater) AppSizeUI.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View dialog = infater.inflate(R.layout.ui_app_manager_all_size_dialog, null);
 		TextView tvcachesize = (TextView) dialog.findViewById(R.id.tvcachesize); // 缓存大小
 		TextView tvdatasize = (TextView) dialog.findViewById(R.id.tvdatasize); // 数据大小
@@ -117,9 +116,7 @@ public class AppSizeUI extends Activity implements OnItemClickListener {
 				// 成员函数才能用getMethod
 				Method getPackageSizeInfo = pm.getClass().getMethod("getPackageSizeInfo",
 						String.class, IPackageStatsObserver.class);
-				
-				
-				getPackageSizeInfo.setAccessible(true);
+				// getPackageSizeInfo.setAccessible(true);
 				// 调用该函数，并且给其分配参数 ，待调用流程完成后会回调PkgSizeObserver类的函数
 				getPackageSizeInfo.invoke(pm, pkgName, new PkgSizeObserver());
 			} catch (Exception ex) {

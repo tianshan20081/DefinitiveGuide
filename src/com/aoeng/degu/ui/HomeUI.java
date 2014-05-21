@@ -16,6 +16,7 @@ import com.aoeng.degu.ui.jni.JNIHomeUI;
 import com.aoeng.degu.ui.logins.LoginUIs;
 import com.aoeng.degu.ui.lvs.ListViewsUI;
 import com.aoeng.degu.ui.nt.NetWorkUI;
+import com.aoeng.degu.ui.security.SecurityUI;
 import com.aoeng.degu.ui.services.ServiceUI;
 import com.aoeng.degu.ui.uis.GroupMainUI;
 import com.aoeng.degu.ui.uis.UIsUI;
@@ -52,6 +53,9 @@ public class HomeUI extends Activity implements OnClickListener {
 
 		this.findViewById(R.id.btnImgs).setOnClickListener(this);
 		this.findViewById(R.id.btnApp).setOnClickListener(this);
+		
+//		反编译与安全
+		this.findViewById(R.id.btnSecurity).setOnClickListener(this);
 
 	}
 
@@ -125,6 +129,9 @@ public class HomeUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnApp:// 应用程序管理
 			intent = new Intent(HomeUI.this, AppManagerUI.class);
+			break;
+		case R.id.btnSecurity:// 反编译与安全
+			intent = new Intent(HomeUI.this, SecurityUI.class);
 			break;
 		}
 
