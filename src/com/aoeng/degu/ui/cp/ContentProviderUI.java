@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.adapter.SmsAdapter;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class ContentProviderUI extends Activity implements OnClickListener {
 	private ListView lvContectsInfo;
@@ -54,14 +54,14 @@ public class ContentProviderUI extends Activity implements OnClickListener {
 			uri = Uri.parse("content://com.aoeng.degu.permission.regionContentprovider/name/西安");
 			cursor = contentResolver.query(uri, null, null, null, null);
 			if (cursor.moveToFirst()) {
-				ViewUtils.toastCenter(this, cursor.getString(cursor.getColumnIndex("city_name")), true);
+				Toaster.toastCenter(this, cursor.getString(cursor.getColumnIndex("city_name")), true);
 			}
 			break;
 		case R.id.btnCityInfoById:
 			uri = Uri.parse("content://com.aoeng.degu.permission.regionContentprovider/code/024");
 			cursor = contentResolver.query(uri, null, null, null, null);
 			if (cursor.moveToFirst()) {
-				ViewUtils.toastCenter(this, cursor.getString(cursor.getColumnIndex("city_name")), true);
+				Toaster.toastCenter(this, cursor.getString(cursor.getColumnIndex("city_name")), true);
 			}
 
 			break;

@@ -3,7 +3,7 @@ package com.aoeng.degu.receiver;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 import android.app.AlertDialog;
 import android.app.Service;
@@ -26,15 +26,15 @@ public class InCallReceiver extends BroadcastReceiver {
 		case TelephonyManager.CALL_STATE_RINGING:// 响铃
 			String telNo = intent.getStringExtra("incoming_number");
 			showToast(context, "tel:" + telNo);
-			ViewUtils.toast(context, telNo, true);
-			ViewUtils.log(context.getPackageName(), telNo);
+			Toaster.toast(context, telNo, true);
+			Toaster.log(context.getPackageName(), telNo);
 			new AlertDialog.Builder(context).setMessage(telNo).create().show();
 			break;
 		case TelephonyManager.CALL_STATE_IDLE:// 挂断
 			closeToast();
 			break;
 		case TelephonyManager.CALL_STATE_OFFHOOK:// 接听电话
-			ViewUtils.log(context.getPackageName(), "电话接听中");
+			Toaster.log(context.getPackageName(), "电话接听中");
 			break;
 
 		}

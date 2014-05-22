@@ -527,12 +527,15 @@ com.aoeng.degu.R$id: int btn4
 com.aoeng.degu.R$id: int btn5
 com.aoeng.degu.R$id: int btnAllApps
 com.aoeng.degu.R$id: int btnAllBoadcast
+com.aoeng.degu.R$id: int btnAntiDebug
 com.aoeng.degu.R$id: int btnAntidex2Jar
 com.aoeng.degu.R$id: int btnApp
 com.aoeng.degu.R$id: int btnAppSize
 com.aoeng.degu.R$id: int btnBaiduLocation
 com.aoeng.degu.R$id: int btnBiDirSlid
 com.aoeng.degu.R$id: int btnBindService
+com.aoeng.degu.R$id: int btnCheckEmu
+com.aoeng.degu.R$id: int btnCheckSignature
 com.aoeng.degu.R$id: int btnCircleImg
 com.aoeng.degu.R$id: int btnCities
 com.aoeng.degu.R$id: int btnCitiesByProvinceName
@@ -745,6 +748,7 @@ com.aoeng.degu.R$id: int tvAntidex2Jareg
 com.aoeng.degu.R$id: int tvAppLabel
 com.aoeng.degu.R$id: int tvBatteryInfo
 com.aoeng.degu.R$id: int tvDataInfo
+com.aoeng.degu.R$id: int tvInfo
 com.aoeng.degu.R$id: int tvLabel
 com.aoeng.degu.R$id: int tvLable
 com.aoeng.degu.R$id: int tvLoad
@@ -836,9 +840,12 @@ com.aoeng.degu.R$layout: int ui_lvs_up_down_more_refresh_footer
 com.aoeng.degu.R$layout: int ui_lvs_up_down_more_refresh_header
 com.aoeng.degu.R$layout: int ui_nt_home
 com.aoeng.degu.R$layout: int ui_recevice_sms
+com.aoeng.degu.R$layout: int ui_security_antidebug
 com.aoeng.degu.R$layout: int ui_security_antidex2jar
+com.aoeng.degu.R$layout: int ui_security_checkemu
 com.aoeng.degu.R$layout: int ui_security_home
 com.aoeng.degu.R$layout: int ui_security_proguard
+com.aoeng.degu.R$layout: int ui_security_signature
 com.aoeng.degu.R$layout: int ui_service_home
 com.aoeng.degu.R$layout: int ui_uis
 com.aoeng.degu.R$layout: int ui_uis_action
@@ -1068,10 +1075,20 @@ com.aoeng.degu.ui.nt.NetWorkUI
 com.aoeng.degu.ui.nt.NetWorkUI: NetWorkUI()
 com.aoeng.degu.ui.nt.NetWorkUI: void onClick(android.view.View)
 com.aoeng.degu.ui.nt.VolleyUI
+com.aoeng.degu.ui.security.AntiDebugUI
+com.aoeng.degu.ui.security.AntiDebugUI: AntiDebugUI()
+com.aoeng.degu.ui.security.AntiDebugUI: void onClick(android.view.View)
 com.aoeng.degu.ui.security.Antidex2JarUI
 com.aoeng.degu.ui.security.Antidex2JarUI: Antidex2JarUI()
 com.aoeng.degu.ui.security.Antidex2JarUI: void onClick(android.view.View)
+com.aoeng.degu.ui.security.CheckEmuUI
+com.aoeng.degu.ui.security.CheckEmuUI: CheckEmuUI()
+com.aoeng.degu.ui.security.CheckEmuUI: void onClick(android.view.View)
+com.aoeng.degu.ui.security.CheckSignatureUI
+com.aoeng.degu.ui.security.CheckSignatureUI: CheckSignatureUI()
+com.aoeng.degu.ui.security.CheckSignatureUI: void onClick(android.view.View)
 com.aoeng.degu.ui.security.ProguardUI
+com.aoeng.degu.ui.security.ProguardUI: ProguardUI()
 com.aoeng.degu.ui.security.ProguardUI: void onClick(android.view.View)
 com.aoeng.degu.ui.security.SecurityUI
 com.aoeng.degu.ui.security.SecurityUI: SecurityUI()

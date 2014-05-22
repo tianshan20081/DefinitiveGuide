@@ -1,6 +1,6 @@
 package com.aoeng.degu.services;
 
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 import android.app.Service;
 import android.content.Intent;
@@ -18,7 +18,7 @@ public class BaseServices extends Service {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		ViewUtils.toastCenter(this, "onCreate()", false);
+		Toaster.toastCenter(this, "onCreate()", false);
 	}
 
 	@Override
@@ -26,27 +26,27 @@ public class BaseServices extends Service {
 		// TODO Auto-generated method stub
 		super.onStart(intent, startId);
 
-		ViewUtils.toastCenter(this, "onStart()", false);
+		Toaster.toastCenter(this, "onStart()", false);
 	}
 
 	@Override
 	public void onRebind(Intent intent) {
 		// TODO Auto-generated method stub
 		super.onRebind(intent);
-		ViewUtils.toastCenter(this, "onRebind()", false);
+		Toaster.toastCenter(this, "onRebind()", false);
 	}
 
 	@Override
 	public void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		ViewUtils.toastCenter(this, "onDestroy()", false);
+		Toaster.toastCenter(this, "onDestroy()", false);
 	}
 
 	@Override
 	public boolean onUnbind(Intent intent) {
 		// TODO Auto-generated method stub
-		ViewUtils.toastCenter(this, "onUnbind()", false);
+		Toaster.toastCenter(this, "onUnbind()", false);
 		return super.onUnbind(intent);
 
 	}

@@ -23,7 +23,7 @@ import android.widget.ImageView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.domain.Person;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class DataSaveUI extends Activity implements OnClickListener {
 	private EditText etDataInfo;
@@ -87,7 +87,7 @@ public class DataSaveUI extends Activity implements OnClickListener {
 			break;
 
 		case R.id.clearData:
-			ViewUtils.toast(this, "数据已经被清空", false);
+			Toaster.toast(this, "数据已经被清空", false);
 			simpleDataEditor.clear();
 			simpleDataEditor.commit();
 			break;
@@ -136,7 +136,7 @@ public class DataSaveUI extends Activity implements OnClickListener {
 			break;
 		case R.id.getData:
 			try {
-				ViewUtils.toast(this, simpleDataSp.getString("simpledata", ""), true);
+				Toaster.toast(this, simpleDataSp.getString("simpledata", ""), true);
 				imgBase64Str = simpleDataSp.getString("img", "");
 				byte[] imgByte = Base64.decode(imgBase64Str.getBytes(), Base64.DEFAULT);
 				ByteArrayInputStream bis = new ByteArrayInputStream(imgByte);
@@ -154,7 +154,7 @@ public class DataSaveUI extends Activity implements OnClickListener {
 				ByteArrayInputStream bis = new ByteArrayInputStream(personBase64Byte);
 				ObjectInputStream ois = new ObjectInputStream(bis);
 				Person person = (Person) ois.readObject();
-				ViewUtils.toast(this, person.toString(), true);
+				Toaster.toast(this, person.toString(), true);
 				byte[] iconByte = Base64.decode(person.getIcon().getBytes(), Base64.DEFAULT);
 				ByteArrayInputStream bis1 = new ByteArrayInputStream(iconByte);
 				Drawable drawable = Drawable.createFromStream(bis1, "image");

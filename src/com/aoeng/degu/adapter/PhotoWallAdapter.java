@@ -10,7 +10,7 @@ import java.util.Set;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.ImagesURL;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -71,7 +71,7 @@ public class PhotoWallAdapter extends ArrayAdapter<String> implements OnScrollLi
 		taskCollection = new HashSet<BitmapWorkerTask>();
 		// 获取应用程序最大可用内存
 		int maxMemory = (int) Runtime.getRuntime().maxMemory();
-		ViewUtils.log(TAG, "Runtime.getRuntime().maxMemory()----->" + Runtime.getRuntime().maxMemory());
+		Toaster.log(TAG, "Runtime.getRuntime().maxMemory()----->" + Runtime.getRuntime().maxMemory());
 		int cacheSize = maxMemory / 20;
 		// 设置图片缓存大小为程序可用内存的 1/8
 		mMemoryCache = new LruCache<String, Bitmap>(cacheSize) {

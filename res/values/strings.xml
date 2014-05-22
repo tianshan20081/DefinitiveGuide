@@ -17,5 +17,6 @@
     <string name="loading_label">正在加载....</string>
     <string name="URL_HOST">http://www.huigush.com/</string>
     <string name="net_error">当前网络不可用，请先连接Internet！</string>
+    <string name="crc">597918297</string>
 
 </resources>

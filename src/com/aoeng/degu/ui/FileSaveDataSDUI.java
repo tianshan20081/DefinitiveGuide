@@ -14,7 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class FileSaveDataSDUI extends Activity implements OnClickListener {
 
@@ -32,9 +32,9 @@ public class FileSaveDataSDUI extends Activity implements OnClickListener {
 		imPic = (ImageView) this.findViewById(R.id.imPic);
 
 		if (android.os.Environment.isExternalStorageRemovable()) {
-			ViewUtils.toast(this, "SD 卡是真实的", true);
+			Toaster.toast(this, "SD 卡是真实的", true);
 		} else {
-			ViewUtils.toast(this, "SD 卡是虚拟的", true);
+			Toaster.toast(this, "SD 卡是虚拟的", true);
 		}
 	}
 
@@ -45,7 +45,7 @@ public class FileSaveDataSDUI extends Activity implements OnClickListener {
 		case R.id.btnShowImg:
 			String fileName = android.os.Environment.getExternalStorageDirectory() + "/image.jpg";
 			if (!new File(fileName).exists()) {
-				ViewUtils.toast(this, "文件不存在!", true);
+				Toaster.toast(this, "文件不存在!", true);
 				return;
 			}
 			try {
@@ -73,7 +73,7 @@ public class FileSaveDataSDUI extends Activity implements OnClickListener {
 				}
 				is.close();
 				fos.close();
-				ViewUtils.toast(this, "文件拷贝完毕", true);
+				Toaster.toast(this, "文件拷贝完毕", true);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

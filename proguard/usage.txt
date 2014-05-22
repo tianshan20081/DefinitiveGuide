@@ -1254,7 +1254,7 @@ com.aoeng.degu.R$raw
 com.aoeng.degu.R$string
 com.aoeng.degu.R$style
 com.aoeng.degu.R$styleable:
-    1196:1196:public R$styleable()
+    1203:1203:public R$styleable()
 com.aoeng.degu.R$xml
 com.aoeng.degu.adapter.PhotoWaterFallAdapter
 com.aoeng.degu.aidl.IMyService$Stub:
@@ -1341,6 +1341,8 @@ com.aoeng.degu.ui.lvs.PullToRefreshListView:
 com.aoeng.degu.ui.nt.Test
 com.aoeng.degu.ui.security.Antidex2JarUI:
     private static final int BITS_PER_UNIT
+com.aoeng.degu.ui.security.CheckEmuUI:
+    123:130:public static java.lang.String getProp(android.content.Context,java.lang.String)
 com.aoeng.degu.utils.BaseHandler
 com.aoeng.degu.utils.CommonUtil
 com.aoeng.degu.utils.CommonUtil$1
@@ -1369,11 +1371,11 @@ com.aoeng.degu.utils.Logger:
 com.aoeng.degu.utils.NetUtil
 com.aoeng.degu.utils.NetUtil$Status
 com.aoeng.degu.utils.RequestVO
+com.aoeng.degu.utils.Toaster:
+    9:9:public Toaster()
+    35:40:public static android.app.ProgressDialog getPro(android.content.Context,java.lang.String)
+    44:48:public static void dismiss(android.app.ProgressDialog)
 com.aoeng.degu.utils.Tools
-com.aoeng.degu.utils.ViewUtils:
-    9:9:public ViewUtils()
-    29:34:public static android.app.ProgressDialog getPro(android.content.Context,java.lang.String)
-    37:41:public static void dismiss(android.app.ProgressDialog)
 com.aoeng.degu.utils.cv.BigImageLoadingDialog:
     29:30:private BigImageLoadingDialog(android.content.Context,int)
 com.aoeng.degu.utils.cv.TwoCacheImageLoader:

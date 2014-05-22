@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aoeng.degu.adapter.ListViewAdapter;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class PagesListViewUI extends ListActivity implements OnScrollListener {
 
@@ -107,11 +107,11 @@ public class PagesListViewUI extends ListActivity implements OnScrollListener {
 
 	private void log(String msg) {
 		// TODO Auto-generated method stub
-		ViewUtils.log(TAG, msg);
+		Toaster.log(TAG, msg);
 	}
 
 	private void toast(String msg) {
 		// TODO Auto-generated method stub
-		ViewUtils.toastCenter(PagesListViewUI.this, msg, true);
+		Toaster.toastCenter(PagesListViewUI.this, msg, true);
 	}
 }

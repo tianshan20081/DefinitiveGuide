@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class BindServices extends Service {
 	private MyBinder myBinder = new MyBinder();
@@ -13,7 +13,7 @@ public class BindServices extends Service {
 	@Override
 	public IBinder onBind(Intent intent) {
 		// TODO Auto-generated method stub
-		ViewUtils.toastCenter(this, "onBind()", false);
+		Toaster.toastCenter(this, "onBind()", false);
 		return myBinder;
 	}
 
@@ -21,7 +21,7 @@ public class BindServices extends Service {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		ViewUtils.toastCenter(this, "onCreate()", false);
+		Toaster.toastCenter(this, "onCreate()", false);
 	}
 
 	@Override
@@ -29,27 +29,27 @@ public class BindServices extends Service {
 		// TODO Auto-generated method stub
 		super.onStart(intent, startId);
 
-		ViewUtils.toastCenter(this, "onStart()", false);
+		Toaster.toastCenter(this, "onStart()", false);
 	}
 
 	@Override
 	public void onRebind(Intent intent) {
 		// TODO Auto-generated method stub
 		super.onRebind(intent);
-		ViewUtils.toastCenter(this, "onRebind()", false);
+		Toaster.toastCenter(this, "onRebind()", false);
 	}
 
 	@Override
 	public void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		ViewUtils.toastCenter(this, "onDestroy()", false);
+		Toaster.toastCenter(this, "onDestroy()", false);
 	}
 
 	@Override
 	public boolean onUnbind(Intent intent) {
 		// TODO Auto-generated method stub
-		ViewUtils.toastCenter(this, "onUnbind()", false);
+		Toaster.toastCenter(this, "onUnbind()", false);
 		return super.onUnbind(intent);
 	}
 

@@ -1,6 +1,6 @@
 package com.aoeng.degu.receiver;
 
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,7 +14,7 @@ public class CustomerReceiver extends BroadcastReceiver {
 		if ("com.aoeng.degu.receiver.SEND_BROADCAST_RECEIVER".equals(intent.getAction())) {
 			// 获得广播数据
 			String info = intent.getStringExtra("data");
-			ViewUtils.toast(context, "获取到广播信息" + info, false);
+			Toaster.toast(context, "获取到广播信息" + info, false);
 		}
 	}
 

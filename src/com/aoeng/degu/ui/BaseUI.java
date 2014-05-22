@@ -76,7 +76,7 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 		processLogic();
 		int i = position(3);
 
-		toast(String.valueOf(i));
+		// toast(String.valueOf(i));
 	}
 
 	private int position(int idx) { // bits big-endian in each unit

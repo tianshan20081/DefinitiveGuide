@@ -37,7 +37,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class NetWorkUI extends Activity implements OnClickListener {
 	private static final String TAG = NetWorkUI.class.getName().toUpperCase();
@@ -45,7 +45,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 
 	private Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
-			ViewUtils.toastCenter(NetWorkUI.this, "可用端口：" + msg.what, false);
+			Toaster.toastCenter(NetWorkUI.this, "可用端口：" + msg.what, false);
 		};
 	};
 	private Button btnScanServerPort;
@@ -148,7 +148,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 			final String port = etPhonePort.getText().toString().trim();
 			final String addressIP = etPhoneIP.getText().toString().trim();
 			if (TextUtils.isEmpty(port)) {
-				ViewUtils.toastCenter(this, "请输入端口号!", false);
+				Toaster.toastCenter(this, "请输入端口号!", false);
 				return;
 			}
 			new Thread(new Runnable() {
@@ -169,7 +169,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 						// TODO Auto-generated catch block
 						e2.printStackTrace();
 					}
-					ViewUtils.toast(NetWorkUI.this, "分享成功!", false);
+					Toaster.toast(NetWorkUI.this, "分享成功!", false);
 				}
 			}).start();
 			btnStopPhoneShare.setEnabled(true);
@@ -190,11 +190,11 @@ public class NetWorkUI extends Activity implements OnClickListener {
 				for (String string : ipList) {
 					if (!string.contains("127.0.0.1")) {
 						etPhoneIP.setText(string);
-						ViewUtils.log(TAG, string);
+						Toaster.log(TAG, string);
 					}
 				}
 				if (TextUtils.isEmpty(etPhoneIP.getText().toString().trim())) {
-					ViewUtils.toastCenter(this, "请链接无线路由器，再获得链接地址！", true);
+					Toaster.toastCenter(this, "请链接无线路由器，再获得链接地址！", true);
 					return;
 				}
 				etPhoneIP.setText("192.168.7.70");
@@ -219,8 +219,8 @@ public class NetWorkUI extends Activity implements OnClickListener {
 				for (String string : ipList) {
 					ipStr += string + "\n";
 				}
-				ViewUtils.toastCenter(this, ipStr, false);
-				ViewUtils.log(TAG, ipStr);
+				Toaster.toastCenter(this, ipStr, false);
+				Toaster.log(TAG, ipStr);
 			} catch (SocketException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -229,7 +229,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 		case R.id.btnSendMsgFromClient:
 			String msg = etClientInfo.getText().toString().trim();
 			if (TextUtils.isEmpty(msg)) {
-				ViewUtils.toast(this, "Please input the Send message !", false);
+				Toaster.toast(this, "Please input the Send message !", false);
 				return;
 			}
 			try {
@@ -247,9 +247,9 @@ public class NetWorkUI extends Activity implements OnClickListener {
 				String msgStr = "";
 				while ((msgStr = bufferedReader.readLine()) != null) {
 					serverMsg += msgStr;
-					ViewUtils.toast(this, msgStr, false);
+					Toaster.toast(this, msgStr, false);
 				}
-				ViewUtils.toast(this, serverMsg, false);
+				Toaster.toast(this, serverMsg, false);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -257,7 +257,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnScanServerPort:
 			new Thread(new ScanPorts(1, 65535)).start();
-			ViewUtils.toastCenter(this, "开始扫描", false);
+			Toaster.toastCenter(this, "开始扫描", false);
 			btnScanServerPort.setEnabled(false);
 			break;
 
@@ -308,7 +308,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 	 */
 	private void toast(String msg) {
 		// TODO Auto-generated method stub
-		ViewUtils.toastCenter(NetWorkUI.this, msg, true);
+		Toaster.toastCenter(NetWorkUI.this, msg, true);
 	}
 
 	class ScanPorts extends Thread {
@@ -329,7 +329,7 @@ public class NetWorkUI extends Activity implements OnClickListener {
 					Socket socket = new Socket();
 					SocketAddress socketAddress = new InetSocketAddress("210.73.90.26", i);
 					socket.connect(socketAddress, 50);
-					ViewUtils.toastCenter(NetWorkUI.this, "可用端口" + i, false);
+					Toaster.toastCenter(NetWorkUI.this, "可用端口" + i, false);
 					handler.sendEmptyMessage(i);
 					socket.close();
 					str += i + ";";
@@ -342,8 +342,8 @@ public class NetWorkUI extends Activity implements OnClickListener {
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-					ViewUtils.toastCenter(NetWorkUI.this, "扫描完成" + str, false);
-					ViewUtils.log(NetWorkUI.class.getName().toUpperCase(), str);
+					Toaster.toastCenter(NetWorkUI.this, "扫描完成" + str, false);
+					Toaster.log(NetWorkUI.class.getName().toUpperCase(), str);
 					btnScanServerPort.setEnabled(true);
 				}
 			});

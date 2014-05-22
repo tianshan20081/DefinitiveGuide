@@ -17,7 +17,7 @@ import android.view.View.OnClickListener;
 import com.aoeng.degu.R;
 import com.aoeng.degu.services.BaseServices;
 import com.aoeng.degu.services.BindServices;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class ServiceUI extends Activity implements OnClickListener {
 	private Intent intent;
@@ -44,14 +44,14 @@ public class ServiceUI extends Activity implements OnClickListener {
 			public void onServiceDisconnected(ComponentName name) {
 				// TODO Auto-generated method stub
 				bindServices = null;
-				ViewUtils.toastCenter(ServiceUI.this, "Services Faild", false);
+				Toaster.toastCenter(ServiceUI.this, "Services Faild", false);
 			}
 
 			@Override
 			public void onServiceConnected(ComponentName name, IBinder service) {
 				// TODO Auto-generated method stub
 				bindServices = ((BindServices.MyBinder) service).getServices();
-				ViewUtils.toastCenter(ServiceUI.this, "Services Connection !", false);
+				Toaster.toastCenter(ServiceUI.this, "Services Connection !", false);
 			}
 		};
 	}
@@ -67,8 +67,8 @@ public class ServiceUI extends Activity implements OnClickListener {
 			for (RunningServiceInfo runningServiceInfo : serviceInfos) {
 				str += runningServiceInfo.service.getClassName() + "\n";
 			}
-			ViewUtils.log("Running Services:", str);
-			ViewUtils.toast(this, str, true);
+			Toaster.log("Running Services:", str);
+			Toaster.toast(this, str, true);
 			break;
 		case R.id.btnClearServices:
 

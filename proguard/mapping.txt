@@ -2981,6 +2981,12 @@ com.aoeng.degu.ui.nt.VolleyUI$1 -> com.aoeng.degu.ui.nt.e:
     com.aoeng.degu.ui.nt.VolleyUI this$0 -> a
     void onResponse(org.json.JSONObject) -> a
     void onResponse(java.lang.Object) -> a
+com.aoeng.degu.ui.security.AntiDebugUI -> com.aoeng.degu.ui.security.AntiDebugUI:
+    void onClick(android.view.View) -> onClick
+    void loadViewLayout() -> a
+    void findViewById() -> b
+    void setListener() -> c
+    void processLogic() -> d
 com.aoeng.degu.ui.security.Antidex2JarUI -> com.aoeng.degu.ui.security.Antidex2JarUI:
     android.widget.TextView tvAntidex2Jareg -> d
     void onClick(android.view.View) -> onClick
@@ -2989,6 +2995,22 @@ com.aoeng.degu.ui.security.Antidex2JarUI -> com.aoeng.degu.ui.security.Antidex2J
     void setListener() -> c
     void processLogic() -> d
     int position(int) -> b
+com.aoeng.degu.ui.security.CheckEmuUI -> com.aoeng.degu.ui.security.CheckEmuUI:
+    android.widget.TextView tvInfo -> d
+    void onClick(android.view.View) -> onClick
+    void loadViewLayout() -> a
+    void findViewById() -> b
+    void setListener() -> c
+    void processLogic() -> d
+    boolean isRunningInEmualtor() -> e
+com.aoeng.degu.ui.security.CheckSignatureUI -> com.aoeng.degu.ui.security.CheckSignatureUI:
+    android.widget.TextView tvInfo -> d
+    void onClick(android.view.View) -> onClick
+    void loadViewLayout() -> a
+    void findViewById() -> b
+    void setListener() -> c
+    void processLogic() -> d
+    int getSignature(java.lang.String) -> b
 com.aoeng.degu.ui.security.ProguardUI -> com.aoeng.degu.ui.security.ProguardUI:
     void onClick(android.view.View) -> onClick
     void loadViewLayout() -> a
@@ -2998,6 +3020,9 @@ com.aoeng.degu.ui.security.ProguardUI -> com.aoeng.degu.ui.security.ProguardUI:
 com.aoeng.degu.ui.security.SecurityUI -> com.aoeng.degu.ui.security.SecurityUI:
     android.widget.Button btnAntidex2Jar -> d
     android.widget.Button btnProguard -> e
+    android.widget.Button btnAntiDebug -> f
+    android.widget.Button btnCheckEmu -> g
+    android.widget.Button btnCheckSignature -> h
     void loadViewLayout() -> a
     void findViewById() -> b
     void setListener() -> c
@@ -3058,8 +3083,9 @@ com.aoeng.degu.utils.ThreadPoolManager -> com.aoeng.degu.d.c:
     com.aoeng.degu.utils.ThreadPoolManager manager -> b
     com.aoeng.degu.utils.ThreadPoolManager getInstance() -> a
     void addTask(java.lang.Runnable) -> a
-com.aoeng.degu.utils.ViewUtils -> com.aoeng.degu.d.d:
+com.aoeng.degu.utils.Toaster -> com.aoeng.degu.d.d:
     void toast(android.content.Context,java.lang.String,boolean) -> a
+    void toast(android.content.Context,java.lang.String) -> a
     void toastCenter(android.content.Context,java.lang.String,boolean) -> b
     void log(java.lang.String,java.lang.String) -> a
 com.aoeng.degu.utils.cv.BigImageLoadingDialog -> com.aoeng.degu.d.a.a:

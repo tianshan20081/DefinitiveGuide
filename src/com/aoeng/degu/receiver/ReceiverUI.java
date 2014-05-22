@@ -15,7 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class ReceiverUI extends Activity implements OnClickListener {
 
@@ -61,12 +61,12 @@ public class ReceiverUI extends Activity implements OnClickListener {
 			intent = new Intent("com.aoeng.degu.receiver.SEND_BROADCAST_RECEIVER");
 			// 查询指定广播
 			List<ResolveInfo> resolveInfos = packageManager.queryBroadcastReceivers(intent, PackageManager.GET_INTENT_FILTERS);
-			ViewUtils.toast(this, "查询到" + resolveInfos.size() + "个广播接收器", false);
+			Toaster.toast(this, "查询到" + resolveInfos.size() + "个广播接收器", false);
 			String s = "";
 			for (ResolveInfo resolveInfo : resolveInfos) {
 				s += String.valueOf(resolveInfo.toString()) + "\n\n";
 			}
-			ViewUtils.toast(this, "广播接收器为：" + s, false);
+			Toaster.toast(this, "广播接收器为：" + s, false);
 			break;
 		case R.id.btnClearBroadcast:
 			// 清空所有的广播接收器
@@ -77,14 +77,14 @@ public class ReceiverUI extends Activity implements OnClickListener {
 			intent.addCategory("com.aoeng.degu.receiver.myCategory");
 			intent.putExtra("data", "com.aoeng.degu.receiver");
 			sendBroadcast(intent);
-			ViewUtils.toastCenter(this, "broadCast Send success", true);
+			Toaster.toastCenter(this, "broadCast Send success", true);
 			break;
 		case R.id.btnRegBroad:
 			// 注册广播接收者
 			filter = new IntentFilter("com.aoeng.degu.receiver.SEND_BROADCAST_RECEIVER");
 			filter.addCategory("com.aoeng.degu.receiver.myCategory");
 			registerReceiver(customerReceiver, filter);
-			ViewUtils.toast(this, "广播接收器注册成功", false);
+			Toaster.toast(this, "广播接收器注册成功", false);
 			break;
 		case R.id.btnScreenRegisterReceiver:
 			filter = new IntentFilter();
@@ -102,12 +102,12 @@ public class ReceiverUI extends Activity implements OnClickListener {
 			filter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
 			filter.setPriority(Integer.MAX_VALUE);
 			registerReceiver(messageReceiver, filter);
-			ViewUtils.toast(this, "短信监听广播注册成功", true);
+			Toaster.toast(this, "短信监听广播注册成功", true);
 			break;
 		case R.id.btnSmsUnRegisterReceiver:
 			if (null != messageReceiver) {
 				unregisterReceiver(messageReceiver);
-				ViewUtils.toast(this, "短信监听广播取消注册成功", true);
+				Toaster.toast(this, "短信监听广播取消注册成功", true);
 			}
 			break;
 		}

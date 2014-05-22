@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class FileSaveDataUI extends Activity implements OnClickListener {
 
@@ -39,14 +39,14 @@ public class FileSaveDataUI extends Activity implements OnClickListener {
 		case R.id.btnSaveData:
 			String dataInfo = etDataInfo.getText().toString().trim();
 			if (TextUtils.isEmpty(dataInfo)) {
-				ViewUtils.toast(this, "数据不可为空", false);
+				Toaster.toast(this, "数据不可为空", false);
 				return;
 			}
 			try {
 				OutputStream os = openFileOutput("file.txt", Activity.MODE_PRIVATE);
 				os.write(dataInfo.getBytes());
 				os.close();
-				ViewUtils.toast(this, "数据添加完毕", false);
+				Toaster.toast(this, "数据添加完毕", false);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

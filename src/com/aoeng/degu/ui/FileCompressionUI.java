@@ -18,7 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class FileCompressionUI extends Activity implements OnClickListener {
 
@@ -62,10 +62,10 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				}
 				zos.finish();
 				zos.close();
-				ViewUtils.toast(this, "Compress AS zip File Success !", false);
+				Toaster.toast(this, "Compress AS zip File Success !", false);
 			} catch (Exception e) {
 				log(e.getMessage());
-				ViewUtils.toast(this, e.getMessage(), false);
+				Toaster.toast(this, e.getMessage(), false);
 			}
 
 			break;
@@ -73,7 +73,7 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 			try {
 				String fileNames = android.os.Environment.getExternalStorageDirectory() + "/file.zip";
 				if (!new File(fileNames).exists()) {
-					ViewUtils.toast(this, "The Zip File Cann't find !", false);
+					Toaster.toast(this, "The Zip File Cann't find !", false);
 					return;
 				}
 				FileInputStream fis = new FileInputStream(fileNames);
@@ -88,12 +88,12 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 					}
 					zis.closeEntry();
 					fos.close();
-					ViewUtils.toast(this, "DeCompress Zip File Success !", false);
+					Toaster.toast(this, "DeCompress Zip File Success !", false);
 				}
 				zis.close();
 			} catch (Exception e) {
 				log(e.getMessage());
-				ViewUtils.toast(this, e.getMessage(), false);
+				Toaster.toast(this, e.getMessage(), false);
 			}
 			break;
 
@@ -112,10 +112,10 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				in.close();
 				jos.closeEntry();
 				jos.close();
-				ViewUtils.toast(this, "Compress string.xml as Jar File Success !", false);
+				Toaster.toast(this, "Compress string.xml as Jar File Success !", false);
 			} catch (Exception e) {
 				log(e.getMessage());
-				ViewUtils.toast(this, e.getMessage(), false);
+				Toaster.toast(this, e.getMessage(), false);
 			}
 
 			break;
@@ -124,7 +124,7 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				// 加压文件
 				String filePath = android.os.Environment.getExternalStorageDirectory() + File.separator + "file.jar";
 				if (!new File(filePath).exists()) {
-					ViewUtils.toast(this, "The Compress File is not Exists !", false);
+					Toaster.toast(this, "The Compress File is not Exists !", false);
 					return;
 				}
 				FileInputStream fis = new FileInputStream(filePath);
@@ -139,11 +139,11 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				jis.closeEntry();
 				jis.close();
 				fos.close();
-				ViewUtils.toast(this, " Jar File DeCompress Success", false);
+				Toaster.toast(this, " Jar File DeCompress Success", false);
 
 			} catch (Exception e) {
 				log(e.getMessage());
-				ViewUtils.toast(this, e.getMessage(), false);
+				Toaster.toast(this, e.getMessage(), false);
 			}
 			break;
 		}
@@ -151,7 +151,7 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 
 	private void log(String message) {
 		// TODO Auto-generated method stub
-		ViewUtils.log(FileCompressionUI.class.getName().toUpperCase(), message);
+		Toaster.log(FileCompressionUI.class.getName().toUpperCase(), message);
 	}
 
 }

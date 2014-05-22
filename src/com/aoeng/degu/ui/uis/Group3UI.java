@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class Group3UI extends Activity {
 	@Override
@@ -17,6 +17,6 @@ public class Group3UI extends Activity {
 	}
 
 	public void onClickGU3(View v) {
-		ViewUtils.toast(this, Group3UI.class.getName().toUpperCase(), true);
+		Toaster.toast(this, Group3UI.class.getName().toUpperCase(), true);
 	}
 }

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class GroupMainUI extends ActivityGroup {
 	private LinearLayout lyHeader;
@@ -37,7 +37,7 @@ public class GroupMainUI extends ActivityGroup {
 
 	public void onClickBottom(View v) {
 
-		ViewUtils.toast(this, GroupMainUI.class.getName().toUpperCase(), true);
+		Toaster.toast(this, GroupMainUI.class.getName().toUpperCase(), true);
 	}
 
 }

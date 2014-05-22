@@ -19,6 +19,10 @@ public class SecurityUI extends BaseUI {
 
 	private Button btnAntidex2Jar;
 	private Button btnProguard;
+	private Button btnAntiDebug;
+	private Button btnCheckEmu;
+	private Button btnCheckSignature;
+	private Button btnCheckCrc;
 
 	/*
 	 * (non-Javadoc)
@@ -41,6 +45,10 @@ public class SecurityUI extends BaseUI {
 		// TODO Auto-generated method stub
 		btnAntidex2Jar = (Button) findView(R.id.btnAntidex2Jar);
 		btnProguard = (Button) findView(R.id.btnProguard);
+		btnAntiDebug = (Button) findView(R.id.btnAntiDebug);
+		btnCheckEmu = (Button) findView(R.id.btnCheckEmu);
+		btnCheckSignature = (Button) findView(R.id.btnCheckSignature);
+		btnCheckCrc = (Button) findView(R.id.btnCheckCrc);
 	}
 
 	/*
@@ -53,6 +61,10 @@ public class SecurityUI extends BaseUI {
 		// TODO Auto-generated method stub
 		btnAntidex2Jar.setOnClickListener(this);
 		btnProguard.setOnClickListener(this);
+		btnAntiDebug.setOnClickListener(this);
+		btnCheckEmu.setOnClickListener(this);
+		btnCheckSignature.setOnClickListener(this);
+		btnCheckCrc.setOnClickListener(this);
 	}
 
 	/*
@@ -80,6 +92,18 @@ public class SecurityUI extends BaseUI {
 			break;
 		case R.id.btnProguard:
 			startActivity(new Intent(this, ProguardUI.class));
+			break;
+		case R.id.btnAntiDebug://反调试模式
+			startActivity(new Intent(this, AntiDebugUI.class));
+			break;
+		case R.id.btnCheckEmu://反调试模式
+			startActivity(new Intent(this, CheckEmuUI.class));
+			break;
+		case R.id.btnCheckSignature://反调试模式
+			startActivity(new Intent(this, CheckSignatureUI.class));
+			break;
+		case R.id.btnCheckCrc://反调试模式
+			startActivity(new Intent(this, CheckCrcUI.class));
 			break;
 
 		default:

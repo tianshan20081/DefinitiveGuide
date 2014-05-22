@@ -4,7 +4,7 @@
 package com.aoeng.degu.ui.cd;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 import android.app.Activity;
 import android.content.Context;
@@ -54,8 +54,8 @@ public class CoordinatesUI extends Activity implements OnClickListener {
 				string += "network";
 			}
 			string += "Latitude is " + location.getLatitude() + "\n" + "the Longitude is " + location.getLongitude();
-			ViewUtils.toastCenter(this, string, true);
-			ViewUtils.log(TAG, string);
+			Toaster.toastCenter(this, string, true);
+			Toaster.log(TAG, string);
 			break;
 
 		default:

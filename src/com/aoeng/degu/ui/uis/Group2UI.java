@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ViewUtils;
+import com.aoeng.degu.utils.Toaster;
 
 public class Group2UI extends Activity {
 	@Override
@@ -17,7 +17,7 @@ public class Group2UI extends Activity {
 	}
 
 	public void onClickGU2(View v) {
-		ViewUtils.toast(this, Group2UI.class.getName().toUpperCase(), true);
+		Toaster.toast(this, Group2UI.class.getName().toUpperCase(), true);
 	}
 
 }
