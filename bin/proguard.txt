@@ -136,6 +136,12 @@
 # view res/layout/ui_cv_photowaterfall.xml #generated:1
 -keep class com.aoeng.degu.ui.cv.views.PhotoWaterFallScrollView { <init>(...); }
 
+# view AndroidManifest.xml #generated:207
+-keep class com.aoeng.degu.ui.games.GameHomeUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:208
+-keep class com.aoeng.degu.ui.games.SuDoKuUI { <init>(...); }
+
 # view AndroidManifest.xml #generated:188
 -keep class com.aoeng.degu.ui.imgs.CircleImgUI { <init>(...); }
 

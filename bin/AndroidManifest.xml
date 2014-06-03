@@ -204,6 +204,8 @@
         <activity android:name=".ui.security.AntiDebugUI" />
         <activity android:name=".ui.security.CheckSignatureUI" />
         <activity android:name=".ui.security.CheckCrcUI" />
+        <activity android:name=".ui.games.GameHomeUI" />
+        <activity android:name=".ui.games.SuDoKuUI" />
     </application>
 
     <permission
