@@ -11,6 +11,7 @@ import com.aoeng.degu.receiver.ReceiverUI;
 import com.aoeng.degu.ui.apps.AppManagerUI;
 import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
+import com.aoeng.degu.ui.games.GameHomeUI;
 import com.aoeng.degu.ui.imgs.ImageViewsUI;
 import com.aoeng.degu.ui.jni.JNIHomeUI;
 import com.aoeng.degu.ui.logins.LoginUIs;
@@ -53,9 +54,10 @@ public class HomeUI extends Activity implements OnClickListener {
 
 		this.findViewById(R.id.btnImgs).setOnClickListener(this);
 		this.findViewById(R.id.btnApp).setOnClickListener(this);
-		
-//		反编译与安全
+
+		// 反编译与安全
 		this.findViewById(R.id.btnSecurity).setOnClickListener(this);
+		this.findViewById(R.id.btnGames).setOnClickListener(this);
 
 	}
 
@@ -64,6 +66,9 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnGames:
+			intent = new Intent(this, GameHomeUI.class);
+			break;
 		case R.id.btnLocations:
 			intent = new Intent(HomeUI.this, LocationsUI.class);
 			break;
