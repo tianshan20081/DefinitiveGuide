@@ -3,6 +3,8 @@
  */
 package com.aoeng.degu.ui.games;
 
+import android.app.Activity;
+import android.os.Bundle;
 import android.view.View;
 
 import com.aoeng.degu.ui.BaseUI;
@@ -12,62 +14,17 @@ import com.aoeng.degu.views.SuDoKuView;
  * Jun 3, 2014 11:48:48 AM
  * 
  */
-public class SuDoKuUI extends BaseUI {
+public class SuDoKuUI extends Activity {
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override
-	public void onClick(View v) {
+	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-
+		super.onCreate(savedInstanceState);
+		setContentView(new SuDoKuView(this));
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#loadViewLayout()
-	 */
-	@Override
-	protected void loadViewLayout() {
-		// TODO Auto-generated method stub
-
-		setContentView(new SuDoKuView(context));
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#findViewById()
-	 */
-	@Override
-	protected void findViewById() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#setListener()
-	 */
-	@Override
-	protected void setListener() {
-		// TODO Auto-generated method stub
-
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#processLogic()
-	 */
-	@Override
-	protected void processLogic() {
-		// TODO Auto-generated method stub
-
-	}
-
 }
