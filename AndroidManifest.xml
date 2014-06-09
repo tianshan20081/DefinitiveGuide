@@ -35,7 +35,6 @@
     <application
         android:name="com.aoeng.degu.application.DGApplication"
         android:allowBackup="true"
-        android:debuggable="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
@@ -206,6 +205,7 @@
         <activity android:name=".ui.security.CheckCrcUI" />
         <activity android:name=".ui.games.GameHomeUI" />
         <activity android:name=".ui.games.SuDoKuUI" />
+        <activity android:name=".ui.games.CompassUI" />
     </application>
 
     <permission

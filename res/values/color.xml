@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="background_color">#F555</color>
+    <color name="marker_color">#AFFF</color>
+    <color name="text_color">#AFFF</color>
     <color name="color_hei">#ff000000</color>
     <color name="color_hei_8">#00000000</color>
     <color name="color_cihei">#ff333333</color>
@@ -502,6 +505,7 @@
     <color name="grey21">#363636</color>
     <color name="gold">#b89766</color>
     <!-- GViewPager的End -->
-<color name="dark">#FF222222</color>
+    <color name="dark">#FF222222</color>
     <color name="light">#FFEEEEEE</color>
+
 </resources>

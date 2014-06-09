@@ -27,6 +27,9 @@ public class GameHomeUI extends BaseUI {
 		case R.id.btnSudoku:
 			startActivity(new Intent(this, SuDoKuUI.class));
 			break;
+		case R.id.btnCompass:
+			startActivity(new Intent(this, CompassUI.class));
+			break;
 
 		default:
 			break;
@@ -53,6 +56,7 @@ public class GameHomeUI extends BaseUI {
 	protected void findViewById() {
 		// TODO Auto-generated method stub
 		findView(R.id.btnSudoku).setOnClickListener(this);
+		findView(R.id.btnCompass).setOnClickListener(this);
 	}
 
 	/*

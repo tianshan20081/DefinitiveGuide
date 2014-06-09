@@ -12,7 +12,10 @@
                 android:text="Sudoku" />
 
             <Button
-                style="@style/btnItem" />
+                android:id="@+id/btnCompass"
+                style="@style/btnItem" 
+                android:text="Compass"
+                />
         </LinearLayout>
     </LinearLayout>
 
