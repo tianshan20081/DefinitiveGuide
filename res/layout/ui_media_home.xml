@@ -20,18 +20,40 @@
 
         <LinearLayout style="@style/lyItem" >
 
-               <Button
-                   android:id="@+id/btnAudioPlay"
-                   style="@style/btnItem"
-                   android:text="AudioPlay" />
-               <Button
-                   android:id="@+id/btnSoundPool"
-                   style="@style/btnItem"
-                   android:text="SoundPool" />
-               
+            <Button
+                android:id="@+id/btnAudioPlay"
+                style="@style/btnItem"
+                android:text="AudioPlay" />
+
+            <Button
+                android:id="@+id/btnSoundPool"
+                style="@style/btnItem"
+                android:text="SoundPool" />
         </LinearLayout>
 
         <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnRawAudio"
+                style="@style/btnItem"
+                android:text="RawAudio" />
+
+            <Button
+                android:id="@+id/btnIntentCamera"
+                style="@style/btnItem"
+                android:text="IntentCamera" />
+        </LinearLayout>
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnCamera"
+                style="@style/btnItem"
+                android:text="Camera" />
+
+            <Button
+                android:id="@+id/btnIntentCamera"
+                style="@style/btnItem"
+                android:text="IntentCamera" />
         </LinearLayout>
     </LinearLayout>
 

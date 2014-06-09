@@ -18,7 +18,6 @@ import android.widget.Button;
  */
 public class MediaHomeUI extends BaseUI {
 
-	private Button btnVideoView;
 
 	/* (non-Javadoc)
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
@@ -27,6 +26,15 @@ public class MediaHomeUI extends BaseUI {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnCamera:
+			startActivity(new Intent(this, CameraUI.class));
+			break;
+		case R.id.btnIntentCamera:
+			startActivity(new Intent(this, IntentCameraUI.class));
+			break;
+		case R.id.btnRawAudio:
+			startActivity(new Intent(this, RawAudioUI.class));
+			break;
 		case R.id.btnVideoView:
 			startActivity(new Intent(this,VideoViewUI.class));
 			break;
@@ -59,10 +67,13 @@ public class MediaHomeUI extends BaseUI {
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
-		btnVideoView = (Button)this.findView(R.id.btnVideoView);
+		findView(R.id.btnVideoView).setOnClickListener(this);
 		findView(R.id.btnSurfaceView).setOnClickListener(this);
 		findView(R.id.btnAudioPlay).setOnClickListener(this);
 		findView(R.id.btnSoundPool).setOnClickListener(this);
+		findView(R.id.btnRawAudio).setOnClickListener(this);
+		findView(R.id.btnIntentCamera).setOnClickListener(this);
+		findView(R.id.btnCamera).setOnClickListener(this);
 	}
 
 	/* (non-Javadoc)
@@ -71,7 +82,6 @@ public class MediaHomeUI extends BaseUI {
 	@Override
 	protected void setListener() {
 		// TODO Auto-generated method stub
-		btnVideoView.setOnClickListener(this);
 	}
 
 	/* (non-Javadoc)
