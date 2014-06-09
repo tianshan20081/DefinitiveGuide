@@ -16,6 +16,7 @@ import com.aoeng.degu.ui.imgs.ImageViewsUI;
 import com.aoeng.degu.ui.jni.JNIHomeUI;
 import com.aoeng.degu.ui.logins.LoginUIs;
 import com.aoeng.degu.ui.lvs.ListViewsUI;
+import com.aoeng.degu.ui.media.MediaHomeUI;
 import com.aoeng.degu.ui.nt.NetWorkUI;
 import com.aoeng.degu.ui.security.SecurityUI;
 import com.aoeng.degu.ui.services.ServiceUI;
@@ -58,6 +59,7 @@ public class HomeUI extends Activity implements OnClickListener {
 		// 反编译与安全
 		this.findViewById(R.id.btnSecurity).setOnClickListener(this);
 		this.findViewById(R.id.btnGames).setOnClickListener(this);
+		this.findViewById(R.id.btnMedia).setOnClickListener(this);
 
 	}
 
@@ -66,6 +68,9 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnMedia:
+			intent = new Intent(this, MediaHomeUI.class);
+			break;
 		case R.id.btnGames:
 			intent = new Intent(this, GameHomeUI.class);
 			break;
