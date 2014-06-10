@@ -219,6 +219,9 @@
         <activity android:name=".ui.media.RawAudioUI" />
         <activity android:name=".ui.media.IntentCameraUI" />
         <activity android:name=".ui.media.CameraUI" />
+        <activity android:name=".ui.media.IntentVideoCameraUI" />
+        <activity android:name=".ui.internet.InternetHomeUI" />
+        <activity android:name=".ui.internet.DomParserUI" />
 
         <receiver android:name=".ui.media.MediaControlReceiver" >
             <intent-filter>

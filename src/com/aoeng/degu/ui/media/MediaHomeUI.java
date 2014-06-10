@@ -47,6 +47,9 @@ public class MediaHomeUI extends BaseUI {
 		case R.id.btnSoundPool:
 			startActivity(new Intent(this, SoundPoolUI.class));
 			break;
+		case R.id.btnIntentVideoCamera:
+			startActivity(new Intent(this, IntentVideoCameraUI.class));
+			break;
 		default:
 			break;
 		}
@@ -74,6 +77,7 @@ public class MediaHomeUI extends BaseUI {
 		findView(R.id.btnRawAudio).setOnClickListener(this);
 		findView(R.id.btnIntentCamera).setOnClickListener(this);
 		findView(R.id.btnCamera).setOnClickListener(this);
+		findView(R.id.btnIntentVideoCamera).setOnClickListener(this);
 	}
 
 	/* (non-Javadoc)

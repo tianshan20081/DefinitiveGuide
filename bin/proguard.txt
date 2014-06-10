@@ -154,6 +154,15 @@
 # view AndroidManifest.xml #generated:190
 -keep class com.aoeng.degu.ui.imgs.ImageViewsUI { <init>(...); }
 
+# view AndroidManifest.xml #generated:224
+-keep class com.aoeng.degu.ui.internet.DomParserUI { <init>(...); }
+
+# view res/layout/ui_internet_domparser.xml #generated:7
+-keep class com.aoeng.degu.ui.internet.EarthquakeListFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:223
+-keep class com.aoeng.degu.ui.internet.InternetHomeUI { <init>(...); }
+
 # view AndroidManifest.xml #generated:154
 -keep class com.aoeng.degu.ui.jni.JNIHomeUI { <init>(...); }
 
@@ -212,7 +221,10 @@
 # view AndroidManifest.xml #generated:220
 -keep class com.aoeng.degu.ui.media.IntentCameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:223
+# view AndroidManifest.xml #generated:222
+-keep class com.aoeng.degu.ui.media.IntentVideoCameraUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:226
 -keep class com.aoeng.degu.ui.media.MediaControlReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:214

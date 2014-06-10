@@ -13,6 +13,7 @@ import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
 import com.aoeng.degu.ui.games.GameHomeUI;
 import com.aoeng.degu.ui.imgs.ImageViewsUI;
+import com.aoeng.degu.ui.internet.InternetHomeUI;
 import com.aoeng.degu.ui.jni.JNIHomeUI;
 import com.aoeng.degu.ui.logins.LoginUIs;
 import com.aoeng.degu.ui.lvs.ListViewsUI;
@@ -60,6 +61,7 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnSecurity).setOnClickListener(this);
 		this.findViewById(R.id.btnGames).setOnClickListener(this);
 		this.findViewById(R.id.btnMedia).setOnClickListener(this);
+		this.findViewById(R.id.btnInternet).setOnClickListener(this);
 
 	}
 
@@ -68,6 +70,9 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnInternet:
+			intent = new Intent(this, InternetHomeUI.class);
+			break;
 		case R.id.btnMedia:
 			intent = new Intent(this, MediaHomeUI.class);
 			break;

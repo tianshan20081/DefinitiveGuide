@@ -233,7 +233,10 @@
                     style="@style/btnItem"
                     android:text="Media" />
 
-                <Button style="@style/btnItem" />
+                <Button
+                    android:id="@+id/btnInternet"
+                    style="@style/btnItem"
+                    android:text="Internet" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

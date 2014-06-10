@@ -51,9 +51,9 @@
                 android:text="Camera" />
 
             <Button
-                android:id="@+id/btnIntentCamera"
+                android:id="@+id/btnIntentVideoCamera"
                 style="@style/btnItem"
-                android:text="IntentCamera" />
+                android:text="IntentVideoCamera" />
         </LinearLayout>
     </LinearLayout>
 
