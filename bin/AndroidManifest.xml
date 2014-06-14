@@ -169,6 +169,7 @@
         <activity android:name=".ui.lvs.ListViewsUI" />
         <activity android:name=".ui.lvs.NormalListViewUI" />
         <activity android:name=".ui.lvs.PagesListViewUI" />
+        <activity android:name=".ui.lvs.LvScrollMarginUI" />
         <!-- PinnedHeaderExpandableListView -->
         <activity android:name=".ui.lvs.ExpandLvUI" />
         <!-- 下拉刷新 -->

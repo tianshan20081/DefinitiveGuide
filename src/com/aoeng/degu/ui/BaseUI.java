@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.aoeng.degu.application.DGApplication;
 import com.aoeng.degu.services.BaseTask;
 import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.utils.BaseHandler;
+import com.aoeng.degu.utils.Logger;
 import com.aoeng.degu.utils.RequestVO;
 import com.aoeng.degu.utils.ThreadPoolManager;
 
@@ -180,5 +182,9 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	protected void toast(String str) {
 		Toast.makeText(context, str, Toast.LENGTH_LONG).show();
 
+	}
+
+	protected void log(String msg) {
+		Logger.i(TAG, msg);
 	}
 }

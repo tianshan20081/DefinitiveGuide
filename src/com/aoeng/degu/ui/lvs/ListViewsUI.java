@@ -29,6 +29,7 @@ public class ListViewsUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnExpandLv).setOnClickListener(this);
 		this.findViewById(R.id.btnMovingDel).setOnClickListener(this);
 		this.findViewById(R.id.btnUpDownLv).setOnClickListener(this);
+		this.findViewById(R.id.btnLvMargin).setOnClickListener(this);
 
 	}
 
@@ -36,6 +37,9 @@ public class ListViewsUI extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnLvMargin:
+			startActivity(new Intent(ListViewsUI.this,LvScrollMarginUI.class));
+			break;
 		case R.id.lvPages:
 			startActivity(new Intent(ListViewsUI.this, PagesListViewUI.class));
 			break;

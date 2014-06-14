@@ -86,9 +86,9 @@
                     android:text="下拉刷新,上拉更多" />
 
                 <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:id="@+id/btnLvMargin"
+                    style="@style/btnItem"
+                    android:text="滑動改變 margin" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
