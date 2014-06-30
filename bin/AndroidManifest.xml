@@ -178,6 +178,8 @@
         <activity android:name=".ui.lvs.PullToRefreshUI" />
         <!-- 左右滑动删除 item -->
         <activity android:name=".ui.lvs.MovingDelItemLvUI" />
+        <!-- 左右滑动删除 item -->
+        <activity android:name=".ui.lvs.LvScrollDelUI" />
         <!-- 下拉刷新,上拉加载更多 -->
         <activity android:name=".ui.lvs.UpDownLvUI" />
         <activity android:name=".ui.logins.LoginUIs" />

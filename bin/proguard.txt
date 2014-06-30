@@ -73,16 +73,16 @@
 # view AndroidManifest.xml #generated:58
 -keep class com.aoeng.degu.ui.WidgetUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:199
+# view AndroidManifest.xml #generated:201
 -keep class com.aoeng.degu.ui.apps.AllAppUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:197
+# view AndroidManifest.xml #generated:199
 -keep class com.aoeng.degu.ui.apps.AppManagerUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:202
+# view AndroidManifest.xml #generated:204
 -keep class com.aoeng.degu.ui.apps.AppSizeUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:200
+# view AndroidManifest.xml #generated:202
 -keep class com.aoeng.degu.ui.apps.SysAppsUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:155
@@ -94,7 +94,7 @@
 # view AndroidManifest.xml #generated:157
 -keep class com.aoeng.degu.ui.cv.BidirSlidingUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:187
+# view AndroidManifest.xml #generated:189
 -keep class com.aoeng.degu.ui.cv.BigImageShowerUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:160
@@ -136,46 +136,46 @@
 # view res/layout/ui_cv_photowaterfall.xml #generated:1
 -keep class com.aoeng.degu.ui.cv.views.PhotoWaterFallScrollView { <init>(...); }
 
-# view AndroidManifest.xml #generated:214
+# view AndroidManifest.xml #generated:216
 -keep class com.aoeng.degu.ui.games.CompassUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:212
+# view AndroidManifest.xml #generated:214
 -keep class com.aoeng.degu.ui.games.GameHomeUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:213
+# view AndroidManifest.xml #generated:215
 -keep class com.aoeng.degu.ui.games.SuDoKuUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:193
+# view AndroidManifest.xml #generated:195
 -keep class com.aoeng.degu.ui.imgs.CircleImgUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:195
+# view AndroidManifest.xml #generated:197
 -keep class com.aoeng.degu.ui.imgs.CustomShapeImgUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:191
+# view AndroidManifest.xml #generated:193
 -keep class com.aoeng.degu.ui.imgs.ImageViewsUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:225
+# view AndroidManifest.xml #generated:227
 -keep class com.aoeng.degu.ui.internet.DomParserUI { <init>(...); }
 
 # view res/layout/ui_internet_domparser.xml #generated:7
 -keep class com.aoeng.degu.ui.internet.EarthquakeListFragment { <init>(...); }
 
-# view AndroidManifest.xml #generated:224
+# view AndroidManifest.xml #generated:226
 -keep class com.aoeng.degu.ui.internet.InternetHomeUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:154
 -keep class com.aoeng.degu.ui.jni.JNIHomeUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:184
+# view AndroidManifest.xml #generated:186
 -keep class com.aoeng.degu.ui.logins.LoginQQSplashUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:185
+# view AndroidManifest.xml #generated:187
 -keep class com.aoeng.degu.ui.logins.LoginQQUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:183
+# view AndroidManifest.xml #generated:185
 -keep class com.aoeng.degu.ui.logins.LoginUIs { <init>(...); }
 
-# view AndroidManifest.xml #generated:186
+# view AndroidManifest.xml #generated:188
 -keep class com.aoeng.degu.ui.logins.MainQQActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:174
@@ -183,6 +183,9 @@
 
 # view AndroidManifest.xml #generated:169
 -keep class com.aoeng.degu.ui.lvs.ListViewsUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:182
+-keep class com.aoeng.degu.ui.lvs.LvScrollDelUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:172
 -keep class com.aoeng.degu.ui.lvs.LvScrollMarginUI { <init>(...); }
@@ -212,61 +215,61 @@
 # view AndroidManifest.xml #generated:177
 -keep class com.aoeng.degu.ui.lvs.RefreshScrollUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:182
+# view AndroidManifest.xml #generated:184
 -keep class com.aoeng.degu.ui.lvs.UpDownLvUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:218
+# view AndroidManifest.xml #generated:220
 -keep class com.aoeng.degu.ui.media.AudioPlayUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:222
+# view AndroidManifest.xml #generated:224
 -keep class com.aoeng.degu.ui.media.CameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:221
+# view AndroidManifest.xml #generated:223
 -keep class com.aoeng.degu.ui.media.IntentCameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:223
+# view AndroidManifest.xml #generated:225
 -keep class com.aoeng.degu.ui.media.IntentVideoCameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:227
+# view AndroidManifest.xml #generated:229
 -keep class com.aoeng.degu.ui.media.MediaControlReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:215
+# view AndroidManifest.xml #generated:217
 -keep class com.aoeng.degu.ui.media.MediaHomeUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:220
+# view AndroidManifest.xml #generated:222
 -keep class com.aoeng.degu.ui.media.RawAudioUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:219
+# view AndroidManifest.xml #generated:221
 -keep class com.aoeng.degu.ui.media.SoundPoolUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:217
+# view AndroidManifest.xml #generated:219
 -keep class com.aoeng.degu.ui.media.SurfaceViewUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:216
+# view AndroidManifest.xml #generated:218
 -keep class com.aoeng.degu.ui.media.VideoViewUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:153
 -keep class com.aoeng.degu.ui.nt.NetWorkUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:209
+# view AndroidManifest.xml #generated:211
 -keep class com.aoeng.degu.ui.security.AntiDebugUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:205
+# view AndroidManifest.xml #generated:207
 -keep class com.aoeng.degu.ui.security.Antidex2JarUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:211
+# view AndroidManifest.xml #generated:213
 -keep class com.aoeng.degu.ui.security.CheckCrcUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:208
+# view AndroidManifest.xml #generated:210
 -keep class com.aoeng.degu.ui.security.CheckEmuUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:210
+# view AndroidManifest.xml #generated:212
 -keep class com.aoeng.degu.ui.security.CheckSignatureUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:207
+# view AndroidManifest.xml #generated:209
 -keep class com.aoeng.degu.ui.security.ProguardUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:204
+# view AndroidManifest.xml #generated:206
 -keep class com.aoeng.degu.ui.security.SecurityUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:138
@@ -324,6 +327,9 @@
 
 # view res/layout/ui_imgs_shap.xml #generated:40
 -keep class com.aoeng.degu.views.SvgImageView { <init>(...); }
+
+# view res/layout/ui_lvs_scroll_del.xml #generated:7
+-keep class com.aoeng.degu.views.lv.SlideCutListView { <init>(...); }
 
 # onClick res/layout/ui_uis_group_main.xml #generated:27
 -keepclassmembers class * { *** onClickBottom(...); }
