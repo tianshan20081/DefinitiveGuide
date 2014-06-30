@@ -1,12 +1,12 @@
 package com.aoeng.degu.ui.lvs;
 
-import com.aoeng.degu.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.aoeng.degu.R;
 
 public class ListViewsUI extends Activity implements OnClickListener {
 
@@ -31,6 +31,7 @@ public class ListViewsUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnUpDownLv).setOnClickListener(this);
 		this.findViewById(R.id.btnLvMargin).setOnClickListener(this);
 		this.findViewById(R.id.btnScrollDel).setOnClickListener(this);
+		this.findViewById(R.id.btnSwipeDel).setOnClickListener(this);
 
 	}
 
@@ -38,6 +39,9 @@ public class ListViewsUI extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnSwipeDel:
+			startActivity(new Intent(ListViewsUI.this,LvSwipeDelUI.class));
+			break;
 		case R.id.btnScrollDel:
 			startActivity(new Intent(ListViewsUI.this,LvScrollDelUI.class));
 			break;
