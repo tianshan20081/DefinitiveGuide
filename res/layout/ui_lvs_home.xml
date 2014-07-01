@@ -8,81 +8,52 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+        <LinearLayout style="@style/lyVerticalStyle" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+            <LinearLayout style="@style/lyItem" >
 
                 <Button
                     android:id="@+id/lvNormal"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="NormalListView" />
 
                 <Button
                     android:id="@+id/lvPages"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="PagesListView" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+            <LinearLayout style="@style/lyItem" >
 
                 <Button
                     android:id="@+id/btnLv01"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="下拉刷新" />
 
                 <Button
                     android:id="@+id/btnLv02"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="下拉刷新，上拉加载更多" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+            <LinearLayout style="@style/lyItem" >
 
                 <Button
                     android:id="@+id/btnExpandLv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="ExpandLv" />
 
                 <Button
                     android:id="@+id/btnMovingDel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="左右滑动删除条目" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+            <LinearLayout style="@style/lyItem" >
 
                 <Button
                     android:id="@+id/btnUpDownLv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="下拉刷新,上拉更多" />
 
                 <Button
@@ -90,23 +61,25 @@
                     style="@style/btnItem"
                     android:text="滑動改變 margin" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+
+            <LinearLayout style="@style/lyItem" >
 
                 <Button
                     android:id="@+id/btnScrollDel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="滑动删除" />
+
                 <Button
                     android:id="@+id/btnSwipeDel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="滑动删除Swipe" />
+            </LinearLayout>
+            <LinearLayout style="@style/lyItem" >
+
+                <Button
+                    android:id="@+id/btnSwipeSingleDel"
+                    style="@style/btnItem"
+                    android:text="滑动删除SwipeSingle" />
 
             </LinearLayout>
         </LinearLayout>

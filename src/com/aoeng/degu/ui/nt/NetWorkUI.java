@@ -18,14 +18,10 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.TelephonyManager;

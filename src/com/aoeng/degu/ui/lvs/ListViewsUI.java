@@ -32,6 +32,7 @@ public class ListViewsUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnLvMargin).setOnClickListener(this);
 		this.findViewById(R.id.btnScrollDel).setOnClickListener(this);
 		this.findViewById(R.id.btnSwipeDel).setOnClickListener(this);
+		this.findViewById(R.id.btnSwipeSingleDel).setOnClickListener(this);
 
 	}
 
@@ -39,14 +40,17 @@ public class ListViewsUI extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnSwipeSingleDel:
+			startActivity(new Intent(ListViewsUI.this, LvSwipeSingleDelUI.class));
+			break;
 		case R.id.btnSwipeDel:
-			startActivity(new Intent(ListViewsUI.this,LvSwipeDelUI.class));
+			startActivity(new Intent(ListViewsUI.this, LvSwipeDelUI.class));
 			break;
 		case R.id.btnScrollDel:
-			startActivity(new Intent(ListViewsUI.this,LvScrollDelUI.class));
+			startActivity(new Intent(ListViewsUI.this, LvScrollDelUI.class));
 			break;
 		case R.id.btnLvMargin:
-			startActivity(new Intent(ListViewsUI.this,LvScrollMarginUI.class));
+			startActivity(new Intent(ListViewsUI.this, LvScrollMarginUI.class));
 			break;
 		case R.id.lvPages:
 			startActivity(new Intent(ListViewsUI.this, PagesListViewUI.class));
