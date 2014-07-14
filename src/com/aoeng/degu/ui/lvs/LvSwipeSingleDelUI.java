@@ -11,18 +11,18 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.adapter.swipe.SwipeAdapter;
+import com.aoeng.degu.adapter.swipe.SwipeSingleAdapter;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.views.swipe.BaseSwipeListViewListener;
+import com.aoeng.degu.views.swipe.SwipeListSingleView;
 import com.aoeng.degu.views.swipe.SwipeListView;
 
 /**
- * Jun 30, 2014 4:15:02 PM
- * 
+ * Jun 30, 2014 4:15:02 PM ListView 中同时只出现 一个可以删除的选项
  */
 public class LvSwipeSingleDelUI extends BaseUI {
-	private SwipeListView mSwipeListView;
-	private SwipeAdapter mAdapter;
+	private SwipeListSingleView mSwipeListView;
+	private SwipeSingleAdapter mAdapter;
 	public static int deviceWidth;
 	private List<String> testData;
 
@@ -45,10 +45,10 @@ public class LvSwipeSingleDelUI extends BaseUI {
 	@Override
 	protected void loadViewLayout() {
 		// TODO Auto-generated method stub
-		setContentView(R.layout.ui_lvs_swipe);
-		mSwipeListView = (SwipeListView) findViewById(R.id.example_lv_list);
+		setContentView(R.layout.ui_lvs_swipe_single);
+		mSwipeListView = (SwipeListSingleView) findViewById(R.id.lv_swipe_single);
 		testData = getTestData();
-		mAdapter = new SwipeAdapter(this, R.layout.package_row, testData, mSwipeListView);
+		mAdapter = new SwipeSingleAdapter(this, R.layout.ui_lvs_swipe_single_item, testData, mSwipeListView);
 		deviceWidth = getDeviceWidth();
 		mSwipeListView.setAdapter(mAdapter);
 		mSwipeListView.setSwipeListViewListener(new TestBaseSwipeListViewListener());
@@ -101,12 +101,13 @@ public class LvSwipeSingleDelUI extends BaseUI {
 
 	private void reload() {
 		mSwipeListView.setSwipeMode(SwipeListView.SWIPE_MODE_LEFT);
+		// mSwipeListView.setSwipeMode(SwipeListView.SWIPE_MODE_BOTH);
 		mSwipeListView.setSwipeActionLeft(SwipeListView.SWIPE_ACTION_REVEAL);
 		// mSwipeListView.setSwipeActionRight(settings.getSwipeActionRight());
 		mSwipeListView.setOffsetLeft(deviceWidth * 1 / 3);
 		// mSwipeListView.setOffsetRight(convertDpToPixel(settings.getSwipeOffsetRight()));
 		mSwipeListView.setAnimationTime(0);
-		mSwipeListView.setSwipeOpenOnLongPress(false);
+		mSwipeListView.setSwipeOpenOnLongPress(true);
 	}
 
 	class TestBaseSwipeListViewListener extends BaseSwipeListViewListener {
@@ -114,14 +115,16 @@ public class LvSwipeSingleDelUI extends BaseUI {
 		@Override
 		public void onClickFrontView(int position) {
 			super.onClickFrontView(position);
-			Toast.makeText(getApplicationContext(), testData.get(position)+"itemOnclick()", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), testData.get(position) + "itemOnclick()", Toast.LENGTH_SHORT)
+					.show();
 		}
 
 		@Override
 		public void onDismiss(int[] reverseSortedPositions) {
 			for (int position : reverseSortedPositions) {
 				testData.remove(position);
-				Toast.makeText(getApplicationContext(), testData.get(position)+"onDismiss()", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), testData.get(position) + "onDismiss()", Toast.LENGTH_SHORT)
+						.show();
 			}
 			mAdapter.notifyDataSetChanged();
 		}

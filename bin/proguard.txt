@@ -337,6 +337,9 @@
 # view res/layout/ui_lvs_scroll_del.xml #generated:7
 -keep class com.aoeng.degu.views.lv.SlideCutListView { <init>(...); }
 
+# view res/layout/ui_lvs_swipe_single.xml #generated:8
+-keep class com.aoeng.degu.views.swipe.SwipeListSingleView { <init>(...); }
+
 # view res/layout/ui_lvs_swipe.xml #generated:8
 -keep class com.aoeng.degu.views.swipe.SwipeListView { <init>(...); }
 

@@ -15,18 +15,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.views.swipe.SwipeListSingleView;
 import com.aoeng.degu.views.swipe.SwipeListView;
 
 /**
  * Jun 30, 2014 4:23:49 PM
  * 
  */
-public class SwipeAdapter extends ArrayAdapter<String> {
+public class SwipeSingleAdapter extends ArrayAdapter<String> {
 	private LayoutInflater mInflater;
 	private List<String> objects;
-	private SwipeListView mSwipeListView;
+	private SwipeListSingleView mSwipeListView;
 
-	public SwipeAdapter(Context context, int textViewResourceId, List<String> objects, SwipeListView mSwipeListView) {
+	public SwipeSingleAdapter(Context context, int textViewResourceId, List<String> objects, SwipeListSingleView mSwipeListView) {
 		super(context, textViewResourceId, objects);
 		this.objects = objects;
 		this.mSwipeListView = mSwipeListView;
@@ -37,7 +38,7 @@ public class SwipeAdapter extends ArrayAdapter<String> {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
 		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.package_row, parent, false);
+			convertView = mInflater.inflate(R.layout.ui_lvs_swipe_single_item, parent, false);
 			holder = new ViewHolder();
 			holder.mFrontText = (TextView) convertView.findViewById(R.id.example_row_tv_title);
 			holder.mBackEdit = (Button) convertView.findViewById(R.id.example_row_b_action_3);
