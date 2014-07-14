@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    style="@style/lyVerticalStyle" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout style="@style/lyVerticalStyle" >
+
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnHello"
+                    style="@style/btnItem"
+                    android:text="Hello" />
+
+                <Button
+                    android:id="@+id/btnSum"
+                    style="@style/btnItem"
+                    android:text="1+2=?" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnSumsCpp"
+                    style="@style/btnItem"
+                    android:text="5!=?" />
+
+                <Button
+                    android:id="@+id/btnArraySort"
+                    style="@style/btnItem"
+                    android:text="ArraySort" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
