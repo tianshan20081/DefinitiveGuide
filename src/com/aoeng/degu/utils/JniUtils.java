@@ -23,4 +23,17 @@ public class JniUtils {
 	 */
 	public native static String getMsgFromJniCpp();
 
+	/**
+	 * @param i
+	 * @return
+	 */
+	public native static int getJieCheng(int i);
+
+	/**
+	 * @param i
+	 * @param j
+	 * @return
+	 */
+	public native static int getSum(int i, int j);
+
 }

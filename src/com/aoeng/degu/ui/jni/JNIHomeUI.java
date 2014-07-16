@@ -30,7 +30,12 @@ public class JNIHomeUI extends BaseUI {
 		case R.id.btnHelloFromCpp:
 			toast(JniUtils.getMsgFromJniCpp());
 			break;
-
+		case R.id.btnSum:
+			toast(JniUtils.getSum(1, 2) + "");
+			break;
+		case R.id.btnJieCheng:
+			toast(JniUtils.getJieCheng(5) + "");
+			break;
 		default:
 			break;
 		}
@@ -68,6 +73,8 @@ public class JNIHomeUI extends BaseUI {
 		// TODO Auto-generated method stub
 		findView(R.id.btnHello).setOnClickListener(this);
 		findView(R.id.btnHelloFromCpp).setOnClickListener(this);
+		findView(R.id.btnSum).setOnClickListener(this);
+		findView(R.id.btnJieCheng).setOnClickListener(this);
 	}
 
 	/*

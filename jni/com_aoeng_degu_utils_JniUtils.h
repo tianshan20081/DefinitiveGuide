@@ -23,6 +23,22 @@ JNIEXPORT jstring JNICALL Java_com_aoeng_degu_utils_JniUtils_getMsgFromJni
 JNIEXPORT jstring JNICALL Java_com_aoeng_degu_utils_JniUtils_getMsgFromJniCpp
   (JNIEnv *, jclass);
 
+/*
+ * Class:     com_aoeng_degu_utils_JniUtils
+ * Method:    getJieCheng
+ * Signature: (I)I
+ */
+JNIEXPORT jint JNICALL Java_com_aoeng_degu_utils_JniUtils_getJieCheng
+  (JNIEnv *, jclass, jint);
+
+/*
+ * Class:     com_aoeng_degu_utils_JniUtils
+ * Method:    getSum
+ * Signature: (II)I
+ */
+JNIEXPORT jint JNICALL Java_com_aoeng_degu_utils_JniUtils_getSum
+  (JNIEnv *, jclass, jint, jint);
+
 #ifdef __cplusplus
 }
 #endif

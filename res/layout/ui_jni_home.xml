@@ -22,19 +22,17 @@
             </LinearLayout>
 
             <LinearLayout style="@style/lyHorizontalStyle" >
-   <Button
+
+                <Button
                     android:id="@+id/btnSum"
                     style="@style/btnItem"
                     android:text="1+2=?" />
+
                 <Button
-                    android:id="@+id/btnSumsCpp"
+                    android:id="@+id/btnJieCheng"
                     style="@style/btnItem"
                     android:text="5!=?" />
 
-                <Button
-                    android:id="@+id/btnArraySort"
-                    style="@style/btnItem"
-                    android:text="ArraySort" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
