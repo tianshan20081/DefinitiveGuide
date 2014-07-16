@@ -16,13 +16,16 @@
                     android:text="Hello" />
 
                 <Button
-                    android:id="@+id/btnSum"
+                    android:id="@+id/btnHelloFromCpp"
                     style="@style/btnItem"
-                    android:text="1+2=?" />
+                    android:text="Hello From CPP" />
             </LinearLayout>
 
             <LinearLayout style="@style/lyHorizontalStyle" >
-
+   <Button
+                    android:id="@+id/btnSum"
+                    style="@style/btnItem"
+                    android:text="1+2=?" />
                 <Button
                     android:id="@+id/btnSumsCpp"
                     style="@style/btnItem"
