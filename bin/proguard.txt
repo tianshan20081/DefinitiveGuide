@@ -236,7 +236,7 @@
 # view AndroidManifest.xml #generated:229
 -keep class com.aoeng.degu.ui.media.IntentVideoCameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:233
+# view AndroidManifest.xml #generated:235
 -keep class com.aoeng.degu.ui.media.MediaControlReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:221
@@ -301,6 +301,12 @@
 
 # view AndroidManifest.xml #generated:65
 -keep class com.aoeng.degu.ui.uis.UIsUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:233
+-keep class com.aoeng.degu.ui.views.TableLayoutUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:232
+-keep class com.aoeng.degu.ui.views.ViewsUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:152
 -keep class com.aoeng.degu.ui.wv.SimpleWebViewUI { <init>(...); }

@@ -238,6 +238,14 @@
                     style="@style/btnItem"
                     android:text="Internet" />
             </LinearLayout>
+            <LinearLayout style="@style/lyItem" >
+
+                <Button
+                    android:id="@+id/btnViews"
+                    style="@style/btnItem"
+                    android:text="Views" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

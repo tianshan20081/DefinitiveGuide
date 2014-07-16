@@ -23,6 +23,7 @@ import com.aoeng.degu.ui.security.SecurityUI;
 import com.aoeng.degu.ui.services.ServiceUI;
 import com.aoeng.degu.ui.uis.GroupMainUI;
 import com.aoeng.degu.ui.uis.UIsUI;
+import com.aoeng.degu.ui.views.ViewsUI;
 import com.aoeng.degu.ui.wv.WebViewUI;
 
 public class HomeUI extends Activity implements OnClickListener {
@@ -62,6 +63,7 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnGames).setOnClickListener(this);
 		this.findViewById(R.id.btnMedia).setOnClickListener(this);
 		this.findViewById(R.id.btnInternet).setOnClickListener(this);
+		this.findViewById(R.id.btnViews).setOnClickListener(this);
 
 	}
 
@@ -147,6 +149,9 @@ public class HomeUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnSecurity:// 反编译与安全
 			intent = new Intent(HomeUI.this, SecurityUI.class);
+			break;
+		case R.id.btnViews:// 
+			intent = new Intent(HomeUI.this, ViewsUI.class);
 			break;
 		}
 

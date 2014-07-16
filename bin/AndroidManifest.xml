@@ -229,6 +229,8 @@
         <activity android:name=".ui.media.IntentVideoCameraUI" />
         <activity android:name=".ui.internet.InternetHomeUI" />
         <activity android:name=".ui.internet.DomParserUI" />
+        <activity android:name=".ui.views.ViewsUI" />
+        <activity android:name=".ui.views.TableLayoutUI" />
 
         <receiver android:name=".ui.media.MediaControlReceiver" >
             <intent-filter>
