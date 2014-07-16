@@ -4,12 +4,15 @@
 package com.aoeng.degu.utils;
 
 import java.net.HttpURLConnection;
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -17,7 +20,13 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.scheme.PlainSocketFactory;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.conn.ssl.X509HostnameVerifier;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.SingleClientConnManager;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
@@ -94,4 +103,47 @@ public class HttpUtils {
 		return task.get();
 	}
 
+	/**
+	 * @return
+	 */
+	public static HttpClient getHttpsClient() {
+		// TODO Auto-generated method stub
+		HostnameVerifier hostnameVerifier = org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER;
+		SchemeRegistry registry = new SchemeRegistry();
+		SSLSocketFactory socketFactory = SSLSocketFactory.getSocketFactory();
+		socketFactory.setHostnameVerifier((X509HostnameVerifier) hostnameVerifier);
+		registry.register(new Scheme("https", socketFactory, 443));
+		registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+
+		DefaultHttpClient client = new DefaultHttpClient();
+		SingleClientConnManager mgr = new SingleClientConnManager(client.getParams(), registry);
+		DefaultHttpClient httpClient = new DefaultHttpClient(mgr, client.getParams());
+
+		HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
+		return httpClient;
+	}
+
+	/**
+	 * @return
+	 * @throws Exception
+	 */
+	public static HttpClient getHttpsClient2() throws Exception {
+		HostnameVerifier hostnameVerifier = org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER;
+		SchemeRegistry registry = new SchemeRegistry();
+		// SSLSocketFactory socketFactory = SSLSocketFactory.getSocketFactory();
+		// KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+		KeyStore trustStore = KeyStore.getInstance("BKS");
+		trustStore.load(null, null);
+		SSLSocketFactory socketFactory = new MySSLSocketFactory(trustStore);
+		socketFactory.setHostnameVerifier((X509HostnameVerifier) hostnameVerifier);
+		registry.register(new Scheme("https", socketFactory, 443));
+		registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+
+		DefaultHttpClient client = new DefaultHttpClient();
+		SingleClientConnManager mgr = new SingleClientConnManager(client.getParams(), registry);
+		DefaultHttpClient httpClient = new DefaultHttpClient(mgr, client.getParams());
+
+		HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
+		return httpClient;
+	}
 }
