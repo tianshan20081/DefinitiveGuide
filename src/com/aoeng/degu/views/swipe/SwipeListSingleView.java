@@ -34,7 +34,6 @@ import android.widget.ListView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.Logger;
-import com.aoeng.degu.utils.Toaster;
 
 /**
  * ListView subclass that provides the swipe functionality
