@@ -4,6 +4,12 @@
 
 #ifndef _Included_com_aoeng_degu_utils_JniUtils
 #define _Included_com_aoeng_degu_utils_JniUtils
+#define LOG    "log -- jni" // 这个是自定义的LOG的标识
+#define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG,__VA_ARGS__) // 定义LOGD类型
+#define LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG,__VA_ARGS__) // 定义LOGI类型
+#define LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG,__VA_ARGS__) // 定义LOGW类型
+#define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG,__VA_ARGS__) // 定义LOGE类型
+#define LOGF(...)  __android_log_print(ANDROID_LOG_FATAL,LOG,__VA_ARGS__) // 定义LOGF类型
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -11,33 +17,47 @@ extern "C" {
  * Class:     com_aoeng_degu_utils_JniUtils
  * Method:    getMsgFromJni
  * Signature: ()Ljava/lang/String;
- */
-JNIEXPORT jstring JNICALL Java_com_aoeng_degu_utils_JniUtils_getMsgFromJni
-  (JNIEnv *, jclass);
-
+ */JNIEXPORT jstring JNICALL Java_com_aoeng_degu_utils_JniUtils_getMsgFromJni(
+		JNIEnv *, jclass);
 /*
  * Class:     com_aoeng_degu_utils_JniUtils
  * Method:    getMsgFromJniCpp
  * Signature: ()Ljava/lang/String;
- */
-JNIEXPORT jstring JNICALL Java_com_aoeng_degu_utils_JniUtils_getMsgFromJniCpp
-  (JNIEnv *, jclass);
-
+ */JNIEXPORT jstring JNICALL Java_com_aoeng_degu_utils_JniUtils_getMsgFromJniCpp(
+		JNIEnv *, jclass);
 /*
  * Class:     com_aoeng_degu_utils_JniUtils
  * Method:    getJieCheng
  * Signature: (I)I
- */
-JNIEXPORT jint JNICALL Java_com_aoeng_degu_utils_JniUtils_getJieCheng
-  (JNIEnv *, jclass, jint);
-
+ */JNIEXPORT jint JNICALL Java_com_aoeng_degu_utils_JniUtils_getJieCheng(JNIEnv *,
+		jclass, jint);
 /*
  * Class:     com_aoeng_degu_utils_JniUtils
  * Method:    getSum
  * Signature: (II)I
- */
-JNIEXPORT jint JNICALL Java_com_aoeng_degu_utils_JniUtils_getSum
-  (JNIEnv *, jclass, jint, jint);
+ */JNIEXPORT jint JNICALL Java_com_aoeng_degu_utils_JniUtils_getSum(JNIEnv *,
+		jclass, jint, jint);
+
+/*
+ * Class:     com_aoeng_degu_utils_JniUtils
+ * Method:    swap
+ * Signature: (II)V
+ */JNIEXPORT void JNICALL Java_com_aoeng_degu_utils_JniUtils_swap(JNIEnv *,
+		jclass, jint, jint);
+
+/*
+ * Class:     com_aoeng_degu_utils_JniUtils
+ * Method:    swapbf
+ * Signature: (Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)V
+ */JNIEXPORT void JNICALL Java_com_aoeng_degu_utils_JniUtils_swapbf(JNIEnv *,
+		jclass, jobject, jobject);
+
+/*
+ * Class:     com_aoeng_degu_utils_JniUtils
+ * Method:    getCppLog
+ * Signature: (I)V
+ */JNIEXPORT void JNICALL Java_com_aoeng_degu_utils_JniUtils_getCppLog(JNIEnv *,
+		jclass, jint);
 
 #ifdef __cplusplus
 }

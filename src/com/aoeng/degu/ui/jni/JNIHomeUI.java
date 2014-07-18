@@ -3,6 +3,8 @@
  */
 package com.aoeng.degu.ui.jni;
 
+import java.nio.ByteBuffer;
+
 import android.view.View;
 
 import com.aoeng.degu.R;
@@ -35,6 +37,18 @@ public class JNIHomeUI extends BaseUI {
 			break;
 		case R.id.btnJieCheng:
 			toast(JniUtils.getJieCheng(5) + "");
+			break;
+		case R.id.btnChange:
+			ByteBuffer bf = ByteBuffer.allocateDirect(10);
+			ByteBuffer rbf = ByteBuffer.allocateDirect(10);
+			;
+			toast("交换之前:a=" + bf.getInt() + "   b=" + rbf.getInt());
+			JniUtils.swapbf(bf, rbf);
+			toast("交换之后 a=" + bf.getInt() + "   b=" + rbf.getInt());
+			break;
+		case R.id.btnCppLog:
+			toast("jni Cpp log");
+			JniUtils.getCppLog(1);
 			break;
 		default:
 			break;
@@ -75,6 +89,8 @@ public class JNIHomeUI extends BaseUI {
 		findView(R.id.btnHelloFromCpp).setOnClickListener(this);
 		findView(R.id.btnSum).setOnClickListener(this);
 		findView(R.id.btnJieCheng).setOnClickListener(this);
+		findView(R.id.btnChange).setOnClickListener(this);
+		findView(R.id.btnCppLog).setOnClickListener(this);
 	}
 
 	/*

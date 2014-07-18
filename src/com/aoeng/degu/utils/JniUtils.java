@@ -3,6 +3,8 @@
  */
 package com.aoeng.degu.utils;
 
+import java.nio.ByteBuffer;
+
 /**
  * Jul 16, 2014 10:43:10 AM
  * 
@@ -35,5 +37,23 @@ public class JniUtils {
 	 * @return
 	 */
 	public native static int getSum(int i, int j);
+
+	/**
+	 * @param a
+	 * @param b
+	 */
+	public native static void swap(int a, int b);
+
+	/**
+	 * @param bf
+	 * @param rbf
+	 */
+	public native static void swapbf(ByteBuffer bf, ByteBuffer rbf);
+
+	/**
+	 * @param i 
+	 * 
+	 */
+	public native static void getCppLog(int i);
 
 }

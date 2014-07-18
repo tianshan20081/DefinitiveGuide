@@ -32,7 +32,19 @@
                     android:id="@+id/btnJieCheng"
                     style="@style/btnItem"
                     android:text="5!=?" />
+            </LinearLayout>
 
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnChange"
+                    style="@style/btnItem"
+                    android:text="数据交换" />
+
+                <Button
+                    android:id="@+id/btnCppLog"
+                    style="@style/btnItem"
+                    android:text="CppLog" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
