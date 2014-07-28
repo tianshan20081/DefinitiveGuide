@@ -136,6 +136,9 @@
 # view res/layout/ui_cv_photowaterfall.xml #generated:1
 -keep class com.aoeng.degu.ui.cv.views.PhotoWaterFallScrollView { <init>(...); }
 
+# view AndroidManifest.xml #generated:234
+-keep class com.aoeng.degu.ui.encryption.EncHomeUI { <init>(...); }
+
 # view AndroidManifest.xml #generated:220
 -keep class com.aoeng.degu.ui.games.CompassUI { <init>(...); }
 
@@ -236,7 +239,7 @@
 # view AndroidManifest.xml #generated:229
 -keep class com.aoeng.degu.ui.media.IntentVideoCameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:235
+# view AndroidManifest.xml #generated:236
 -keep class com.aoeng.degu.ui.media.MediaControlReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:221

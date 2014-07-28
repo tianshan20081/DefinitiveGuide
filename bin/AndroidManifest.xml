@@ -231,6 +231,7 @@
         <activity android:name=".ui.internet.DomParserUI" />
         <activity android:name=".ui.views.ViewsUI" />
         <activity android:name=".ui.views.TableLayoutUI" />
+        <activity android:name=".ui.encryption.EncHomeUI" />
 
         <receiver android:name=".ui.media.MediaControlReceiver" >
             <intent-filter>

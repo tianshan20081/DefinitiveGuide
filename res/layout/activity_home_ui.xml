@@ -244,6 +244,10 @@
                     android:id="@+id/btnViews"
                     style="@style/btnItem"
                     android:text="Views" />
+                <Button
+                    android:id="@+id/btnEnc"
+                    style="@style/btnItem"
+                    android:text="Enc" />
 
             </LinearLayout>
         </LinearLayout>
