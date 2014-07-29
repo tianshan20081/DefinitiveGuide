@@ -1,7 +1,8 @@
 #include <jni.h>
 #include<android/log.h>
-#include "com_aoeng_degu_utils_JniUtils.h"
+#include "log.h"
 
+extern "C" {
 JNIEXPORT void JNICALL Java_com_aoeng_degu_utils_JniUtils_getCppLog(JNIEnv *env,
 		jclass thisz, jint lev) {
 	switch (lev) {
@@ -23,4 +24,5 @@ JNIEXPORT void JNICALL Java_com_aoeng_degu_utils_JniUtils_getCppLog(JNIEnv *env,
 
 	}
 
+}
 }

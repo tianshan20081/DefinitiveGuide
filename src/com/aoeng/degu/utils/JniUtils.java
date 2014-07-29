@@ -56,4 +56,10 @@ public class JniUtils {
 	 */
 	public native static void getCppLog(int i);
 
+	/**
+	 * @param md5CppSrc
+	 * @return
+	 */
+	public native static String getCppMD5(String md5CppSrc);
+
 }

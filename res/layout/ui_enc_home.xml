@@ -13,12 +13,24 @@
             <Button
                 android:id="@+id/btnDesEnc"
                 style="@style/btnItem"
-                android:text="Des" />
+                android:text="Des加密" />
 
             <Button
                 android:id="@+id/btnDesDec"
                 style="@style/btnItem"
-                android:text="MD5" />
+                android:text="DES解密" />
+        </LinearLayout>
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnJavaMD5"
+                style="@style/btnItem"
+                android:text="JavaMD5" />
+
+            <Button
+                android:id="@+id/btnCppMD5"
+                style="@style/btnItem"
+                android:text="CppMD5" />
         </LinearLayout>
     </LinearLayout>
 

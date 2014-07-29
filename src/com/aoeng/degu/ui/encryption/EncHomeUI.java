@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.EncUtils;
 import com.aoeng.degu.utils.EncryptionUtils;
 
 /**
@@ -55,7 +56,16 @@ public class EncHomeUI extends BaseUI {
 				e.printStackTrace();
 			}
 			break;
-
+		case R.id.btnJavaMD5:// java MD5
+			String md5Src = "test";
+			String md5Str = EncUtils.getJavaMD5(md5Src);
+			toast("MD5 srcStr :" + md5Src + "\n" + "MD5 MD5Str : " + md5Str);
+			break;
+		case R.id.btnCppMD5:// java MD5
+			String md5CppSrc = "test";
+			String md5CppStr = EncUtils.getCppMD5(md5CppSrc);
+			toast("MD5 md5CppSrc :" + md5CppSrc + "\n" + "MD5 md5CppStr : " + md5CppStr);
+			break;
 		default:
 			break;
 		}
@@ -93,6 +103,8 @@ public class EncHomeUI extends BaseUI {
 		// TODO Auto-generated method stub
 		findView(R.id.btnDesEnc).setOnClickListener(this);
 		findView(R.id.btnDesDec).setOnClickListener(this);
+		findView(R.id.btnJavaMD5).setOnClickListener(this);
+		findView(R.id.btnCppMD5).setOnClickListener(this);
 
 	}
 
