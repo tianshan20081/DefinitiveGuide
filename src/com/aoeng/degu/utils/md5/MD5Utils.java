@@ -3,6 +3,7 @@
  */
 package com.aoeng.degu.utils.md5;
 
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -44,7 +45,35 @@ public class MD5Utils {
 		return "";
 	}
 
-	public static void main(String[] args) {
-		System.out.println("md5 zhaiyao---->" + getJavaMD5("test"));
+	/**
+	 * @param src
+	 *            获取摘要字符串
+	 * @param key
+	 *            加盐
+	 * @return 返回 对 字符串 src 进行加盐 后获取到的 摘要值 MD5
+	 */
+	public static String getJavaMD5Salt(String src, String key) {
+		// TODO Auto-generated method stub
+		Md5 md5 = new Md5("");
+		try {
+			byte b[] = null;
+			md5.hmac_Md5(src, key);
+			b = md5.getDigest();
+			return Md5.stringify(b);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	private static String getJaveMD5Salt2(String src, String key) {
+		try {
+			MessageDigest digest = MessageDigest.getInstance("MD5");
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
 	}
 }

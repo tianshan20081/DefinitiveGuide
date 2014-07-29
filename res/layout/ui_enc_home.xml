@@ -32,6 +32,18 @@
                 style="@style/btnItem"
                 android:text="CppMD5" />
         </LinearLayout>
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnJavaMD5Salt"
+                style="@style/btnItem"
+                android:text="JavaMD5Salt" />
+
+            <Button
+                android:id="@+id/btnCppMD5Salt"
+                style="@style/btnItem"
+                android:text="CppMD5Salt" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

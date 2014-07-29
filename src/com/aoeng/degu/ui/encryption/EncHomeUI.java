@@ -29,9 +29,11 @@ public class EncHomeUI extends BaseUI {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		String src = "test";
+		String key = "testtest";
+		String encStr;
 		switch (v.getId()) {
 		case R.id.btnDesEnc:
-			String src = "张三";
 			try {
 				toast("encode ------ >" + EncryptionUtils.getDesEnctry(URLEncoder.encode(src, "gbk"), "testtest"));
 			} catch (UnsupportedEncodingException e) {
@@ -57,14 +59,20 @@ public class EncHomeUI extends BaseUI {
 			}
 			break;
 		case R.id.btnJavaMD5:// java MD5
-			String md5Src = "test";
-			String md5Str = EncUtils.getJavaMD5(md5Src);
-			toast("MD5 srcStr :" + md5Src + "\n" + "MD5 MD5Str : " + md5Str);
+			String md5Str = EncUtils.getJavaMD5(src);
+			toast("MD5 srcStr :" + src + "\n" + "MD5 MD5Str : " + md5Str);
 			break;
 		case R.id.btnCppMD5:// java MD5
-			String md5CppSrc = "test";
-			String md5CppStr = EncUtils.getCppMD5(md5CppSrc);
-			toast("MD5 md5CppSrc :" + md5CppSrc + "\n" + "MD5 md5CppStr : " + md5CppStr);
+			encStr = EncUtils.getCppMD5(src);
+			toast("MD5 md5CppSrc :" + src + "\n" + "MD5 md5CppStr : " + encStr);
+			break;
+		case R.id.btnJavaMD5Salt:// java MD5
+			encStr = EncUtils.getJavaMD5Salt(src,key);
+			toast("MD5 md5CppSrc :" + src + "\n" + "MD5 md5CppStr : " + encStr);
+			break;
+		case R.id.btnCppMD5Salt:// java MD5
+			encStr = EncUtils.getCppMD5Salt(src,key);
+			toast("MD5 md5CppSrc :" + src + "\n" + "MD5 md5CppStr : " + encStr);
 			break;
 		default:
 			break;
@@ -105,6 +113,8 @@ public class EncHomeUI extends BaseUI {
 		findView(R.id.btnDesDec).setOnClickListener(this);
 		findView(R.id.btnJavaMD5).setOnClickListener(this);
 		findView(R.id.btnCppMD5).setOnClickListener(this);
+		findView(R.id.btnJavaMD5Salt).setOnClickListener(this);
+		findView(R.id.btnCppMD5Salt).setOnClickListener(this);
 
 	}
 

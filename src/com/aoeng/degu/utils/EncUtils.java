@@ -30,4 +30,29 @@ public class EncUtils {
 		return JniUtils.getCppMD5(md5CppSrc);
 	}
 
+	/**
+	 * @param src
+	 * @param key
+	 * @return
+	 */
+	public static String getJavaMD5Salt(String src, String key) {
+		// TODO Auto-generated method stub
+
+		return MD5Utils.getJavaMD5Salt(src, key);
+	}
+
+	/**
+	 * @param src
+	 * @param key
+	 * @return
+	 */
+	public static String getCppMD5Salt(String src, String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(getJavaMD5Salt("zhang", "test"));
+	}
+
 }
