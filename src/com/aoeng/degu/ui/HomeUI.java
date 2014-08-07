@@ -33,7 +33,7 @@ public class HomeUI extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home_ui);
+		setContentView(R.layout.ui_home);
 
 		this.findViewById(R.id.chapter1).setOnClickListener(this);
 		this.findViewById(R.id.chapter2).setOnClickListener(this);

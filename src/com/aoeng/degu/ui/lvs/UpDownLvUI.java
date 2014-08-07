@@ -56,7 +56,7 @@ public class UpDownLvUI extends Activity {
 
 					@Override
 					protected Void doInBackground(Void... params) {
-						SystemClock.sleep(2000);
+						SystemClock.sleep(1000);
 						listViewData.add(0, "这是下拉刷新出来BaseAnimation");
 						return null;
 					}
@@ -76,7 +76,7 @@ public class UpDownLvUI extends Activity {
 
 					@Override
 					protected Void doInBackground(Void... params) {
-						SystemClock.sleep(5000);
+						SystemClock.sleep(1000);
 						listViewData.add("加载更多刷新出来BaseAnimation1");
 						listViewData.add("加载更多刷新出来BaseAnimation2");
 						listViewData.add("加载更多刷新出来BaseAnimation3");
