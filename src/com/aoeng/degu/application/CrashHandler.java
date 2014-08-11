@@ -1,9 +1,7 @@
 package com.aoeng.degu.application;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -64,7 +62,9 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		} else {
 			SystemClock.sleep(3000);
 			BaseUI.exit();
-			// 在一个if-else判断中，如果我们程序是按照我们预想的执行，到最后我们需要停止程序，那么我们使用System.exit(0)，而System.exit(1)一般放在catch块中，当捕获到异常，需要停止程序，我们使用System.exit(1)。这个status=1是用来表示这个程序是非正常退出。
+			// 在一个if-else判断中，如果我们程序是按照我们预想的执行，到最后我们需要停止程序，
+			// 那么我们使用System.exit(0)，而System.exit(1)一般放在catch块中，当捕获到异常，
+			// 需要停止程序，我们使用System.exit(1)。这个status=1是用来表示这个程序是非正常退出。
 			System.exit(1);
 
 			Intent intent = new Intent(UIUtils.getContext(), HomeUI.class);
