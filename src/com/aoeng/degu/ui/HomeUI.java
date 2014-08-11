@@ -12,6 +12,7 @@ import com.aoeng.degu.ui.apps.AppManagerUI;
 import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
 import com.aoeng.degu.ui.encryption.EncHomeUI;
+import com.aoeng.degu.ui.eventdispatch.EventDispatchUI;
 import com.aoeng.degu.ui.games.GameHomeUI;
 import com.aoeng.degu.ui.handler.ThreadHandlerUI;
 import com.aoeng.degu.ui.imgs.ImageViewsUI;
@@ -27,6 +28,7 @@ import com.aoeng.degu.ui.uis.GroupMainUI;
 import com.aoeng.degu.ui.uis.UIsUI;
 import com.aoeng.degu.ui.views.ViewsUI;
 import com.aoeng.degu.ui.wv.WebViewUI;
+import com.aoeng.degu.utils.UIUtils;
 
 public class HomeUI extends Activity implements OnClickListener {
 
@@ -67,7 +69,9 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnInternet).setOnClickListener(this);
 		this.findViewById(R.id.btnViews).setOnClickListener(this);
 		this.findViewById(R.id.btnEnc).setOnClickListener(this);
+
 		this.findViewById(R.id.btnHandler).setOnClickListener(this);
+		this.findViewById(R.id.btnEventDistribution).setOnClickListener(this);
 
 	}
 
@@ -76,6 +80,9 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnEventDistribution:
+			intent = new Intent(UIUtils.getContext(), EventDispatchUI.class);
+			break;
 		case R.id.btnHandler:
 			intent = new Intent(getApplicationContext(), ThreadHandlerUI.class);
 			break;
@@ -168,5 +175,4 @@ public class HomeUI extends Activity implements OnClickListener {
 		startActivity(intent);
 
 	}
-
 }

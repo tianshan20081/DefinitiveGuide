@@ -10,6 +10,7 @@ import java.util.List;
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.ServiceConnection;
 import android.os.Environment;
 import android.os.IBinder;
@@ -21,6 +22,7 @@ import com.aoeng.degu.utils.Logger;
  * 
  */
 public class DGApplication extends Application {
+	private static DGApplication mApplication;
 
 	/** 缓存路径 */
 	private static String cacheDir;
@@ -33,6 +35,7 @@ public class DGApplication extends Application {
 		super.onCreate();
 
 		initCacheDirPath();
+		this.mApplication = this ;
 	}
 
 	public static String getCacheDirPath() {
@@ -41,8 +44,10 @@ public class DGApplication extends Application {
 
 	private void initCacheDirPath() {
 		File f;
-		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-			f = new File(Environment.getExternalStorageDirectory() + "/.huigush/");
+		if (Environment.getExternalStorageState().equals(
+				Environment.MEDIA_MOUNTED)) {
+			f = new File(Environment.getExternalStorageDirectory()
+					+ "/.huigush/");
 			if (!f.exists()) {
 				f.mkdir();
 			}
@@ -83,5 +88,10 @@ public class DGApplication extends Application {
 
 	public int getCurrentActivitySize() {
 		return records.size();
+	}
+
+	public static Context getContext() {
+		// TODO Auto-generated method stub
+		return mApplication;
 	}
 }
