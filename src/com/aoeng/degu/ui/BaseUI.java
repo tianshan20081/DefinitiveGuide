@@ -3,6 +3,7 @@
  */
 package com.aoeng.degu.ui;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 
@@ -31,6 +32,7 @@ import com.aoeng.degu.utils.ThreadPoolManager;
  */
 public abstract class BaseUI extends Activity implements View.OnClickListener {
 	private static BaseUI mCurrentShowUI;
+	private static LinkedList<BaseUI> mBaseUIs = new LinkedList<BaseUI>();
 	private static final int BITS_PER_UNIT = 8;
 	public static final String TAG = BaseUI.class.getName();
 	private LinearLayout fmContent;
@@ -206,5 +208,37 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	public static BaseUI getCurrenthowUI() {
 		// TODO Auto-generated method stub
 		return mCurrentShowUI;
+	}
+
+	protected static void finishAllExcept(BaseUI except) {
+		if (null != mBaseUIs && mBaseUIs.size() > 0) {
+			LinkedList<BaseUI> copy;
+			synchronized (mBaseUIs) {
+				copy = new LinkedList<BaseUI>(mBaseUIs);
+			}
+			for (BaseUI baseUI : copy) {
+				if (baseUI != except) {
+					baseUI.finish();
+				}
+			}
+		}
+	}
+
+	protected static void finishAllUIs() {
+		if (null != mBaseUIs && mBaseUIs.size() > 0) {
+			LinkedList<BaseUI> copy;
+			synchronized (mBaseUIs) {
+				copy = new LinkedList<BaseUI>(mBaseUIs);
+			}
+			for (BaseUI baseUI : copy) {
+				baseUI.finish();
+			}
+		}
+	}
+
+	public static void exit() {
+		// TODO Auto-generated method stub
+		finishAllUIs();
+		android.os.Process.killProcess(android.os.Process.myPid());
 	}
 }

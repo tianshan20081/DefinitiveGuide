@@ -1395,6 +1395,7 @@ containing a value of this type.
         public static final int cardinal_south=0x7f0a0002;
         public static final int cardinal_west=0x7f0a0003;
         public static final int crc=0x7f0a0014;
+        public static final int exception_exit=0x7f0a0016;
         public static final int hello_world=0x7f0a0006;
         public static final int image_url=0x7f0a0009;
         public static final int loading_label=0x7f0a0011;

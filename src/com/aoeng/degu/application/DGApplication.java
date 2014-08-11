@@ -47,6 +47,9 @@ public class DGApplication extends Application {
 		this.mMainThreadLooper = getMainThreadLooper();
 		this.mMainThreadId = android.os.Process.myPid();
 		this.mMainThread = Thread.currentThread();
+
+		CrashHandler mCrashHandler = CrashHandler.getInstance();
+		mCrashHandler.init();
 	}
 
 	public static String getCacheDirPath() {

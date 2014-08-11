@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="exception_exit">很抱歉，程序出现异常，即将退出！</string>
+
+</resources>
