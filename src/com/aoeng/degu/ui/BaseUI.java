@@ -30,6 +30,7 @@ import com.aoeng.degu.utils.ThreadPoolManager;
  * 
  */
 public abstract class BaseUI extends Activity implements View.OnClickListener {
+	private static BaseUI mCurrentShowUI;
 	private static final int BITS_PER_UNIT = 8;
 	public static final String TAG = BaseUI.class.getName();
 	private LinearLayout fmContent;
@@ -65,6 +66,20 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 		fmContent = (LinearLayout) super.findViewById(R.id.fmContent);
 		context = getApplicationContext();
 		initView();
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		this.mCurrentShowUI = this;
+		super.onResume();
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		this.mCurrentShowUI = null;
+		super.onStop();
 	}
 
 	/**
@@ -186,5 +201,10 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 
 	protected void log(String msg) {
 		Logger.i(TAG, msg);
+	}
+
+	public static BaseUI getCurrenthowUI() {
+		// TODO Auto-generated method stub
+		return mCurrentShowUI;
 	}
 }

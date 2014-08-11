@@ -13,7 +13,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.ServiceConnection;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 
 import com.aoeng.degu.utils.Logger;
 
@@ -27,7 +29,13 @@ public class DGApplication extends Application {
 	/** 缓存路径 */
 	private static String cacheDir;
 
+	private static Looper mMainThreadLooper;
+
+	private static int mMainThreadId;
+
 	private List<Activity> records = new ArrayList<Activity>();
+
+	private static Thread mMainThread;
 	private static final String TAG = "HGApplication";
 
 	@Override
@@ -35,7 +43,10 @@ public class DGApplication extends Application {
 		super.onCreate();
 
 		initCacheDirPath();
-		this.mApplication = this ;
+		this.mApplication = this;
+		this.mMainThreadLooper = getMainThreadLooper();
+		this.mMainThreadId = android.os.Process.myPid();
+		this.mMainThread = Thread.currentThread();
 	}
 
 	public static String getCacheDirPath() {
@@ -93,5 +104,19 @@ public class DGApplication extends Application {
 	public static Context getContext() {
 		// TODO Auto-generated method stub
 		return mApplication;
+	}
+
+	public static Looper getMainThreadLooper() {
+		// TODO Auto-generated method stub
+		return mMainThreadLooper;
+	}
+
+	public static int getMainThreadId() {
+		// TODO Auto-generated method stub
+		return mMainThreadId;
+	}
+
+	public static Thread getMainThread() {
+		return mMainThread;
 	}
 }

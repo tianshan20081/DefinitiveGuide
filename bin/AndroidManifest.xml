@@ -232,6 +232,10 @@
         <activity android:name=".ui.views.ViewsUI" />
         <activity android:name=".ui.views.TableLayoutUI" />
         <activity android:name=".ui.encryption.EncHomeUI" />
+        <!-- 事件分发 -->
+        <activity android:name=".ui.eventdispatch.EventDispatchUI" />
+        <activity android:name=".ui.eventdispatch.SimpleEventDispatchUI" />
+        <activity android:name=".ui.eventdispatch.EventDispatchViewUI" />
 
         <receiver android:name=".ui.media.MediaControlReceiver" >
             <intent-filter>
