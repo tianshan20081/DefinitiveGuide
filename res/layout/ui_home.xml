@@ -238,25 +238,30 @@
                     style="@style/btnItem"
                     android:text="Internet" />
             </LinearLayout>
+
             <LinearLayout style="@style/lyItem" >
 
                 <Button
                     android:id="@+id/btnViews"
                     style="@style/btnItem"
                     android:text="Views" />
+
                 <Button
                     android:id="@+id/btnEnc"
                     style="@style/btnItem"
                     android:text="Enc" />
-
             </LinearLayout>
+
             <LinearLayout style="@style/lyItem" >
 
                 <Button
                     android:id="@+id/btnHandler"
                     style="@style/btnItem"
                     android:text="Handler" />
-
+                <Button
+                    android:id="@+id/btnEventDistribution"
+                    style="@style/btnItem"
+                    android:text="事件分发" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

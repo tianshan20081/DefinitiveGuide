@@ -139,6 +139,15 @@
 # view AndroidManifest.xml #generated:234
 -keep class com.aoeng.degu.ui.encryption.EncHomeUI { <init>(...); }
 
+# view AndroidManifest.xml #generated:236
+-keep class com.aoeng.degu.ui.eventdispatch.EventDispatchUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:238
+-keep class com.aoeng.degu.ui.eventdispatch.EventDispatchViewUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:237
+-keep class com.aoeng.degu.ui.eventdispatch.SimpleEventDispatchUI { <init>(...); }
+
 # view AndroidManifest.xml #generated:220
 -keep class com.aoeng.degu.ui.games.CompassUI { <init>(...); }
 
@@ -239,7 +248,7 @@
 # view AndroidManifest.xml #generated:229
 -keep class com.aoeng.degu.ui.media.IntentVideoCameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:236
+# view AndroidManifest.xml #generated:240
 -keep class com.aoeng.degu.ui.media.MediaControlReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:221
@@ -324,6 +333,9 @@
 
 # view res/layout/ui_imgs_shap.xml #generated:19
 -keep class com.aoeng.degu.views.CustomShapeImageView { <init>(...); }
+
+# view res/layout/ui_eventdispatch_view.xml #generated:7
+-keep class com.aoeng.degu.views.EventDispatchView { <init>(...); }
 
 # view res/layout/ui_lvs_moving_del.xml #generated:6
 -keep class com.aoeng.degu.views.ListViewCompat { <init>(...); }
