@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /home/paynet/git/DefinitiveGuide/src/com/aoeng/degu/aidl/IProductService.aidl
+ * Original file: /home/aoeng/git/DefinitiveGuide/src/com/aoeng/degu/aidl/IProductService.aidl
  */
 package com.aoeng.degu.aidl;
 public interface IProductService extends android.os.IInterface

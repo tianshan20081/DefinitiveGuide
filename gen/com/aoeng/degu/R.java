@@ -887,7 +887,7 @@ containing a value of this type.
         public static final int TextView1=0x7f070059;
         public static final int accept_accounts=0x7f0700c8;
         public static final int accept_troopmsg=0x7f0700c9;
-        public static final int action_settings=0x7f07016c;
+        public static final int action_settings=0x7f07016f;
         public static final int address=0x7f07000c;
         public static final int age=0x7f07000b;
         public static final int alphabetButton=0x7f070040;
@@ -966,6 +966,7 @@ containing a value of this type.
         public static final int btnIntentVideoCamera=0x7f070118;
         public static final int btnInternet=0x7f0700a4;
         public static final int btnJNI=0x7f07009a;
+        public static final int btnJavaCallJs=0x7f07016c;
         public static final int btnJavaMD5=0x7f070073;
         public static final int btnJavaMD5Salt=0x7f070075;
         public static final int btnJieCheng=0x7f0700b2;
@@ -1040,6 +1041,7 @@ containing a value of this type.
         public static final int btnWebService=0x7f070133;
         public static final int btnWebView=0x7f070097;
         public static final int btnWifiIP=0x7f070127;
+        public static final int btnWvJsCallJava=0x7f07016b;
         public static final int buton1=0x7f0700be;
         public static final int button1=0x7f07000e;
         public static final int buttonAutofocus=0x7f07010b;
@@ -1153,7 +1155,7 @@ containing a value of this type.
         public static final int lyBody=0x7f070157;
         public static final int lyBottom=0x7f070158;
         public static final int lyHeader=0x7f070156;
-        public static final int menu_settings=0x7f07016d;
+        public static final int menu_settings=0x7f070170;
         public static final int mergeView=0x7f070159;
         public static final int more_bottom=0x7f0700c1;
         public static final int more_image=0x7f0700c3;
@@ -1248,7 +1250,8 @@ containing a value of this type.
         public static final int weibolist=0x7f0700ee;
         public static final int widget=0x7f07008f;
         public static final int work_censustable_id=0x7f070166;
-        public static final int wvSimple=0x7f07016b;
+        public static final int wvJsCallJava=0x7f07016d;
+        public static final int wvSimple=0x7f07016e;
     }
     public static final class layout {
         public static final int child=0x7f030000;
@@ -1366,7 +1369,8 @@ containing a value of this type.
         public static final int ui_viewsmergeview=0x7f030070;
         public static final int ui_wigets=0x7f030071;
         public static final int ui_wv_home=0x7f030072;
-        public static final int ui_wv_simplewv=0x7f030073;
+        public static final int ui_wv_jscalljava=0x7f030073;
+        public static final int ui_wv_simplewv=0x7f030074;
     }
     public static final class menu {
         public static final int home_ui=0x7f0c0000;

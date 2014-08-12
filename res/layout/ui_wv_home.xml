@@ -20,10 +20,12 @@
 
                 <Button
                     android:id="@+id/btnSimpleWebView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="SimpleWebView" />
+                <Button
+                    android:id="@+id/btnWvJsCallJava"
+                    style="@style/btnItem"
+                    android:text="JsCallJava" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

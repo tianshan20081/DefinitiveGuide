@@ -150,6 +150,8 @@
 
         <activity android:name=".ui.wv.WebViewUI" />
         <activity android:name=".ui.wv.SimpleWebViewUI" />
+        <!-- js Call java  -->
+        <activity android:name=".ui.wv.JsCallJavaUI" />
         <activity android:name=".ui.nt.NetWorkUI" />
         <activity android:name=".ui.jni.JNIHomeUI" />
         <activity android:name=".ui.cd.CoordinatesUI" />
