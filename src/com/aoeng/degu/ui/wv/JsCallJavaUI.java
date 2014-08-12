@@ -8,6 +8,12 @@ import android.widget.Toast;
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
 
+/**
+ * 
+ * @author aoeng Aug 13, 2014 12:43:12 AM
+ * 
+ *         http://blog.csdn.net/wangtingshuai/article/details/8631835
+ */
 public class JsCallJavaUI extends BaseUI {
 
 	private WebView wvJsCallJava;
