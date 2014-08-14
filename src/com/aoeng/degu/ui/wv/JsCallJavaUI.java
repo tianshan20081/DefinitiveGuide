@@ -1,5 +1,11 @@
 package com.aoeng.degu.ui.wv;
 
+import java.net.URI;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -7,6 +13,8 @@ import android.widget.Toast;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.FormatUtils;
+import com.aoeng.degu.utils.UIUtils;
 
 /**
  * 
@@ -73,6 +81,27 @@ public class JsCallJavaUI extends BaseUI {
 
 			}
 		});
+	}
+
+	public void callPhone(final String phone) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+
+				// TODO Auto-generated method stub
+				if (FormatUtils.isPhone(phone)) {
+					// Intent intent = new Intent(o)
+					Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
+					startActivity(intent);
+				} else {
+					UIUtils.toastShow("Please input right phone number !");
+					wvJsCallJava.loadUrl("javascript:clearPhoneInput()");
+				}
+
+			}
+		});
+
 	}
 
 	public void startFunction(final String str) {

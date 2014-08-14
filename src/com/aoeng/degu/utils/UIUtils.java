@@ -67,9 +67,12 @@ public class UIUtils {
 		return mainHandler;
 	}
 
-	private static void toastShow(String msg) {
+	public static void toastShow(String msg) {
 		// TODO Auto-generated method stub
 		Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
 	}
 
+	public static void post(Runnable run) {
+		getHandler().post(run);
+	}
 }

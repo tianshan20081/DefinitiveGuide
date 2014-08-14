@@ -58,10 +58,8 @@ public class DGApplication extends Application {
 
 	private void initCacheDirPath() {
 		File f;
-		if (Environment.getExternalStorageState().equals(
-				Environment.MEDIA_MOUNTED)) {
-			f = new File(Environment.getExternalStorageDirectory()
-					+ "/.huigush/");
+		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+			f = new File(Environment.getExternalStorageDirectory() + "/.huigush/");
 			if (!f.exists()) {
 				f.mkdir();
 			}
