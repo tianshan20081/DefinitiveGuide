@@ -150,7 +150,7 @@
 
         <activity android:name=".ui.wv.WebViewUI" />
         <activity android:name=".ui.wv.SimpleWebViewUI" />
-        <!-- js Call java  -->
+        <!-- js Call java -->
         <activity android:name=".ui.wv.JsCallJavaUI" />
         <activity android:name=".ui.nt.NetWorkUI" />
         <activity android:name=".ui.jni.JNIHomeUI" />
@@ -238,6 +238,18 @@
         <activity android:name=".ui.eventdispatch.EventDispatchUI" />
         <activity android:name=".ui.eventdispatch.SimpleEventDispatchUI" />
         <activity android:name=".ui.eventdispatch.EventDispatchViewUI" />
+
+        <!-- PhoneGap -->
+        <activity android:name=".ui.phonegap.PhoneGapHomeUI" />
+        <activity
+            android:name=".ui.phonegap.SimplePhoneGapUI"
+            android:configChanges="orientation|keyboardHidden" />
+        <activity
+            android:name="org.apache.cordova.DroidGap"
+            android:configChanges="keyboardHidden|orientation" >
+            <intent-filter>
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".ui.media.MediaControlReceiver" >
             <intent-filter>

@@ -248,7 +248,7 @@
 # view AndroidManifest.xml #generated:231
 -keep class com.aoeng.degu.ui.media.IntentVideoCameraUI { <init>(...); }
 
-# view AndroidManifest.xml #generated:242
+# view AndroidManifest.xml #generated:254
 -keep class com.aoeng.degu.ui.media.MediaControlReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:223
@@ -268,6 +268,12 @@
 
 # view AndroidManifest.xml #generated:155
 -keep class com.aoeng.degu.ui.nt.NetWorkUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:243
+-keep class com.aoeng.degu.ui.phonegap.PhoneGapHomeUI { <init>(...); }
+
+# view AndroidManifest.xml #generated:244
+-keep class com.aoeng.degu.ui.phonegap.SimplePhoneGapUI { <init>(...); }
 
 # view AndroidManifest.xml #generated:217
 -keep class com.aoeng.degu.ui.security.AntiDebugUI { <init>(...); }
@@ -366,6 +372,9 @@
 
 # view res/layout/ui_lvs_swipe.xml #generated:8
 -keep class com.aoeng.degu.views.swipe.SwipeListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:247
+-keep class org.apache.cordova.DroidGap { <init>(...); }
 
 # onClick res/layout/ui_uis_group_main.xml #generated:27
 -keepclassmembers class * { *** onClickBottom(...); }
