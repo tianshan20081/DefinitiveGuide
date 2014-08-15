@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--自适应界面,如果出现,在某些设备出现界面偏小的话,检查一下有没有加入这句 -->
+    <meta http-equiv="Content-type" name="viewport"
+          content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <!--样式-->
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0.1.min.css" />
+    <!--end-->
+    <!--导入的js框架-->
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+    <script src="jquery.mobile/jquery-1.6.4.min"></script>
+    <script src="jquery.mobile/jquery.mobile-1.0.1.min.js"></script>
+    <!--end-->
+    <!--import custom library -->
+	<script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/device.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/storage.js"></script>
+	<!--end-->
+
+    <!--自己写的js-->
+   <script type="text/javascript">
+            //在页面初始化的时候,利用phonegap初始化我们的应用
+            $('body').live("pageinit",function(){
+               init();
+            });
+    
+            $('#setting').live("pageinit",function(){
+                //显示头像图片
+                var saveImage = kget("image");
+                if(saveImage){
+                    //console.log("have image"+saveImage);
+                    var cameraImage = document.getElementById('settingImage');
+                    cameraImage.style.visibility = 'visible';
+                    cameraImage.src = "data:image/jpeg;base64," + saveImage;
+                      
+                }
+                //当我们向右滑动的时候,回到主页
+                $('#settingContent').bind("swiperight",function(){
+                    $.mobile.changePage('#home',{ transition: "fade"});
+                });
+                //进行拍照
+                $('#takePhoto').bind("tap",function(){
+                    take_pic();
+                });
+            });
+            
+            $("#btnSubmit").click(function(){
+                var saveImage = kget("image");
+                if(saveImage){
+                    //console.log("have image"+saveImage);
+                    var cameraImage = document.getElementById('settingImage');
+                    cameraImage.style.visibility = 'visible';
+                    cameraImage.src = "data:image/jpeg;base64," + saveImage;
+                }
+            });
+            
+
+        </script>
+    <!--end-->
+</head>
+<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h1>个人信息</h1>
+				<a href="#setting" data-rel="dialog" data-icon="home" id="intro" class="ui-btn-right">设置</a>
+			</div>
+			<div data-role="content" id="homeContent" data-theme="b">
+				<p>头像</p>
+				<img id="cameraImage" src="images/default.jpg"  width="100%"  height="200"/>
+                <!--这一块的动态实现你会图片的读取和存储,这个就很简单了..这里就不做介绍了..-->
+			</div>
+		</div>
+        <div data-role="dialog" id="setting" data-overlay-theme="a"  data-theme="b" data-title="设置">
+            <div data-role="header">
+                <h1>头像设置</h1>
+            </div>
+            <div data-role="settingContent">
+                <div style="text-align: center;" align="center">
+                <img  align="middle" id="settingImage" src="images/default.jpg"  width="90%" height="200"/>
+                </div>
+                <br>
+                 <div style="text-align: center;" align="center">
+                   <div style="text-align: center;" align="center"><div  data-role="button" id="takePhoto">拍照</div></div>
+                </div>
+            </div>
+            <br/>
+             <fieldset class="ui-grid-a">
+				<div class="ui-block-a">
+				<a href="index.html" data-role="button" data-rel="back"   data-theme="c" id="btnSubmit">确定 </a> 
+				</div>
+				<div class="ui-block-b">
+				<a href="index.html" data-role="button" data-rel="back"   data-theme="b">取消 </a> 
+				</div>	   
+			</fieldset>
+        </div>
+		<script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/device.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/storage.js"></script>
+	</body>
+</html>
