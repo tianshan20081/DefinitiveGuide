@@ -84,16 +84,14 @@ public class JsCallJavaUI extends BaseUI {
 	}
 
 	public void callPhone(final String phone) {
-		runOnUiThread(new Runnable() {
+		UIUtils.runInMainThread(new Runnable() {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 
-				// TODO Auto-generated method stub
 				if (FormatUtils.isPhone(phone)) {
-					// Intent intent = new Intent(o)
 					Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
-					startActivity(intent);
+					UIUtils.startActivity(intent);
 				} else {
 					UIUtils.toastShow("Please input right phone number !");
 					wvJsCallJava.loadUrl("javascript:clearPhoneInput()");

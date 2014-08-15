@@ -75,4 +75,14 @@ public class UIUtils {
 	public static void post(Runnable run) {
 		getHandler().post(run);
 	}
+
+	public static void runInMainThread(Runnable run) {
+		// TODO Auto-generated method stub
+		if (isRunInMainThread()) {
+			run.run();
+		} else {
+			post(run);
+		}
+
+	}
 }
