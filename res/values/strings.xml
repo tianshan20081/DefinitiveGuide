@@ -19,7 +19,7 @@
     <string name="pull_to_refresh_updated_at_label">最近更新于: </string>
     <string name="loadmore_label">加载更多</string>
     <string name="loading_label">正在加载....</string>
-    <string name="URL_HOST">http://www.huigush.com/</string>
+    <string name="URL_HOST">http://192.168.1.115/df</string>
     <string name="net_error">当前网络不可用，请先连接Internet！</string>
     <string name="crc">597918297</string>
     <string name="quake_feed">http://earthquake.usgs.gov/earthquakes/catalogs/1day-M2.5.xml</string>

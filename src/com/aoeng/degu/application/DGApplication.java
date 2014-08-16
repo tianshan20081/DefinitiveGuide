@@ -11,13 +11,16 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 
+import com.aoeng.degu.services.LogFileUploadServices;
 import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.UIUtils;
 
 /**
  * May 21, 2014 4:54:26 PM
@@ -48,8 +51,10 @@ public class DGApplication extends Application {
 		this.mMainThreadId = android.os.Process.myPid();
 		this.mMainThread = Thread.currentThread();
 
-		CrashHandler mCrashHandler = CrashHandler.getInstance();
-		mCrashHandler.init();
+		// CrashHandler mCrashHandler = CrashHandler.getInstance();
+		// mCrashHandler.init();
+		Intent intent = new Intent(UIUtils.getContext(), LogFileUploadServices.class);
+		getContext().startService(intent);
 	}
 
 	public static String getCacheDirPath() {

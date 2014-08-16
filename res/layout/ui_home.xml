@@ -258,10 +258,24 @@
                     android:id="@+id/btnHandler"
                     style="@style/btnItem"
                     android:text="Handler" />
+
                 <Button
                     android:id="@+id/btnEventDistribution"
                     style="@style/btnItem"
                     android:text="事件分发" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/lyItem" >
+
+                <Button
+                    android:id="@+id/btnPhoneGap"
+                    style="@style/btnItem"
+                    android:text="PhoneGap" />
+
+                <Button
+                    android:id="@+id/btnChartEngine"
+                    style="@style/btnItem"
+                    android:text="ChartEngine" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

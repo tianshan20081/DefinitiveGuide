@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.aoeng.degu.application.DGApplication;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.ui.chartengine.SimpleChartEngineUI;
 
 public class UIUtils {
 
@@ -84,5 +85,10 @@ public class UIUtils {
 			post(run);
 		}
 
+	}
+
+	public static void startActivity(Class<SimpleChartEngineUI> clazz) {
+		// TODO Auto-generated method stub
+		startActivity(new Intent(getContext(), clazz));
 	}
 }

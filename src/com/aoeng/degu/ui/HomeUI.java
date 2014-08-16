@@ -10,6 +10,7 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.receiver.ReceiverUI;
 import com.aoeng.degu.ui.apps.AppManagerUI;
 import com.aoeng.degu.ui.cd.CoordinatesUI;
+import com.aoeng.degu.ui.chartengine.ChartEngineHomeUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
 import com.aoeng.degu.ui.encryption.EncHomeUI;
 import com.aoeng.degu.ui.eventdispatch.EventDispatchUI;
@@ -22,6 +23,7 @@ import com.aoeng.degu.ui.logins.LoginUIs;
 import com.aoeng.degu.ui.lvs.ListViewsUI;
 import com.aoeng.degu.ui.media.MediaHomeUI;
 import com.aoeng.degu.ui.nt.NetWorkUI;
+import com.aoeng.degu.ui.phonegap.PhoneGapHomeUI;
 import com.aoeng.degu.ui.security.SecurityUI;
 import com.aoeng.degu.ui.services.ServiceUI;
 import com.aoeng.degu.ui.uis.GroupMainUI;
@@ -73,6 +75,9 @@ public class HomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnHandler).setOnClickListener(this);
 		this.findViewById(R.id.btnEventDistribution).setOnClickListener(this);
 
+		this.findViewById(R.id.btnPhoneGap).setOnClickListener(this);
+		this.findViewById(R.id.btnChartEngine).setOnClickListener(this);
+
 	}
 
 	@Override
@@ -80,6 +85,12 @@ public class HomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent = null;
 		switch (v.getId()) {
+		case R.id.btnChartEngine:
+			intent = new Intent(UIUtils.getContext(), ChartEngineHomeUI.class);
+			break;
+		case R.id.btnPhoneGap:
+			intent = new Intent(UIUtils.getContext(), PhoneGapHomeUI.class);
+			break;
 		case R.id.btnEventDistribution:
 			intent = new Intent(UIUtils.getContext(), EventDispatchUI.class);
 			break;

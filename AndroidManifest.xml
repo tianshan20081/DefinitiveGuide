@@ -150,7 +150,7 @@
 
         <activity android:name=".ui.wv.WebViewUI" />
         <activity android:name=".ui.wv.SimpleWebViewUI" />
-        <!-- js Call java  -->
+        <!-- js Call java -->
         <activity android:name=".ui.wv.JsCallJavaUI" />
         <activity android:name=".ui.nt.NetWorkUI" />
         <activity android:name=".ui.jni.JNIHomeUI" />
@@ -239,11 +239,31 @@
         <activity android:name=".ui.eventdispatch.SimpleEventDispatchUI" />
         <activity android:name=".ui.eventdispatch.EventDispatchViewUI" />
 
+        <!-- Phonegap -->
+        <activity android:name=".ui.phonegap.PhoneGapHomeUI" />
+        <activity android:name=".ui.phonegap.SimplePhoneGapUI" />
+        <activity android:name=".ui.phonegap.PhoneGapCameraUI" />
+        <activity android:name=".ui.phonegap.PhoneGapBarcodeUI" />
+        <activity
+            android:name="com.phonegap.DroidGap"
+            android:configChanges="keyboardHidden|orientation" >
+            <intent-filter>
+            </intent-filter>
+        </activity>
+
+        <!-- PhoneGap -->
+        <activity android:name=".ui.chartengine.ChartEngineHomeUI" />
+        <activity android:name=".ui.chartengine.SimpleChartEngineUI" />
+
         <receiver android:name=".ui.media.MediaControlReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".services.LogFileUploadServices"
+            android:enabled="true" />
     </application>
 
     <permission
