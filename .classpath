@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="libs/JsonObjectTest_fat.jar"/>
 	<classpathentry kind="lib" path="libs/phonegap.jar"/>
 	<classpathentry kind="lib" path="libs/achartengine-1.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/httpmime-4.4-alpha1.jar" sourcepath="libss/httpmime-4.4-alpha1-sources.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

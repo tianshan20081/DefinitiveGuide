@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.views.swipe.SwipeListSingleView;
-import com.aoeng.degu.views.swipe.SwipeListView;
 
 /**
  * Jun 30, 2014 4:23:49 PM

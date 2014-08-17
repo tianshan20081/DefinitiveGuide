@@ -3,14 +3,6 @@
  */
 package com.aoeng.degu.ui;
 
-import java.security.cert.Certificate;
-
-import com.aoeng.degu.R;
-import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
-import com.baidu.location.LocationClient;
-import com.baidu.location.LocationClientOption;
-
 import android.app.Activity;
 import android.location.Criteria;
 import android.location.Location;
@@ -19,6 +11,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+
+import com.aoeng.degu.R;
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 
 /**
  * May 6, 2014 3:42:34 PM

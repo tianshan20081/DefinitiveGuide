@@ -3,9 +3,6 @@
  */
 package com.aoeng.degu.ui.cd;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Toaster;
-
 import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
@@ -13,6 +10,9 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.utils.Toaster;
 
 /**
  * @author [Aoeng Zhang] @datatime Jul 26, 2013:2:38:46 PM

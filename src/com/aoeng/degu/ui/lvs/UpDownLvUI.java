@@ -16,8 +16,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.ui.lvs.PullToRefreshListView.OnRefreshListener;
-import com.aoeng.degu.ui.lvs.ReflashListUI.MyAdapter;
 import com.aoeng.degu.views.RefreshLV;
 
 /**

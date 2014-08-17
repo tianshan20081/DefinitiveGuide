@@ -91,4 +91,8 @@ public class UIUtils {
 		// TODO Auto-generated method stub
 		startActivity(new Intent(getContext(), clazz));
 	}
+	
+	public static ThreadPoolManager getThreadPoolManager(){
+		return DGApplication.getThreadPoolManager();
+	}
 }

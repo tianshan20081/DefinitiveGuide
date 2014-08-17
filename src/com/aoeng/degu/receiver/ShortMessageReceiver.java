@@ -1,13 +1,11 @@
 package com.aoeng.degu.receiver;
 
-import java.security.Provider;
 import java.util.Set;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 
 import com.aoeng.degu.utils.Toaster;

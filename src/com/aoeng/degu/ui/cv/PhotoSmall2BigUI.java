@@ -3,12 +3,12 @@
  */
 package com.aoeng.degu.ui.cv;
 
-import com.aoeng.degu.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.aoeng.degu.R;
 
 /**
  * @author [ShaoCheng Zhang] Sep 8, 2013:1:58:15 PM

@@ -3,13 +3,13 @@
  */
 package com.aoeng.degu.ui.imgs;
 
-import com.aoeng.degu.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.aoeng.degu.R;
 
 /**
  * May 16, 2014  6:02:25 PM

@@ -1,10 +1,10 @@
 package com.aoeng.degu.receiver;
 
-import com.aoeng.degu.ui.HomeUI;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
+import com.aoeng.degu.ui.HomeUI;
 
 public class StartUpReceiver extends BroadcastReceiver {
 

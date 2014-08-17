@@ -3,9 +3,6 @@ package com.aoeng.degu.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-
 public class Person implements Serializable {
 	private String name;
 	private int age;

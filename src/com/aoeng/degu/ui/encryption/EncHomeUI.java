@@ -4,9 +4,7 @@
 package com.aoeng.degu.ui.encryption;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.security.NoSuchAlgorithmException;
 
 import android.view.View;
 

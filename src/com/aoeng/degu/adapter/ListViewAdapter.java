@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.aoeng.degu.ui.lvs.PagesListViewUI;
-
 //用于数据生成
 public class ListViewAdapter extends BaseAdapter {
 	public int count = 10 ;

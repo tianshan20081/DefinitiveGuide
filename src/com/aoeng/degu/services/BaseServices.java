@@ -1,10 +1,10 @@
 package com.aoeng.degu.services;
 
-import com.aoeng.degu.utils.Toaster;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+
+import com.aoeng.degu.utils.Toaster;
 
 public class BaseServices extends Service {
 

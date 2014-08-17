@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.domain.LogFileUploadResult;
 import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.ui.BaseUI;
 
@@ -19,13 +20,12 @@ import com.aoeng.degu.ui.BaseUI;
  */
 public class BaseHandler extends Handler {
 	private static final String TAG = BaseHandler.class.getName();
-	private Context context;
 	private DataCallback callBack;
 	private RequestVO reqVo;
 	private ProgressDialog progressDialog;
 
-	public BaseHandler(Context context, DataCallback callBack, RequestVO reqVo) {
-		this.context = context;
+	public BaseHandler(DataCallback callBack, RequestVO reqVo) {
+		// TODO Auto-generated constructor stub
 		this.callBack = callBack;
 		this.reqVo = reqVo;
 	}
@@ -34,14 +34,14 @@ public class BaseHandler extends Handler {
 		closeProgressDialog();
 		if (msg.what == Constant.SUCCESS) {
 			if (msg.obj == null) {
-				CommonUtil.showInfoDialog(context, context.getString(R.string.net_error));
+				CommonUtil.showInfoDialog(UIUtils.getContext(), UIUtils.getContext().getString(R.string.net_error));
 			} else {
 				callBack.processData(msg.obj, true);
 			}
 		} else if (msg.what == Constant.NET_FAILED) {
-			CommonUtil.showInfoDialog(context, context.getString(R.string.net_error));
+			CommonUtil.showInfoDialog(UIUtils.getContext(), UIUtils.getContext().getString(R.string.net_error));
 		} else if (msg.what == Constant.NET_ERROR) {
-			CommonUtil.showInfoDialog(context, context.getString(R.string.net_error));
+			CommonUtil.showInfoDialog(UIUtils.getContext(), UIUtils.getContext().getString(R.string.net_error));
 		}
 
 		Logger.d(TAG, "recordSize:" + BaseUI.record.size());
@@ -51,8 +51,8 @@ public class BaseHandler extends Handler {
 	 * 显示提示框
 	 */
 	protected void showProgressDialog() {
-		if ((!((Activity) context).isFinishing()) && (this.progressDialog == null)) {
-			this.progressDialog = new ProgressDialog(context);
+		if ((!((Activity) UIUtils.getContext()).isFinishing()) && (this.progressDialog == null)) {
+			this.progressDialog = new ProgressDialog(UIUtils.getContext());
 		}
 		this.progressDialog.setTitle("标题");
 		this.progressDialog.setMessage("数据加载中...");

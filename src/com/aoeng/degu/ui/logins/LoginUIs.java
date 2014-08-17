@@ -1,12 +1,12 @@
 package com.aoeng.degu.ui.logins;
 
-import com.aoeng.degu.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.aoeng.degu.R;
 
 public class LoginUIs extends Activity implements OnClickListener {
 

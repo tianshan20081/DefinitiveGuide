@@ -3,12 +3,15 @@
  */
 package com.aoeng.degu.utils;
 
+import java.io.File;
 import java.io.IOException;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
+import org.apache.http.Consts;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -24,6 +27,10 @@ import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.message.BasicHeader;
@@ -39,9 +46,12 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.provider.MediaStore.Files;
 import android.widget.Toast;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.domain.LogFileUploadResult;
+import com.aoeng.degu.services.DataCallback;
 
 /**
  * Mar 23, 2014 11:57:37 AM
@@ -70,26 +80,36 @@ public class NetUtil {
 	 * 
 	 */
 	public static Object post(RequestVO vo) {
-		HttpClient client = getNewHttpClient();
-		String url = vo.context.getString(R.string.URL_HOST).concat(vo.context.getString(vo.requestUrl));
+		HttpClient client = HttpUtils.getNewHttpClient();
+		String url = URLUtils.URL_HOST.concat(vo.requestUrl);
 		Logger.i(TAG, "Post " + url);
 		HttpPost post = new HttpPost(url);
 		// post.setHeaders(headers);
 		Object obj = null;
 		try {
+			MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
+			StringBuffer buffer = new StringBuffer("?");
 			if (vo.requestDataMap != null) {
 				HashMap<String, String> map = vo.requestDataMap;
-				ArrayList<BasicNameValuePair> pairList = new ArrayList<BasicNameValuePair>();
-				StringBuffer buffer = new StringBuffer("?");
+
 				for (Map.Entry<String, String> entry : map.entrySet()) {
-					BasicNameValuePair pair = new BasicNameValuePair(entry.getKey(), entry.getValue());
-					pairList.add(pair);
 					buffer.append(entry.getKey() + "=" + entry.getValue()).append("&");
+					entityBuilder.addTextBody(entry.getKey(), entry.getValue(), ContentType.create("text/plain", Consts.UTF_8));
 				}
-				Logger.i(TAG, buffer.toString());
-				HttpEntity entity = new UrlEncodedFormEntity(pairList, "UTF-8");
-				post.setEntity(entity);
+
 			}
+			if (vo instanceof FileUploadVO) {
+				FileUploadVO fvo = (FileUploadVO) vo;
+				if (fvo.fileFieldMap != null) {
+					for (Entry<String, String> entry : fvo.fileFieldMap.entrySet()) {
+						entityBuilder.addBinaryBody(entry.getKey(), new File(entry.getValue()));
+						buffer.append(entry.getKey()).append("&");
+					}
+
+				}
+			}
+			Logger.i(TAG, buffer.toString());
+			post.setEntity(entityBuilder.build());
 			HttpResponse response = client.execute(post);
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				setCookie(response);
@@ -110,30 +130,6 @@ public class NetUtil {
 			Logger.e(TAG, e.getLocalizedMessage(), e);
 		}
 		return null;
-	}
-
-	public static HttpClient getNewHttpClient() {
-		try {
-			KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
-			trustStore.load(null, null);
-
-			SSLSocketFactory sf = new SSLSocketFactoryEx(trustStore);
-			sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
-
-			HttpParams params = new BasicHttpParams();
-			HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
-			HttpProtocolParams.setContentCharset(params, HTTP.UTF_8);
-
-			SchemeRegistry registry = new SchemeRegistry();
-			registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-			registry.register(new Scheme("https", sf, 443));
-
-			ClientConnectionManager ccm = new ThreadSafeClientConnManager(params, registry);
-
-			return new DefaultHttpClient(ccm, params);
-		} catch (Exception e) {
-			return new DefaultHttpClient();
-		}
 	}
 
 	/**
@@ -188,7 +184,7 @@ public class NetUtil {
 	 */
 	public static Object get(RequestVO vo) {
 		DefaultHttpClient client = new DefaultHttpClient();
-		String url = vo.context.getString(R.string.URL_HOST).concat(vo.context.getString(vo.requestUrl));
+		String url = UIUtils.getContext().getString(R.string.URL_HOST).concat(vo.requestUrl);
 		Logger.i(TAG, "Get " + url);
 		HttpGet get = new HttpGet(url);
 		// get.setHeaders(headers);
@@ -236,5 +232,10 @@ public class NetUtil {
 
 	public static enum Status {
 		Login
+	}
+
+	public static void getDateFromServer(DataCallback<LogFileUploadResult> dataCallback) {
+		// TODO Auto-generated method stub
+
 	}
 }

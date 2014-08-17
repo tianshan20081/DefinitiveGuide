@@ -1,9 +1,6 @@
 package com.aoeng.degu.receiver;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
-import com.aoeng.degu.utils.Toaster;
 
 import android.app.AlertDialog;
 import android.app.Service;
@@ -13,6 +10,8 @@ import android.content.Intent;
 import android.telephony.TelephonyManager;
 import android.view.Gravity;
 import android.widget.Toast;
+
+import com.aoeng.degu.utils.Toaster;
 
 public class InCallReceiver extends BroadcastReceiver {
 

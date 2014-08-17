@@ -1,13 +1,13 @@
 package com.aoeng.degu.views;
 
-import com.aoeng.degu.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.ListView;
+
+import com.aoeng.degu.R;
 
 public class RefreshLV2 extends ListView implements OnScrollListener {
 

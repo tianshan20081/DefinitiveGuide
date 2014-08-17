@@ -3,14 +3,13 @@
  */
 package com.aoeng.degu.ui.media;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Logger;
-
 import android.app.Activity;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.utils.Logger;
 
 /**
  * Jun 9, 2014 3:08:18 PM

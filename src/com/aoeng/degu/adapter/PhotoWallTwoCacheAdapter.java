@@ -3,19 +3,16 @@
  */
 package com.aoeng.degu.adapter;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.utils.cv.TwoCacheImageLoader;
-
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.provider.MediaStore.Images;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.utils.cv.TwoCacheImageLoader;
 
 /**
  * @author [ShaoCheng Zhang] Sep 5, 2013:2:50:54 PM

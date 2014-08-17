@@ -5,7 +5,6 @@ package com.aoeng.degu.ui.views;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.TableLayout;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;

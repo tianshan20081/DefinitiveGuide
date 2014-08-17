@@ -1,11 +1,7 @@
 package com.aoeng.degu.ui.wv;
 
-import java.net.URI;
-
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;

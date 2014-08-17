@@ -11,7 +11,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Toaster;
 
 public class SimpleWebViewUI extends Activity {
 	private WebView wvSimple;

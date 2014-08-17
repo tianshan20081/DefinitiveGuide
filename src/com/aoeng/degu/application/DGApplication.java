@@ -14,12 +14,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Environment;
-import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 
 import com.aoeng.degu.services.LogFileUploadServices;
 import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.ThreadPoolManager;
 import com.aoeng.degu.utils.UIUtils;
 
 /**
@@ -38,6 +38,8 @@ public class DGApplication extends Application {
 
 	private List<Activity> records = new ArrayList<Activity>();
 
+	private static ThreadPoolManager mThreadPoolManager;
+
 	private static Thread mMainThread;
 	private static final String TAG = "HGApplication";
 
@@ -50,6 +52,8 @@ public class DGApplication extends Application {
 		this.mMainThreadLooper = getMainThreadLooper();
 		this.mMainThreadId = android.os.Process.myPid();
 		this.mMainThread = Thread.currentThread();
+
+		mThreadPoolManager = ThreadPoolManager.getInstance();
 
 		// CrashHandler mCrashHandler = CrashHandler.getInstance();
 		// mCrashHandler.init();
@@ -124,5 +128,10 @@ public class DGApplication extends Application {
 
 	public static Thread getMainThread() {
 		return mMainThread;
+	}
+
+	public static ThreadPoolManager getThreadPoolManager() {
+		// TODO Auto-generated method stub
+		return mThreadPoolManager;
 	}
 }

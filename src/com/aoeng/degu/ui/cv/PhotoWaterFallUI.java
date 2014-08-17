@@ -3,10 +3,10 @@
  */
 package com.aoeng.degu.ui.cv;
 
-import com.aoeng.degu.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.aoeng.degu.R;
 
 /**
  * @author [ShaoCheng Zhang] Sep 8, 2013:12:39:56 PM

@@ -3,15 +3,15 @@
  */
 package com.aoeng.degu.views;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.utils.SuDoKuGame;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.FontMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.utils.SuDoKuGame;
 
 /**
  * Jun 3, 2014 1:44:48 PM

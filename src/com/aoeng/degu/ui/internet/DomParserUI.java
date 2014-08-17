@@ -3,10 +3,10 @@
  */
 package com.aoeng.degu.ui.internet;
 
-import com.aoeng.degu.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.aoeng.degu.R;
 
 /**
  * Jun 10, 2014 10:50:51 AM

@@ -3,7 +3,6 @@
  */
 package com.aoeng.degu.services;
 
-import android.content.Context;
 import android.net.wifi.WifiConfiguration.Status;
 import android.os.Handler;
 import android.os.Message;
@@ -13,18 +12,17 @@ import com.aoeng.degu.utils.Constant;
 import com.aoeng.degu.utils.Logger;
 import com.aoeng.degu.utils.NetUtil;
 import com.aoeng.degu.utils.RequestVO;
+import com.aoeng.degu.utils.UIUtils;
 
 /**
  * May 21, 2014 5:19:24 PM
  * 
  */
 public class BaseTask implements Runnable {
-	private Context context;
 	private RequestVO reqVo;
 	private Handler handler;
 
-	public BaseTask(Context context, RequestVO reqVo, Handler handler) {
-		this.context = context;
+	public BaseTask(RequestVO reqVo, Handler handler) {
 		this.reqVo = reqVo;
 		this.handler = handler;
 	}
@@ -34,12 +32,13 @@ public class BaseTask implements Runnable {
 		Object obj = null;
 		Message msg = Message.obtain();
 		try {
-			if (NetUtil.hasNetwork(context)) {
+			if (NetUtil.hasNetwork(UIUtils.getContext())) {
 				obj = NetUtil.post(reqVo);
 				if (null != obj) {
 					Logger.i(BaseUI.TAG, obj.toString());
 					if (obj instanceof Status) {
-						// Intent intent = new Intent(BaseUI.this, LoginUI.class);
+						// Intent intent = new Intent(BaseUI.this,
+						// LoginUI.class);
 						// intent.putExtra("notlogin", "notlogin");
 						// startActivityForResult(intent, NOT_LOGIN);
 					} else {

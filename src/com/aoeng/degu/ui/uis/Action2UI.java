@@ -1,10 +1,10 @@
 package com.aoeng.degu.ui.uis;
 
-import com.aoeng.degu.utils.Toaster;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
+
+import com.aoeng.degu.utils.Toaster;
 
 public class Action2UI extends Activity {
 	@Override

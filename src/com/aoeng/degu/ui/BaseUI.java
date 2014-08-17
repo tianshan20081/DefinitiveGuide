@@ -11,8 +11,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -49,7 +47,7 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	protected Context context;
 
 	public BaseUI() {
-		threadPoolManager = ThreadPoolManager.getInstance();
+		
 	}
 
 	/*
@@ -158,8 +156,8 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	 * @param callBack
 	 */
 	protected void getDataFromServer(RequestVO reqVo, DataCallback callBack) {
-		BaseHandler handler = new BaseHandler(this, callBack, reqVo);
-		BaseTask taskThread = new BaseTask(this, reqVo, handler);
+		BaseHandler handler = new BaseHandler(callBack, reqVo);
+		BaseTask taskThread = new BaseTask(reqVo, handler);
 		record.add(taskThread);
 		this.threadPoolManager.addTask(taskThread);
 	}

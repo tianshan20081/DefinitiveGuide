@@ -3,16 +3,15 @@
  */
 package com.aoeng.degu.ui.cv;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.adapter.PhotoWallTwoCacheAdapter;
-import com.aoeng.degu.utils.ImagesURL;
-
 import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.ListView;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.adapter.PhotoWallTwoCacheAdapter;
+import com.aoeng.degu.utils.ImagesURL;
 
 /**
  * @author [ShaoCheng Zhang] Sep 6, 2013:4:26:35 PM

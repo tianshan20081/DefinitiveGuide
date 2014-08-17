@@ -8,7 +8,6 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceHolder;

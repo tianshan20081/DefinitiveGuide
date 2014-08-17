@@ -1,8 +1,8 @@
 package com.aoeng.degu.ui.phonegap;
 
-import com.phonegap.DroidGap;
-
 import android.os.Bundle;
+
+import com.phonegap.DroidGap;
 
 public class PhoneGapCameraUI extends DroidGap {
 	@Override

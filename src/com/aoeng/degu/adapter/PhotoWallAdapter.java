@@ -8,10 +8,6 @@ import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.utils.ImagesURL;
-import com.aoeng.degu.utils.Toaster;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,6 +21,10 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.utils.ImagesURL;
+import com.aoeng.degu.utils.Toaster;
 
 /**
  * @author [ShaoCheng Zhang] Sep 3, 2013:9:41:22 AM

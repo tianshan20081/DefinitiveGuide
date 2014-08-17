@@ -3,14 +3,11 @@
  */
 package com.aoeng.degu.ui.media;
 
+import android.content.Intent;
+import android.view.View;
+
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 /**
  * Jun 9, 2014  3:04:23 PM

@@ -3,13 +3,13 @@
  */
 package com.aoeng.degu.ui.cv;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.adapter.PhotoWallAdapter;
-import com.aoeng.degu.utils.ImagesURL;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.GridView;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.adapter.PhotoWallAdapter;
+import com.aoeng.degu.utils.ImagesURL;
 
 /**
  * @author [Aoeng Zhang] @datatime Sep 3, 2013:9:23:46 AM

@@ -1,11 +1,11 @@
 package com.aoeng.degu.ui.logins;
 
-import com.aoeng.degu.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.aoeng.degu.R;
 
 public class LoginQQSplashUI extends Activity {
 

@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
-import android.widget.AbsListView.RecyclerListener;
 import android.widget.RelativeLayout;
 
 /**

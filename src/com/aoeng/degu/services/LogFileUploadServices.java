@@ -1,21 +1,22 @@
 package com.aoeng.degu.services;
 
 import java.io.File;
-
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
-
-import com.aoeng.degu.utils.FileUtils;
-import com.aoeng.degu.utils.Logger;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import android.app.Service;
-import android.app.backup.FileBackupHelper;
 import android.content.Intent;
 import android.os.IBinder;
 import android.text.TextUtils;
+
+import com.aoeng.degu.domain.LogFileUploadResult;
+import com.aoeng.degu.parser.LogFileUploadParser;
+import com.aoeng.degu.utils.DataUtils;
+import com.aoeng.degu.utils.FileUploadVO;
+import com.aoeng.degu.utils.FileUtils;
+import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.URLUtils;
 
 public class LogFileUploadServices extends Service {
 
@@ -35,21 +36,60 @@ public class LogFileUploadServices extends Service {
 		String path = FileUtils.getAppCrashPath();
 		Logger.i(TAG, path);
 	}
+
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		// TODO Auto-generated method stub
+
+		FileUploadVO vo = new FileUploadVO();
+		vo.requestUrl = URLUtils.URL_HOST.concat(URLUtils.urlLogsUpload);
+		vo.jsonParser = new LogFileUploadParser();
+		vo.requestDataMap = getNormalFieldMap();
+		vo.fileFieldMap = getFileFieldMap();
+
+		DataUtils.getDateFromServer(vo, new DataCallback<LogFileUploadResult>() {
+
+			@Override
+			public void processData(LogFileUploadResult paramObject, boolean paramBoolean) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
+		return START_STICKY;
+	}
+
+	private HashMap<String, String> getFileFieldMap() {
+		HashMap<String, String> map = null;
+
 		String path = FileUtils.getAppCrashPath();
 		if (!TextUtils.isEmpty(path)) {
 			File fileCrash = new File(path);
 			if (fileCrash.exists() && fileCrash.isDirectory() && fileCrash.list().length > 0) {
 				String[] loges = fileCrash.list();
-				for (String log : loges) {
-					HttpClient client = new DefaultHttpClient();
-					HttpPost post = new HttpPost();
+				if (null == loges || loges.length == 1) {
+					return null;
+				}
+				map = new HashMap<String, String>();
+				File logFile = null;
+				for (String fileName : loges) {
+					logFile = new File(path, fileName);
+					if (logFile.exists() && logFile.isFile()) {
+						map.put(fileName, logFile.getAbsolutePath());
+						// break;
+					}
 				}
 			}
 		}
-		return START_STICKY;
+		return map;
 	}
 
+	private HashMap<String, String> getNormalFieldMap() {
+		// TODO Auto-generated method stub
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("name", "name");
+		// map.put("uploadDate", new Date().toString());
+
+		return map;
+	}
 }

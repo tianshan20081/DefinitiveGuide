@@ -6,11 +6,6 @@ package com.aoeng.degu.ui.cv;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aoeng.degu.R;
-import com.aoeng.degu.adapter.ContactAdapter;
-import com.aoeng.degu.domain.Contact;
-
-import android.R.integer;
 import android.app.Activity;
 import android.database.Cursor;
 import android.net.Uri;
@@ -26,6 +21,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.adapter.ContactAdapter;
+import com.aoeng.degu.domain.Contact;
 
 /**
  * @author [ShaoCheng Zhang] Sep 3, 2013:1:25:10 PM
