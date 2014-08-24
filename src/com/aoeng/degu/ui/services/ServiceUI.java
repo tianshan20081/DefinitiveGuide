@@ -135,12 +135,15 @@ public class ServiceUI extends Activity implements OnClickListener {
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
 			// TODO Auto-generated method stub
-
+			UIUtils.getToastSafe("ServiceConnection ---------onServiceDisconnected");
+			Logger.i(TAG, "ServiceConnection ---------onServiceDisconnected");
 		}
 
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			// TODO Auto-generated method stub
+			UIUtils.getToastSafe("ServiceConnection ---------onServiceConnected");
+			Logger.i(TAG, "ServiceConnection ---------onServiceConnected");
 			person = IPerson.Stub.asInterface(service);
 			try {
 				person.setName("Aoeng");
