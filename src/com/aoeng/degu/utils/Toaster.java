@@ -19,8 +19,7 @@ public class Toaster {
 
 	public static void toastCenter(Context context, String text, boolean isLong) {
 
-		Toast toast = Toast
-				.makeText(context, text, isLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
+		Toast toast = Toast.makeText(context, text, isLong ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
 		toast.setGravity(Gravity.CENTER, 0, 0);
 		toast.show();
 

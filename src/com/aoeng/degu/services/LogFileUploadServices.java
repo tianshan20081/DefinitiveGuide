@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import android.app.Service;
 import android.content.Intent;
@@ -42,7 +43,7 @@ public class LogFileUploadServices extends Service {
 		// TODO Auto-generated method stub
 
 		FileUploadVO vo = new FileUploadVO();
-		vo.requestUrl = URLUtils.URL_HOST.concat(URLUtils.urlLogsUpload);
+		vo.requestUrl = URLUtils.urlLogsUpload;
 		vo.jsonParser = new LogFileUploadParser();
 		vo.requestDataMap = getNormalFieldMap();
 		vo.fileFieldMap = getFileFieldMap();
@@ -50,9 +51,12 @@ public class LogFileUploadServices extends Service {
 		DataUtils.getDateFromServer(vo, new DataCallback<LogFileUploadResult>() {
 
 			@Override
-			public void processData(LogFileUploadResult paramObject, boolean paramBoolean) {
+			public void processData(LogFileUploadResult result, boolean paramBoolean) {
 				// TODO Auto-generated method stub
-
+				if (null != result) {
+					Logger.i(TAG, result.toString());
+					List<String> uploadedFile = result.getFileNames();
+				}
 			}
 		});
 
@@ -76,7 +80,7 @@ public class LogFileUploadServices extends Service {
 					logFile = new File(path, fileName);
 					if (logFile.exists() && logFile.isFile()) {
 						map.put(fileName, logFile.getAbsolutePath());
-						// break;
+						break;
 					}
 				}
 			}

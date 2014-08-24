@@ -58,7 +58,7 @@ public class DGApplication extends Application {
 		// CrashHandler mCrashHandler = CrashHandler.getInstance();
 		// mCrashHandler.init();
 		Intent intent = new Intent(UIUtils.getContext(), LogFileUploadServices.class);
-		getContext().startService(intent);
+//		getContext().startService(intent);
 	}
 
 	public static String getCacheDirPath() {

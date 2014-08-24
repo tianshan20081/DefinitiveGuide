@@ -55,6 +55,7 @@ public class BindServices extends Service {
 
 	public class MyBinder extends Binder {
 		public BindServices getServices() {
+			
 			return BindServices.this;
 		}
 	}

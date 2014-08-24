@@ -14,6 +14,11 @@
                     android:id="@+id/btnTableLayout"
                     style="@style/btnStyle"
                     android:text="TableLayout" />
+
+                <Button
+                    android:id="@+id/btnProgressDialog"
+                    style="@style/btnStyle"
+                    android:text="ProgressDialog" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

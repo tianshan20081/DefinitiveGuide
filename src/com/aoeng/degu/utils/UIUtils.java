@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.aoeng.degu.application.DGApplication;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.ui.chartengine.SimpleChartEngineUI;
+import com.aoeng.degu.ui.views.DialogUI;
 
 public class UIUtils {
 
@@ -87,12 +88,13 @@ public class UIUtils {
 
 	}
 
-	public static void startActivity(Class<SimpleChartEngineUI> clazz) {
+	public static void startActivity(Class clazz) {
 		// TODO Auto-generated method stub
 		startActivity(new Intent(getContext(), clazz));
 	}
-	
-	public static ThreadPoolManager getThreadPoolManager(){
+
+	public static ThreadPoolManager getThreadPoolManager() {
 		return DGApplication.getThreadPoolManager();
 	}
+
 }

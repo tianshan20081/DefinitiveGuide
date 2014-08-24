@@ -5,24 +5,33 @@ import java.util.List;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.services.BaseServices;
 import com.aoeng.degu.services.BindServices;
+import com.aoeng.degu.services.PersonService;
+import com.aoeng.degu.services.TIntentService;
+import com.aoeng.degu.utils.Logger;
 import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.UIUtils;
 
 public class ServiceUI extends Activity implements OnClickListener {
+	protected static final String TAG = ServiceUI.class.getName();
 	private Intent intent;
 	private BindServices bindServices;
 	private ServiceConnection serviceConnection;
+
+	private IPerson person;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +46,10 @@ public class ServiceUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnUnBindService).setOnClickListener(this);
 		this.findViewById(R.id.btnServices).setOnClickListener(this);
 		this.findViewById(R.id.btnClearServices).setOnClickListener(this);
+		this.findViewById(R.id.btnIntentService).setOnClickListener(this);
+		this.findViewById(R.id.btnBindsService).setOnClickListener(this);
+		this.findViewById(R.id.btnUnBindsService).setOnClickListener(this);
+		this.findViewById(R.id.btnCallBindService).setOnClickListener(this);
 
 		serviceConnection = new ServiceConnection() {
 
@@ -60,6 +73,28 @@ public class ServiceUI extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnCallBindService:
+			try {
+				String per = person.getPerson();
+				UIUtils.getToastSafe(per);
+				Logger.i(TAG, per);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case R.id.btnUnBindsService:
+			UIUtils.getContext().unbindService(conn);
+			break;
+		case R.id.btnBindsService:
+			Intent bindIntent = new Intent(UIUtils.getContext(), PersonService.class);
+			UIUtils.getContext().bindService(bindIntent, conn, Service.BIND_AUTO_CREATE);
+			UIUtils.getToastSafe("bindIntent");
+			break;
+		case R.id.btnIntentService:
+			Intent serviceIntent = new Intent(UIUtils.getContext(), TIntentService.class);
+			UIUtils.getContext().startService(serviceIntent);
+			break;
 		case R.id.btnServices:
 			ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 			List<RunningServiceInfo> serviceInfos = activityManager.getRunningServices(100);
@@ -69,6 +104,7 @@ public class ServiceUI extends Activity implements OnClickListener {
 			}
 			Toaster.log("Running Services:", str);
 			Toaster.toast(this, str, true);
+			Logger.i(TAG, str);
 			break;
 		case R.id.btnClearServices:
 
@@ -93,5 +129,30 @@ public class ServiceUI extends Activity implements OnClickListener {
 			break;
 		}
 	}
+
+	private ServiceConnection conn = new ServiceConnection() {
+
+		@Override
+		public void onServiceDisconnected(ComponentName name) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			// TODO Auto-generated method stub
+			person = IPerson.Stub.asInterface(service);
+			try {
+				person.setName("Aoeng");
+				person.setSex("Girl");
+				person.setAge(20);
+
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	};
 
 }

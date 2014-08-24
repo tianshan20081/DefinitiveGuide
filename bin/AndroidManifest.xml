@@ -134,6 +134,12 @@
         <service
             android:name=".services.BindServices"
             android:enabled="true" />
+        <service
+            android:name=".services.TIntentService"
+            android:enabled="true" />
+        <service
+            android:name=".services.PersonService"
+            android:enabled="true" />
 
         <activity android:name=".ui.services.ServiceUI" />
 
@@ -233,6 +239,7 @@
         <activity android:name=".ui.internet.DomParserUI" />
         <activity android:name=".ui.views.ViewsUI" />
         <activity android:name=".ui.views.TableLayoutUI" />
+        <activity android:name=".ui.views.DialogUI" />
         <activity android:name=".ui.encryption.EncHomeUI" />
         <!-- 事件分发 -->
         <activity android:name=".ui.eventdispatch.EventDispatchUI" />

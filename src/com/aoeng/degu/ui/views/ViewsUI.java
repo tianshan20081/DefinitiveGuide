@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.UIUtils;
 
 /**
  * Jul 16, 2014 11:18:49 AM
@@ -27,7 +28,9 @@ public class ViewsUI extends BaseUI {
 		case R.id.btnTableLayout:
 			startActivity(new Intent(ViewsUI.this, TableLayoutUI.class));
 			break;
-
+		case R.id.btnProgressDialog:
+			UIUtils.startActivity(DialogUI.class);
+			break;
 		default:
 			break;
 		}
@@ -64,6 +67,7 @@ public class ViewsUI extends BaseUI {
 	protected void setListener() {
 		// TODO Auto-generated method stub
 		findView(R.id.btnTableLayout).setOnClickListener(this);
+		findView(R.id.btnProgressDialog).setOnClickListener(this);
 	}
 
 	/*

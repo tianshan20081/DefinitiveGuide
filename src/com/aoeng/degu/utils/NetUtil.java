@@ -102,7 +102,7 @@ public class NetUtil {
 				FileUploadVO fvo = (FileUploadVO) vo;
 				if (fvo.fileFieldMap != null) {
 					for (Entry<String, String> entry : fvo.fileFieldMap.entrySet()) {
-						entityBuilder.addBinaryBody(entry.getKey(), new File(entry.getValue()));
+						entityBuilder.addBinaryBody("upload", new File(entry.getValue()));
 						buffer.append(entry.getKey()).append("&");
 					}
 
@@ -114,10 +114,11 @@ public class NetUtil {
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				setCookie(response);
 				String result = EntityUtils.toString(response.getEntity(), "UTF-8");
+				Logger.i(TAG, result);
 				try {
-					if (invilidateLogin(result)) {
-						return Status.Login;
-					}
+//					if (invilidateLogin(result)) {
+//						return Status.Login;
+//					}
 					obj = vo.jsonParser.parseJSON(result);
 				} catch (JSONException e) {
 					Logger.e(TAG, e.getLocalizedMessage(), e);
