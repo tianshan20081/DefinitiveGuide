@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.utils.UIUtils;
 
 /**
  * May 16, 2014  6:02:25 PM
@@ -29,6 +30,7 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 		
 		this.findViewById(R.id.btnCircleImg).setOnClickListener(this);
 		this.findViewById(R.id.btnShapeImg).setOnClickListener(this);
+		this.findViewById(R.id.btnGetPicFromMediaStore).setOnClickListener(this);
 	}
 
 	/* (non-Javadoc)
@@ -38,6 +40,9 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnGetPicFromMediaStore:
+			UIUtils.startActivity(PictureFromMediaStoreUI.class);
+			break;
 		case R.id.btnCircleImg:
 			startActivity(new Intent(ImageViewsUI.this, CircleImgUI.class));
 			break;

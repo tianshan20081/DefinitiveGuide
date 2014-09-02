@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    style="@style/lyVerticalStyle" >
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+    <ScrollView style="@style/scrollViewStyle" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+        <LinearLayout style="@style/lyVerticalStyle" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnCircleImg"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="NormalListView" />
+                    style="@style/btnItem"
+                    android:text="圆角图片" />
 
                 <Button
                     android:id="@+id/btnShapeImg"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    style="@style/btnItem"
+                    android:text="不规则形状照片" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnGetPicFromMediaStore"
+                    style="@style/btnItem"
+                    android:text="从图库选择图片" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

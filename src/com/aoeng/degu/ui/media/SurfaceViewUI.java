@@ -164,7 +164,6 @@ public class SurfaceViewUI extends Activity implements Callback {
 				return 0;
 			}
 
-			@Override
 			public int getAudioSessionId() {
 				// TODO Auto-generated method stub
 				return 0;

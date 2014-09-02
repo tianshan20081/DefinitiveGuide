@@ -207,6 +207,7 @@
         <activity android:name=".ui.imgs.CircleImgUI" />
         <!-- 多种图形展示界面 -->
         <activity android:name=".ui.imgs.CustomShapeImgUI" />
+        <activity android:name=".ui.imgs.PictureFromMediaStoreUI" />
         <!-- 應用程序管理界面 -->
         <activity android:name=".ui.apps.AppManagerUI" />
         <!-- 所有應用程序 -->
