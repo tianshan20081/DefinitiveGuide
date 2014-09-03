@@ -10,9 +10,9 @@ import android.os.Message;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.utils.Constant;
 import com.aoeng.degu.utils.Logger;
-import com.aoeng.degu.utils.NetUtil;
 import com.aoeng.degu.utils.RequestVO;
 import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.net.NetUtil;
 
 /**
  * May 21, 2014 5:19:24 PM

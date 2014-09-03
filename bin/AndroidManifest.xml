@@ -208,6 +208,8 @@
         <!-- 多种图形展示界面 -->
         <activity android:name=".ui.imgs.CustomShapeImgUI" />
         <activity android:name=".ui.imgs.PictureFromMediaStoreUI" />
+        <activity android:name=".ui.imgs.PicturesFromMediaStoreUI" />
+        <activity android:name=".ui.imgs.PictureWallUI" />
         <!-- 應用程序管理界面 -->
         <activity android:name=".ui.apps.AppManagerUI" />
         <!-- 所有應用程序 -->

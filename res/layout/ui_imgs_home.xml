@@ -25,6 +25,17 @@
                     android:id="@+id/btnGetPicFromMediaStore"
                     style="@style/btnItem"
                     android:text="从图库选择图片" />
+                <Button
+                    android:id="@+id/btnGetPicsFromMediaStore"
+                    style="@style/btnItem"
+                    android:text="从图库选择多张图片" />
+            </LinearLayout>
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnPicWall"
+                    style="@style/btnItem"
+                    android:text="照片墙" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

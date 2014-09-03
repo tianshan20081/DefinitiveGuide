@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.JniUtils;
+import com.aoeng.gni.utils.JniUtils;
 
 /**
  * @author [Aoeng Zhang] @datatime Jul 26, 2013:2:34:42 PM

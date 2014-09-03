@@ -31,6 +31,8 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnCircleImg).setOnClickListener(this);
 		this.findViewById(R.id.btnShapeImg).setOnClickListener(this);
 		this.findViewById(R.id.btnGetPicFromMediaStore).setOnClickListener(this);
+		this.findViewById(R.id.btnGetPicsFromMediaStore).setOnClickListener(this);
+		this.findViewById(R.id.btnPicWall).setOnClickListener(this);
 	}
 
 	/* (non-Javadoc)
@@ -40,8 +42,14 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnPicWall:
+			UIUtils.startActivity(PictureWallUI.class);
+			break;
 		case R.id.btnGetPicFromMediaStore:
 			UIUtils.startActivity(PictureFromMediaStoreUI.class);
+			break;
+		case R.id.btnGetPicsFromMediaStore:
+			UIUtils.startActivity(PicturesFromMediaStoreUI.class);
 			break;
 		case R.id.btnCircleImg:
 			startActivity(new Intent(ImageViewsUI.this, CircleImgUI.class));

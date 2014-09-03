@@ -85,6 +85,7 @@ public class Constant {
 	public final static int TIME_OUT = 3;
 	public static final int IMAGE_QUALITY = 100;
 	public static final int NET_ERROR = 5;
+
 	public static int defaultIndex;
 	public static boolean exit = true;
 	public static int selectedHome;

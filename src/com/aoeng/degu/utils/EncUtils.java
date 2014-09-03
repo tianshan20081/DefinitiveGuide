@@ -4,6 +4,7 @@
 package com.aoeng.degu.utils;
 
 import com.aoeng.degu.utils.md5.MD5Utils;
+import com.aoeng.gni.utils.JniUtils;
 
 /**
  * Jul 29, 2014 3:01:09 PM
