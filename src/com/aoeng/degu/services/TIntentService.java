@@ -1,6 +1,6 @@
 package com.aoeng.degu.services;
 
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 import android.app.IntentService;
 import android.content.Intent;

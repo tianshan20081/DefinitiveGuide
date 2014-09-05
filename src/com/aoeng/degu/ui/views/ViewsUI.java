@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * Jul 16, 2014 11:18:49 AM

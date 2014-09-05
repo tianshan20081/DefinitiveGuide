@@ -20,7 +20,7 @@ import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 /**
  * Jun 9, 2014 3:31:00 PM

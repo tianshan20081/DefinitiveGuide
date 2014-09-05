@@ -25,9 +25,10 @@ import android.text.TextUtils;
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.ui.HomeUI;
-import com.aoeng.degu.utils.FileUtils;
-import com.aoeng.degu.utils.Logger;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.FileUtils;
+import com.aoeng.degu.utils.common.LogUtils;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 public class CrashHandler implements UncaughtExceptionHandler {
 	private static final String TAG = CrashHandler.class.getName();

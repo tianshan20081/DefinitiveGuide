@@ -1,4 +1,4 @@
-package com.aoeng.degu.utils;
+package com.aoeng.degu.utils.common;
 
 import android.util.Log;
 
@@ -35,12 +35,12 @@ public final class Logger {
 
 	public static void i(String tag, String msg) {
 		if (LEVLE <= Log.INFO)
-			Logger.d(tag, msg);
+			Log.d(tag, msg);
 	}
 
 	public static void i(String tag, String msg, Throwable tr) {
 		if (LEVLE <= Log.INFO)
-			Logger.d(tag, msg, tr);
+			Log.d(tag, msg, tr);
 	}
 
 	public static void w(String tag, String msg) {
@@ -85,7 +85,7 @@ public final class Logger {
 
 	public static void wtf(String tag, String msg, Throwable tr) {
 		if (LEVLE <= Log.ASSERT)
-			Logger.wtf(tag, msg, tr);
+			Log.wtf(tag, msg, tr);
 	}
 
 }

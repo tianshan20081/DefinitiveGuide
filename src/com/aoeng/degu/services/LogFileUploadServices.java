@@ -15,8 +15,8 @@ import com.aoeng.degu.domain.LogFileUploadResult;
 import com.aoeng.degu.parser.LogFileUploadParser;
 import com.aoeng.degu.utils.DataUtils;
 import com.aoeng.degu.utils.FileUploadVO;
-import com.aoeng.degu.utils.FileUtils;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.FileUtils;
+import com.aoeng.degu.utils.common.Logger;
 import com.aoeng.degu.utils.net.URLUtils;
 
 public class LogFileUploadServices extends Service {

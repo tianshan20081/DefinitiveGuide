@@ -21,9 +21,9 @@ import com.aoeng.degu.services.BaseServices;
 import com.aoeng.degu.services.BindServices;
 import com.aoeng.degu.services.PersonService;
 import com.aoeng.degu.services.TIntentService;
-import com.aoeng.degu.utils.Logger;
 import com.aoeng.degu.utils.Toaster;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 public class ServiceUI extends Activity implements OnClickListener {
 	protected static final String TAG = ServiceUI.class.getName();

@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * May 16, 2014  6:02:25 PM

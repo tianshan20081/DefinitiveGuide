@@ -10,8 +10,8 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.EncUtils;
-import com.aoeng.degu.utils.EncryptionUtils;
+import com.aoeng.degu.utils.enc.EncUtils;
+import com.aoeng.degu.utils.enc.EncryptionUtils;
 
 /**
  * Jul 22, 2014 1:55:41 PM

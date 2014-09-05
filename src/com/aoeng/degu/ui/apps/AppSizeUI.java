@@ -33,7 +33,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 /**
  * May 19, 2014 6:53:24 PM

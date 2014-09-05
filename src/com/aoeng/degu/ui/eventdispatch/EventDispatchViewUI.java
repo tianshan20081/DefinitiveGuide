@@ -8,8 +8,8 @@ import android.widget.Button;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.Logger;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 import com.aoeng.degu.views.EventDispatchView;
 
 public class EventDispatchViewUI extends BaseUI {

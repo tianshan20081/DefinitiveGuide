@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aoeng.degu.utils.md5;
+package com.aoeng.degu.utils.enc;
 
 import java.io.IOException;
 import java.security.MessageDigest;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aoeng.degu.utils;
+package com.aoeng.degu.utils.enc;
 
 import java.security.NoSuchAlgorithmException;
 

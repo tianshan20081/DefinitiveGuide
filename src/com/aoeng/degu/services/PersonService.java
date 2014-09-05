@@ -1,8 +1,8 @@
 package com.aoeng.degu.services;
 
 import com.aoeng.degu.ui.services.PersonImpl;
-import com.aoeng.degu.utils.Logger;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 import android.app.Service;
 import android.content.Intent;

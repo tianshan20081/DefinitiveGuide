@@ -1,9 +1,8 @@
 /**
  * 
  */
-package com.aoeng.degu.utils;
+package com.aoeng.degu.utils.enc;
 
-import com.aoeng.degu.utils.md5.MD5Utils;
 import com.aoeng.gni.utils.JniUtils;
 
 /**

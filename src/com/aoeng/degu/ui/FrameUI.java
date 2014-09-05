@@ -11,7 +11,7 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 public class FrameUI extends Activity implements OnClickListener {
 	private static final String TAG = FrameUI.class.getName();

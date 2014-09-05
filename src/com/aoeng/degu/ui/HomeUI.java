@@ -30,7 +30,7 @@ import com.aoeng.degu.ui.uis.GroupMainUI;
 import com.aoeng.degu.ui.uis.UIsUI;
 import com.aoeng.degu.ui.views.ViewsUI;
 import com.aoeng.degu.ui.wv.WebViewUI;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.UIUtils;
 
 public class HomeUI extends Activity implements OnClickListener {
 

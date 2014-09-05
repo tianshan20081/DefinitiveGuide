@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 /**
  * May 22, 2014  2:41:56 PM

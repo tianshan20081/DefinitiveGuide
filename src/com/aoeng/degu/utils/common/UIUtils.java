@@ -1,4 +1,4 @@
-package com.aoeng.degu.utils;
+package com.aoeng.degu.utils.common;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import com.aoeng.degu.application.DGApplication;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.ui.chartengine.SimpleChartEngineUI;
 import com.aoeng.degu.ui.views.DialogUI;
+import com.aoeng.degu.utils.ThreadPoolManager;
 
 public class UIUtils {
 
@@ -34,7 +35,7 @@ public class UIUtils {
 		getToastSafe(getString(resId));
 	}
 
-	private static String getString(int resId) {
+	public static String getString(int resId) {
 		// TODO Auto-generated method stub
 		return getContext().getString(resId);
 	}

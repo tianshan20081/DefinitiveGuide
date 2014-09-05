@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 public class ThreadHandlerUI extends BaseUI {
 	private static final int SEND_HELLO = 2;

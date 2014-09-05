@@ -5,14 +5,14 @@ package com.aoeng.degu.utils;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.domain.LogFileUploadResult;
 import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * May 21, 2014 5:11:23 PM

@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.domain.AppInfo;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 /**
  * May 19, 2014 1:35:23 PM

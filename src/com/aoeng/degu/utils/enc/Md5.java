@@ -1,4 +1,4 @@
-package com.aoeng.degu.utils.md5;
+package com.aoeng.degu.utils.enc;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

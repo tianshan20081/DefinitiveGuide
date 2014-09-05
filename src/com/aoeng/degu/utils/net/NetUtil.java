@@ -5,40 +5,22 @@ package com.aoeng.degu.utils.net;
 
 import java.io.File;
 import java.io.IOException;
-import java.security.KeyStore;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.http.Consts;
 import org.apache.http.Header;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.http.HttpVersion;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.conn.scheme.PlainSocketFactory;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.scheme.SchemeRegistry;
-import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.message.BasicHeader;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.params.HttpProtocolParams;
-import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,16 +28,15 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.provider.MediaStore.Files;
 import android.widget.Toast;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.domain.LogFileUploadResult;
 import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.utils.FileUploadVO;
-import com.aoeng.degu.utils.Logger;
 import com.aoeng.degu.utils.RequestVO;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * Mar 23, 2014 11:57:37 AM
@@ -120,9 +101,9 @@ public class NetUtil {
 				String result = EntityUtils.toString(response.getEntity(), "UTF-8");
 				Logger.i(TAG, result);
 				try {
-//					if (invilidateLogin(result)) {
-//						return Status.Login;
-//					}
+					// if (invilidateLogin(result)) {
+					// return Status.Login;
+					// }
 					obj = vo.jsonParser.parseJSON(result);
 				} catch (JSONException e) {
 					Logger.e(TAG, e.getLocalizedMessage(), e);

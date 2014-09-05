@@ -33,167 +33,172 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 /**
  * ListView subclass that provides the swipe functionality
  */
 public class SwipeListView extends ListView {
 
-    /**
-     * Used when user want change swipe list mode on some rows
-     */
-    public final static int SWIPE_MODE_DEFAULT = -1;
+	/**
+	 * Used when user want change swipe list mode on some rows
+	 */
+	public final static int SWIPE_MODE_DEFAULT = -1;
 
-    /**
-     * Disables all swipes
-     */
-    public final static int SWIPE_MODE_NONE = 0;
+	/**
+	 * Disables all swipes
+	 */
+	public final static int SWIPE_MODE_NONE = 0;
 
-    /**
-     * Enables both left and right swipe
-     */
-    public final static int SWIPE_MODE_BOTH = 1;
+	/**
+	 * Enables both left and right swipe
+	 */
+	public final static int SWIPE_MODE_BOTH = 1;
 
-    /**
-     * Enables right swipe
-     */
-    public final static int SWIPE_MODE_RIGHT = 2;
+	/**
+	 * Enables right swipe
+	 */
+	public final static int SWIPE_MODE_RIGHT = 2;
 
-    /**
-     * Enables left swipe
-     */
-    public final static int SWIPE_MODE_LEFT = 3;
+	/**
+	 * Enables left swipe
+	 */
+	public final static int SWIPE_MODE_LEFT = 3;
 
-    /**
-     * Binds the swipe gesture to reveal a view behind the row (Drawer style)
-     */
-    public final static int SWIPE_ACTION_REVEAL = 0;
+	/**
+	 * Binds the swipe gesture to reveal a view behind the row (Drawer style)
+	 */
+	public final static int SWIPE_ACTION_REVEAL = 0;
 
-    /**
-     * Dismisses the cell when swiped over
-     */
-    public final static int SWIPE_ACTION_DISMISS = 1;
+	/**
+	 * Dismisses the cell when swiped over
+	 */
+	public final static int SWIPE_ACTION_DISMISS = 1;
 
-    /**
-     * Marks the cell as checked when swiped and release
-     */
-    public final static int SWIPE_ACTION_CHOICE = 2;
+	/**
+	 * Marks the cell as checked when swiped and release
+	 */
+	public final static int SWIPE_ACTION_CHOICE = 2;
 
-    /**
-     * No action when swiped
-     */
-    public final static int SWIPE_ACTION_NONE = 3;
+	/**
+	 * No action when swiped
+	 */
+	public final static int SWIPE_ACTION_NONE = 3;
 
-    /**
-     * Default ids for front view
-     */
-    public final static String SWIPE_DEFAULT_FRONT_VIEW = "swipelist_frontview";
+	/**
+	 * Default ids for front view
+	 */
+	public final static String SWIPE_DEFAULT_FRONT_VIEW = "swipelist_frontview";
 
-    /**
-     * Default id for back view
-     */
-    public final static String SWIPE_DEFAULT_BACK_VIEW = "swipelist_backview";
+	/**
+	 * Default id for back view
+	 */
+	public final static String SWIPE_DEFAULT_BACK_VIEW = "swipelist_backview";
 
-    /**
-     * Indicates no movement
-     */
-    private final static int TOUCH_STATE_REST = 0;
+	/**
+	 * Indicates no movement
+	 */
+	private final static int TOUCH_STATE_REST = 0;
 
-    /**
-     * State scrolling x position
-     */
-    private final static int TOUCH_STATE_SCROLLING_X = 1;
+	/**
+	 * State scrolling x position
+	 */
+	private final static int TOUCH_STATE_SCROLLING_X = 1;
 
-    /**
-     * State scrolling y position
-     */
-    private final static int TOUCH_STATE_SCROLLING_Y = 2;
+	/**
+	 * State scrolling y position
+	 */
+	private final static int TOUCH_STATE_SCROLLING_Y = 2;
 
 	private static final String TAG = "SwipeListView";
 
 	private static int OPENED_POSITION = -1;
 
-    private int touchState = TOUCH_STATE_REST;
+	private int touchState = TOUCH_STATE_REST;
 
-    private float lastMotionX;
-    private float lastMotionY;
-    private int touchSlop;
+	private float lastMotionX;
+	private float lastMotionY;
+	private int touchSlop;
 
-    int swipeFrontView = 0;
-    int swipeBackView = 0;
+	int swipeFrontView = 0;
+	int swipeBackView = 0;
 
-    /**
-     * Internal listener for common swipe events
-     */
-    private SwipeListViewListener swipeListViewListener;
+	/**
+	 * Internal listener for common swipe events
+	 */
+	private SwipeListViewListener swipeListViewListener;
 
-    /**
-     * Internal touch listener
-     */
-    private SwipeListViewTouchListener touchListener;
+	/**
+	 * Internal touch listener
+	 */
+	private SwipeListViewTouchListener touchListener;
 
+	/**
+	 * If you create a View programmatically you need send back and front
+	 * identifier
+	 * 
+	 * @param context
+	 *            Context
+	 * @param swipeBackView
+	 *            Back Identifier
+	 * @param swipeFrontView
+	 *            Front Identifier
+	 */
+	public SwipeListView(Context context, int swipeBackView, int swipeFrontView) {
+		super(context);
+		this.swipeFrontView = swipeFrontView;
+		this.swipeBackView = swipeBackView;
+		init(null);
+	}
 
-    /**
-     * If you create a View programmatically you need send back and front identifier
-     *
-     * @param context        Context
-     * @param swipeBackView  Back Identifier
-     * @param swipeFrontView Front Identifier
-     */
-    public SwipeListView(Context context, int swipeBackView, int swipeFrontView) {
-        super(context);
-        this.swipeFrontView = swipeFrontView;
-        this.swipeBackView = swipeBackView;
-        init(null);
-    }
+	/**
+	 * @see android.widget.ListView#ListView(android.content.Context,
+	 *      android.util.AttributeSet)
+	 */
+	public SwipeListView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		init(attrs);
+	}
 
-    /**
-     * @see android.widget.ListView#ListView(android.content.Context, android.util.AttributeSet)
-     */
-    public SwipeListView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(attrs);
-    }
+	/**
+	 * @see android.widget.ListView#ListView(android.content.Context,
+	 *      android.util.AttributeSet, int)
+	 */
+	public SwipeListView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init(attrs);
+	}
 
-    /**
-     * @see android.widget.ListView#ListView(android.content.Context, android.util.AttributeSet, int)
-     */
-    public SwipeListView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        init(attrs);
-    }
+	/**
+	 * Init ListView
+	 * 
+	 * @param attrs
+	 *            AttributeSet
+	 */
+	private void init(AttributeSet attrs) {
 
-    /**
-     * Init ListView
-     *
-     * @param attrs AttributeSet
-     */
-    private void init(AttributeSet attrs) {
+		int swipeMode = SWIPE_MODE_BOTH;
+		boolean swipeOpenOnLongPress = true;
+		boolean swipeCloseAllItemsWhenMoveList = true;
+		long swipeAnimationTime = 0;
+		float swipeOffsetLeft = 0;
+		float swipeOffsetRight = 0;
+		int swipeDrawableChecked = 0;
+		int swipeDrawableUnchecked = 0;
 
-        int swipeMode = SWIPE_MODE_BOTH;
-        boolean swipeOpenOnLongPress = true;
-        boolean swipeCloseAllItemsWhenMoveList = true;
-        long swipeAnimationTime = 0;
-        float swipeOffsetLeft = 0;
-        float swipeOffsetRight = 0;
-        int swipeDrawableChecked = 0;
-        int swipeDrawableUnchecked = 0;
+		int swipeActionLeft = SWIPE_ACTION_REVEAL;
+		int swipeActionRight = SWIPE_ACTION_REVEAL;
 
-        int swipeActionLeft = SWIPE_ACTION_REVEAL;
-        int swipeActionRight = SWIPE_ACTION_REVEAL;
-
-        if (attrs != null) {
-            TypedArray styled = getContext().obtainStyledAttributes(attrs, R.styleable.SwipeListView);
-            swipeMode = styled.getInt(R.styleable.SwipeListView_swipeMode, SWIPE_MODE_BOTH);
-            swipeActionLeft = styled.getInt(R.styleable.SwipeListView_swipeActionLeft, SWIPE_ACTION_REVEAL);
-            swipeActionRight = styled.getInt(R.styleable.SwipeListView_swipeActionRight, SWIPE_ACTION_REVEAL);
-            swipeOffsetLeft = styled.getDimension(R.styleable.SwipeListView_swipeOffsetLeft, 0);
-            swipeOffsetRight = styled.getDimension(R.styleable.SwipeListView_swipeOffsetRight, 0);
-            swipeOpenOnLongPress = styled.getBoolean(R.styleable.SwipeListView_swipeOpenOnLongPress, true);
+		if (attrs != null) {
+			TypedArray styled = getContext().obtainStyledAttributes(attrs, R.styleable.SwipeListView);
+			swipeMode = styled.getInt(R.styleable.SwipeListView_swipeMode, SWIPE_MODE_BOTH);
+			swipeActionLeft = styled.getInt(R.styleable.SwipeListView_swipeActionLeft, SWIPE_ACTION_REVEAL);
+			swipeActionRight = styled.getInt(R.styleable.SwipeListView_swipeActionRight, SWIPE_ACTION_REVEAL);
+			swipeOffsetLeft = styled.getDimension(R.styleable.SwipeListView_swipeOffsetLeft, 0);
+			swipeOffsetRight = styled.getDimension(R.styleable.SwipeListView_swipeOffsetRight, 0);
+			swipeOpenOnLongPress = styled.getBoolean(R.styleable.SwipeListView_swipeOpenOnLongPress, true);
 			swipeAnimationTime = styled.getInteger(R.styleable.SwipeListView_swipeAnimationTime, 0);
-			swipeCloseAllItemsWhenMoveList = styled.getBoolean(
-					R.styleable.SwipeListView_swipeCloseAllItemsWhenMoveList, true);
+			swipeCloseAllItemsWhenMoveList = styled.getBoolean(R.styleable.SwipeListView_swipeCloseAllItemsWhenMoveList, true);
 			swipeDrawableChecked = styled.getResourceId(R.styleable.SwipeListView_swipeDrawableChecked, 0);
 			swipeDrawableUnchecked = styled.getResourceId(R.styleable.SwipeListView_swipeDrawableUnchecked, 0);
 			swipeFrontView = styled.getResourceId(R.styleable.SwipeListView_swipeFrontView, 0);
@@ -201,16 +206,13 @@ public class SwipeListView extends ListView {
 		}
 
 		if (swipeFrontView == 0 || swipeBackView == 0) {
-			swipeFrontView = getContext().getResources().getIdentifier(SWIPE_DEFAULT_FRONT_VIEW, "id",
-					getContext().getPackageName());
-			swipeBackView = getContext().getResources().getIdentifier(SWIPE_DEFAULT_BACK_VIEW, "id",
-					getContext().getPackageName());
+			swipeFrontView = getContext().getResources().getIdentifier(SWIPE_DEFAULT_FRONT_VIEW, "id", getContext().getPackageName());
+			swipeBackView = getContext().getResources().getIdentifier(SWIPE_DEFAULT_BACK_VIEW, "id", getContext().getPackageName());
 
 			if (swipeFrontView == 0 || swipeBackView == 0) {
-				throw new RuntimeException(
-						String.format(
-								"You forgot the attributes swipeFrontView or swipeBackView. You can add this attributes or use '%s' and '%s' identifiers",
-								SWIPE_DEFAULT_FRONT_VIEW, SWIPE_DEFAULT_BACK_VIEW));
+				throw new RuntimeException(String.format(
+						"You forgot the attributes swipeFrontView or swipeBackView. You can add this attributes or use '%s' and '%s' identifiers",
+						SWIPE_DEFAULT_FRONT_VIEW, SWIPE_DEFAULT_BACK_VIEW));
 			}
 		}
 
@@ -234,7 +236,8 @@ public class SwipeListView extends ListView {
 	}
 
 	/**
-	 * Recycle cell. This method should be called from getView in Adapter when use SWIPE_ACTION_CHOICE
+	 * Recycle cell. This method should be called from getView in Adapter when
+	 * use SWIPE_ACTION_CHOICE
 	 * 
 	 * @param convertView
 	 *            parent view

@@ -18,9 +18,9 @@ import android.os.IBinder;
 import android.os.Looper;
 
 import com.aoeng.degu.services.LogFileUploadServices;
-import com.aoeng.degu.utils.Logger;
 import com.aoeng.degu.utils.ThreadPoolManager;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * May 21, 2014 4:54:26 PM

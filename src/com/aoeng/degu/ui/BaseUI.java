@@ -20,9 +20,9 @@ import com.aoeng.degu.application.DGApplication;
 import com.aoeng.degu.services.BaseTask;
 import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.utils.BaseHandler;
-import com.aoeng.degu.utils.Logger;
 import com.aoeng.degu.utils.RequestVO;
 import com.aoeng.degu.utils.ThreadPoolManager;
+import com.aoeng.degu.utils.common.Logger;
 
 /**
  * May 21, 2014 4:48:31 PM

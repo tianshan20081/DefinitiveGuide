@@ -1,4 +1,4 @@
-package com.aoeng.degu.utils;
+package com.aoeng.degu.utils.common;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

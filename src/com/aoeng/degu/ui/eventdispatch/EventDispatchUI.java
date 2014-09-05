@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.UIUtils;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * 事件分发

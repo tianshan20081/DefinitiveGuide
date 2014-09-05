@@ -33,7 +33,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Logger;
+import com.aoeng.degu.utils.common.Logger;
 
 /**
  * ListView subclass that provides the swipe functionality
