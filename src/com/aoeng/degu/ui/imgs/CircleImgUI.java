@@ -24,8 +24,7 @@ public class CircleImgUI extends Activity {
 		setContentView(R.layout.ui_imgs_circle);
 
 		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction().add(R.id.container, new MainFragment())
-					.commit();
+			getFragmentManager().beginTransaction().add(R.id.container, new MainFragment()).commit();
 		}
 	}
 
@@ -36,10 +35,8 @@ public class CircleImgUI extends Activity {
 		}
 
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.ui_imgs_circle_fragment_main, container,
-					false);
+		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.ui_imgs_circle_fragment_main, container, false);
 			return rootView;
 		}
 	}
