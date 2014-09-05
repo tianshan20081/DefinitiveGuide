@@ -29,13 +29,15 @@ import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.utils.DataUtils;
 import com.aoeng.degu.utils.RequestVO;
 import com.aoeng.degu.utils.common.ImageUtils;
+import com.aoeng.degu.utils.common.SystemUtils;
 import com.aoeng.degu.utils.common.UIUtils;
 import com.aoeng.degu.utils.enc.MD5Utils;
 import com.aoeng.degu.utils.net.URLUtils;
+import com.aoeng.degu.views.ImagePullToRefreshLv;
 
 public class PictureWallUI extends BaseUI {
 
-	private ListView lvPicWall;
+	private ImagePullToRefreshLv lvPicWall;
 	HashMap<String, String> dicmMap = new HashMap<String, String>();
 
 	@Override
@@ -54,7 +56,7 @@ public class PictureWallUI extends BaseUI {
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
-		lvPicWall = (ListView) findView(R.id.lvPicWall);
+		lvPicWall = (ImagePullToRefreshLv) findView(R.id.lvPicWall);
 
 	}
 
@@ -230,12 +232,13 @@ public class PictureWallUI extends BaseUI {
 			// holder.rlImg.setBackgroundDrawable(new
 			// BitmapDrawable(BitmapFactory.decodeFile(new
 			// ArrayList<String>(dicmMap.keySet()).get(position))));
-			holder.rlImg.setBackgroundDrawable(new BitmapDrawable(ImageUtils.getSmallBitmap(new ArrayList<String>(dicmMap.keySet()).get(position))));
+			Bitmap bitmap = BitmapFactory.decodeFile(new ArrayList<String>(dicmMap.keySet()).get(position));
+			holder.rlImg.setBackgroundDrawable(new BitmapDrawable(
+					ImageUtils.compressBySize(bitmap, SystemUtils.getScreenWidth(), SystemUtils.getScreenHeight())));
 			holder.tvTime.setText(dicmMap.get(new ArrayList<String>(dicmMap.keySet()).get(position)));
 
 			return convertView;
 		}
-
 	}
 
 	private static class ViewHolder {

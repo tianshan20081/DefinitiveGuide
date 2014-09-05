@@ -89,13 +89,11 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 		// Load all of the animations we need in code rather than through XML
 		/** 定义旋转动画 **/
 		// 参数：1.旋转开始的角度 2.旋转结束的角度 3. X轴伸缩模式 4.X坐标的伸缩值 5.Y轴的伸缩模式 6.Y坐标的伸缩值
-		mFlipAnimation = new RotateAnimation(0, -180, RotateAnimation.RELATIVE_TO_SELF, 0.5f,
-				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+		mFlipAnimation = new RotateAnimation(0, -180, RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		mFlipAnimation.setInterpolator(new LinearInterpolator());
 		mFlipAnimation.setDuration(250); // 设置持续时间
 		mFlipAnimation.setFillAfter(true); // 动画执行完是否停留在执行完的状态
-		mReverseFlipAnimation = new RotateAnimation(-180, 0, RotateAnimation.RELATIVE_TO_SELF,
-				0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+		mReverseFlipAnimation = new RotateAnimation(-180, 0, RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		mReverseFlipAnimation.setInterpolator(new LinearInterpolator());
 		mReverseFlipAnimation.setDuration(250);
 		mReverseFlipAnimation.setFillAfter(true);
@@ -104,16 +102,12 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 		mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		// 加载下拉刷新的头部视图
-		mRefreshHeaderView = (RelativeLayout) mInflater.inflate(R.layout.ui_lvs_rf_pull_to_refresh_header,
-				this, false);
+		mRefreshHeaderView = (RelativeLayout) mInflater.inflate(R.layout.ui_lvs_rf_pull_to_refresh_header, this, false);
 		mRefreshViewText = (TextView) mRefreshHeaderView.findViewById(R.id.pull_to_refresh_text);
 		mRefreshViewImage = (ImageView) mRefreshHeaderView.findViewById(R.id.pull_to_refresh_image);
-		mRefreshViewProgress = (ProgressBar) mRefreshHeaderView
-				.findViewById(R.id.pull_to_refresh_progress);
-		mRefreshViewLastUpdated = (TextView) mRefreshHeaderView
-				.findViewById(R.id.pull_to_refresh_updated_at);
-		mLoadMoreFooterView = (RelativeLayout) mInflater.inflate(R.layout.ui_lvs_rf_loadmore_footer, this,
-				false);
+		mRefreshViewProgress = (ProgressBar) mRefreshHeaderView.findViewById(R.id.pull_to_refresh_progress);
+		mRefreshViewLastUpdated = (TextView) mRefreshHeaderView.findViewById(R.id.pull_to_refresh_updated_at);
+		mLoadMoreFooterView = (RelativeLayout) mInflater.inflate(R.layout.ui_lvs_rf_loadmore_footer, this, false);
 		mLoadMoreText = (TextView) mLoadMoreFooterView.findViewById(R.id.loadmore_text);
 		mLoadMoreProgress = (ProgressBar) mLoadMoreFooterView.findViewById(R.id.loadmore_progress);
 
@@ -147,7 +141,8 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	}
 
 	/**
-	 * Set the listener that will receive notifications every time the list scrolls.
+	 * Set the listener that will receive notifications every time the list
+	 * scrolls.
 	 * 
 	 * @param l
 	 *            The scroll listener.
@@ -158,7 +153,8 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	}
 
 	/**
-	 * Register a callback to be invoked when this list should be refreshed. 注册监听器
+	 * Register a callback to be invoked when this list should be refreshed.
+	 * 注册监听器
 	 * 
 	 * @param onRefreshListener
 	 *            The callback to run.
@@ -168,7 +164,8 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	}
 
 	/**
-	 * Set a text to represent when the list was last updated. 设置一个文本来表示最近更新的列表，显示的是最近更新列表的时间
+	 * Set a text to represent when the list was last updated.
+	 * 设置一个文本来表示最近更新的列表，显示的是最近更新列表的时间
 	 * 
 	 * @param lastUpdated
 	 *            Last updated at.
@@ -192,14 +189,12 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 				setVerticalScrollBarEnabled(true);
 			}
 			if (getFirstVisiblePosition() == 0 && mRefreshState != REFRESHING) {
-				if ((mRefreshHeaderView.getBottom() > mRefreshViewHeight || mRefreshHeaderView
-						.getTop() >= 0) && mRefreshState == RELEASE_TO_REFRESH) {
+				if ((mRefreshHeaderView.getBottom() > mRefreshViewHeight || mRefreshHeaderView.getTop() >= 0) && mRefreshState == RELEASE_TO_REFRESH) {
 					// Initiate the refresh
 					mRefreshState = REFRESHING; // 刷新状态
 					prepareForRefresh();
 					onRefresh();
-				} else if (mRefreshHeaderView.getBottom() < mRefreshViewHeight
-						|| mRefreshHeaderView.getTop() < 0) {
+				} else if (mRefreshHeaderView.getBottom() < mRefreshViewHeight || mRefreshHeaderView.getTop() < 0) {
 					// Abort refresh and scroll down below the refresh view
 					resetHeader();
 					setSelection(1);
@@ -245,8 +240,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 					int historicalY = 0;
 					try {
 						// For Android > 2.0
-						Method method = MotionEvent.class.getMethod("getHistoricalY", Integer.TYPE,
-								Integer.TYPE);
+						Method method = MotionEvent.class.getMethod("getHistoricalY", Integer.TYPE, Integer.TYPE);
 						historicalY = ((Float) method.invoke(ev, p, h)).intValue();
 					} catch (NoSuchMethodException e) {
 						// For Android < 2.0
@@ -264,8 +258,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 					int topPadding = (int) (((historicalY - mLastMotionY) - mRefreshViewHeight) / 1.7);
 
 					// 设置上、下、左、右四个位置的间隙间隙
-					mRefreshHeaderView.setPadding(mRefreshHeaderView.getPaddingLeft(), topPadding,
-							mRefreshHeaderView.getPaddingRight(),
+					mRefreshHeaderView.setPadding(mRefreshHeaderView.getPaddingLeft(), topPadding, mRefreshHeaderView.getPaddingRight(),
 							mRefreshHeaderView.getPaddingBottom());
 				}
 			}
@@ -276,8 +269,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	 * Sets the header padding back to original size. 设置头部填充会原始大小
 	 */
 	private void resetHeaderPadding() {
-		mRefreshHeaderView.setPadding(mRefreshHeaderView.getPaddingLeft(),
-				mRefreshOriginalTopPadding, mRefreshHeaderView.getPaddingRight(),
+		mRefreshHeaderView.setPadding(mRefreshHeaderView.getPaddingLeft(), mRefreshOriginalTopPadding, mRefreshHeaderView.getPaddingRight(),
 				mRefreshHeaderView.getPaddingBottom());
 	}
 
@@ -325,8 +317,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	private void measureView(View child) {
 		ViewGroup.LayoutParams p = child.getLayoutParams();
 		if (p == null) {
-			p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-					ViewGroup.LayoutParams.WRAP_CONTENT);
+			p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		}
 
 		int childWidthSpec = ViewGroup.getChildMeasureSpec(0, 0 + 0, p.width);
@@ -341,22 +332,19 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	}
 
 	@Override
-	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
-			int totalItemCount) {
+	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 		// When the refresh view is completely visible, change the text to say
 		// "Release to refresh..." and flip the arrow drawable.
 		if (mCurrentScrollState == SCROLL_STATE_TOUCH_SCROLL && mRefreshState != REFRESHING) {
 			if (firstVisibleItem == 0) { // 如果第一个可见条目为0
 				mRefreshViewImage.setVisibility(View.VISIBLE); // 让指示箭头变得可见
 				/** 如果头部视图相对与父容器的位置大于其自身高度+20或者头部视图的顶部位置>0,并且要在刷新状态不等于"释放以刷新" **/
-				if ((mRefreshHeaderView.getBottom() > mRefreshViewHeight + 20 || mRefreshHeaderView
-						.getTop() >= 0) && mRefreshState != RELEASE_TO_REFRESH) {
+				if ((mRefreshHeaderView.getBottom() > mRefreshViewHeight + 20 || mRefreshHeaderView.getTop() >= 0) && mRefreshState != RELEASE_TO_REFRESH) {
 					mRefreshViewText.setText(R.string.pull_to_refresh_release_label);// 设置刷新文本为"Release to refresh..."
 					mRefreshViewImage.clearAnimation(); // 清除动画
 					mRefreshViewImage.startAnimation(mFlipAnimation); // 启动动画
 					mRefreshState = RELEASE_TO_REFRESH; // 更改刷新状态为“释放以刷新"
-				} else if (mRefreshHeaderView.getBottom() < mRefreshViewHeight + 20
-						&& mRefreshState != PULL_TO_REFRESH) {
+				} else if (mRefreshHeaderView.getBottom() < mRefreshViewHeight + 20 && mRefreshState != PULL_TO_REFRESH) {
 					mRefreshViewText.setText(R.string.pull_to_refresh_pull_label);// 设置刷新文本为"Pull to refresh..."
 					if (mRefreshState != TAP_TO_REFRESH) {
 						mRefreshViewImage.clearAnimation();
@@ -368,8 +356,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 				mRefreshViewImage.setVisibility(View.GONE); // 让刷新箭头不可见
 				resetHeader(); // 重新设置头部为原始状态
 			}
-		} else if (mCurrentScrollState == SCROLL_STATE_FLING && firstVisibleItem == 0
-				&& mRefreshState != REFRESHING) {
+		} else if (mCurrentScrollState == SCROLL_STATE_FLING && firstVisibleItem == 0 && mRefreshState != REFRESHING) {
 			setSelection(1);
 		}
 
@@ -457,7 +444,9 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	}
 
 	/**
-	 * Invoked when the refresh view is clicked on. This is mainly used when there's only a few items in the list and it's not possible to drag the list. 点击刷新
+	 * Invoked when the refresh view is clicked on. This is mainly used when
+	 * there's only a few items in the list and it's not possible to drag the
+	 * list. 点击刷新
 	 */
 	private class OnClickRefreshListener implements OnClickListener {
 
@@ -487,13 +476,15 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 	}
 
 	/**
-	 * Interface definition for a callback to be invoked when list should be refreshed. 接口定义一个回调方法当列表应当被刷新
+	 * Interface definition for a callback to be invoked when list should be
+	 * refreshed. 接口定义一个回调方法当列表应当被刷新
 	 */
 	public interface OnRefreshListener {
 		/**
 		 * Called when the list should be refreshed. 当列表应当被刷新是调用这个方法
 		 * <p>
-		 * A call to {@link PullToRefreshListView #onRefreshComplete()} is expected to indicate that the refresh has completed.
+		 * A call to {@link PullToRefreshListView #onRefreshComplete()} is
+		 * expected to indicate that the refresh has completed.
 		 */
 		public void onRefresh();
 
