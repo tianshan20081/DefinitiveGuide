@@ -123,7 +123,7 @@ public class FileUtils {
 	 * 獲取應用目錄，當 SD 卡存在時 ，獲取 SD 卡上的目錄，當 SD卡不存在，獲取應用程序的 cache 目錄
 	 * 
 	 * @param downloadDir
-	 * @return
+	 * @return downloadDir/
 	 */
 	private static String getDir(String name) {
 		// TODO Auto-generated method stub
@@ -133,10 +133,9 @@ public class FileUtils {
 		} else
 			sb.append(getCachePath());
 		sb.append(name);
-		sb.append(File.separator);
 		String path = sb.toString();
 		if (createDirs(path)) {
-			return path;
+			return path.concat(File.separator);
 		} else
 			return null;
 	}
