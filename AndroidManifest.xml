@@ -276,6 +276,10 @@
         <service
             android:name=".services.LogFileUploadServices"
             android:enabled="true" />
+
+        <service
+            android:name=".services.MulityLogFileUploadServices"
+            android:enabled="true" />
     </application>
 
     <permission
