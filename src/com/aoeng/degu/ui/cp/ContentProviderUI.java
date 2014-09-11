@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.adapter.SmsAdapter;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class ContentProviderUI extends Activity implements OnClickListener {
 	private ListView lvContectsInfo;

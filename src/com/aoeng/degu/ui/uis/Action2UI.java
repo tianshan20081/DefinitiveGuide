@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class Action2UI extends Activity {
 	@Override

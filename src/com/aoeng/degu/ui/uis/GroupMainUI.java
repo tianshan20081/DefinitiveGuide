@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class GroupMainUI extends ActivityGroup {
 	private LinearLayout lyHeader;

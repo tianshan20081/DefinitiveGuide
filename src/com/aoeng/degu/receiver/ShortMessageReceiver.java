@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class ShortMessageReceiver extends BroadcastReceiver {
 	private static final String TAG = ShortMessageReceiver.class.getName().toUpperCase();

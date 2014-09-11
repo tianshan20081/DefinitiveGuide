@@ -8,8 +8,8 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.utils.Toaster;
 import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.Toaster;
 
 /**
  * May 22, 2014 1:48:42 PM

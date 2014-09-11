@@ -1,4 +1,4 @@
-package com.aoeng.degu.utils;
+package com.aoeng.degu.utils.common;
 
 import android.app.ProgressDialog;
 import android.content.Context;

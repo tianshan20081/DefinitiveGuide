@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 /**
  * @author [Aoeng Zhang] @datatime Jul 26, 2013:2:38:46 PM

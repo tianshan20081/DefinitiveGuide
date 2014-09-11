@@ -14,7 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class FileSaveDataSDUI extends Activity implements OnClickListener {
 

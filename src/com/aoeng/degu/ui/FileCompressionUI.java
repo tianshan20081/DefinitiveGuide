@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class FileCompressionUI extends Activity implements OnClickListener {
 

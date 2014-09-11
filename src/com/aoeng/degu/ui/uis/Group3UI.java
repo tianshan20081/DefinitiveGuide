@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.aoeng.degu.R;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class Group3UI extends Activity {
 	@Override

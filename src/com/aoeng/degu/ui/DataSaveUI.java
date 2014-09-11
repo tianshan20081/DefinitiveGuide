@@ -23,7 +23,7 @@ import android.widget.ImageView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.domain.Person;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class DataSaveUI extends Activity implements OnClickListener {
 	private EditText etDataInfo;

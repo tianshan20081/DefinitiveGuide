@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.aoeng.degu.adapter.ListViewAdapter;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class PagesListViewUI extends ListActivity implements OnScrollListener {
 

@@ -11,7 +11,7 @@ import android.telephony.TelephonyManager;
 import android.view.Gravity;
 import android.widget.Toast;
 
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 public class InCallReceiver extends BroadcastReceiver {
 

@@ -24,7 +24,7 @@ import android.widget.ImageView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.ImagesURL;
-import com.aoeng.degu.utils.Toaster;
+import com.aoeng.degu.utils.common.Toaster;
 
 /**
  * @author [ShaoCheng Zhang] Sep 3, 2013:9:41:22 AM
