@@ -8,6 +8,9 @@ import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.ui.internet.download.MulityDownloadUI;
+import com.aoeng.degu.ui.internet.download.NormalDownloadUI;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * Jun 10, 2014 10:48:16 AM
@@ -24,6 +27,12 @@ public class InternetHomeUI extends BaseUI {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+		case R.id.btnMulityDownload:
+			UIUtils.startActivity(MulityDownloadUI.class);
+			break;
+		case R.id.btnNormalDownload:
+			UIUtils.startActivity(NormalDownloadUI.class);
+			break;
 		case R.id.btnDomParser:
 			startActivity(new Intent(this, DomParserUI.class));
 			break;
@@ -53,6 +62,8 @@ public class InternetHomeUI extends BaseUI {
 	protected void findViewById() {
 		// TODO Auto-generated method stub
 		this.findView(R.id.btnDomParser).setOnClickListener(this);
+		this.findView(R.id.btnNormalDownload).setOnClickListener(this);
+		this.findView(R.id.btnMulityDownload).setOnClickListener(this);
 	}
 
 	/*

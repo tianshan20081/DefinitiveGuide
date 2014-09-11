@@ -43,7 +43,7 @@ public class LogFileUploadServices extends Service {
 		// TODO Auto-generated method stub
 
 		FileUploadVO vo = new FileUploadVO();
-		vo.requestUrl = URLUtils.urlLogsUpload;
+		vo.requestUrl = URLUtils.URL_HOST + URLUtils.urlLogsUpload;
 		vo.jsonParser = new LogFileUploadParser();
 		vo.requestDataMap = getNormalFieldMap();
 		vo.fileFieldMap = getFileFieldMap();

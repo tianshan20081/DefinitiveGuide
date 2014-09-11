@@ -12,7 +12,18 @@
                 style="@style/btnItem"
                 android:text="DomParser" />
 
-            <Button style="@style/btnItem" />
+            <Button
+                android:id="@+id/btnNormalDownload"
+                style="@style/btnItem"
+                android:text="Download" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnMulityDownload"
+                style="@style/btnItem"
+                android:text="MulityDownload" />
         </LinearLayout>
     </LinearLayout>
 

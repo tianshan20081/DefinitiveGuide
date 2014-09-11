@@ -36,10 +36,8 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	private UncaughtExceptionHandler mDefaultUncaughtExceptionHandler;
 	private Map<String, String> mInfos = new HashMap<String, String>();
 
-	private SimpleDateFormat crashLogNameDateFormat = new SimpleDateFormat(
-			"yyyy-MM-dd-HH");
-	private SimpleDateFormat logsDateFormat = new SimpleDateFormat(
-			"yyyy-MM-dd-HH-mm-ss-SSS");
+	private SimpleDateFormat crashLogNameDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH");
+	private SimpleDateFormat logsDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS");
 
 	private CrashHandler() {
 		// TODO Auto-generated constructor stub
@@ -50,8 +48,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	}
 
 	public void init() {
-		mDefaultUncaughtExceptionHandler = Thread
-				.getDefaultUncaughtExceptionHandler();
+		mDefaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
 		Thread.setDefaultUncaughtExceptionHandler(this);
 	}
 
@@ -101,8 +98,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
 		for (Entry<String, String> entry : mInfos.entrySet()) {
-			sb.append(entry.getKey()).append("=").append(entry.getValue())
-					.append("\n");
+			sb.append(entry.getKey()).append("=").append(entry.getValue()).append("\n");
 		}
 		Writer writer = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(writer);
@@ -112,18 +108,15 @@ public class CrashHandler implements UncaughtExceptionHandler {
 			ex.printStackTrace(printWriter);
 			cause = ex.getCause();
 		}
-		String exceptionInfo = logsDateFormat.format(new Date()).concat("\n")
-				.concat(writer.toString());
-		String fileName = "crash-" + crashLogNameDateFormat.format(new Date())
-				+ ".log";
+		String exceptionInfo = logsDateFormat.format(new Date()).concat("\n").concat(writer.toString());
+		String fileName = "crash-" + crashLogNameDateFormat.format(new Date()) + ".log";
 		String crashPath = FileUtils.getAppCrashPath();
 		if (!TextUtils.isEmpty(crashPath)) {
 			File crashDir = new File(crashPath);
 			if (!crashDir.exists()) {
 				crashDir.mkdirs();
 			}
-			File logFile = new File(crashPath.concat(File.separator).concat(
-					fileName));
+			File logFile = new File(crashPath.concat(File.separator).concat(fileName));
 			if (logFile.exists()) {
 				sb = new StringBuffer(exceptionInfo);
 			} else {
@@ -145,11 +138,9 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		// TODO Auto-generated method stub
 		PackageManager pm = UIUtils.getContext().getPackageManager();
 		try {
-			PackageInfo pi = pm.getPackageInfo(UIUtils.getContext()
-					.getPackageName(), PackageManager.GET_ACTIVITIES);
+			PackageInfo pi = pm.getPackageInfo(UIUtils.getContext().getPackageName(), PackageManager.GET_ACTIVITIES);
 			if (null != pi) {
-				String versionName = pi.versionName == null ? "null"
-						: pi.versionName;
+				String versionName = pi.versionName == null ? "null" : pi.versionName;
 				String versionCode = pi.versionCode + "";
 				mInfos.put("versionName", versionName);
 				mInfos.put("versionCode", versionCode);

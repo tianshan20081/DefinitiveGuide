@@ -18,6 +18,7 @@ import android.os.IBinder;
 import android.os.Looper;
 
 import com.aoeng.degu.services.LogFileUploadServices;
+import com.aoeng.degu.services.MulityLogFileUploadServices;
 import com.aoeng.degu.utils.ThreadPoolManager;
 import com.aoeng.degu.utils.common.Logger;
 import com.aoeng.degu.utils.common.UIUtils;
@@ -57,8 +58,10 @@ public class DGApplication extends Application {
 
 		// CrashHandler mCrashHandler = CrashHandler.getInstance();
 		// mCrashHandler.init();
-		Intent intent = new Intent(UIUtils.getContext(), LogFileUploadServices.class);
-//		getContext().startService(intent);
+		// Intent intent = new Intent(UIUtils.getContext(),
+		// LogFileUploadServices.class);
+		Intent intent = new Intent(UIUtils.getContext(), MulityLogFileUploadServices.class);
+		getContext().startService(intent);
 	}
 
 	public static String getCacheDirPath() {

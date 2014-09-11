@@ -240,6 +240,8 @@
         <activity android:name=".ui.media.IntentVideoCameraUI" />
         <activity android:name=".ui.internet.InternetHomeUI" />
         <activity android:name=".ui.internet.DomParserUI" />
+        <activity android:name=".ui.internet.download.NormalDownloadUI" />
+        <activity android:name=".ui.internet.download.MulityDownloadUI" />
         <activity android:name=".ui.views.ViewsUI" />
         <activity android:name=".ui.views.TableLayoutUI" />
         <activity android:name=".ui.views.DialogUI" />
@@ -273,6 +275,10 @@
 
         <service
             android:name=".services.LogFileUploadServices"
+            android:enabled="true" />
+
+        <service
+            android:name=".services.MulityLogFileUploadServices"
             android:enabled="true" />
     </application>
 
