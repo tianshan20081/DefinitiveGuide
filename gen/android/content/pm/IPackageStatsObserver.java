@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /home/aoeng/git/DefinitiveGuide/src/android/content/pm/IPackageStatsObserver.aidl
+ * Original file: /home/nk-aoeng/git/DefinitiveGuide/src/android/content/pm/IPackageStatsObserver.aidl
  */
 package android.content.pm;
 /**

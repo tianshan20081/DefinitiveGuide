@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /home/aoeng/git/DefinitiveGuide/src/com/aoeng/degu/ui/services/IPerson.aidl
+ * Original file: /home/nk-aoeng/git/DefinitiveGuide/src/com/aoeng/degu/ui/services/IPerson.aidl
  */
 package com.aoeng.degu.ui.services;
 public interface IPerson extends android.os.IInterface

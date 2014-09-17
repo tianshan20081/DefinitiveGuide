@@ -36,6 +36,12 @@
                     android:id="@+id/btnPicWall"
                     style="@style/btnItem"
                     android:text="照片墙" />
+
+                <Button
+                    android:id="@+id/btnTakeIcon"
+                    style="@style/btnItem"
+                    android:text="拍一张头像" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
