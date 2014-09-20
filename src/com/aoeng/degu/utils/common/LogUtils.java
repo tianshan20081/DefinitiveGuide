@@ -24,7 +24,7 @@ public class LogUtils {
 	/** 日誌輸出級別 ERROR */
 	public static final int LEVEL_ERROR = 5;
 
-	public static String mTag = "Android_play";
+	public static String mTag = "DefinitiveGuide";
 	/** 允許日誌輸出級別 0 ：全部輸出，大於6 全部不輸出 */
 	private static int mDebugable = 6;
 	/** 用於計時的變量 */

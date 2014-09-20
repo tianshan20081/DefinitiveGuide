@@ -28,7 +28,9 @@ import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.utils.DataUtils;
 import com.aoeng.degu.utils.RequestVO;
+import com.aoeng.degu.utils.common.FileUtils;
 import com.aoeng.degu.utils.common.ImageUtils;
+import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.SystemUtils;
 import com.aoeng.degu.utils.common.UIUtils;
 import com.aoeng.degu.utils.enc.MD5Utils;
@@ -37,7 +39,7 @@ import com.aoeng.degu.views.ImagePullToRefreshLv;
 
 public class PictureWallUI extends BaseUI {
 
-	private ImagePullToRefreshLv lvPicWall;
+	// private ImagePullToRefreshLv lvPicWall;
 	HashMap<String, String> dicmMap = new HashMap<String, String>();
 
 	@Override
@@ -51,12 +53,19 @@ public class PictureWallUI extends BaseUI {
 		// TODO Auto-generated method stub
 
 		setContentView(R.layout.ui_imgs_pic_wall);
+		LogUtils.e("loadImgInfo(ch.getAbsolutePath());" + FileUtils.getPhonePhotoFolder().getAbsolutePath());
+		String path = FileUtils.getPhonePhotoFolder().getAbsolutePath();
+		// String path = "/storage/emulated/0/Camera/P40918-232644.jpg";
+		// String path = "/storage/emulated/0/Camera/P";
+		LogUtils.e("loadImgInfo(ch.getAbsolutePath());" + FileUtils.getPhonePhotoFolder().getAbsolutePath());
+		LogUtils.e("path" + path);
+		loadImgInfo(path);
 	}
 
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
-		lvPicWall = (ImagePullToRefreshLv) findView(R.id.lvPicWall);
+		// lvPicWall = (ImagePullToRefreshLv) findView(R.id.lvPicWall);
 
 	}
 
@@ -70,64 +79,83 @@ public class PictureWallUI extends BaseUI {
 	protected void processLogic() {
 		// TODO Auto-generated method stub
 
-		ImageAdapter adapter = new ImageAdapter();
+		// ImageAdapter adapter = new ImageAdapter();
 
 		// TODO Auto-generated method stub
-		String[] filePathColumn = { MediaStore.Images.Media.DATA, MediaStore.Images.Media.LATITUDE, MediaStore.Images.Media.LONGITUDE,
-				MediaStore.Images.Media.SIZE, MediaStore.Images.Media.TITLE, MediaStore.Images.Media.DESCRIPTION, MediaStore.Images.Media.MIME_TYPE,
-				MediaStore.Images.Media.DATE_ADDED, MediaStore.Images.Media.DATE_MODIFIED, MediaStore.Images.Media.DATE_TAKEN,
-				MediaStore.Images.Media.DISPLAY_NAME, MediaStore.Images.Media.HEIGHT, MediaStore.Images.Media.WIDTH };
+		// String[] filePathColumn = { MediaStore.Images.Media.DATA,
+		// MediaStore.Images.Media.LATITUDE, MediaStore.Images.Media.LONGITUDE,
+		// MediaStore.Images.Media.SIZE, MediaStore.Images.Media.TITLE,
+		// MediaStore.Images.Media.DESCRIPTION,
+		// MediaStore.Images.Media.MIME_TYPE,
+		// MediaStore.Images.Media.DATE_ADDED,
+		// MediaStore.Images.Media.DATE_MODIFIED,
+		// MediaStore.Images.Media.DATE_TAKEN,
+		// MediaStore.Images.Media.DISPLAY_NAME, MediaStore.Images.Media.HEIGHT,
+		// MediaStore.Images.Media.WIDTH };
+		//
+		// File dicmFile =
+		// Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+		//
+		// if (null != dicmFile && dicmFile.isDirectory()) {
+		// File[] chFile = dicmFile.listFiles();
+		// if (null == chFile && chFile.length == 0) {
+		// log("empty Dicm");
+		// return;
+		// }
+		// for (File ch : chFile) {
+		// if (null != ch && ch.isFile()) {
+		// dicmMap.put(ch.getAbsolutePath(), new
+		// Date(ch.lastModified()).toString());
+		// // Bitmap bitmap =
+		// // BitmapFactory.decodeFile(ch.getAbsolutePath());
+		//
+		// // Cursor cursor =
+		// //
+		// getContentResolver().delete(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+		// // MediaStore.Images.Media.DATA + " LIKE ?",
+		// // params);
+		//
+		// loadImgInfo(ch.getAbsolutePath());
+		//
+		// }
+		// }
+		// }
+		// for (String info : dicmMap.keySet()) {
+		// StringBuffer sb = new StringBuffer();
+		// sb.append(info).append(":").append(dicmMap.get(info).toString()).append("----").append(MD5Utils.getJavaMD5(dicmMap.get(info).toString()));
+		// log(sb.toString());
+		//
+		// }
 
-		File dicmFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-
-		if (null != dicmFile && dicmFile.isDirectory()) {
-			File[] chFile = dicmFile.listFiles();
-			if (null == chFile && chFile.length == 0) {
-				log("empty Dicm");
-				return;
-			}
-			for (File ch : chFile) {
-				if (null != ch && ch.isFile()) {
-					dicmMap.put(ch.getAbsolutePath(), new Date(ch.lastModified()).toString());
-					// Bitmap bitmap =
-					// BitmapFactory.decodeFile(ch.getAbsolutePath());
-
-					// Cursor cursor =
-					// getContentResolver().delete(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-					// MediaStore.Images.Media.DATA + " LIKE ?",
-					// params);
-
-					// loadImgInfo(ch.getAbsolutePath());
-
-				}
-			}
-		}
-		for (String info : dicmMap.keySet()) {
-			StringBuffer sb = new StringBuffer();
-			sb.append(info).append(":").append(dicmMap.get(info).toString()).append("----").append(MD5Utils.getJavaMD5(dicmMap.get(info).toString()));
-			log(sb.toString());
-
-		}
-
-		lvPicWall.setAdapter(adapter);
+		// lvPicWall.setAdapter(adapter);
 
 	}
 
 	protected void loadImgInfo(String url) {
 		// TODO Auto-generated method stub
+		// String params[] = new String[] {
+		// "'%"+FileUtils.getPhonePhotoFolder().getAbsolutePath()+"%'" };
 		String params[] = new String[] { url };
 		String[] filePathColumn = { MediaStore.Images.Media.DATA, MediaStore.Images.Media.LATITUDE, MediaStore.Images.Media.LONGITUDE,
 				MediaStore.Images.Media.SIZE, MediaStore.Images.Media.TITLE, MediaStore.Images.Media.DESCRIPTION, MediaStore.Images.Media.MIME_TYPE,
 				MediaStore.Images.Media.DATE_ADDED, MediaStore.Images.Media.DATE_MODIFIED, MediaStore.Images.Media.DATE_TAKEN,
 				MediaStore.Images.Media.DISPLAY_NAME, MediaStore.Images.Media.HEIGHT, MediaStore.Images.Media.WIDTH };
+		// String param = MediaStore.Images.Media.DATA + " like '%" + url +
+		// "%'";
+		String param = MediaStore.Images.Media.DATA + " like '%" + url + "%' ";
+		Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, filePathColumn, param, null,
+				MediaStore.Images.Media.DATE_TAKEN + " desc  limit 3 offset 2 ");
+		// Cursor cursor =
+		// getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+		// filePathColumn, null, null, null);
 
-		Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, filePathColumn, MediaStore.Images.Media.DATA + " LIKE ?",
-				params, null);
+		// MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI
 		ImageInfo picInfo = null;
 		if (null == cursor) {
 			log("null == cursor ");
 			return;
 		}
+		ArrayList<ImageInfo> infos = new ArrayList<ImageInfo>();
 		while (cursor.moveToNext()) {
 			picInfo = new ImageInfo();
 			picInfo.setPicPath(cursor.getString(cursor.getColumnIndex(filePathColumn[0])));
@@ -144,16 +172,17 @@ public class PictureWallUI extends BaseUI {
 
 			picInfo.setHeight(cursor.getInt(cursor.getColumnIndex(filePathColumn[11])));
 			picInfo.setWidth(cursor.getInt(cursor.getColumnIndex(filePathColumn[12])));
-
+			infos.add(picInfo);
 		}
 
 		cursor.close();
-		if (null != picInfo) {
 
+		for (ImageInfo imageInfo : infos) {
+			LogUtils.e(imageInfo.toString());
 			log(picInfo.toString());
-			if (null != picInfo.getLatitude() && 0 < picInfo.getLatitude()) {
-				loadImageInfo(picInfo);
-			}
+			// if (null != picInfo.getLatitude() && 0 < picInfo.getLatitude()) {
+			// // loadImageInfo(picInfo);
+			// }
 
 		}
 	}

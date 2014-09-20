@@ -4,9 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <!-- 
+
     <com.aoeng.degu.views.ImagePullToRefreshLv
         android:id="@+id/lvPicWall"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+ -->
 
 </LinearLayout>

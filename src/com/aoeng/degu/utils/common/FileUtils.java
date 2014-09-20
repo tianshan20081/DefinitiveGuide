@@ -43,6 +43,17 @@ public class FileUtils {
 		return null;
 	}
 
+	public static File getPhonePhotoFolder() {
+		// TODO Auto-generated method stub
+		LogUtils.i("Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+"
+				+ Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsoluteFile());
+		LogUtils.i("Environment.getDataDirectory()" + Environment.getDataDirectory().getAbsolutePath());
+		// LogUtils.i("Environment.getDataDirectory()" +
+		// Environment.getExternalStoragePublicDirectory(Environment.));
+
+		return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+	}
+
 	private static String getAppRootPath() {
 		// TODO Auto-generated method stub
 		if (isSDCardAvailiable()) {
