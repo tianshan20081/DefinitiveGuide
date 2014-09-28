@@ -33,6 +33,10 @@ public class DGApplication extends Application {
 	/** 缓存路径 */
 	private static String cacheDir;
 
+	
+	
+	
+	
 	private static Looper mMainThreadLooper;
 
 	private static int mMainThreadId;
