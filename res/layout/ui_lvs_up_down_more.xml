@@ -7,6 +7,6 @@
     <com.aoeng.degu.views.RefreshLV
         android:id="@+id/refresh_listview"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

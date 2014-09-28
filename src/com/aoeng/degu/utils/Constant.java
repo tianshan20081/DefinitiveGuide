@@ -85,6 +85,10 @@ public class Constant {
 	public final static int TIME_OUT = 3;
 	public static final int IMAGE_QUALITY = 100;
 	public static final int NET_ERROR = 5;
+	/**
+	 * 相册照片分割 最小时间 （单位：毫秒）
+	 */
+	public static final long GroupMaxMinutes = 1 * 60 * 60 * 1000;
 
 	public static int defaultIndex;
 	public static boolean exit = true;

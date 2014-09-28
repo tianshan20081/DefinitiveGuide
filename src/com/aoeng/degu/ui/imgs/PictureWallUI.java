@@ -1,9 +1,13 @@
 package com.aoeng.degu.ui.imgs;
 
 import java.io.File;
+import java.security.spec.MGF1ParameterSpec;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -22,11 +26,14 @@ import android.widget.TextView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.domain.BaiDuLocation;
+import com.aoeng.degu.domain.Group;
+import com.aoeng.degu.domain.ImageGroup;
 import com.aoeng.degu.domain.ImageInfo;
 import com.aoeng.degu.parser.BaiDuLocationParser;
 import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.utils.DataUtils;
+import com.aoeng.degu.utils.PhotoUtils;
 import com.aoeng.degu.utils.RequestVO;
 import com.aoeng.degu.utils.common.FileUtils;
 import com.aoeng.degu.utils.common.ImageUtils;
@@ -54,12 +61,21 @@ public class PictureWallUI extends BaseUI {
 
 		setContentView(R.layout.ui_imgs_pic_wall);
 		LogUtils.e("loadImgInfo(ch.getAbsolutePath());" + FileUtils.getPhonePhotoFolder().getAbsolutePath());
-		String path = FileUtils.getPhonePhotoFolder().getAbsolutePath();
+		final String path = FileUtils.getPhonePhotoFolder().getAbsolutePath();
 		// String path = "/storage/emulated/0/Camera/P40918-232644.jpg";
 		// String path = "/storage/emulated/0/Camera/P";
 		LogUtils.e("loadImgInfo(ch.getAbsolutePath());" + FileUtils.getPhonePhotoFolder().getAbsolutePath());
 		LogUtils.e("path" + path);
-		loadImgInfo(path);
+
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				loadImgInfo(path);
+			}
+		}).start();
+
 	}
 
 	@Override
@@ -144,18 +160,33 @@ public class PictureWallUI extends BaseUI {
 		// "%'";
 		String param = MediaStore.Images.Media.DATA + " like '%" + url + "%' ";
 		Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, filePathColumn, param, null,
-				MediaStore.Images.Media.DATE_TAKEN + " desc  limit 3 offset 2 ");
+				MediaStore.Images.Media.DATE_TAKEN + " desc  ");
 		// Cursor cursor =
+		// Cursor cursor =
+		// getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+		// filePathColumn, param, null,
+		// MediaStore.Images.Media.DATE_TAKEN + " desc  limit 3 offset 2 ");
+		// // Cursor cursor =
 		// getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
 		// filePathColumn, null, null, null);
 
 		// MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI
-		ImageInfo picInfo = null;
+
 		if (null == cursor) {
 			log("null == cursor ");
 			return;
 		}
-		ArrayList<ImageInfo> infos = new ArrayList<ImageInfo>();
+		// ArrayList<ImageGroup> infos = new ArrayList<ImageGroup>();
+		TreeMap<String, ImageGroup> treeMap = new TreeMap<String, ImageGroup>(new Comparator<String>() {
+
+			@Override
+			public int compare(String lhs, String rhs) {
+				// TODO Auto-generated method stub
+				return (int) (Long.parseLong(rhs) - Long.parseLong(lhs));
+			}
+		});
+		ImageGroup group = null;
+		ImageInfo picInfo = null;
 		while (cursor.moveToNext()) {
 			picInfo = new ImageInfo();
 			picInfo.setPicPath(cursor.getString(cursor.getColumnIndex(filePathColumn[0])));
@@ -172,19 +203,38 @@ public class PictureWallUI extends BaseUI {
 
 			picInfo.setHeight(cursor.getInt(cursor.getColumnIndex(filePathColumn[11])));
 			picInfo.setWidth(cursor.getInt(cursor.getColumnIndex(filePathColumn[12])));
-			infos.add(picInfo);
+
+			if (null == treeMap || treeMap.size() <= 0) {
+				group = new ImageGroup();
+				group.add(picInfo);
+				treeMap.put(group.getGroupId()+"", group);
+				group = null;
+			} else {
+				if (treeMap.lastEntry().getValue().isBelong(picInfo)) {
+					treeMap.lastEntry().getValue().add(picInfo);
+				} else {
+					group = new ImageGroup();
+					group.add(picInfo);
+					treeMap.put(group.getGroupId()+"", group);
+					group = null;
+				}
+			}
 		}
 
 		cursor.close();
-
-		for (ImageInfo imageInfo : infos) {
-			LogUtils.e(imageInfo.toString());
-			log(picInfo.toString());
+		LogUtils.e("treeMap.size()---------------------------------" + treeMap.size());
+		for (Entry<String, ImageGroup> entry : treeMap.entrySet()) {
+			LogUtils.e("GroupInfo-------------------------------------------------" + entry.getValue().toString());
+			for (ImageInfo in : entry.getValue().getInfos()) {
+				// LogUtils.e(in.toString());
+			}
 			// if (null != picInfo.getLatitude() && 0 < picInfo.getLatitude()) {
 			// // loadImageInfo(picInfo);
 			// }
 
 		}
+		
+		treeMap = PhotoUtils.getAllPhotos();
 	}
 
 	private void loadImageInfo(final ImageInfo picInfo) {
