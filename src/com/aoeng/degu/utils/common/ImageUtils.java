@@ -490,4 +490,117 @@ public class ImageUtils {
 		return null;
 	}
 
+	public static InputStream compressForUpload2(String imgPath, int maxSize) {
+		Bitmap resizeBitmap = null;
+		if (!StringUtils.isEmpty(imgPath)) {
+			try {
+
+				// resizeBitmap = parseBitmapByOneEdge(imgPath, 768);
+				resizeBitmap = parseBitmapByOneEdge2(imgPath, 768);
+
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+				ExifInterface sourceExif = new ExifInterface(imgPath);
+				int result = sourceExif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED);
+				int rotate = 0;
+				switch (result) {
+				case ExifInterface.ORIENTATION_ROTATE_90:
+					rotate = 90;
+					break;
+				case ExifInterface.ORIENTATION_ROTATE_180:
+					rotate = 180;
+					break;
+				case ExifInterface.ORIENTATION_ROTATE_270:
+					rotate = 270;
+					break;
+				}
+
+				if (resizeBitmap != null) {
+					if (rotate > 0) {
+						Matrix matrix = new Matrix();
+						matrix.setRotate(rotate);
+
+						Bitmap rotateBitmap = Bitmap.createBitmap(resizeBitmap, 0, 0, resizeBitmap.getWidth(), resizeBitmap.getHeight(), matrix, true);
+						if (rotateBitmap != null) {
+							resizeBitmap.recycle();
+							resizeBitmap = rotateBitmap;
+						}
+					}
+					int options = 90;
+					resizeBitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);
+					while (baos.toByteArray().length > maxSize) { // 循环判断如果压缩后图片是否大于200K,大于继续压缩
+						baos.reset();// 重置baos即清空baos
+						resizeBitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);// 这里压缩options%，把压缩后的数据存放到baos中
+						options -= 10;// 每次都减少10
+					}
+					// bmp.recycle();
+					InputStream sbs = new ByteArrayInputStream(baos.toByteArray());
+					return sbs;
+				}
+
+			} catch (OutOfMemoryError e) {
+				System.gc();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
+	private static Bitmap parseBitmapByOneEdge2(String imgPath, int i) {
+		// TODO Auto-generated method stub
+		Bitmap bitmap = BitmapFactory.decodeFile(imgPath);
+		return parseBitmap(bitmap, i);
+	}
+
+	private static Bitmap parseBitmap(Bitmap mBitmap, int unit) {
+		float sx = getScaleSize(mBitmap, unit);
+		if (sx > 0)
+			return postScaleBitamp(mBitmap, sx, sx);
+		return mBitmap;
+	}
+
+	/**
+	 * 图片放大缩小
+	 * 
+	 * @param bmp
+	 * @param degree
+	 * @return
+	 */
+	public static Bitmap postScaleBitamp(Bitmap bmp, float sx, float sy) {
+		// 获得Bitmap的高和宽
+		int bmpWidth = bmp.getWidth();
+		int bmpHeight = bmp.getHeight();
+		Matrix matrix = new Matrix();
+		matrix.setScale(sx, sy);
+		Bitmap resizeBmp = Bitmap.createBitmap(bmp, 0, 0, bmpWidth, bmpHeight, matrix, true);
+		return resizeBmp;
+	}
+
+	/**
+	 * 对图片进行处理 1，首先判断 图片的宽和高
+	 */
+	public static float getScaleSize(Bitmap mBitmap, int unit) {
+		float imgWidth = mBitmap.getWidth();
+		float imgHeight = mBitmap.getHeight();
+		float sx;
+		if (imgWidth < 300 || imgHeight < 300)
+			return -1;
+		if (imgWidth > imgHeight) {
+			sx = unit / imgHeight;
+			if (imgWidth * sx >= 4096) {
+				/**
+				 * TODO add by wxbin ImageView 最大加载 4096 * 4096
+				 */
+				sx = 4096 / imgWidth;
+			}
+		} else {
+			sx = unit / imgWidth;
+			if (imgHeight * sx >= 4096) {
+				sx = 4096 / imgHeight;
+			}
+		}
+		return sx;
+	}
+
 }

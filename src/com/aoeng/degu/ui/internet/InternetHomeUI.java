@@ -36,7 +36,12 @@ public class InternetHomeUI extends BaseUI {
 		case R.id.btnDomParser:
 			startActivity(new Intent(this, DomParserUI.class));
 			break;
-
+		case R.id.btnQnSingleUpload:
+			startActivity(new Intent(this, QnSingleUploadUI.class));
+			break;
+		case R.id.btnQnBreakpointsUpload:
+			startActivity(new Intent(this, QnBreakPointUploadUI.class));
+			break;
 		default:
 			break;
 		}
@@ -64,6 +69,8 @@ public class InternetHomeUI extends BaseUI {
 		this.findView(R.id.btnDomParser).setOnClickListener(this);
 		this.findView(R.id.btnNormalDownload).setOnClickListener(this);
 		this.findView(R.id.btnMulityDownload).setOnClickListener(this);
+		this.findView(R.id.btnQnSingleUpload).setOnClickListener(this);
+		this.findView(R.id.btnQnBreakpointsUpload).setOnClickListener(this);
 	}
 
 	/*

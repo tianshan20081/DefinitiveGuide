@@ -25,6 +25,19 @@
                 style="@style/btnItem"
                 android:text="MulityDownload" />
         </LinearLayout>
+
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnQnSingleUpload"
+                style="@style/btnItem"
+                android:text="@string/qnSingleUpload" />
+
+            <Button
+                android:id="@+id/btnQnBreakpointsUpload"
+                style="@style/btnItem"
+                android:text="@string/qnBreakPointUpload" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

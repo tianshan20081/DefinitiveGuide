@@ -24,5 +24,7 @@
     <string name="crc">597918297</string>
     <string name="quake_feed">http://earthquake.usgs.gov/earthquakes/catalogs/1day-M2.5.xml</string>
     <string name="exception_exit">Sorry ,App is force close !</string>
+    <string name="qnSingleUpload">七牛单文件上传</string>
+    <string name="qnBreakPointUpload">七牛单文件断点上传</string>
 
 </resources>

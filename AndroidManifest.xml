@@ -244,6 +244,8 @@
         <activity android:name=".ui.internet.DomParserUI" />
         <activity android:name=".ui.internet.download.NormalDownloadUI" />
         <activity android:name=".ui.internet.download.MulityDownloadUI" />
+        <activity android:name=".ui.internet.QnBreakPointUploadUI" />
+        <activity android:name=".ui.internet.QnSingleUploadUI" />
         <activity android:name=".ui.views.ViewsUI" />
         <activity android:name=".ui.views.TableLayoutUI" />
         <activity android:name=".ui.views.DialogUI" />
