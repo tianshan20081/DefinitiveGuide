@@ -26,5 +26,14 @@
     <string name="exception_exit">Sorry ,App is force close !</string>
     <string name="qnSingleUpload">七牛单文件上传</string>
     <string name="qnBreakPointUpload">七牛单文件断点上传</string>
+    <string name="picIcon">选择头像</string>
+    <string name="picCrop">图片裁剪</string>
+    <string name="chosePicFromStore">从图库选择图片</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="saving_image">Saving image</string>
+    <string name="preparing_card">Preparing card</string>
+    <string name="no_storage_card">No storage card</string>
+    <string name="not_enough_space">Not enough space</string>
 
 </resources>

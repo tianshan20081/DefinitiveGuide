@@ -36,6 +36,8 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnGetPicsFromMediaStore).setOnClickListener(this);
 		this.findViewById(R.id.btnPicWall).setOnClickListener(this);
 		this.findViewById(R.id.btnTakeIcon).setOnClickListener(this);
+		this.findViewById(R.id.btnPicIcon).setOnClickListener(this);
+		this.findViewById(R.id.btnImgCrop).setOnClickListener(this);
 	}
 
 	/*
@@ -65,7 +67,12 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 		case R.id.btnShapeImg:
 			startActivity(new Intent(ImageViewsUI.this, CustomShapeImgUI.class));
 			break;
-
+		case R.id.btnPicIcon:
+			startActivity(new Intent(ImageViewsUI.this, PicIconUI.class));
+			break;
+		case R.id.btnImgCrop:
+			startActivity(new Intent(ImageViewsUI.this, PicCropUI.class));
+			break;
 		default:
 			break;
 		}

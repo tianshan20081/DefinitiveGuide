@@ -25,11 +25,13 @@
                     android:id="@+id/btnGetPicFromMediaStore"
                     style="@style/btnItem"
                     android:text="从图库选择图片" />
+
                 <Button
                     android:id="@+id/btnGetPicsFromMediaStore"
                     style="@style/btnItem"
                     android:text="从图库选择多张图片" />
             </LinearLayout>
+
             <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
@@ -41,7 +43,19 @@
                     android:id="@+id/btnTakeIcon"
                     style="@style/btnItem"
                     android:text="拍一张头像" />
+            </LinearLayout>
 
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnPicIcon"
+                    style="@style/btnItem"
+                    android:text="@string/picIcon" />
+
+                <Button
+                    android:id="@+id/btnImgCrop"
+                    style="@style/btnItem"
+                    android:text="@string/picCrop" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

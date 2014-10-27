@@ -19,13 +19,13 @@ import com.aoeng.degu.domain.ImageInfo;
 import com.aoeng.degu.parser.BaiDuLocationParser;
 import com.aoeng.degu.services.DataCallback;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.CodeUtils;
 import com.aoeng.degu.utils.DataUtils;
 import com.aoeng.degu.utils.RequestVO;
 import com.aoeng.degu.utils.net.URLUtils;
 
 public class PictureFromMediaStoreUI extends BaseUI {
 
-	private static final int RESULT_LOAD_IMAGE = 100;
 	private ImageView ivPic;
 	private Button btnGetImg;
 	private TextView tvImgInfo;
@@ -37,7 +37,7 @@ public class PictureFromMediaStoreUI extends BaseUI {
 		case R.id.btnGetImg:
 			Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
-			startActivityForResult(intent, RESULT_LOAD_IMAGE);
+			startActivityForResult(intent, CodeUtils.REQUEST_LOAD_IMAGE);
 			break;
 
 		default:
@@ -76,12 +76,11 @@ public class PictureFromMediaStoreUI extends BaseUI {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 
-		if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+		if (requestCode == CodeUtils.REQUEST_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
 			Uri selectedImage = data.getData();
-			String[] filePathColumn = { MediaStore.Images.Media.DATA, MediaStore.Images.Media.LATITUDE, MediaStore.Images.Media.LONGITUDE,
-					MediaStore.Images.Media.SIZE, MediaStore.Images.Media.TITLE, MediaStore.Images.Media.DESCRIPTION, MediaStore.Images.Media.MIME_TYPE,
-					MediaStore.Images.Media.DATE_ADDED, MediaStore.Images.Media.DATE_MODIFIED, MediaStore.Images.Media.DATE_TAKEN,
-					MediaStore.Images.Media.DISPLAY_NAME, MediaStore.Images.Media.HEIGHT, MediaStore.Images.Media.WIDTH };
+			String[] filePathColumn = { MediaStore.Images.Media.DATA, MediaStore.Images.Media.LATITUDE, MediaStore.Images.Media.LONGITUDE, MediaStore.Images.Media.SIZE, MediaStore.Images.Media.TITLE,
+					MediaStore.Images.Media.DESCRIPTION, MediaStore.Images.Media.MIME_TYPE, MediaStore.Images.Media.DATE_ADDED, MediaStore.Images.Media.DATE_MODIFIED,
+					MediaStore.Images.Media.DATE_TAKEN, MediaStore.Images.Media.DISPLAY_NAME, MediaStore.Images.Media.HEIGHT, MediaStore.Images.Media.WIDTH };
 
 			Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
 			ImageInfo picInfo = null;

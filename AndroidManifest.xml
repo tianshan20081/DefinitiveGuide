@@ -119,14 +119,17 @@
         </service>
 
         <activity android:name=".receiver.ReceiverUI" />
-        <activity android:name=".ui.cp.ContentProviderUI" >
-        </activity>
+        <activity android:name=".ui.cp.ContentProviderUI" />
 
         <provider
             android:name=".contentprovider.RegionContentProvider"
             android:authorities="com.aoeng.degu.permission.regionContentprovider"
             android:permission="com.aoeng.degu.permission.regionContentprovider.REGION" >
         </provider>
+        <provider
+            android:name=".ui.imgs.InternalStorageContentProvider"
+            android:authorities="com.aoeng.degu.ui.imgs"
+            android:exported="true" />
 
         <service
             android:name=".services.BaseServices"
@@ -210,6 +213,10 @@
         <activity android:name=".ui.imgs.PictureFromMediaStoreUI" />
         <activity android:name=".ui.imgs.PicturesFromMediaStoreUI" />
         <activity android:name=".ui.imgs.PictureWallUI" />
+        <activity android:name=".ui.imgs.PicIconUI" />
+        <activity android:name=".ui.imgs.ImageClipUI" />
+        <activity android:name=".ui.imgs.PicCropUI" />
+        <activity android:name=".ui.imgs.CropImage" />
         <!-- 拍摄一个头像 -->
         <activity android:name=".ui.imgs.TakeIconUI" />
         <!-- 應用程序管理界面 -->
