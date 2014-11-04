@@ -16,6 +16,12 @@ import com.aoeng.degu.utils.CodeUtils;
 import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.StringUtils;
 
+/**
+ * https://github.com/biokys/cropimage.git
+ * 
+ * @author sczhang
+ * 
+ */
 public class PicIconUI extends BaseUI {
 
 	private Button btnChosePic;
