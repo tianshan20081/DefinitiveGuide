@@ -19,7 +19,9 @@ import android.os.Looper;
 
 import com.aoeng.degu.services.LogFileUploadServices;
 import com.aoeng.degu.services.MulityLogFileUploadServices;
+import com.aoeng.degu.utils.AppUtils;
 import com.aoeng.degu.utils.ThreadPoolManager;
+import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.Logger;
 import com.aoeng.degu.utils.common.UIUtils;
 
@@ -33,10 +35,6 @@ public class DGApplication extends Application {
 	/** 缓存路径 */
 	private static String cacheDir;
 
-	
-	
-	
-	
 	private static Looper mMainThreadLooper;
 
 	private static int mMainThreadId;
@@ -66,6 +64,13 @@ public class DGApplication extends Application {
 		// LogFileUploadServices.class);
 		Intent intent = new Intent(UIUtils.getContext(), MulityLogFileUploadServices.class);
 		getContext().startService(intent);
+
+		printCommonInfo();
+	}
+
+	private void printCommonInfo() {
+		// TODO Auto-generated method stub
+		LogUtils.e("---AppKey----" + AppUtils.getAppKey(this.mApplication));
 	}
 
 	public static String getCacheDirPath() {

@@ -290,6 +290,10 @@
         <service
             android:name=".services.MulityLogFileUploadServices"
             android:enabled="true" />
+
+        <meta-data
+            android:name="USER_PRIVATE_KEY"
+            android:value="thisisuserprivatekey" /> <!-- </>值来自开发者平台取得的AppKey -->
     </application>
 
     <permission
