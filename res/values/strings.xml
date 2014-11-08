@@ -35,5 +35,8 @@
     <string name="preparing_card">Preparing card</string>
     <string name="no_storage_card">No storage card</string>
     <string name="not_enough_space">Not enough space</string>
-
+    <string name="recorderVoice">录音</string>
+    <string name="pressTalk">按住说话</string>
+    <string name="voiceDel">确定删除该语音？</string>
+<string name="sure">确认 </string>
 </resources>

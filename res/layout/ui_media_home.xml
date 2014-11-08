@@ -43,6 +43,7 @@
                 style="@style/btnItem"
                 android:text="IntentCamera" />
         </LinearLayout>
+
         <LinearLayout style="@style/lyItem" >
 
             <Button
@@ -54,6 +55,14 @@
                 android:id="@+id/btnIntentVideoCamera"
                 style="@style/btnItem"
                 android:text="IntentVideoCamera" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnRecorderVoidce"
+                style="@style/btnItem"
+                android:text="@string/recorderVoice" />
         </LinearLayout>
     </LinearLayout>
 

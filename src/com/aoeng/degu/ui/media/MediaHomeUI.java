@@ -4,6 +4,8 @@
 package com.aoeng.degu.ui.media;
 
 import android.content.Intent;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.view.View;
 
 import com.aoeng.degu.R;
@@ -47,6 +49,9 @@ public class MediaHomeUI extends BaseUI {
 		case R.id.btnIntentVideoCamera:
 			startActivity(new Intent(this, IntentVideoCameraUI.class));
 			break;
+		case R.id.btnRecorderVoidce:
+			startActivity(new Intent(this, MediaRecorderedVoiceUI.class));
+			break;
 		default:
 			break;
 		}
@@ -75,6 +80,8 @@ public class MediaHomeUI extends BaseUI {
 		findView(R.id.btnIntentCamera).setOnClickListener(this);
 		findView(R.id.btnCamera).setOnClickListener(this);
 		findView(R.id.btnIntentVideoCamera).setOnClickListener(this);
+		findView(R.id.btnRecorderVoidce).setOnClickListener(this);
+		
 	}
 
 	/* (non-Javadoc)

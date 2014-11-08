@@ -23,6 +23,7 @@ public class FileUtils {
 	public static final String DOWNLOAD_DIR = "download";
 	public static final String CACHE_DIR = "cache";
 	public static final String ICON_DIR = "icon";
+	private static final String ARM_DIR = "arm";
 
 	/**
 	 * 用当前时间给取得的图片命名
@@ -45,8 +46,7 @@ public class FileUtils {
 
 	public static File getPhonePhotoFolder() {
 		// TODO Auto-generated method stub
-		LogUtils.i("Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+"
-				+ Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsoluteFile());
+		LogUtils.i("Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsoluteFile());
 		LogUtils.i("Environment.getDataDirectory()" + Environment.getDataDirectory().getAbsolutePath());
 		// LogUtils.i("Environment.getDataDirectory()" +
 		// Environment.getExternalStoragePublicDirectory(Environment.));
@@ -550,5 +550,15 @@ public class FileUtils {
 			file.delete();
 		}
 		return true;
+	}
+
+	public static String getFileName() {
+		// TODO Auto-generated method stub
+		return DateUtil.yyyyMMdd_HHmmss.format(new Date()).toString();
+	}
+
+	public static String getArmDir() {
+		// TODO Auto-generated method stub
+		return getDir(ARM_DIR);
 	}
 }

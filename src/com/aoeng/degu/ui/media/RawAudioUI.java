@@ -98,13 +98,11 @@ public class RawAudioUI extends Activity {
 			BufferedOutputStream bos = new BufferedOutputStream(os);
 			DataOutputStream dos = new DataOutputStream(bos);
 
-			int bufferSize = AudioRecord.getMinBufferSize(frequency, channelConfiguration,
-					audioEncoding);
+			int bufferSize = AudioRecord.getMinBufferSize(frequency, channelConfiguration, audioEncoding);
 			short[] buffer = new short[bufferSize];
 
 			// Create a new AudioRecord object to record the audio.
-			AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency,
-					channelConfiguration, audioEncoding, bufferSize);
+			AudioRecord audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, frequency, channelConfiguration, audioEncoding, bufferSize);
 			audioRecord.startRecording();
 
 			while (isRecording) {
@@ -149,8 +147,7 @@ public class RawAudioUI extends Activity {
 			dis.close();
 
 			// Create and play a new AudioTrack object
-			AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC, frequency,
-					channelConfiguration, audioEncoding, audioLength, AudioTrack.MODE_STREAM);
+			AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC, frequency, channelConfiguration, audioEncoding, audioLength, AudioTrack.MODE_STREAM);
 			audioTrack.play();
 			audioTrack.write(audio, 0, audioLength);
 		} catch (Throwable t) {
