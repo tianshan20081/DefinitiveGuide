@@ -15,7 +15,7 @@
             <Button
                 android:id="@+id/btnNormalDownload"
                 style="@style/btnItem"
-                android:text="Download" />
+                android:text="@string/normalDownload" />
         </LinearLayout>
 
         <LinearLayout style="@style/lyItem" >

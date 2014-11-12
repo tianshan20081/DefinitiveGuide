@@ -3,18 +3,22 @@ package com.aoeng.degu.utils.common;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 
+import com.aoeng.degu.utils.AppUtils;
+
 import android.os.Environment;
-import android.text.TextUtils;
 
 public class FileUtils {
 	private static String ROOT_DIR = "df";
@@ -37,11 +41,7 @@ public class FileUtils {
 
 	public static String getAppCrashPath() {
 		// TODO Auto-generated method stub
-		String appPath = getAppRootPath();
-		if (!TextUtils.isEmpty(appPath)) {
-			return appPath.concat(File.separator).concat(ROOT_CRASH);
-		}
-		return null;
+		return getDir(ROOT_CRASH);
 	}
 
 	public static File getPhonePhotoFolder() {
@@ -52,14 +52,6 @@ public class FileUtils {
 		// Environment.getExternalStoragePublicDirectory(Environment.));
 
 		return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-	}
-
-	private static String getAppRootPath() {
-		// TODO Auto-generated method stub
-		if (isSDCardAvailiable()) {
-			return Environment.getExternalStorageDirectory().getAbsolutePath().concat(File.separator).concat(ROOT_DIR);
-		}
-		return null;
 	}
 
 	private static boolean isSDCardAvailiable() {
@@ -143,6 +135,23 @@ public class FileUtils {
 		return getDir(ICON_DIR);
 	}
 
+	public static String getAppRootPath() {
+		// TODO Auto-generated method stub
+		StringBuilder sb = new StringBuilder();
+		if (isSDCardAvailable()) {
+			sb.append(getExternalStoragePath());
+		} else
+			sb.append(getCachePath());
+		if (!StringUtils.isEmpty(sb.toString())) {
+			File file = new File(sb.append(File.separator).append(ROOT_DIR).toString());
+			if (!file.exists()) {
+				file.mkdirs();
+			}
+			return file.getAbsolutePath();
+		}
+		return null;
+	}
+
 	/**
 	 * 獲取應用目錄，當 SD 卡存在時 ，獲取 SD 卡上的目錄，當 SD卡不存在，獲取應用程序的 cache 目錄
 	 * 
@@ -151,13 +160,15 @@ public class FileUtils {
 	 */
 	private static String getDir(String name) {
 		// TODO Auto-generated method stub
-		StringBuilder sb = new StringBuilder();
-		if (isSDCardAvailable()) {
-			sb.append(getExternalStoragePath());
-		} else
-			sb.append(getCachePath());
-		sb.append(name);
-		String path = sb.toString();
+		if (StringUtils.isEmpty(name)) {
+			LogUtils.e(" folder name is null");
+			return null;
+		}
+		String rootPath = getAppRootPath();
+		if (StringUtils.isEmpty(rootPath)) {
+			return null;
+		}
+		String path = rootPath.concat(File.separator).concat(name);
 		if (createDirs(path)) {
 			return path.concat(File.separator);
 		} else
@@ -173,9 +184,6 @@ public class FileUtils {
 		// TODO Auto-generated method stub
 		StringBuilder sb = new StringBuilder();
 		sb.append(Environment.getExternalStorageDirectory().getAbsolutePath());
-		sb.append(File.separator);
-		sb.append(ROOT_DIR);
-		sb.append(File.separator);
 		return sb.toString();
 	}
 
@@ -205,7 +213,7 @@ public class FileUtils {
 		if (null == file) {
 			return null;
 		} else
-			return file.getAbsolutePath() + File.separator;
+			return file.getAbsolutePath();
 	}
 
 	/**
@@ -561,4 +569,55 @@ public class FileUtils {
 		// TODO Auto-generated method stub
 		return getDir(ARM_DIR);
 	}
+
+	public static List<String> getCarshFiles() {
+
+		// TODO Auto-generated method stub
+		ArrayList<String> files = new ArrayList<String>();
+
+		String path = FileUtils.getAppCrashPath();
+		LogUtils.i("appcrashpath " + path);
+		if (!StringUtils.isEmpty(path)) {
+			File fileCrash = new File(path);
+			if (fileCrash.exists() && fileCrash.isDirectory() && fileCrash.list().length > 0) {
+				String[] loges = fileCrash.list();
+				if (null == loges || loges.length == 1) {
+					return null;
+				}
+				File logFile = null;
+				for (String fileName : loges) {
+					logFile = new File(path, fileName);
+					if (logFile.exists() && logFile.isFile()) {
+						files.add(logFile.getAbsolutePath());
+					}
+				}
+			}
+		}
+
+		return files;
+
+	}
+
+	public static File getCrashFile() {
+		// TODO Auto-generated method stub
+
+		String crashPath = FileUtils.getAppCrashPath();
+		String logName = AppUtils.getAppName() + "crash-" + DateUtil.yyyyMMdd.format(new Date()) + ".log";
+		if (!StringUtils.isEmpty(crashPath)) {
+			File file = new File(crashPath);
+			File logFile = new File(file, logName);
+			if (!logFile.exists()) {
+				try {
+					logFile.createNewFile();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					LogUtils.e(e);
+					return null;
+				}
+			}
+			return logFile;
+		}
+		return null;
+	}
+
 }

@@ -38,5 +38,8 @@
     <string name="recorderVoice">录音</string>
     <string name="pressTalk">按住说话</string>
     <string name="voiceDel">确定删除该语音？</string>
-<string name="sure">确认 </string>
+    <string name="sure">确认 </string>
+    <string name="normalDownload">普通下载 </string>
+    <string name="startOtherApp">打开其他应用 </string>
+
 </resources>

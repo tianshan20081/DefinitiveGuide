@@ -21,6 +21,7 @@ import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.utils.ByteToInputStream;
 import com.aoeng.degu.utils.common.ImageUtils;
 import com.aoeng.degu.utils.common.LogUtils;
+import com.aoeng.degu.utils.qiniu.QNApi;
 import com.qiniu.auth.Authorizer;
 import com.qiniu.io.IO;
 import com.qiniu.rs.CallBack;
@@ -32,29 +33,13 @@ import com.qiniu.utils.InputStreamAt;
 public class QnSingleUploadUI extends BaseUI {
 	public static final int PICK_PICTURE_RESUMABLE = 0;
 
-	// upToken 这里需要自行获取. SDK 将不实现获取过程. 隔一段时间到业务服务器重新获取一次
-	public static String uptoken = "sUp_H-7FJu_nie9pCBVoQ_dHxtIdXBWnU5nqnc7x:kAtZumWS-e-RAJV3l-Zbdktdhzo=:eyJzY29wZSI6Im5va2VlIiwiZGVhZGxpbmUiOjE0MTQwNTI5ODB9";
-
-	public static String bucketName;
-	public static Authorizer auth = new Authorizer();
-	{
-		auth.setUploadToken(uptoken);
-		try {
-			String str = uptoken.split(":")[2];
-			String jsonStr = new String(Base64.decode(str, Base64.URL_SAFE | Base64.NO_WRAP), "utf-8");
-			JSONObject json = new JSONObject(jsonStr);
-			String scope = json.optString("scope");
-			bucketName = scope.split(":")[0];
-			Log.d("Scope", bucketName);
-		} catch (Exception e) {
-			bucketName = "<bucketName>";
-			e.printStackTrace();
-		}
-	}
-
 	private Button btnUpload;
 	private Button btnResumableUpload;
 	private TextView hint;
+	// @gist upload
+	volatile boolean uploading = false;
+
+	protected String bucketName = QNApi.BUCKET_ANDROIDPLAY;
 
 	@Override
 	public void onClick(View v) {
@@ -102,9 +87,6 @@ public class QnSingleUploadUI extends BaseUI {
 
 	}
 
-	// @gist upload
-	volatile boolean uploading = false;
-
 	/**
 	 * 普通上传文件
 	 * 
@@ -124,7 +106,7 @@ public class QnSingleUploadUI extends BaseUI {
 		hint.setText("上传中");
 		// 返回 UploadTaskExecutor ，可执行cancel，见 MyResumableActivity
 		Context context = this.getApplicationContext();
-		IO.putFile(context, auth, key, uri, extra, new CallBack() {
+		IO.putFile(context, QNApi.getAuthorizer(), key, uri, extra, new CallBack() {
 			@Override
 			public void onProcess(long current, long total) {
 				int percent = (int) (current * 100 / total);
@@ -158,8 +140,8 @@ public class QnSingleUploadUI extends BaseUI {
 			return;
 		if (requestCode == PICK_PICTURE_RESUMABLE) {
 			// doUploadUri(data.getData());
-			// doUploadFile(data.getData());
-			doUploadStreamAt(data.getData());
+			doUploadFile(data.getData());
+			// doUploadStreamAt(data.getData());
 			return;
 		}
 	}
@@ -184,7 +166,7 @@ public class QnSingleUploadUI extends BaseUI {
 		LogUtils.d("path------------------" + path);
 		InputStream stream = ImageUtils.compressForUpload2(path, 200 * 1024);
 		InputStreamAt input = new InputStreamAt.ByteInput(ByteToInputStream.input2byte(stream));
-		IO.put(auth, key, input, extra, new CallBack() {
+		IO.put(QNApi.getAuthorizer(), key, input, extra, new CallBack() {
 			@Override
 			public void onProcess(long current, long total) {
 				int percent = (int) (current * 100 / total);
@@ -219,7 +201,7 @@ public class QnSingleUploadUI extends BaseUI {
 			return;
 		}
 		uploading = true;
-		String key = IO.UNDEFINED_KEY; // 自动生成key
+		String key = UUID.randomUUID().toString(); // 自动生成key
 		PutExtra extra = new PutExtra();
 		extra.params = new HashMap<String, String>();
 		extra.params.put("x:a", "测试中文信息");
@@ -229,7 +211,7 @@ public class QnSingleUploadUI extends BaseUI {
 		String path = ImageUtils.getUriString(uri, getContentResolver());
 		LogUtils.d("path------------------" + path);
 		File file = new File(path);
-		IO.putFile(auth, key, file, extra, new CallBack() {
+		IO.putFile(QNApi.getAuthorizer(), key, file, extra, new CallBack() {
 			@Override
 			public void onProcess(long current, long total) {
 				int percent = (int) (current * 100 / total);

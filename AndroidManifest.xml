@@ -141,6 +141,9 @@
             android:name=".services.TIntentService"
             android:enabled="true" />
         <service
+            android:name=".services.QiNiuFileUploadService"
+            android:enabled="true" />
+        <service
             android:name=".services.PersonService"
             android:enabled="true" />
 

@@ -17,13 +17,14 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.os.Looper;
 
-import com.aoeng.degu.services.LogFileUploadServices;
-import com.aoeng.degu.services.MulityLogFileUploadServices;
+import com.aoeng.degu.services.QiNiuFileUploadService;
 import com.aoeng.degu.utils.AppUtils;
 import com.aoeng.degu.utils.ThreadPoolManager;
+import com.aoeng.degu.utils.common.FileUtils;
 import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.Logger;
 import com.aoeng.degu.utils.common.UIUtils;
+import com.aoeng.degu.utils.qiniu.QNApi;
 
 /**
  * May 21, 2014 4:54:26 PM
@@ -58,11 +59,13 @@ public class DGApplication extends Application {
 
 		mThreadPoolManager = ThreadPoolManager.getInstance();
 
-		// CrashHandler mCrashHandler = CrashHandler.getInstance();
-		// mCrashHandler.init();
+		CrashHandler mCrashHandler = CrashHandler.getInstance();
+		mCrashHandler.init();
 		// Intent intent = new Intent(UIUtils.getContext(),
 		// LogFileUploadServices.class);
-		Intent intent = new Intent(UIUtils.getContext(), MulityLogFileUploadServices.class);
+		// Intent intent = new Intent(UIUtils.getContext(),
+		// MulityLogFileUploadServices.class);
+		Intent intent = new Intent(UIUtils.getContext(), QiNiuFileUploadService.class);
 		getContext().startService(intent);
 
 		printCommonInfo();
@@ -71,6 +74,9 @@ public class DGApplication extends Application {
 	private void printCommonInfo() {
 		// TODO Auto-generated method stub
 		LogUtils.e("---AppKey----" + AppUtils.getAppKey(this.mApplication));
+		LogUtils.i("FileUtils.getAppRootPath() --" + FileUtils.getAppRootPath());
+
+		LogUtils.e("QNApi.getUpToken(QNApi.BUCKET_ANDROIDPLAY)" + QNApi.getUpToken(QNApi.BUCKET_ANDROIDPLAY));
 	}
 
 	public static String getCacheDirPath() {

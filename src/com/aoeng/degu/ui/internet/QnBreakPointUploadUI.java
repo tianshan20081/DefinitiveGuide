@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.qiniu.QNApi;
 import com.qiniu.auth.Authorizer;
 import com.qiniu.resumableio.ResumableIO;
 import com.qiniu.resumableio.SliceUploadTask.Block;
@@ -32,10 +34,6 @@ import com.qiniu.rs.UploadTaskExecutor;
 import com.qiniu.utils.Util;
 
 public class QnBreakPointUploadUI extends BaseUI {
-	private Authorizer auth = new Authorizer();
-	{
-		auth.setUploadToken(QnSingleUploadUI.uptoken);
-	}
 
 	private ProgressBar pb;
 	private Button start;
@@ -114,9 +112,8 @@ public class QnBreakPointUploadUI extends BaseUI {
 			extra.params.put("x:a", "bb");
 		}
 
-		// String id = key + "_" + uri.getPath();
-		String id = QnSingleUploadUI.bucketName + ":" + key + "_" + uri.getPath() + "<other>"; // 应用中唯一确定一个上传记录
 		// final BlockRecord record = new MyBlockRecord(this, id);
+		String id = UUID.randomUUID().toString();
 		final BlockRecord record = new MyFileBlockRecord(this, id);
 
 		List<Block> blks = record.load();
@@ -128,13 +125,13 @@ public class QnBreakPointUploadUI extends BaseUI {
 		}
 		final String pre = s + "\r\n";
 		uploading = true;
-		executor = ResumableIO.putFile(this, auth, key, uri, extra, blks, new CallBack() {
+		executor = ResumableIO.putFile(this, QNApi.getAuthorizer(), key, uri, extra, blks, new CallBack() {
 			@Override
 			public void onSuccess(UploadCallRet ret) {
 				uploading = false;
 				String key = ret.getKey();
-				String redirect = "http://" + QnSingleUploadUI.bucketName + ".qiniudn.com/" + key;
-				String redirect2 = "http://" + QnSingleUploadUI.bucketName + ".u.qiniudn.com/" + key;
+				String redirect = "http://" + QNApi.BUCKET_ANDROIDPLAY + ".qiniudn.com/" + key;
+				String redirect2 = "http://" + QNApi.BUCKET_ANDROIDPLAY + ".u.qiniudn.com/" + key;
 				hint.setText(pre + "上传成功! ret: " + ret.toString() + "  \r\n可到" + redirect + " 或  " + redirect2 + " 访问");
 				record.remove();
 				clean();

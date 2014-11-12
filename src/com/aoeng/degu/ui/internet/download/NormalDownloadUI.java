@@ -19,7 +19,8 @@ public class NormalDownloadUI extends BaseUI {
 
 	private TextView btnStart;
 	private TextView btnStop;
-	String url = "http://dl.m.jd.com/download/android/360buy.apk";
+	// String url = "http://dl.m.jd.com/download/android/360buy.apk";
+	String url = "http://nokee.qiniudn.com/6406556c-f608-451e-997d-912b9875215dIMG_20141030_123003.jpg?imageView2/2/h/768/q/85";
 	private AsyncHttpClient client;
 
 	@Override

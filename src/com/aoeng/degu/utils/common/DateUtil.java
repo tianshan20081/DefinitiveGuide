@@ -12,11 +12,25 @@ public final class DateUtil {
 	private static String[] weeks = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
 	private static String[] days = { "周日", "周一", "周二", "周三", "周四", "周五", "周六", "执行一次" };
 	public static SimpleDateFormat HHmmss = new SimpleDateFormat("HH:mm:ss", Locale.CHINA);
+	/**
+	 * HHmmss
+	 */
 	public static SimpleDateFormat HHmmssNoColon = new SimpleDateFormat("HHmmss", Locale.CHINA);
+	/**
+	 * yyyyMMddHHmmss
+	 */
 	public static SimpleDateFormat yyyyMMddHHmmss = new SimpleDateFormat("yyyyMMddHHmmss", Locale.CHINA);
-
+	/**
+	 * MMddyyyyHHmmss
+	 */
 	public static SimpleDateFormat MMddYYYYHHmmss = new SimpleDateFormat("MMddyyyyHHmmss", Locale.CHINA);
+	/**
+	 * MMddHHmmss
+	 */
 	public static SimpleDateFormat MMddHHmmss = new SimpleDateFormat("MMddHHmmss", Locale.CHINA);
+	/**
+	 * yyyy-MM-dd
+	 */
 	public static SimpleDateFormat yyyyMMdd = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
 	/**
 	 * 2014.09.22
@@ -31,12 +45,16 @@ public final class DateUtil {
 	 */
 	public static SimpleDateFormat yyyy_M_d_HH_mm = new SimpleDateFormat("yyyy年MM月dd日 HH:mm", Locale.CHINA);
 	/**
-	 * 
+	 * yyyy-M-d
 	 */
 	public static SimpleDateFormat YYYY_M_D_MIDDLE = new SimpleDateFormat("yyyy-M-d", Locale.CHINA);
-
+	/**
+	 * yyyyMMdd
+	 */
 	public static SimpleDateFormat shortyyyyMMdd = new SimpleDateFormat("yyyyMMdd", Locale.CHINA);
-
+	/**
+	 * yyyy-MM-dd E
+	 */
 	public static SimpleDateFormat yyyy_MM_dde = new SimpleDateFormat("yyyy-MM-dd E", Locale.CHINA);
 	/**
 	 * "yyyy-MM-dd HH:mm"
@@ -46,6 +64,9 @@ public final class DateUtil {
 	 * yyyy-MM-dd HH:mm:ss
 	 */
 	public static SimpleDateFormat yyyy_MM_dd_HHmmss = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+	/**
+	 * HH:mm
+	 */
 	public static SimpleDateFormat HHmm = new SimpleDateFormat("HH:mm", Locale.CHINA);
 	/**
 	 * 20141025_21:25:36

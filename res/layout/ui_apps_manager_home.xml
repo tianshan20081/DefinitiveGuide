@@ -29,7 +29,11 @@
                 style="@style/btnItem"
                 android:text="获取应用程序大小" />
 
-            <Button style="@style/btnItem" />
+            <Button
+                android:id="@+id/btnStartOtherApp"
+                style="@style/btnItem"
+                android:text="@string/startOtherApp" />
+
         </LinearLayout>
     </LinearLayout>
 

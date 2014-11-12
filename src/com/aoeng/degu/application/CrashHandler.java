@@ -28,6 +28,7 @@ import com.aoeng.degu.ui.HomeUI;
 import com.aoeng.degu.utils.common.FileUtils;
 import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.StringUtils;
 import com.aoeng.degu.utils.common.UIUtils;
 
 public class CrashHandler implements UncaughtExceptionHandler {
@@ -109,28 +110,26 @@ public class CrashHandler implements UncaughtExceptionHandler {
 			cause = ex.getCause();
 		}
 		String exceptionInfo = logsDateFormat.format(new Date()).concat("\n").concat(writer.toString());
-		String fileName = "crash-" + crashLogNameDateFormat.format(new Date()) + ".log";
-		String crashPath = FileUtils.getAppCrashPath();
-		if (!TextUtils.isEmpty(crashPath)) {
-			File crashDir = new File(crashPath);
-			if (!crashDir.exists()) {
-				crashDir.mkdirs();
-			}
-			File logFile = new File(crashPath.concat(File.separator).concat(fileName));
-			if (logFile.exists()) {
-				sb = new StringBuffer(exceptionInfo);
-			} else {
-				sb.append(exceptionInfo);
-			}
-			try {
-				FileOutputStream fos = new FileOutputStream(logFile, true);
-				fos.write(sb.toString().getBytes());
-				fos.flush();
-				fos.close();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				Logger.e(TAG, "log file save to sd card error !");
-			}
+		File logFile = FileUtils.getCrashFile();
+		if (null == logFile) {
+			LogUtils.e("make logFile error ");
+			return;
+		}
+		if (logFile.exists()) {
+			sb = new StringBuffer(exceptionInfo);
+		} else {
+			sb.append(exceptionInfo);
+		}
+		LogUtils.i("crashInfo------" + sb.toString());
+		try {
+			FileOutputStream fos = new FileOutputStream(logFile, true);
+			fos.write(sb.toString().getBytes());
+			fos.flush();
+			fos.close();
+			LogUtils.i("logFile.getAbsolutePath()" + logFile.getAbsolutePath());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Logger.e(TAG, "log file save to sd card error !");
 		}
 	}
 

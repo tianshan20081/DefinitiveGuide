@@ -1,5 +1,8 @@
 package com.aoeng.degu.utils;
 
+import com.aoeng.degu.utils.common.LogUtils;
+import com.aoeng.degu.utils.common.UIUtils;
+
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -66,5 +69,14 @@ public class AppUtils {
 
 		}
 		return appKey;
+	}
+
+	public static String getAppName() {
+		// TODO Auto-generated method stub
+		ApplicationInfo info = UIUtils.getContext().getApplicationContext().getApplicationInfo();
+		String pache = info.packageName;
+		String name = info.name;
+		LogUtils.i(pache + " 	" + name);
+		return name;
 	}
 }
