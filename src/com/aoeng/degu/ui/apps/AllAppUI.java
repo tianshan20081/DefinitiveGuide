@@ -49,14 +49,17 @@ public class AllAppUI extends Activity {
 		lvAllApps = (ListView) this.findViewById(R.id.lvAllApps);
 
 		PackageManager pm = getPackageManager();
-		List<ApplicationInfo> infos = pm
-				.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
+		List<ApplicationInfo> infos = pm.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
 		// GET_UNINSTALLED_PACKAGES代表已删除，但还有安装目录的
 
 		List<PackageInfo> packageInfos = pm.getInstalledPackages(0);
 		if (null == packageInfos || packageInfos.size() == 0) {
 			return;
 		}
+
+		StringBuffer sb = new StringBuffer();
+		StringBuffer sbUserApp = new StringBuffer("User Apps ");
+		sbUserApp.append("\n");
 		for (PackageInfo p : packageInfos) {
 			if ((p.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
 				// 非系统应用
@@ -66,6 +69,11 @@ public class AllAppUI extends Activity {
 				String label = (String) p.applicationInfo.loadLabel(pm);
 				Drawable icon = p.applicationInfo.loadIcon(pm);
 				String packageName = p.packageName;
+
+				sbUserApp.append("name:").append(name).append("\n");
+				sbUserApp.append("versionCode:").append(versionCode).append("\n");
+				sbUserApp.append("versionName:").append(versionName).append("\n");
+				sbUserApp.append("label:").append(label).append("\n");
 			} else {
 				// 系统应用　　　　　　　　
 			}
@@ -75,9 +83,9 @@ public class AllAppUI extends Activity {
 			List<AppInfo> appInfos = new ArrayList<AppInfo>();
 			for (ApplicationInfo info : infos) {
 				AppInfo appInfo = new AppInfo();
-				appInfo.setIcon(info.loadIcon(pm));
-				appInfo.setLabel((String) info.loadLabel(pm));
-				appInfo.setPackageName(info.packageName);
+				appInfo.setAppIcon(info.loadIcon(pm));
+				appInfo.setAppLabel((String) info.loadLabel(pm));
+				appInfo.setPkgName(info.packageName);
 				appInfo.setName(info.name);
 				appInfos.add(appInfo);
 				Logger.i(TAG, appInfo.toString());
@@ -135,7 +143,8 @@ public class AllAppUI extends Activity {
 		/*
 		 * (non-Javadoc)
 		 * 
-		 * @see android.widget.Adapter#getView(int, android.view.View, android.view.ViewGroup)
+		 * @see android.widget.Adapter#getView(int, android.view.View,
+		 * android.view.ViewGroup)
 		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
@@ -155,9 +164,9 @@ public class AllAppUI extends Activity {
 			}
 			AppInfo info = infos.get(position);
 			holder.tvName.setText(info.getName());
-			holder.tvLable.setText(info.getLabel());
-			holder.tvPackageName.setText(info.getPackageName());
-			holder.imIcon.setBackground(info.getIcon());
+			holder.tvLable.setText(info.getAppLabel());
+			holder.tvPackageName.setText(info.getPkgName());
+			holder.imIcon.setBackground(info.getAppIcon());
 			return convertView;
 		}
 	}

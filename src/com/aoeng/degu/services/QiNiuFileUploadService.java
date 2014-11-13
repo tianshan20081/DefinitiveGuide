@@ -4,23 +4,23 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aoeng.degu.utils.common.FileUtils;
-import com.aoeng.degu.utils.common.LogUtils;
-import com.aoeng.degu.utils.common.UIUtils;
-import com.aoeng.degu.utils.qiniu.QNApi;
-import com.qiniu.auth.Authorizer;
-import com.qiniu.io.IO;
-import com.qiniu.rs.CallBack;
-import com.qiniu.rs.CallRet;
-import com.qiniu.rs.PutExtra;
-import com.qiniu.rs.UploadCallRet;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+
+import com.aoeng.degu.R;
+import com.aoeng.degu.utils.common.FileUtils;
+import com.aoeng.degu.utils.common.LogUtils;
+import com.aoeng.degu.utils.common.UIUtils;
+import com.aoeng.degu.utils.qiniu.QNApi;
+import com.qiniu.io.IO;
+import com.qiniu.rs.CallBack;
+import com.qiniu.rs.CallRet;
+import com.qiniu.rs.PutExtra;
+import com.qiniu.rs.UploadCallRet;
 
 public class QiNiuFileUploadService extends Service {
 
@@ -54,7 +54,14 @@ public class QiNiuFileUploadService extends Service {
 						uploader(patFile);
 					}
 				} else {
-					UIUtils.getToastSafe("文件上传完毕");
+
+					String crashPath = FileUtils.getAppCrashPath();
+					File crashFolder = new File(crashPath);
+					if (crashFolder.exists()) {
+						crashFolder.delete();
+					}
+//					FileUtils.delFolder()
+					UIUtils.getToastSafe(R.string.app_upload_success);
 					stopSelf();
 				}
 				break;
@@ -75,11 +82,7 @@ public class QiNiuFileUploadService extends Service {
 			@Override
 			protected List<String> doInBackground(Void... params) {
 				// TODO Auto-generated method stub
-
-				// FileUtils.getCarshFiles()
-				String path = "/storage/sdcard0/DCIM/Camera";
-				getUploads(path);
-				return mList;
+				return FileUtils.getFileLists(FileUtils.getAppCrashPath());
 
 			}
 
@@ -117,7 +120,7 @@ public class QiNiuFileUploadService extends Service {
 	private void uploader(final File file) {
 		// TODO Auto-generated method stub
 		LogUtils.i(file.getAbsolutePath());
-		IO.putFile(QNApi.getAuthorizer(), file.getName(), file, extra, new CallBack() {
+		IO.putFile(QNApi.getAuthorizer(QNApi.BUCKET_TSLOGS), file.getName(), file, extra, new CallBack() {
 
 			@Override
 			public void onSuccess(UploadCallRet ret) {

@@ -6,39 +6,27 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.Thread.UncaughtExceptionHandler;
-import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.os.Build;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
 import com.aoeng.degu.ui.HomeUI;
+import com.aoeng.degu.utils.AppUtils;
+import com.aoeng.degu.utils.common.DateUtil;
 import com.aoeng.degu.utils.common.FileUtils;
 import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.Logger;
-import com.aoeng.degu.utils.common.StringUtils;
 import com.aoeng.degu.utils.common.UIUtils;
 
 public class CrashHandler implements UncaughtExceptionHandler {
 	private static final String TAG = CrashHandler.class.getName();
 	private static CrashHandler mCrashHandler = new CrashHandler();
 	private UncaughtExceptionHandler mDefaultUncaughtExceptionHandler;
-	private Map<String, String> mInfos = new HashMap<String, String>();
-
-	private SimpleDateFormat crashLogNameDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH");
-	private SimpleDateFormat logsDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS");
 
 	private CrashHandler() {
 		// TODO Auto-generated constructor stub
@@ -89,8 +77,6 @@ public class CrashHandler implements UncaughtExceptionHandler {
 			}
 		}).start();
 
-		collectionDeviceInfo();
-
 		saveInfos2SDCard(ex);
 		return true;
 	}
@@ -98,9 +84,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	private void saveInfos2SDCard(Throwable ex) {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
-		for (Entry<String, String> entry : mInfos.entrySet()) {
-			sb.append(entry.getKey()).append("=").append(entry.getValue()).append("\n");
-		}
+		sb.append(AppUtils.getDeviceInfo());
 		Writer writer = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(writer);
 		ex.printStackTrace(printWriter);
@@ -109,7 +93,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 			ex.printStackTrace(printWriter);
 			cause = ex.getCause();
 		}
-		String exceptionInfo = logsDateFormat.format(new Date()).concat("\n").concat(writer.toString());
+		String exceptionInfo = DateUtil.yyyyMMddHHmmss.format(new Date()).concat("\n").concat(writer.toString());
 		File logFile = FileUtils.getCrashFile();
 		if (null == logFile) {
 			LogUtils.e("make logFile error ");
@@ -130,33 +114,6 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			Logger.e(TAG, "log file save to sd card error !");
-		}
-	}
-
-	private void collectionDeviceInfo() {
-		// TODO Auto-generated method stub
-		PackageManager pm = UIUtils.getContext().getPackageManager();
-		try {
-			PackageInfo pi = pm.getPackageInfo(UIUtils.getContext().getPackageName(), PackageManager.GET_ACTIVITIES);
-			if (null != pi) {
-				String versionName = pi.versionName == null ? "null" : pi.versionName;
-				String versionCode = pi.versionCode + "";
-				mInfos.put("versionName", versionName);
-				mInfos.put("versionCode", versionCode);
-			}
-		} catch (NameNotFoundException e) {
-			// TODO Auto-generated catch block
-			Logger.e(TAG, "get application info error ");
-		}
-		try {
-			Field[] fields = Build.class.getDeclaredFields();
-			for (Field field : fields) {
-				field.setAccessible(true);
-				mInfos.put(field.getName(), field.get(null).toString());
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			Logger.e(TAG, "Reflect Build error");
 		}
 	}
 

@@ -1,13 +1,21 @@
 package com.aoeng.degu.utils;
 
-import com.aoeng.degu.utils.common.LogUtils;
-import com.aoeng.degu.utils.common.UIUtils;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
 import android.os.Bundle;
+
+import com.aoeng.degu.utils.common.LogUtils;
+import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 public class AppUtils {
 
@@ -76,7 +84,52 @@ public class AppUtils {
 		ApplicationInfo info = UIUtils.getContext().getApplicationContext().getApplicationInfo();
 		String pache = info.packageName;
 		String name = info.name;
+		CharSequence label = info.loadLabel(UIUtils.getContext().getPackageManager());
 		LogUtils.i(pache + " 	" + name);
 		return name;
+	}
+
+	public static String getDeviceName() {
+
+		return android.os.Build.DEVICE;
+	}
+
+	public static String getDeviceInfo() {
+		// TODO Auto-generated method stub
+		StringBuffer sb = new StringBuffer();
+		for (Entry<String, String> entry : getDeviceMap().entrySet()) {
+			sb.append(entry.getKey()).append("=").append(entry.getValue()).append("\n");
+		}
+		return sb.toString();
+	}
+
+	public static Map<String, String> getDeviceMap() {
+
+		// TODO Auto-generated method stub
+		PackageManager pm = UIUtils.getContext().getPackageManager();
+		Map<String, String> map = new HashMap<String, String>();
+		try {
+			PackageInfo pi = pm.getPackageInfo(UIUtils.getContext().getPackageName(), PackageManager.GET_ACTIVITIES);
+			if (null != pi) {
+				String versionName = pi.versionName == null ? "null" : pi.versionName;
+				String versionCode = pi.versionCode + "";
+				map.put("versionName", versionName);
+				map.put("versionCode", versionCode);
+			}
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			LogUtils.e("get application info error ");
+		}
+		try {
+			Field[] fields = Build.class.getDeclaredFields();
+			for (Field field : fields) {
+				field.setAccessible(true);
+				map.put(field.getName(), field.get(null).toString());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			LogUtils.e("Reflect Build error");
+		}
+		return map;
 	}
 }

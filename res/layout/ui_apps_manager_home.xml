@@ -33,7 +33,14 @@
                 android:id="@+id/btnStartOtherApp"
                 style="@style/btnItem"
                 android:text="@string/startOtherApp" />
+        </LinearLayout>
 
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnUploadAppsInfo"
+                style="@style/btnItem"
+                android:text="@string/uploadAppsInfo" />
         </LinearLayout>
     </LinearLayout>
 

@@ -16,9 +16,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 
-import com.aoeng.degu.utils.AppUtils;
-
 import android.os.Environment;
+
+import com.aoeng.degu.utils.AppUtils;
 
 public class FileUtils {
 	private static String ROOT_DIR = "df";
@@ -28,6 +28,7 @@ public class FileUtils {
 	public static final String CACHE_DIR = "cache";
 	public static final String ICON_DIR = "icon";
 	private static final String ARM_DIR = "arm";
+	private static final String TEMP_DIR = "temp";
 
 	/**
 	 * 用当前时间给取得的图片命名
@@ -574,7 +575,6 @@ public class FileUtils {
 
 		// TODO Auto-generated method stub
 		ArrayList<String> files = new ArrayList<String>();
-
 		String path = FileUtils.getAppCrashPath();
 		LogUtils.i("appcrashpath " + path);
 		if (!StringUtils.isEmpty(path)) {
@@ -602,7 +602,12 @@ public class FileUtils {
 		// TODO Auto-generated method stub
 
 		String crashPath = FileUtils.getAppCrashPath();
-		String logName = AppUtils.getAppName() + "crash-" + DateUtil.yyyyMMdd.format(new Date()) + ".log";
+		String logName = AppUtils.getDeviceName() + "-crash-" + getFileName() + ".log";
+
+		return getFile(crashPath, logName);
+	}
+
+	private static File getFile(String crashPath, String logName) {
 		if (!StringUtils.isEmpty(crashPath)) {
 			File file = new File(crashPath);
 			File logFile = new File(file, logName);
@@ -620,4 +625,65 @@ public class FileUtils {
 		return null;
 	}
 
+	public static File getTempleFile(String infos) {
+		// TODO Auto-generated method stub
+		String tempPath = getTempPath();
+		String fileName = AppUtils.getDeviceName().toUpperCase() + "-apps-" + getFileName() + ".log";
+		File file = getFile(tempPath, fileName);
+		if (file.exists()) {
+			try {
+				FileOutputStream fos = new FileOutputStream(file, true);
+				fos.write(infos.getBytes());
+				fos.flush();
+				fos.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				LogUtils.e(e);
+			}
+		}
+		return file;
+	}
+
+	private static String getTempPath() {
+		// TODO Auto-generated method stub
+		return getDir(TEMP_DIR);
+	}
+
+	public static String getTempleFilePath(String infos) {
+		// TODO Auto-generated method stub
+		return getTempleFile(infos).getAbsolutePath();
+	}
+
+	/**
+	 * 获得 文件夹 @folderName 下面的 所有文件 集合
+	 * 
+	 * @param folderName
+	 *            文件夹的名称 eg .D:\\Camera
+	 * @return
+	 */
+	public static List<String> getFileLists(String folderName) {
+		// TODO Auto-generated method stub
+		List<String> filePaths = new ArrayList<String>();
+		if (StringUtils.isEmpty(folderName)) {
+			throw new IllegalArgumentException("the folder name is empty !!! ");
+		}
+		File folder = new File(folderName);
+		if (!folder.exists()) {
+			throw new IllegalArgumentException("the folder name is not exists !");
+		}
+		if (!folder.isDirectory()) {
+			throw new IllegalArgumentException("the folder name is not a directory !");
+		}
+		File[] files = folder.listFiles();
+		if (null != files && files.length > 0) {
+			for (File file : files) {
+				if (file.isFile()) {
+					filePaths.add(file.getAbsolutePath());
+				} else {
+					filePaths.addAll(getFileLists(file.getAbsolutePath()));
+				}
+			}
+		}
+		return filePaths;
+	}
 }

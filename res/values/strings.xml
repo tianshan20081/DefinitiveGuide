@@ -41,5 +41,13 @@
     <string name="sure">确认 </string>
     <string name="normalDownload">普通下载 </string>
     <string name="startOtherApp">打开其他应用 </string>
+    <string name="uploadAppsInfo">上传Apps信息</string>
+    <string name="app_size_empty">应用信息为空，请检查。。。</string>
+    <string name="app_scan_failure">应用程序信息扫描失败。</string>
+    <string name="app_scan_success">应用程序信息扫描成功。</string>
+    <string name="app_upload_failure">文件上传失败(%s)</string>
+    <string name="app_upload_success">文件上传成功(七牛bucket：%s)</string>
+    <string name="app_scan_startupload">文件开始上传</string>
+    <string name="tempfile_del_success">临时文件删除成功</string>
 
 </resources>

@@ -33,6 +33,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.domain.AppInfo;
 import com.aoeng.degu.utils.common.Logger;
 
 /**
@@ -63,8 +64,7 @@ public class AppSizeUI extends Activity implements OnItemClickListener {
 		listview = (ListView) findViewById(R.id.lvAppSize);
 		mlistAppInfo = new ArrayList<AppInfo>();
 		queryAppInfo(); // 查询所有应用程序信息
-		BrowseApplicationInfoAdapter browseAppAdapter = new BrowseApplicationInfoAdapter(this,
-				mlistAppInfo);
+		BrowseApplicationInfoAdapter browseAppAdapter = new BrowseApplicationInfoAdapter(this, mlistAppInfo);
 		listview.setAdapter(browseAppAdapter);
 		listview.setOnItemClickListener(this);
 	}
@@ -114,8 +114,7 @@ public class AppSizeUI extends Activity implements OnItemClickListener {
 				// 通过反射机制获得该隐藏函数
 				// 这种是类静态函数，要用getDeclaredMethod而不是getMethod
 				// 成员函数才能用getMethod
-				Method getPackageSizeInfo = pm.getClass().getMethod("getPackageSizeInfo",
-						String.class, IPackageStatsObserver.class);
+				Method getPackageSizeInfo = pm.getClass().getMethod("getPackageSizeInfo", String.class, IPackageStatsObserver.class);
 				// getPackageSizeInfo.setAccessible(true);
 				// 调用该函数，并且给其分配参数 ，待调用流程完成后会回调PkgSizeObserver类的函数
 				getPackageSizeInfo.invoke(pm, pkgName, new PkgSizeObserver());
@@ -138,15 +137,13 @@ public class AppSizeUI extends Activity implements OnItemClickListener {
 		 * @param succeeded
 		 *            代表回调成功
 		 */
-		public void onGetStatsCompleted(PackageStats pStats, boolean succeeded)
-				throws RemoteException {
+		public void onGetStatsCompleted(PackageStats pStats, boolean succeeded) throws RemoteException {
 			// TODO Auto-generated method stub
 			cachesize = pStats.cacheSize; // 缓存大小
 			datasize = pStats.dataSize; // 数据大小
 			codesize = pStats.codeSize; // 应用程序大小
 			totalsize = cachesize + datasize + codesize;
-			Logger.i(TAG, "cachesize--->" + cachesize + " datasize---->" + datasize
-					+ " codeSize---->" + codesize);
+			Logger.i(TAG, "cachesize--->" + cachesize + " datasize---->" + datasize + " codeSize---->" + codesize);
 		}
 	}
 
@@ -250,75 +247,4 @@ public class AppSizeUI extends Activity implements OnItemClickListener {
 		}
 	}
 
-	// Model类 ，用来存储应用程序信息
-	public class AppInfo {
-
-		private String appLabel; // 应用程序标签
-		private Drawable appIcon; // 应用程序图像
-		private Intent intent; // 启动应用程序的Intent ，一般是Action为Main和Category为Lancher的Activity
-		private String pkgName; // 应用程序所对应的包名
-
-		private long cachesize; // 缓存大小
-		private long datasize; // 数据大小
-		private long codesieze; // 应用程序大小
-
-		public long getCachesize() {
-			return cachesize;
-		}
-
-		public void setCachesize(long cachesize) {
-			this.cachesize = cachesize;
-		}
-
-		public long getDatasize() {
-			return datasize;
-		}
-
-		public void setDatasize(long datasize) {
-			this.datasize = datasize;
-		}
-
-		public long getCodesieze() {
-			return codesieze;
-		}
-
-		public void setCodesieze(long codesieze) {
-			this.codesieze = codesieze;
-		}
-
-		public AppInfo() {
-		}
-
-		public String getAppLabel() {
-			return appLabel;
-		}
-
-		public void setAppLabel(String appName) {
-			this.appLabel = appName;
-		}
-
-		public Drawable getAppIcon() {
-			return appIcon;
-		}
-
-		public void setAppIcon(Drawable appIcon) {
-			this.appIcon = appIcon;
-		}
-
-		public Intent getIntent() {
-			return intent;
-		}
-
-		public void setIntent(Intent intent) {
-			this.intent = intent;
-		}
-
-		public String getPkgName() {
-			return pkgName;
-		}
-
-		public void setPkgName(String pkgName) {
-			this.pkgName = pkgName;
-		}
-	}
 }

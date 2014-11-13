@@ -91,4 +91,18 @@ public class QNApi {
 		auth.setUploadToken(QNApi.getUpToken(BUCKET_TSLOGS));
 		return auth;
 	}
+
+	/**
+	 * 获得七牛 的 Authorizer
+	 * 
+	 * @param bucket
+	 *            bucket 空间名称
+	 * @return
+	 */
+	public static Authorizer getAuthorizer(String bucket) {
+		// TODO Auto-generated method stub
+		Authorizer auth = new Authorizer();
+		auth.setUploadToken(QNApi.getUpToken(bucket));
+		return auth;
+	}
 }

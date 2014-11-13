@@ -3,109 +3,104 @@
  */
 package com.aoeng.degu.domain;
 
+import java.io.Serializable;
+
+import com.alibaba.fastjson.JSON;
+
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 
 /**
  * May 19, 2014 10:10:08 AM
  * 
  */
-public class AppInfo {
-
-	private String name;
-	private String packageName;
-	private String label;
-	private Drawable icon;
+public class AppInfo implements Serializable {
 
 	/**
 	 * 
 	 */
-	public AppInfo() {
-		super();
+	private static final long serialVersionUID = 6048549878338414744L;
+
+	private String name;
+
+	private String appLabel; // 应用程序标签
+	private Drawable appIcon; // 应用程序图像
+	private Intent intent; // 启动应用程序的Intent
+							// ，一般是Action为Main和Category为Lancher的Activity
+	private String pkgName; // 应用程序所对应的包名
+
+	private long cachesize; // 缓存大小
+	private long datasize; // 数据大小
+	private long codesieze; // 应用程序大小
+
+	public long getCachesize() {
+		return cachesize;
 	}
 
-	/**
-	 * @param name
-	 * @param packageName
-	 * @param label
-	 * @param icon
-	 * @param logo
-	 */
-	public AppInfo(String name, String packageName, String label, Drawable icon) {
-		super();
-		this.name = name;
-		this.packageName = packageName;
-		this.label = label;
-		this.icon = icon;
+	public void setCachesize(long cachesize) {
+		this.cachesize = cachesize;
 	}
 
-	/**
-	 * @return the name
-	 */
+	public long getDatasize() {
+		return datasize;
+	}
+
+	public void setDatasize(long datasize) {
+		this.datasize = datasize;
+	}
+
+	public long getCodesieze() {
+		return codesieze;
+	}
+
+	public void setCodesieze(long codesieze) {
+		this.codesieze = codesieze;
+	}
+
+	public String getAppLabel() {
+		return appLabel;
+	}
+
+	public void setAppLabel(String appName) {
+		this.appLabel = appName;
+	}
+
+	public Drawable getAppIcon() {
+		return appIcon;
+	}
+
+	public void setAppIcon(Drawable appIcon) {
+		this.appIcon = appIcon;
+	}
+
+	public Intent getIntent() {
+		return intent;
+	}
+
+	public void setIntent(Intent intent) {
+		this.intent = intent;
+	}
+
+	public String getPkgName() {
+		return pkgName;
+	}
+
+	public void setPkgName(String pkgName) {
+		this.pkgName = pkgName;
+	}
+
+	@Override
+	public String toString() {
+		return "AppInfo [name=" + name + ", appLabel=" + appLabel + ", appIcon=" + appIcon + ", intent=" + intent + ", pkgName=" + pkgName + ", cachesize=" + cachesize + ", datasize=" + datasize
+				+ ", codesieze=" + codesieze + "]\n";
+	}
+
 	public String getName() {
 		return name;
 	}
 
-	/**
-	 * @param name
-	 *            the name to set
-	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	/**
-	 * @return the packageName
-	 */
-	public String getPackageName() {
-		return packageName;
-	}
-
-	/**
-	 * @param packageName
-	 *            the packageName to set
-	 */
-	public void setPackageName(String packageName) {
-		this.packageName = packageName;
-	}
-
-	/**
-	 * @return the label
-	 */
-	public String getLabel() {
-		return label;
-	}
-
-	/**
-	 * @param label
-	 *            the label to set
-	 */
-	public void setLabel(String label) {
-		this.label = label;
-	}
-
-	/**
-	 * @return the icon
-	 */
-	public Drawable getIcon() {
-		return icon;
-	}
-
-	/**
-	 * @param icon
-	 *            the icon to set
-	 */
-	public void setIcon(Drawable icon) {
-		this.icon = icon;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "AppInfo [name=" + name + ", packageName=" + packageName + ", label=" + label
-				+ ", icon=" + icon + "]";
-	}
-
 
 }

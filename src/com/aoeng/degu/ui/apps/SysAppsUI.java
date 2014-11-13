@@ -51,8 +51,7 @@ public class SysAppsUI extends Activity {
 		Intent intent = new Intent(Intent.ACTION_MAIN, null);
 		intent.addCategory(Intent.CATEGORY_LAUNCHER);
 		// 通过查询，获得所有ResolveInfo对象.
-		List<ResolveInfo> resolveInfos = pm.queryIntentActivities(intent,
-				PackageManager.MATCH_DEFAULT_ONLY);
+		List<ResolveInfo> resolveInfos = pm.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
 		if (null == resolveInfos || resolveInfos.size() == 0) {
 			return;
 		}
@@ -60,9 +59,9 @@ public class SysAppsUI extends Activity {
 		for (ResolveInfo reInfo : resolveInfos) {
 			AppInfo info = new AppInfo();
 			info.setName(reInfo.activityInfo.name); // 获得该应用程序的启动Activity的name
-			info.setPackageName(reInfo.activityInfo.packageName); // 获得应用程序的包名
-			info.setLabel((String) reInfo.loadLabel(pm)); // 获得应用程序的Label
-			info.setIcon(reInfo.loadIcon(pm)); // 获得应用程序图标
+			info.setPkgName(reInfo.activityInfo.packageName); // 获得应用程序的包名
+			info.setAppLabel((String) reInfo.loadLabel(pm)); // 获得应用程序的Label
+			info.setAppIcon(reInfo.loadIcon(pm)); // 获得应用程序图标
 			appInfos.add(info);
 			Logger.i(TAG, info.toString());
 		}
@@ -116,7 +115,8 @@ public class SysAppsUI extends Activity {
 		/*
 		 * (non-Javadoc)
 		 * 
-		 * @see android.widget.Adapter#getView(int, android.view.View, android.view.ViewGroup)
+		 * @see android.widget.Adapter#getView(int, android.view.View,
+		 * android.view.ViewGroup)
 		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
@@ -136,9 +136,9 @@ public class SysAppsUI extends Activity {
 			}
 			AppInfo info = infos.get(position);
 			holder.tvName.setText(info.getName());
-			holder.tvLable.setText(info.getLabel());
-			holder.tvPackageName.setText(info.getPackageName());
-			holder.imIcon.setBackground(info.getIcon());
+			holder.tvLable.setText(info.getAppLabel());
+			holder.tvPackageName.setText(info.getPkgName());
+			holder.imIcon.setBackground(info.getAppIcon());
 			return convertView;
 		}
 

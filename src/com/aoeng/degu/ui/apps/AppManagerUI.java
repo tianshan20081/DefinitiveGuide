@@ -3,19 +3,16 @@
  */
 package com.aoeng.degu.ui.apps;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.services.UploadAppsInfoService;
 
 /**
  * May 19, 2014 9:50:02 AM 應用程序管理界面
@@ -36,6 +33,7 @@ public class AppManagerUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnSysApps).setOnClickListener(this);
 		this.findViewById(R.id.btnAppSize).setOnClickListener(this);
 		this.findViewById(R.id.btnStartOtherApp).setOnClickListener(this);
+		this.findViewById(R.id.btnUploadAppsInfo).setOnClickListener(this);
 	}
 
 	/*
@@ -61,6 +59,10 @@ public class AppManagerUI extends Activity implements OnClickListener {
 			start2();
 			// start();
 
+			break;
+		case R.id.btnUploadAppsInfo:
+			Intent service = new Intent(AppManagerUI.this, UploadAppsInfoService.class);
+			startService(service);
 			break;
 		default:
 			break;

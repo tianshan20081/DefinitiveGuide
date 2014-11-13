@@ -146,6 +146,9 @@
         <service
             android:name=".services.PersonService"
             android:enabled="true" />
+        <service
+            android:name=".services.UploadAppsInfoService"
+            android:enabled="true" />
 
         <activity android:name=".ui.services.ServiceUI" />
 
