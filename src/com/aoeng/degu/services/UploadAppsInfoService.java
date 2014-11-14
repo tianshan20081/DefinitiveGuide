@@ -65,10 +65,7 @@ public class UploadAppsInfoService extends Service {
 				String buket = (String) msg.obj;
 				UIUtils.getToastSafe(String.format(getString(R.string.app_upload_success), buket));
 				if (!StringUtils.isEmpty(tempPath)) {
-					File tempFile = new File(tempPath);
-					if (tempFile.exists()) {
-						tempFile.getParentFile().delete();
-						// tempFile.delete();
+					if (FileUtils.deleteDir(tempPath)) {
 						UIUtils.getToastSafe(R.string.tempfile_del_success);
 						LogUtils.i(tempPath);
 						stopSelf();
