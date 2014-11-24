@@ -42,11 +42,7 @@ public class QiNiuFileUploadService extends Service {
 
 				break;
 			case FILE_UPLOAD_SUCCESS:
-				String path = (String) msg.obj;
-				if (mFils.contains(path)) {
-					LogUtils.i(path);
-					mFils.remove(path);
-				}
+				mFils = FileUtils.getFileLists(FileUtils.getAppCrashPath());
 				if (null != mFils && mFils.size() > 0) {
 					String pat = mFils.get(0);
 					File patFile = new File(pat);
@@ -54,13 +50,6 @@ public class QiNiuFileUploadService extends Service {
 						uploader(patFile);
 					}
 				} else {
-
-					String crashPath = FileUtils.getAppCrashPath();
-					File crashFolder = new File(crashPath);
-					if (crashFolder.exists()) {
-						crashFolder.delete();
-					}
-//					FileUtils.delFolder()
 					UIUtils.getToastSafe(R.string.app_upload_success);
 					stopSelf();
 				}
@@ -83,7 +72,6 @@ public class QiNiuFileUploadService extends Service {
 			protected List<String> doInBackground(Void... params) {
 				// TODO Auto-generated method stub
 				return FileUtils.getFileLists(FileUtils.getAppCrashPath());
-
 			}
 
 			@Override
@@ -126,9 +114,9 @@ public class QiNiuFileUploadService extends Service {
 			public void onSuccess(UploadCallRet ret) {
 				// TODO Auto-generated method stub
 				Message message = handler.obtainMessage();
-				message.obj = file.getAbsolutePath();
 				message.what = FILE_UPLOAD_SUCCESS;
 				handler.sendMessage(message);
+				file.delete();
 				LogUtils.i("IO.putFile  upload " + ret.getResponse());
 			}
 

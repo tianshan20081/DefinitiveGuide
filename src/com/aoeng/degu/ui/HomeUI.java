@@ -1,8 +1,6 @@
 package com.aoeng.degu.ui;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
@@ -32,53 +30,7 @@ import com.aoeng.degu.ui.views.ViewsUI;
 import com.aoeng.degu.ui.wv.WebViewUI;
 import com.aoeng.degu.utils.common.UIUtils;
 
-public class HomeUI extends Activity implements OnClickListener {
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.ui_home);
-
-		this.findViewById(R.id.chapter1).setOnClickListener(this);
-		this.findViewById(R.id.chapter2).setOnClickListener(this);
-		this.findViewById(R.id.widget).setOnClickListener(this);
-		this.findViewById(R.id.dataSave).setOnClickListener(this);
-		this.findViewById(R.id.btnSystemUI).setOnClickListener(this);
-		this.findViewById(R.id.btnUserUI).setOnClickListener(this);
-		this.findViewById(R.id.btnGroupUI).setOnClickListener(this);
-		this.findViewById(R.id.btnReceiver).setOnClickListener(this);
-		this.findViewById(R.id.btnContentProvider).setOnClickListener(this);
-		this.findViewById(R.id.btnServices).setOnClickListener(this);
-		this.findViewById(R.id.btnNetWork).setOnClickListener(this);
-		this.findViewById(R.id.btnWebView).setOnClickListener(this);
-
-		this.findViewById(R.id.btnJNI).setOnClickListener(this);
-		this.findViewById(R.id.btnCoordinates).setOnClickListener(this);
-
-		this.findViewById(R.id.btnCustomerUI).setOnClickListener(this);
-		this.findViewById(R.id.btnListViews).setOnClickListener(this);
-
-		this.findViewById(R.id.btnLoginUIs).setOnClickListener(this);
-		this.findViewById(R.id.btnLocations).setOnClickListener(this);
-
-		this.findViewById(R.id.btnImgs).setOnClickListener(this);
-		this.findViewById(R.id.btnApp).setOnClickListener(this);
-
-		// 反编译与安全
-		this.findViewById(R.id.btnSecurity).setOnClickListener(this);
-		this.findViewById(R.id.btnGames).setOnClickListener(this);
-		this.findViewById(R.id.btnMedia).setOnClickListener(this);
-		this.findViewById(R.id.btnInternet).setOnClickListener(this);
-		this.findViewById(R.id.btnViews).setOnClickListener(this);
-		this.findViewById(R.id.btnEnc).setOnClickListener(this);
-
-		this.findViewById(R.id.btnHandler).setOnClickListener(this);
-		this.findViewById(R.id.btnEventDistribution).setOnClickListener(this);
-
-		this.findViewById(R.id.btnPhoneGap).setOnClickListener(this);
-		this.findViewById(R.id.btnChartEngine).setOnClickListener(this);
-
-	}
+public class HomeUI extends BaseUI implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
@@ -184,6 +136,69 @@ public class HomeUI extends Activity implements OnClickListener {
 		}
 
 		startActivity(intent);
+
+	}
+
+	@Override
+	protected void loadViewLayout() {
+		// TODO Auto-generated method stub
+		setContentView(R.layout.ui_home);
+	}
+
+	@Override
+	protected void findViewById() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	protected void setListener() {
+		// TODO Auto-generated method stub
+
+		this.findViewById(R.id.chapter1).setOnClickListener(this);
+		this.findViewById(R.id.chapter2).setOnClickListener(this);
+		this.findViewById(R.id.widget).setOnClickListener(this);
+		this.findViewById(R.id.dataSave).setOnClickListener(this);
+		this.findViewById(R.id.btnSystemUI).setOnClickListener(this);
+		this.findViewById(R.id.btnUserUI).setOnClickListener(this);
+		this.findViewById(R.id.btnGroupUI).setOnClickListener(this);
+		this.findViewById(R.id.btnReceiver).setOnClickListener(this);
+		this.findViewById(R.id.btnContentProvider).setOnClickListener(this);
+		this.findViewById(R.id.btnServices).setOnClickListener(this);
+		this.findViewById(R.id.btnNetWork).setOnClickListener(this);
+		this.findViewById(R.id.btnWebView).setOnClickListener(this);
+
+		this.findViewById(R.id.btnJNI).setOnClickListener(this);
+		this.findViewById(R.id.btnCoordinates).setOnClickListener(this);
+
+		this.findViewById(R.id.btnCustomerUI).setOnClickListener(this);
+		this.findViewById(R.id.btnListViews).setOnClickListener(this);
+
+		this.findViewById(R.id.btnLoginUIs).setOnClickListener(this);
+		this.findViewById(R.id.btnLocations).setOnClickListener(this);
+
+		this.findViewById(R.id.btnImgs).setOnClickListener(this);
+		this.findViewById(R.id.btnApp).setOnClickListener(this);
+
+		// 反编译与安全
+		this.findViewById(R.id.btnSecurity).setOnClickListener(this);
+		this.findViewById(R.id.btnGames).setOnClickListener(this);
+		this.findViewById(R.id.btnMedia).setOnClickListener(this);
+		this.findViewById(R.id.btnInternet).setOnClickListener(this);
+		this.findViewById(R.id.btnViews).setOnClickListener(this);
+		this.findViewById(R.id.btnEnc).setOnClickListener(this);
+
+		this.findViewById(R.id.btnHandler).setOnClickListener(this);
+		this.findViewById(R.id.btnEventDistribution).setOnClickListener(this);
+
+		this.findViewById(R.id.btnPhoneGap).setOnClickListener(this);
+		this.findViewById(R.id.btnChartEngine).setOnClickListener(this);
+
+	}
+
+	@Override
+	protected void processLogic() {
+		// TODO Auto-generated method stub
 
 	}
 }

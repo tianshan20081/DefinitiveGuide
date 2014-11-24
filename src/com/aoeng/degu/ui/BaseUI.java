@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.application.DGApplication;
@@ -23,6 +24,7 @@ import com.aoeng.degu.utils.BaseHandler;
 import com.aoeng.degu.utils.RequestVO;
 import com.aoeng.degu.utils.ThreadPoolManager;
 import com.aoeng.degu.utils.common.Logger;
+import com.aoeng.degu.utils.common.UIUtils;
 
 /**
  * May 21, 2014 4:48:31 PM
@@ -47,7 +49,7 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	protected Context context;
 
 	public BaseUI() {
-		
+
 	}
 
 	/*
@@ -73,6 +75,15 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 		// TODO Auto-generated method stub
 		this.mCurrentShowUI = this;
 		super.onResume();
+		JPushInterface.onResume(UIUtils.getContext());
+
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(UIUtils.getContext());
 	}
 
 	@Override

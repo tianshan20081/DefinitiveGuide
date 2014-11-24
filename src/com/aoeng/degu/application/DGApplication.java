@@ -6,6 +6,7 @@ package com.aoeng.degu.application;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import android.app.Activity;
 import android.app.Application;
@@ -16,6 +17,8 @@ import android.content.ServiceConnection;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.Looper;
+import cn.jpush.android.api.JPushInterface;
+import cn.jpush.android.api.TagAliasCallback;
 
 import com.aoeng.degu.services.QiNiuFileUploadService;
 import com.aoeng.degu.utils.AppUtils;
@@ -51,14 +54,14 @@ public class DGApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 
-		initCacheDirPath();
 		this.mApplication = this;
 		this.mMainThreadLooper = getMainThreadLooper();
 		this.mMainThreadId = android.os.Process.myPid();
 		this.mMainThread = Thread.currentThread();
 
 		mThreadPoolManager = ThreadPoolManager.getInstance();
-
+		initJpush();
+		initCacheDirPath();
 		CrashHandler mCrashHandler = CrashHandler.getInstance();
 		mCrashHandler.init();
 		// Intent intent = new Intent(UIUtils.getContext(),
@@ -69,6 +72,21 @@ public class DGApplication extends Application {
 		getContext().startService(intent);
 
 		printCommonInfo();
+	}
+
+	private void initJpush() {
+		// TODO Auto-generated method stub
+		JPushInterface.setDebugMode(true);
+		JPushInterface.init(this);
+
+		JPushInterface.setAlias(getContext(), "admin", new TagAliasCallback() {
+
+			@Override
+			public void gotResult(int arg0, String arg1, Set<String> arg2) {
+				// TODO Auto-generated method stub
+				LogUtils.i(arg1);
+			}
+		});
 	}
 
 	private void printCommonInfo() {
