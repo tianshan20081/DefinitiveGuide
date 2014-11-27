@@ -1,5 +1,7 @@
 package com.aoeng.degu.receiver;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -32,6 +34,8 @@ public class JpushReciver extends BroadcastReceiver {
 			processCustomMessage(context, bundle);
 
 			LogUtils.i("contents  ----" + extrs);
+			
+			UIUtils.notify(extrs);
 
 			UIUtils.getToastSafe(extrs);
 
@@ -63,6 +67,7 @@ public class JpushReciver extends BroadcastReceiver {
 			LogUtils.i("[MyReceiver] Unhandled intent - " + intent.getAction());
 		}
 	}
+
 
 	// 打印所有的 intent extra 数据
 	private static String printBundle(Bundle bundle) {

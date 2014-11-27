@@ -29,6 +29,7 @@ public class PictureFromMediaStoreUI extends BaseUI {
 	private ImageView ivPic;
 	private Button btnGetImg;
 	private TextView tvImgInfo;
+	private TextView tvPath;
 
 	@Override
 	public void onClick(View v) {
@@ -58,6 +59,7 @@ public class PictureFromMediaStoreUI extends BaseUI {
 		ivPic = (ImageView) findView(R.id.ivPic);
 
 		tvImgInfo = (TextView) findView(R.id.tvImgInfo);
+		tvPath = (TextView) findView(R.id.tvPath);
 	}
 
 	@Override
@@ -106,7 +108,7 @@ public class PictureFromMediaStoreUI extends BaseUI {
 			cursor.close();
 			if (null != picInfo) {
 				ivPic.setImageBitmap(BitmapFactory.decodeFile(picInfo.getPicPath()));
-
+				tvPath.setText(picInfo.getPicPath());
 				log(picInfo.toString());
 				loadImageInfo(picInfo);
 			}

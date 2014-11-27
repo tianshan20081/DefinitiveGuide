@@ -1,15 +1,20 @@
 package com.aoeng.degu.utils.common;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.widget.Toast;
 
+import com.aoeng.degu.R;
 import com.aoeng.degu.application.DGApplication;
 import com.aoeng.degu.ui.BaseUI;
-import com.aoeng.degu.ui.chartengine.SimpleChartEngineUI;
-import com.aoeng.degu.ui.views.DialogUI;
+import com.aoeng.degu.ui.mp.MpRequestInfoUI;
 import com.aoeng.degu.utils.ThreadPoolManager;
 
 public class UIUtils {
@@ -98,4 +103,32 @@ public class UIUtils {
 		return DGApplication.getThreadPoolManager();
 	}
 
+	public static void notify(String extrs) {
+		// TODO Auto-generated method stub
+		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getContext()).setSmallIcon(R.drawable.ic_launcher).setContentTitle("来自京东服务器的通知").setContentText(extrs);
+		// Creates an explicit intent for an Activity in your app
+		Intent resultIntent = new Intent(getContext(), MpRequestInfoUI.class);
+		resultIntent.putExtra("extras", extrs);
+
+		// The stack builder object will contain an artificial back stack for
+		// the
+		// started Activity.
+		// This ensures that navigating backward from the Activity leads out of
+		// your application to the Home screen.
+		TaskStackBuilder stackBuilder = TaskStackBuilder.create(getContext());
+		// Adds the back stack for the Intent (but not the Intent itself)
+		stackBuilder.addParentStack(MpRequestInfoUI.class);
+		// Adds the Intent that starts the Activity to the top of the stack
+		stackBuilder.addNextIntent(resultIntent);
+		PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+		mBuilder.setContentIntent(resultPendingIntent);
+		NotificationManager mNotificationManager = (NotificationManager) UIUtils.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
+		// mId allows you to update the notification later on.
+
+		mBuilder.setDefaults(Notification.DEFAULT_LIGHTS);
+		mBuilder.setLights(0xff00ff00, 300, 1000);
+		long[] pattern = { 0, 100, 200, 300 };
+		mBuilder.setVibrate(pattern);
+		mNotificationManager.notify(2, mBuilder.build());
+	}
 }

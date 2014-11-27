@@ -68,6 +68,7 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <!-- jpush end -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <application
         android:name="com.aoeng.degu.application.DGApplication"
         android:allowBackup="true"
@@ -305,6 +306,7 @@
         <activity android:name=".ui.phonegap.SimplePhoneGapUI" />
         <activity android:name=".ui.phonegap.PhoneGapCameraUI" />
         <activity android:name=".ui.phonegap.PhoneGapBarcodeUI" />
+        <activity android:name=".ui.mp.MpRequestInfoUI" />
         <activity
             android:name="com.phonegap.DroidGap"
             android:configChanges="keyboardHidden|orientation" >
