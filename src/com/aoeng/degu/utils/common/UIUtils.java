@@ -129,6 +129,7 @@ public class UIUtils {
 		mBuilder.setLights(0xff00ff00, 300, 1000);
 		long[] pattern = { 0, 100, 200, 300 };
 		mBuilder.setVibrate(pattern);
-		mNotificationManager.notify(2, mBuilder.build());
+		mBuilder.setAutoCancel(true);
+		mNotificationManager.notify((int) (System.currentTimeMillis() % 10000000), mBuilder.build());
 	}
 }
