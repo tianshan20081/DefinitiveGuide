@@ -22,6 +22,9 @@ public class WebViewUI extends BaseUI implements OnClickListener {
 		case R.id.btnWvJsCallJava:
 			UIUtils.startActivity(new Intent(UIUtils.getContext(), JsCallJavaUI.class));
 			break;
+		case R.id.btnPbWebView:
+			UIUtils.startActivity(new Intent(UIUtils.getContext(), PbWebViewUI.class));
+			break;
 		default:
 			break;
 		}
@@ -32,14 +35,12 @@ public class WebViewUI extends BaseUI implements OnClickListener {
 		// TODO Auto-generated method stub
 		setContentView(R.layout.ui_wv_home);
 
-		
-
 	}
 
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -47,12 +48,13 @@ public class WebViewUI extends BaseUI implements OnClickListener {
 		// TODO Auto-generated method stub
 		this.findViewById(R.id.btnSimpleWebView).setOnClickListener(this);
 		this.findViewById(R.id.btnWvJsCallJava).setOnClickListener(this);
+		this.findViewById(R.id.btnPbWebView).setOnClickListener(this);
 	}
 
 	@Override
 	protected void processLogic() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

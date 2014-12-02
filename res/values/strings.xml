@@ -28,6 +28,9 @@
     <string name="qnBreakPointUpload">七牛单文件断点上传</string>
     <string name="picIcon">选择头像</string>
     <string name="picCrop">图片裁剪</string>
+    <string name="SimpleWebView">简单webview</string>
+    <string name="JsCallJava">webview &amp;&amp; js</string>
+    <string name="pbWebView">带进度条的 webview</string>
     <string name="chosePicFromStore">从图库选择图片</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>

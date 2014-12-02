@@ -21,11 +21,23 @@
                 <Button
                     android:id="@+id/btnSimpleWebView"
                     style="@style/btnItem"
-                    android:text="SimpleWebView" />
+                    android:text="@string/SimpleWebView" />
+
                 <Button
                     android:id="@+id/btnWvJsCallJava"
                     style="@style/btnItem"
-                    android:text="JsCallJava" />
+                    android:text="@string/JsCallJava" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnPbWebView"
+                    style="@style/btnItem"
+                    android:text="@string/pbWebView" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

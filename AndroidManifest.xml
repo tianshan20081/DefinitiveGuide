@@ -68,7 +68,8 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <!-- jpush end -->
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:name="com.aoeng.degu.application.DGApplication"
         android:allowBackup="true"
@@ -197,6 +198,7 @@
 
         <activity android:name=".ui.wv.WebViewUI" />
         <activity android:name=".ui.wv.SimpleWebViewUI" />
+        <activity android:name=".ui.wv.PbWebViewUI" />
         <!-- js Call java -->
         <activity android:name=".ui.wv.JsCallJavaUI" />
         <activity android:name=".ui.nt.NetWorkUI" />

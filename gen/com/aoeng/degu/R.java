@@ -909,7 +909,7 @@ containing a value of this type.
         public static final int TextView1=0x7f0c0061;
         public static final int accept_accounts=0x7f0c00f5;
         public static final int accept_troopmsg=0x7f0c00f6;
-        public static final int action_settings=0x7f0c01ab;
+        public static final int action_settings=0x7f0c01ad;
         public static final int address=0x7f0c000c;
         public static final int age=0x7f0c000b;
         public static final int alphabetButton=0x7f0c0048;
@@ -998,7 +998,7 @@ containing a value of this type.
         public static final int btnIntentVideoCamera=0x7f0c0141;
         public static final int btnInternet=0x7f0c00ac;
         public static final int btnJNI=0x7f0c00a2;
-        public static final int btnJavaCallJs=0x7f0c01a8;
+        public static final int btnJavaCallJs=0x7f0c01a9;
         public static final int btnJavaMD5=0x7f0c007b;
         public static final int btnJavaMD5Salt=0x7f0c007d;
         public static final int btnJieCheng=0x7f0c00df;
@@ -1017,6 +1017,7 @@ containing a value of this type.
         public static final int btnOpenBlueTooth=0x7f0c015e;
         public static final int btnOpenBlueTooth2=0x7f0c015f;
         public static final int btnOpenUI=0x7f0c018f;
+        public static final int btnPbWebView=0x7f0c01a8;
         public static final int btnPhoneGap=0x7f0c00b1;
         public static final int btnPhotoWall=0x7f0c004f;
         public static final int btnPhotoWall2Cache=0x7f0c0052;
@@ -1219,7 +1220,7 @@ containing a value of this type.
         public static final int lyBottom=0x7f0c0192;
         public static final int lyHeader=0x7f0c0190;
         public static final int lySpeaked=0x7f0c0147;
-        public static final int menu_settings=0x7f0c01ac;
+        public static final int menu_settings=0x7f0c01ae;
         public static final int mergeView=0x7f0c0193;
         public static final int more_bottom=0x7f0c00ee;
         public static final int more_image=0x7f0c00f0;
@@ -1236,6 +1237,7 @@ containing a value of this type.
         public static final int password=0x7f0c00ea;
         public static final int pb=0x7f0c019e;
         public static final int pbImageLoading=0x7f0c0013;
+        public static final int pbWebView=0x7f0c01ab;
         public static final int pb_listview_header_progress=0x7f0c012e;
         public static final int percentTV=0x7f0c00d2;
         public static final int photo=0x7f0c0058;
@@ -1332,8 +1334,8 @@ containing a value of this type.
         public static final int weibolist=0x7f0c011b;
         public static final int widget=0x7f0c0097;
         public static final int work_censustable_id=0x7f0c01a2;
-        public static final int wvJsCallJava=0x7f0c01a9;
-        public static final int wvSimple=0x7f0c01aa;
+        public static final int wvJsCallJava=0x7f0c01aa;
+        public static final int wvSimple=0x7f0c01ac;
     }
     public static final class layout {
         public static final int child=0x7f030000;
@@ -1471,7 +1473,8 @@ containing a value of this type.
         public static final int ui_wigets=0x7f030084;
         public static final int ui_wv_home=0x7f030085;
         public static final int ui_wv_jscalljava=0x7f030086;
-        public static final int ui_wv_simplewv=0x7f030087;
+        public static final int ui_wv_pbwv=0x7f030087;
+        public static final int ui_wv_simplewv=0x7f030088;
     }
     public static final class menu {
         public static final int home_ui=0x7f0b0000;
@@ -1490,23 +1493,25 @@ containing a value of this type.
         public static final int track3=0x7f060009;
     }
     public static final class string {
+        public static final int JsCallJava=0x7f09001c;
+        public static final int SimpleWebView=0x7f09001b;
         public static final int URL_HOST=0x7f090012;
         public static final int action_settings=0x7f090005;
         public static final int app_name=0x7f090004;
-        public static final int app_scan_failure=0x7f09002a;
-        public static final int app_scan_startupload=0x7f09002e;
-        public static final int app_scan_success=0x7f09002b;
-        public static final int app_size_empty=0x7f090029;
-        public static final int app_upload_failure=0x7f09002c;
-        public static final int app_upload_success=0x7f09002d;
+        public static final int app_scan_failure=0x7f09002d;
+        public static final int app_scan_startupload=0x7f090031;
+        public static final int app_scan_success=0x7f09002e;
+        public static final int app_size_empty=0x7f09002c;
+        public static final int app_upload_failure=0x7f09002f;
+        public static final int app_upload_success=0x7f090030;
         public static final int border_bottom=0x7f090008;
         public static final int border_top=0x7f090007;
-        public static final int cancel=0x7f09001c;
+        public static final int cancel=0x7f09001f;
         public static final int cardinal_east=0x7f090001;
         public static final int cardinal_north=0x7f090000;
         public static final int cardinal_south=0x7f090002;
         public static final int cardinal_west=0x7f090003;
-        public static final int chosePicFromStore=0x7f09001b;
+        public static final int chosePicFromStore=0x7f09001e;
         public static final int crc=0x7f090014;
         public static final int exception_exit=0x7f090016;
         public static final int hello_world=0x7f090006;
@@ -1515,13 +1520,14 @@ containing a value of this type.
         public static final int loadmore_label=0x7f090010;
         public static final int menu_settings=0x7f09000a;
         public static final int net_error=0x7f090013;
-        public static final int no_storage_card=0x7f090020;
-        public static final int normalDownload=0x7f090026;
-        public static final int not_enough_space=0x7f090021;
+        public static final int no_storage_card=0x7f090023;
+        public static final int normalDownload=0x7f090029;
+        public static final int not_enough_space=0x7f090024;
+        public static final int pbWebView=0x7f09001d;
         public static final int picCrop=0x7f09001a;
         public static final int picIcon=0x7f090019;
-        public static final int preparing_card=0x7f09001f;
-        public static final int pressTalk=0x7f090023;
+        public static final int preparing_card=0x7f090022;
+        public static final int pressTalk=0x7f090026;
         public static final int pull_to_refresh_pull_label=0x7f09000b;
         public static final int pull_to_refresh_refreshing_label=0x7f09000d;
         public static final int pull_to_refresh_release_label=0x7f09000c;
@@ -1530,14 +1536,14 @@ containing a value of this type.
         public static final int qnBreakPointUpload=0x7f090018;
         public static final int qnSingleUpload=0x7f090017;
         public static final int quake_feed=0x7f090015;
-        public static final int recorderVoice=0x7f090022;
-        public static final int save=0x7f09001d;
-        public static final int saving_image=0x7f09001e;
-        public static final int startOtherApp=0x7f090027;
-        public static final int sure=0x7f090025;
-        public static final int tempfile_del_success=0x7f09002f;
-        public static final int uploadAppsInfo=0x7f090028;
-        public static final int voiceDel=0x7f090024;
+        public static final int recorderVoice=0x7f090025;
+        public static final int save=0x7f090020;
+        public static final int saving_image=0x7f090021;
+        public static final int startOtherApp=0x7f09002a;
+        public static final int sure=0x7f090028;
+        public static final int tempfile_del_success=0x7f090032;
+        public static final int uploadAppsInfo=0x7f09002b;
+        public static final int voiceDel=0x7f090027;
     }
     public static final class style {
         public static final int AnimHead=0x7f0a0008;
