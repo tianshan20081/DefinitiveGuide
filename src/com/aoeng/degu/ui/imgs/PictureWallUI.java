@@ -152,15 +152,13 @@ public class PictureWallUI extends BaseUI {
 		// String params[] = new String[] {
 		// "'%"+FileUtils.getPhonePhotoFolder().getAbsolutePath()+"%'" };
 		String params[] = new String[] { url };
-		String[] filePathColumn = { MediaStore.Images.Media.DATA, MediaStore.Images.Media.LATITUDE, MediaStore.Images.Media.LONGITUDE,
-				MediaStore.Images.Media.SIZE, MediaStore.Images.Media.TITLE, MediaStore.Images.Media.DESCRIPTION, MediaStore.Images.Media.MIME_TYPE,
-				MediaStore.Images.Media.DATE_ADDED, MediaStore.Images.Media.DATE_MODIFIED, MediaStore.Images.Media.DATE_TAKEN,
+		String[] filePathColumn = { MediaStore.Images.Media.DATA, MediaStore.Images.Media.LATITUDE, MediaStore.Images.Media.LONGITUDE, MediaStore.Images.Media.SIZE, MediaStore.Images.Media.TITLE,
+				MediaStore.Images.Media.DESCRIPTION, MediaStore.Images.Media.MIME_TYPE, MediaStore.Images.Media.DATE_ADDED, MediaStore.Images.Media.DATE_MODIFIED, MediaStore.Images.Media.DATE_TAKEN,
 				MediaStore.Images.Media.DISPLAY_NAME, MediaStore.Images.Media.HEIGHT, MediaStore.Images.Media.WIDTH };
 		// String param = MediaStore.Images.Media.DATA + " like '%" + url +
 		// "%'";
 		String param = MediaStore.Images.Media.DATA + " like '%" + url + "%' ";
-		Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, filePathColumn, param, null,
-				MediaStore.Images.Media.DATE_TAKEN + " desc  ");
+		Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, filePathColumn, param, null, MediaStore.Images.Media.DATE_TAKEN + " desc  ");
 		// Cursor cursor =
 		// Cursor cursor =
 		// getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
@@ -196,9 +194,9 @@ public class PictureWallUI extends BaseUI {
 			picInfo.setTitle(cursor.getString(cursor.getColumnIndex(filePathColumn[4])));
 			picInfo.setDescription(cursor.getString(cursor.getColumnIndex(filePathColumn[5])));
 			picInfo.setMimeType(cursor.getString(cursor.getColumnIndex(filePathColumn[6])));
-			picInfo.setAddDate(new Date((cursor.getLong(cursor.getColumnIndex(filePathColumn[7])))));
-			picInfo.setModifyDate(new Date((cursor.getLong(cursor.getColumnIndex(filePathColumn[8])))));
-			picInfo.setTakenDate(new Date((cursor.getLong(cursor.getColumnIndex(filePathColumn[9])))));
+			picInfo.setAddDate(new Date(cursor.getLong(cursor.getColumnIndex(filePathColumn[7]))));
+			picInfo.setModifyDate(new Date(cursor.getLong(cursor.getColumnIndex(filePathColumn[8]))));
+			picInfo.setTakenDate(new Date(cursor.getLong(cursor.getColumnIndex(filePathColumn[9]))));
 			picInfo.setDisplayName(cursor.getString(cursor.getColumnIndex(filePathColumn[10])));
 
 			picInfo.setHeight(cursor.getInt(cursor.getColumnIndex(filePathColumn[11])));
@@ -207,7 +205,7 @@ public class PictureWallUI extends BaseUI {
 			if (null == treeMap || treeMap.size() <= 0) {
 				group = new ImageGroup();
 				group.add(picInfo);
-				treeMap.put(group.getGroupId()+"", group);
+				treeMap.put(group.getGroupId() + "", group);
 				group = null;
 			} else {
 				if (treeMap.lastEntry().getValue().isBelong(picInfo)) {
@@ -215,7 +213,7 @@ public class PictureWallUI extends BaseUI {
 				} else {
 					group = new ImageGroup();
 					group.add(picInfo);
-					treeMap.put(group.getGroupId()+"", group);
+					treeMap.put(group.getGroupId() + "", group);
 					group = null;
 				}
 			}
@@ -233,7 +231,7 @@ public class PictureWallUI extends BaseUI {
 			// }
 
 		}
-		
+
 		treeMap = PhotoUtils.getAllPhotos();
 	}
 
@@ -312,8 +310,7 @@ public class PictureWallUI extends BaseUI {
 			// BitmapDrawable(BitmapFactory.decodeFile(new
 			// ArrayList<String>(dicmMap.keySet()).get(position))));
 			Bitmap bitmap = BitmapFactory.decodeFile(new ArrayList<String>(dicmMap.keySet()).get(position));
-			holder.rlImg.setBackgroundDrawable(new BitmapDrawable(
-					ImageUtils.compressBySize(bitmap, SystemUtils.getScreenWidth(), SystemUtils.getScreenHeight())));
+			holder.rlImg.setBackgroundDrawable(new BitmapDrawable(ImageUtils.compressBySize(bitmap, SystemUtils.getScreenWidth(), SystemUtils.getScreenHeight())));
 			holder.tvTime.setText(dicmMap.get(new ArrayList<String>(dicmMap.keySet()).get(position)));
 
 			return convertView;

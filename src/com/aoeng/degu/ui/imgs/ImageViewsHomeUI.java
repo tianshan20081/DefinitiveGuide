@@ -16,7 +16,7 @@ import com.aoeng.degu.utils.common.UIUtils;
  * May 16, 2014 6:02:25 PM
  * 
  */
-public class ImageViewsUI extends Activity implements OnClickListener {
+public class ImageViewsHomeUI extends Activity implements OnClickListener {
 
 	/*
 	 * (non-Javadoc)
@@ -38,6 +38,7 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnTakeIcon).setOnClickListener(this);
 		this.findViewById(R.id.btnPicIcon).setOnClickListener(this);
 		this.findViewById(R.id.btnImgCrop).setOnClickListener(this);
+		this.findViewById(R.id.btnImageAutoGroup).setOnClickListener(this);
 	}
 
 	/*
@@ -62,16 +63,19 @@ public class ImageViewsUI extends Activity implements OnClickListener {
 			UIUtils.startActivity(PicturesFromMediaStoreUI.class);
 			break;
 		case R.id.btnCircleImg:
-			startActivity(new Intent(ImageViewsUI.this, CircleImgUI.class));
+			startActivity(new Intent(ImageViewsHomeUI.this, CircleImgUI.class));
 			break;
 		case R.id.btnShapeImg:
-			startActivity(new Intent(ImageViewsUI.this, CustomShapeImgUI.class));
+			startActivity(new Intent(ImageViewsHomeUI.this, CustomShapeImgUI.class));
 			break;
 		case R.id.btnPicIcon:
-			startActivity(new Intent(ImageViewsUI.this, PicIconUI.class));
+			startActivity(new Intent(ImageViewsHomeUI.this, PicIconUI.class));
 			break;
 		case R.id.btnImgCrop:
-			startActivity(new Intent(ImageViewsUI.this, PicCropUI.class));
+			startActivity(new Intent(ImageViewsHomeUI.this, PicCropUI.class));
+			break;
+		case R.id.btnImageAutoGroup:
+			startActivity(new Intent(ImageViewsHomeUI.this, ImageAutoGroupUI.class));
 			break;
 		default:
 			break;

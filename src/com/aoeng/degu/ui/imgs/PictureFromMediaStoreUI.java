@@ -95,9 +95,9 @@ public class PictureFromMediaStoreUI extends BaseUI {
 				picInfo.setTitle(cursor.getString(cursor.getColumnIndex(filePathColumn[4])));
 				picInfo.setDescription(cursor.getString(cursor.getColumnIndex(filePathColumn[5])));
 				picInfo.setMimeType(cursor.getString(cursor.getColumnIndex(filePathColumn[6])));
-				picInfo.setAddDate(new Date((cursor.getLong(cursor.getColumnIndex(filePathColumn[7])))));
-				picInfo.setModifyDate(new Date((cursor.getLong(cursor.getColumnIndex(filePathColumn[8])))));
-				picInfo.setTakenDate(new Date((cursor.getLong(cursor.getColumnIndex(filePathColumn[9])))));
+				picInfo.setAddDate(new Date(cursor.getLong(cursor.getColumnIndex(filePathColumn[7]))));
+				picInfo.setModifyDate(new Date(cursor.getLong(cursor.getColumnIndex(filePathColumn[8]))));
+				picInfo.setTakenDate(new Date(cursor.getLong(cursor.getColumnIndex(filePathColumn[9]))));
 				picInfo.setDisplayName(cursor.getString(cursor.getColumnIndex(filePathColumn[10])));
 
 				picInfo.setHeight(cursor.getInt(cursor.getColumnIndex(filePathColumn[11])));

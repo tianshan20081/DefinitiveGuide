@@ -1,8 +1,10 @@
 package com.aoeng.degu.utils.common;
 
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
@@ -131,5 +133,24 @@ public class UIUtils {
 		mBuilder.setVibrate(pattern);
 		mBuilder.setAutoCancel(true);
 		mNotificationManager.notify((int) (System.currentTimeMillis() % 10000000), mBuilder.build());
+	}
+
+	/**
+	 * @param string
+	 * @return
+	 */
+	public static Dialog showProgressDialog(String msg) {
+		// TODO Auto-generated method stub
+		ProgressDialog dialog = new ProgressDialog(getContext());
+		dialog.setMessage(msg);
+		dialog.setCancelable(false);
+		return dialog;
+	}
+
+	public static void dismissProgressDialog(Dialog dialog) {
+		if (null != dialog && dialog.isShowing()) {
+			dialog.dismiss();
+			dialog = null;
+		}
 	}
 }

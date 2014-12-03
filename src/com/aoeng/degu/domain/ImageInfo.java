@@ -9,8 +9,13 @@ public class ImageInfo implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -2123782808060725597L;
-
+	/**
+ * 
+ */
 	private Date addDate;
+	/**
+	 * 
+	 */
 	private Date modifyDate;
 	private Date takenDate;
 	private Double latitude;
@@ -24,28 +29,29 @@ public class ImageInfo implements Serializable {
 	private int height;
 	private int width;
 
-	public int getHeight() {
-		return height;
+
+	public Date getAddDate() {
+		return addDate;
 	}
 
-	public void setHeight(int height) {
-		this.height = height;
+	public void setAddDate(Date addDate) {
+		this.addDate = addDate;
 	}
 
-	public int getWidth() {
-		return width;
+	public Date getModifyDate() {
+		return modifyDate;
 	}
 
-	public void setWidth(int width) {
-		this.width = width;
+	public void setModifyDate(Date modifyDate) {
+		this.modifyDate = modifyDate;
 	}
 
-	public String getDisplayName() {
-		return displayName;
+	public Date getTakenDate() {
+		return takenDate;
 	}
 
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
+	public void setTakenDate(Date takenDate) {
+		this.takenDate = takenDate;
 	}
 
 	public Double getLatitude() {
@@ -88,14 +94,6 @@ public class ImageInfo implements Serializable {
 		this.description = description;
 	}
 
-	public long getSize() {
-		return size;
-	}
-
-	public void setSize(long size) {
-		this.size = size;
-	}
-
 	public String getMimeType() {
 		return mimeType;
 	}
@@ -104,34 +102,36 @@ public class ImageInfo implements Serializable {
 		this.mimeType = mimeType;
 	}
 
-	public Date getAddDate() {
-		return addDate;
+	public String getDisplayName() {
+		return displayName;
 	}
 
-	public void setAddDate(Date addDate) {
-		this.addDate = addDate;
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
-	public Date getModifyDate() {
-		return modifyDate;
+	public long getSize() {
+		return size;
 	}
 
-	public void setModifyDate(Date modifyDate) {
-		this.modifyDate = modifyDate;
+	public void setSize(long size) {
+		this.size = size;
 	}
 
-	public Date getTakenDate() {
-		return takenDate;
+	public int getHeight() {
+		return height;
 	}
 
-	public void setTakenDate(Date takenDate) {
-		this.takenDate = takenDate;
+	public void setHeight(int height) {
+		this.height = height;
 	}
 
-	@Override
-	public String toString() {
-		return "ImageInfo [addDate=" + addDate + ", modifyDate=" + modifyDate + ", takenDate=" + takenDate + ", latitude=" + latitude + ", longitude=" + longitude + ", picPath=" + picPath
-				+ ", title=" + title + ", description=" + description + ", mimeType=" + mimeType + ", displayName=" + displayName + ", size=" + size + ", height=" + height + ", width=" + width + "]";
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
 	}
 
 }

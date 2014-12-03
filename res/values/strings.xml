@@ -18,6 +18,8 @@
     <string name="pull_to_refresh_tap_label">Tap to refresh...</string>
     <string name="pull_to_refresh_updated_at_label">最近更新于: </string>
     <string name="loadmore_label">加载更多</string>
+    <string name="scan">扫描</string>
+    <string name="scan_group">扫描分组</string>
     <string name="loading_label">正在加载....</string>
     <string name="URL_HOST">http://192.168.1.115/df</string>
     <string name="net_error">当前网络不可用，请先连接Internet！</string>
@@ -28,6 +30,8 @@
     <string name="qnBreakPointUpload">七牛单文件断点上传</string>
     <string name="picIcon">选择头像</string>
     <string name="picCrop">图片裁剪</string>
+    <string name="images_auto_group">相册自动分组</string>
+    <string name="flush">刷新</string>
     <string name="SimpleWebView">简单webview</string>
     <string name="JsCallJava">webview &amp;&amp; js</string>
     <string name="pbWebView">带进度条的 webview</string>

@@ -245,7 +245,7 @@
             android:name=".ui.cv.BigImageShowerUI"
             android:theme="@style/ImageScale" />
         <!-- 圖片展示 -->
-        <activity android:name=".ui.imgs.ImageViewsUI" />
+        <activity android:name=".ui.imgs.ImageViewsHomeUI" />
         <!-- 圆形图片 -->
         <activity android:name=".ui.imgs.CircleImgUI" />
         <!-- 多种图形展示界面 -->
@@ -257,6 +257,7 @@
         <activity android:name=".ui.imgs.ImageClipUI" />
         <activity android:name=".ui.imgs.PicCropUI" />
         <activity android:name=".ui.imgs.CropImage" />
+        <activity android:name=".ui.imgs.ImageAutoGroupUI" />
         <!-- 拍摄一个头像 -->
         <activity android:name=".ui.imgs.TakeIconUI" />
         <!-- 應用程序管理界面 -->

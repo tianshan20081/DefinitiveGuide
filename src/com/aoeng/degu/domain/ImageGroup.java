@@ -1,13 +1,20 @@
 package com.aoeng.degu.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import com.aoeng.degu.utils.Constant;
-import com.aoeng.degu.utils.DateUtils;
+import com.alibaba.fastjson.JSON;
+import com.aoeng.degu.constant.Constants;
 import com.aoeng.degu.utils.common.StringUtils;
 
-public class ImageGroup {
+public class ImageGroup implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7155071219748681643L;
 	/**
 	 * 编号
 	 */
@@ -32,8 +39,21 @@ public class ImageGroup {
 	 * 拍照经度
 	 */
 	private Double longitude;
+	/**
+	 * 分组 首页照片 地址
+	 */
 	private String frontImgPath;
-	private ArrayList<ImageInfo> infos = new ArrayList<ImageInfo>();
+	/**
+	 * 分组 首页照片 缩略图地址
+	 */
+	private String frontCacheImgPath;
+	/**
+	 * 
+	 */
+	// private String contactImgs;
+	private int albumSize;
+
+	private List<ImageInfo> infos = new ArrayList<ImageInfo>();
 
 	public void add(ImageInfo info) {
 		if (null == info) {
@@ -56,7 +76,20 @@ public class ImageGroup {
 		if (0 == this.groupId || this.groupId < info.getTakenDate().getTime()) {
 			this.groupId = info.getTakenDate().getTime();
 		}
+
 		infos.add(info);
+		this.albumSize = this.infos.size();
+		StringBuffer sb = new StringBuffer();
+		this.frontImgPath = info.getPicPath();
+		// for (ImageInfo ifo : this.infos) {
+		// sb.append(JSON.toJSONString(ifo)).append(";");
+		//
+		// }
+		// String str = sb.toString().substring(0,
+		// sb.toString().lastIndexOf(";"));
+
+		// this.contactImgs = str;
+
 	}
 
 	public long getGroupId() {
@@ -83,12 +116,24 @@ public class ImageGroup {
 		return longitude;
 	}
 
-	public ArrayList<ImageInfo> getInfos() {
+	public List<ImageInfo> getInfos() {
 		return infos;
 	}
 
 	public String getFrontImgPath() {
 		return frontImgPath;
+	}
+
+	public void setLoaction(String loaction) {
+		this.loaction = loaction;
+	}
+
+	public String getFrontCacheImgPath() {
+		return frontCacheImgPath;
+	}
+
+	public void setFrontCacheImgPath(String frontCacheImgPath) {
+		this.frontCacheImgPath = frontCacheImgPath;
 	}
 
 	/**
@@ -99,8 +144,7 @@ public class ImageGroup {
 	 */
 	public boolean isBelong(ImageInfo info) {
 		// TODO Auto-generated method stub
-		if (info.getTakenDate().getTime() < this.maxDate.getTime() + Constant.GroupMaxMinutes
-				&& info.getTakenDate().getTime() > this.minDate.getTime() - Constant.GroupMaxMinutes) {
+		if (info.getTakenDate().getTime() < this.maxDate.getTime() + Constants.GroupMaxMillisecond && info.getTakenDate().getTime() > this.minDate.getTime() - Constants.GroupMaxMillisecond) {
 			// LogUtils.i("isBelong--------------true");
 			return true;
 		}
@@ -119,15 +163,43 @@ public class ImageGroup {
 		this.loaction = "";
 	}
 
-	@Override
-	public String toString() {
-		return "ImageGroup [groupId=" + groupId + ", maxDate=" + maxDate + ", minDate=" + minDate + ", loaction=" + loaction + ", latitude=" + latitude
-				+ ", longitude=" + longitude + ", frontImgPath=" + frontImgPath + ", infos.size()=" + infos.size() + "]";
+	/**
+	 * 判断 时间 beginTime 是不是属于 该 group
+	 * 
+	 * @param begTime
+	 */
+	public boolean isBelongGroup(long begTime) {
+		// TODO Auto-generated method stub
+		if (Math.abs(this.minDate.getTime() - begTime) - Constants.GroupMaxMillisecond > 0 || Math.abs(this.maxDate.getTime() - begTime) - Constants.GroupMaxMillisecond > 0) {
+			return false;
+		}
+		return true;
 	}
 
-	public String toStr() {
-		return "ImageGroup [groupId=" + groupId + ", maxDate=" + DateUtils.yyyyMMdd_HHmmss.format(maxDate) + ", minDate="
-				+ DateUtils.yyyyMMdd_HHmmss.format(minDate) + ", frontImgPath=" + frontImgPath + ", infos.size()=" + infos.size() + "]";
+	public void setAlbumSize(int albumSize) {
+		this.albumSize = albumSize;
+	}
+
+	public int getAlbumSize() {
+		return this.albumSize;
+	}
+
+	public boolean isSameGroup(ImageGroup imageGroup) {
+		// TODO Auto-generated method stub
+		if (isBelongGroup(imageGroup.getMinDate().getTime()) || isBelongGroup(imageGroup.getMaxDate().getTime())) {
+			return true;
+		}
+		return false;
+	}
+
+	public void setInfos(List<ImageInfo> list) {
+		this.infos = list;
+	}
+
+	@Override
+	public String toString() {
+		return "ImageGroup [groupId=" + groupId + ", maxDate=" + maxDate + ", minDate=" + minDate + ", loaction=" + loaction + ", latitude=" + latitude + ", longitude=" + longitude
+				+ ", frontImgPath=" + frontImgPath + ", frontCacheImgPath=" + frontCacheImgPath + ", albumSize=" + albumSize + ", infos=" + infos + "]";
 	}
 
 }

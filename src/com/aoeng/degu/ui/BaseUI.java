@@ -8,10 +8,12 @@ import java.util.List;
 import java.util.Vector;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager.BadTokenException;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import cn.jpush.android.api.JPushInterface;
@@ -47,6 +49,7 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	/** ContentView */
 	private View inflate;
 	protected Context context;
+	private ProgressDialog progressDialog;
 
 	public BaseUI() {
 
@@ -157,6 +160,50 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 			} else {
 				finish();
 			}
+		}
+	}
+
+	/**
+	 * 显示正在加载的进度条
+	 * 
+	 */
+	public void showProgressDialog() {
+		if (progressDialog != null && progressDialog.isShowing()) {
+			return;
+		}
+		progressDialog = new ProgressDialog(BaseUI.this);
+		progressDialog.setMessage("加载中...");
+		try {
+			progressDialog.setCancelable(false);
+			progressDialog.show();
+		} catch (BadTokenException exception) {
+			exception.printStackTrace();
+		}
+	}
+
+	public void showProgressDialog(String msg) {
+		if (progressDialog != null && progressDialog.isShowing()) {
+			progressDialog.dismiss();
+			progressDialog = null;
+		}
+		progressDialog = new ProgressDialog(BaseUI.this);
+		progressDialog.setMessage(msg);
+		try {
+			progressDialog.show();
+			progressDialog.setCancelable(false);
+		} catch (BadTokenException exception) {
+			exception.printStackTrace();
+		}
+	}
+
+	/**
+	 * 隐藏正在加载的进度条
+	 * 
+	 */
+	public void dismissProgressDialog() {
+		if (null != progressDialog && progressDialog.isShowing() == true) {
+			progressDialog.dismiss();
+			progressDialog = null;
 		}
 	}
 

@@ -57,6 +57,14 @@
                     style="@style/btnItem"
                     android:text="@string/picCrop" />
             </LinearLayout>
+
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnImageAutoGroup"
+                    style="@style/btnItem"
+                    android:text="@string/images_auto_group" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
