@@ -202,7 +202,6 @@ public class RequestQueue {
             throw new IllegalArgumentException("Cannot cancelAll with a null tag");
         }
         cancelAll(new RequestFilter() {
-            @Override
             public boolean apply(Request<?> request) {
                 return request.getTag() == tag;
             }

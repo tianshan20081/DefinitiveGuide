@@ -55,14 +55,12 @@ public class ExecutorDelivery implements ResponseDelivery {
         postResponse(request, response, null);
     }
 
-    @Override
     public void postResponse(Request<?> request, Response<?> response, Runnable runnable) {
         request.markDelivered();
         request.addMarker("post-response");
         mResponsePoster.execute(new ResponseDeliveryRunnable(request, response, runnable));
     }
 
-    @Override
     public void postError(Request<?> request, VolleyError error) {
         request.addMarker("post-error");
         Response<?> response = Response.error(error);

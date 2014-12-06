@@ -30,7 +30,6 @@ public abstract class InputStreamAt implements Closeable {
 			isa = new FileInput(file, filename);
 			isa.cleans.add(new CleanCallBack(){
 
-				@Override
 				public void clean() {
 					file.delete();
 				}

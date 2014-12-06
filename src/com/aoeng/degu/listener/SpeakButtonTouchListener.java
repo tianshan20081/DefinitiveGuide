@@ -1,9 +1,6 @@
 package com.aoeng.degu.listener;
 
 import java.io.File;
-import java.util.Date;
-
-import org.apache.commons.lang3.StringUtils;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
@@ -20,6 +17,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.utils.common.StringUtils;
 
 /**
  * 处理录音说话按钮的触摸事件的监听器
@@ -98,7 +96,7 @@ public class SpeakButtonTouchListener implements OnTouchListener {
 			}
 			// 删除该录音文件
 			try {
-				if (!StringUtils.isEmpty(absolutePath)) {
+				if (!com.aoeng.degu.utils.common.StringUtils.isEmpty(absolutePath)) {
 					File file = new File(absolutePath);
 					if (file.exists()) {
 						file.delete();

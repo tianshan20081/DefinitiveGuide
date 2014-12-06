@@ -77,7 +77,6 @@ public class SimpleUploadTask extends UploadTask {
 		
 		m.setProcessNotify(new IOnProcess(){
 
-			@Override
 			public void onProcess(long current, long total) {
 				publishProgress(current, total); 
 			}
