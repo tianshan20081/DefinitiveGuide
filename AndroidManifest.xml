@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="11" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -288,6 +288,8 @@
         <activity android:name=".ui.media.IntentCameraUI" />
         <activity android:name=".ui.media.CameraUI" />
         <activity android:name=".ui.media.IntentVideoCameraUI" />
+        <activity android:name=".ui.media.BenchmarkUI" />
+        <activity android:name=".ui.media.ZXingTestUI" />
         <activity android:name=".ui.media.MediaRecorderedVoiceUI" />
         <activity android:name=".ui.internet.InternetHomeUI" />
         <activity android:name=".ui.internet.DomParserUI" />
