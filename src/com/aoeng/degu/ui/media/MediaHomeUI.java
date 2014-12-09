@@ -4,20 +4,21 @@
 package com.aoeng.degu.ui.media;
 
 import android.content.Intent;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.view.View;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.BaseUI;
 
 /**
- * Jun 9, 2014 3:04:23 PM
+ * Jun 9, 2014  3:04:23 PM
  *
  */
 public class MediaHomeUI extends BaseUI {
 
-	/*
-	 * (non-Javadoc)
-	 * 
+
+	/* (non-Javadoc)
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
 	 */
 	@Override
@@ -34,7 +35,7 @@ public class MediaHomeUI extends BaseUI {
 			startActivity(new Intent(this, RawAudioUI.class));
 			break;
 		case R.id.btnVideoView:
-			startActivity(new Intent(this, VideoViewUI.class));
+			startActivity(new Intent(this,VideoViewUI.class));
 			break;
 		case R.id.btnSurfaceView:
 			startActivity(new Intent(this, SurfaceViewUI.class));
@@ -51,17 +52,12 @@ public class MediaHomeUI extends BaseUI {
 		case R.id.btnRecorderVoidce:
 			startActivity(new Intent(this, MediaRecorderedVoiceUI.class));
 			break;
-		case R.id.btnZXingTest:
-			startActivity(new Intent(this, ZXingTestUI.class));
-			break;
 		default:
 			break;
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see com.aoeng.degu.ui.BaseUI#loadViewLayout()
 	 */
 	@Override
@@ -70,9 +66,7 @@ public class MediaHomeUI extends BaseUI {
 		setContentView(R.layout.ui_media_home);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see com.aoeng.degu.ui.BaseUI#findViewById()
 	 */
 	@Override
@@ -87,13 +81,10 @@ public class MediaHomeUI extends BaseUI {
 		findView(R.id.btnCamera).setOnClickListener(this);
 		findView(R.id.btnIntentVideoCamera).setOnClickListener(this);
 		findView(R.id.btnRecorderVoidce).setOnClickListener(this);
-		findView(R.id.btnZXingTest).setOnClickListener(this);
-
+		
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see com.aoeng.degu.ui.BaseUI#setListener()
 	 */
 	@Override
@@ -101,15 +92,13 @@ public class MediaHomeUI extends BaseUI {
 		// TODO Auto-generated method stub
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see com.aoeng.degu.ui.BaseUI#processLogic()
 	 */
 	@Override
 	protected void processLogic() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

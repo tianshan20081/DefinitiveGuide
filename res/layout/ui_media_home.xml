@@ -63,10 +63,6 @@
                 android:id="@+id/btnRecorderVoidce"
                 style="@style/btnItem"
                 android:text="@string/recorderVoice" />
-            <Button
-                android:id="@+id/btnZXingTest"
-                style="@style/btnItem"
-                android:text="@string/zxing_test" />
         </LinearLayout>
     </LinearLayout>
 
