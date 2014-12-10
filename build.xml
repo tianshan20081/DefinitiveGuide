@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="Degu" default="init">
+	<loadproperties srcFile="project.properties"/>
+	<property environment="SystemVariable" />  
+	<property name="sdk.dir" value="${SystemVariable.ANDROID_SDK_HOME}" />
+	<property name="ndk.dir" value="${SystemVariable.ANDROID_NDK_HOME}" />
+
+	
+	<fail message="sdk.dir is missing." unless="sdk.dir" />
+    <fail message="ndk.dir is missing." unless="ndk.dir" />
+	
+	<import file="${sdk.dir}/tools/ant/build.xml" />
+	
+	
+	<target name="native">
+		<echo message="Building native libraries..." />
+		<exec executable="${ndk.dir}/ndk-build.cmd" failonerror="true"/>
+		<echo message="DONE (Building native libraries)"/>
+	</target>
+	
+	<target name="apks" depends="native,release">
+	</target>
+	<target name="relapks" depends="release">
+	
+	</target>
+	
+	<target name="init">
+		<echo message="${sdk.dir}" />
+		<fail message="Ant 1.9.4 or higher is required.">
+			<condition>
+				<not>
+					<antversion property="ant.version" atleast="1.9.4"/>
+				</not>
+			</condition>
+		</fail>
+	</target>
+
+
+	<target name="clean">
+		<echo message="delete temporary files" />
+		<delete dir="gen" />
+		<delete dir="bin" />
+		<delete dir="out" />
+		<delete dir="obj" />
+		<echo message="done (delete temporary files)"/>
+	</target>
+</project>
