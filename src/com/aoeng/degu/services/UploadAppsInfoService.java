@@ -16,7 +16,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 
-import com.alibaba.fastjson.JSON;
 import com.aoeng.degu.R;
 import com.aoeng.degu.domain.AppInfo;
 import com.aoeng.degu.utils.AppUtils;

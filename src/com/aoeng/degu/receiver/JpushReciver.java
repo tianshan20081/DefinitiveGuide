@@ -1,16 +1,11 @@
 package com.aoeng.degu.receiver;
 
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import cn.jpush.android.api.JPushInterface;
 
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
 import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.UIUtils;
 

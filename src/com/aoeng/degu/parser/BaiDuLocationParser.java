@@ -1,7 +1,6 @@
 package com.aoeng.degu.parser;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.text.TextUtils;
 
