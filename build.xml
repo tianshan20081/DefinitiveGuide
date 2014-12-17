@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="Degu" default="init">
 	<loadproperties srcFile="project.properties"/>
+	<loadproperties srcFile="local.properties"/>
 	<property environment="SystemVariable" />  
 	<property name="sdk.dir" value="${SystemVariable.ANDROID_SDK_HOME}" />
 	<property name="ndk.dir" value="${SystemVariable.ANDROID_NDK_HOME}" />
@@ -23,6 +24,8 @@
 	<target name="relapks" depends="release">
 	
 	</target>
+	
+	
 	
 	<target name="init">
 		<echo message="${sdk.dir}" />

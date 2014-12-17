@@ -277,6 +277,14 @@
                     style="@style/btnItem"
                     android:text="ChartEngine" />
             </LinearLayout>
+
+            <LinearLayout style="@style/lyItem" >
+
+                <Button
+                    android:id="@+id/btnMobileManager"
+                    style="@style/btnItem"
+                    android:text="@string/str_mobile_manager" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
