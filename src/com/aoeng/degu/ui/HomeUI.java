@@ -15,7 +15,7 @@ import com.aoeng.degu.ui.eventdispatch.EventDispatchUI;
 import com.aoeng.degu.ui.games.GameHomeUI;
 import com.aoeng.degu.ui.handler.ThreadHandlerUI;
 import com.aoeng.degu.ui.imgs.ImageViewsHomeUI;
-import com.aoeng.degu.ui.internet.InternetHomeUI;
+import com.aoeng.degu.ui.internet.UpDownloadHomeUI;
 import com.aoeng.degu.ui.jni.JNIHomeUI;
 import com.aoeng.degu.ui.logins.LoginUIs;
 import com.aoeng.degu.ui.lvs.ListViewsUI;
@@ -54,7 +54,7 @@ public class HomeUI extends BaseUI implements OnClickListener {
 			intent = new Intent(HomeUI.this, EncHomeUI.class);
 			break;
 		case R.id.btnInternet:
-			intent = new Intent(this, InternetHomeUI.class);
+			intent = new Intent(this, UpDownloadHomeUI.class);
 			break;
 		case R.id.btnMedia:
 			intent = new Intent(this, MediaHomeUI.class);

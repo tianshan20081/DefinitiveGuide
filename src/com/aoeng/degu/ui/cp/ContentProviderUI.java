@@ -6,10 +6,10 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.adapter.SmsAdapter;

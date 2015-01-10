@@ -90,7 +90,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="BroadcastReceiver" />
+                    android:text="@string/str_broadcast_reciver" />
             </LinearLayout>
 
             <LinearLayout
@@ -236,7 +236,7 @@
                 <Button
                     android:id="@+id/btnInternet"
                     style="@style/btnItem"
-                    android:text="Internet" />
+                    android:text="@string/str_up_download" />
             </LinearLayout>
 
             <LinearLayout style="@style/lyItem" >

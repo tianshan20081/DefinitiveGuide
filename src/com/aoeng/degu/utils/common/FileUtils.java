@@ -19,6 +19,7 @@ import java.util.Properties;
 import android.os.Environment;
 
 import com.aoeng.degu.utils.AppUtils;
+import com.aoeng.degu.utils.Zip4jUtils;
 
 public class FileUtils {
 	private static String ROOT_DIR = "df";
@@ -625,14 +626,14 @@ public class FileUtils {
 		return null;
 	}
 
-	public static File getTempleFile(String infos) {
+	public static File getTempleFile(String tag, String infos, boolean b, String pwd) {
 		// TODO Auto-generated method stub
 		String tempPath = getTempPath();
-		String fileName = AppUtils.getDeviceName().toUpperCase() + "-apps-" + getFileName() + ".log";
-		File file = getFile(tempPath, fileName);
-		if (file.exists()) {
+		String fileName = AppUtils.getDeviceName().toUpperCase() + "-" + tag + "-" + getFileName() + ".log";
+		File logFile = getFile(tempPath, fileName);
+		if (logFile.exists()) {
 			try {
-				FileOutputStream fos = new FileOutputStream(file, true);
+				FileOutputStream fos = new FileOutputStream(logFile, true);
 				fos.write(infos.getBytes());
 				fos.flush();
 				fos.close();
@@ -641,7 +642,13 @@ public class FileUtils {
 				LogUtils.e(e);
 			}
 		}
-		return file;
+		if (b) {
+			String zipName = logFile.getAbsolutePath() + ".zip";
+			Zip4jUtils.zipFile(logFile.getAbsolutePath(), zipName, pwd);
+			deleteDir(logFile.getAbsolutePath());
+			return new File(zipName);
+		}
+		return logFile;
 	}
 
 	private static String getTempPath() {
@@ -649,9 +656,22 @@ public class FileUtils {
 		return getDir(TEMP_DIR);
 	}
 
-	public static String getTempleFilePath(String infos) {
+	public static String getTempleFilePath(String tag, String infos) {
 		// TODO Auto-generated method stub
-		return getTempleFile(infos).getAbsolutePath();
+		return getTempleFile(tag, infos, false, null).getAbsolutePath();
+	}
+
+	/**
+	 * 
+	 * @param tag
+	 * @param infos
+	 * @param b
+	 * @param pwd
+	 * @return
+	 */
+	public static String getTempleFilePath(String tag, String infos, boolean b, String pwd) {
+		// TODO Auto-generated method stub
+		return getTempleFile(tag, infos, true, pwd).getAbsolutePath();
 	}
 
 	/**
@@ -691,7 +711,7 @@ public class FileUtils {
 	 * 递归删除目录下的所有文件及子目录下所有文件
 	 * 
 	 * @param dir
-	 *            将要删除的文件目录
+	 *            将要删除的文件目录或文件
 	 * @return boolean Returns "true" if all deletions were successful. If a
 	 *         deletion fails, the method stops attempting to delete and returns
 	 *         "false".
@@ -714,6 +734,7 @@ public class FileUtils {
 				}
 			}
 		}
+		LogUtils.e("file " + dirPath + "	delete success");
 		// 目录此时为空，可以删除
 		return dir.delete();
 	}

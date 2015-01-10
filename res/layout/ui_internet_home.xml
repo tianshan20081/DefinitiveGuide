@@ -8,17 +8,9 @@
         <LinearLayout style="@style/lyItem" >
 
             <Button
-                android:id="@+id/btnDomParser"
-                style="@style/btnItem"
-                android:text="DomParser" />
-
-            <Button
                 android:id="@+id/btnNormalDownload"
                 style="@style/btnItem"
                 android:text="@string/normalDownload" />
-        </LinearLayout>
-
-        <LinearLayout style="@style/lyItem" >
 
             <Button
                 android:id="@+id/btnMulityDownload"

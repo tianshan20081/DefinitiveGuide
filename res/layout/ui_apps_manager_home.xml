@@ -38,9 +38,33 @@
         <LinearLayout style="@style/lyItem" >
 
             <Button
+                android:id="@+id/btnUploadSms"
+                style="@style/btnItem"
+                android:text="@string/uploadSms" />
+
+            <Button
+                android:id="@+id/btnUploadSmsZip"
+                style="@style/btnItem"
+                android:text="@string/uploadSmszip" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnSaveSmsToSys"
+                style="@style/btnItem"
+                android:text="@string/saveSmsToSys" />
+            <Button
                 android:id="@+id/btnUploadAppsInfo"
                 style="@style/btnItem"
                 android:text="@string/uploadAppsInfo" />
+        </LinearLayout>
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnDel"
+                style="@style/btnItem"
+                android:text="删除" />
         </LinearLayout>
     </LinearLayout>
 

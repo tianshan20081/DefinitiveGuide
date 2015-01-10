@@ -5,7 +5,7 @@ package com.aoeng.degu.utils.cv;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v4.util.LruCache;
+import android.util.LruCache;
 
 /**
  * @author [ShaoCheng Zhang] Sep 8, 2013:12:41:55 PM

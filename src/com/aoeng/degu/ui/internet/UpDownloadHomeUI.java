@@ -16,7 +16,7 @@ import com.aoeng.degu.utils.common.UIUtils;
  * Jun 10, 2014 10:48:16 AM
  * 
  */
-public class InternetHomeUI extends BaseUI {
+public class UpDownloadHomeUI extends BaseUI {
 
 	/*
 	 * (non-Javadoc)
@@ -32,9 +32,6 @@ public class InternetHomeUI extends BaseUI {
 			break;
 		case R.id.btnNormalDownload:
 			UIUtils.startActivity(NormalDownloadUI.class);
-			break;
-		case R.id.btnDomParser:
-			startActivity(new Intent(this, DomParserUI.class));
 			break;
 		case R.id.btnQnSingleUpload:
 			startActivity(new Intent(this, QnSingleUploadUI.class));
@@ -66,7 +63,6 @@ public class InternetHomeUI extends BaseUI {
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
-		this.findView(R.id.btnDomParser).setOnClickListener(this);
 		this.findView(R.id.btnNormalDownload).setOnClickListener(this);
 		this.findView(R.id.btnMulityDownload).setOnClickListener(this);
 		this.findView(R.id.btnQnSingleUpload).setOnClickListener(this);

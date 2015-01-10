@@ -45,9 +45,11 @@ public class NormalDownloadUI extends BaseUI {
 		client.setTimeout(5000);
 		client.head(url, new AsyncHttpResponseHandler() {
 			public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-				for (Header header : headers)
+				for (Header header : headers) {
 					if ("Content-Length".equals(header.getName()))
 						System.out.println(header.getValue());
+				}
+
 			}
 
 			public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
