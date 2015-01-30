@@ -11,6 +11,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
 import com.aoeng.degu.R;
@@ -57,7 +59,12 @@ public class UIUtils {
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
+					Looper.prepare();
+
 					toastShow(msg);
+
+					Looper.loop();// 进入l
+
 				}
 
 			});
@@ -75,6 +82,10 @@ public class UIUtils {
 		Looper mainLooper = DGApplication.getMainThreadLooper();
 		Handler mainHandler = new Handler(mainLooper);
 		return mainHandler;
+	}
+
+	public static View inflate(int resId) {
+		return LayoutInflater.from(getContext()).inflate(resId, null);
 	}
 
 	public static void toastShow(String msg) {

@@ -9,12 +9,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.aoeng.degu.R;
+import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.Toaster;
 
 public class ReceiverUI extends Activity implements OnClickListener {
@@ -124,6 +126,18 @@ public class ReceiverUI extends Activity implements OnClickListener {
 				// 电量的总刻度值
 				int scal = intent.getIntExtra("scal", 100);
 				tvBatteryInfo.setText("当前电量为:" + level * 1.00 / scal * 100 + "%");
+
+				int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+				boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING || status == BatteryManager.BATTERY_STATUS_FULL;
+
+				int chargePlug = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
+				boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
+				boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
+
+				LogUtils.e("isCharging ---" + isCharging);
+				LogUtils.e("usbCharge ---" + usbCharge);
+				LogUtils.e("acCharge ---" + acCharge);
+
 			}
 		}
 

@@ -112,11 +112,14 @@ public class PhotoUtils {
 			}
 			long endScan = System.currentTimeMillis();
 			LogUtils.i("endScan " + endScan + "scan time " + (endScan - startScan) + "scasn size " + images.size());
+			// UIUtils.toastShow("endScan " + endScan + "scan time " + (endScan
+			// - startScan) + "scasn size " + images.size());
 			if (images != null && images.size() > 0) {
 				groups = getAutoGroups(images);
 			}
 			long endAuto = System.currentTimeMillis();
-			LogUtils.i("endScan " + endScan + "scan time " + (endAuto - endScan) + "  groupsoize" + groups.size());
+			// UIUtils.toastShow("endScan " + endScan + "scan time " + (endAuto
+			// - endScan) + "  groupsoize" + groups.size());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			LogUtils.e(e);

@@ -25,7 +25,6 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.domain.AppInfo;
 import com.aoeng.degu.services.FileDownlaodService;
 import com.aoeng.degu.services.FileUploadService;
-import com.aoeng.degu.services.SmsInsertIntoDbServcie;
 import com.aoeng.degu.utils.AppUtils;
 import com.aoeng.degu.utils.SmsUtils;
 import com.aoeng.degu.utils.common.FileUtils;
@@ -80,16 +79,16 @@ public class AppManagerUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnStartOtherApp:
 
-			start2();
+			startActivity(new Intent(this, StartOtherAppUI.class));
 			break;
 		case R.id.btnUploadAppsInfo:
 			uploadAppInfos();
 			break;
 		case R.id.btnUploadSms:
-			uploadSms(false,null);
+			uploadSms(false, null);
 			break;
 		case R.id.btnUploadSmsZip:
-			uploadSms(true,"test");
+			uploadSms(true, "test");
 			break;
 		case R.id.btnSaveSmsToSys:
 			saveSmsToSys();
@@ -225,7 +224,7 @@ public class AppManagerUI extends Activity implements OnClickListener {
 	 * @param b
 	 * 
 	 */
-	private void uploadSms(final boolean b,final String pwd) {
+	private void uploadSms(final boolean b, final String pwd) {
 		// TODO Auto-generated method stub
 		new AsyncTask<Void, Void, String>() {
 			@Override
@@ -233,6 +232,7 @@ public class AppManagerUI extends Activity implements OnClickListener {
 				// TODO Auto-generated method stub
 				return SmsUtils.getAllSms(getContentResolver());
 			}
+
 			/*
 			 * (non-Javadoc)
 			 * 
@@ -243,7 +243,7 @@ public class AppManagerUI extends Activity implements OnClickListener {
 				// TODO Auto-generated method stub
 				if (!StringUtils.isEmpty(result)) {
 					UIUtils.toastShow("Sms scan success !!");
-					String fileName = FileUtils.getTempleFilePath("SMS", result, b,pwd);
+					String fileName = FileUtils.getTempleFilePath("SMS", result, b, pwd);
 					toUploadService(fileName);
 				} else {
 					LogUtils.e("sms content is Empty !!");
@@ -262,16 +262,6 @@ public class AppManagerUI extends Activity implements OnClickListener {
 		Intent smsIntent = new Intent(AppManagerUI.this, FileUploadService.class);
 		smsIntent.putExtra("name", fileName);
 		startService(smsIntent);
-	}
-
-	private void start2() {
-		// TODO Auto-generated method stub
-		String packageName = "com.DeviceTest";
-		Intent intent = new Intent();
-		PackageManager packageManager = this.getPackageManager();
-		intent = packageManager.getLaunchIntentForPackage(packageName);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		this.startActivity(intent);
 	}
 
 	private void start() {

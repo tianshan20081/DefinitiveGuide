@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/scrollViewStyle" >
+
+    <LinearLayout style="@style/lyVerticalStyle" >
+
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnOpenTenWeiBo"
+                style="@style/btnItem"
+                android:text="@string/openTenWeiBo" />
+            <Button
+                android:id="@+id/btnOpenWeiBo"
+                style="@style/btnItem"
+                android:text="@string/openWeiBo" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnOpenQq"
+                style="@style/btnItem"
+                android:text="@string/openQq" />
+
+            <Button
+                android:id="@+id/btnOpenWeiChart"
+                style="@style/btnItem"
+                android:text="@string/openWeiChart" />
+        </LinearLayout>
+        <LinearLayout style="@style/lyItem" >
+
+            <Button
+                android:id="@+id/btnOpenNk"
+                style="@style/btnItem"
+                android:text="@string/openNk" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

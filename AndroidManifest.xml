@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aoeng.degu"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.0.2" >
 
     <uses-sdk
         android:minSdkVersion="12"
@@ -264,6 +264,7 @@
         <activity android:name=".ui.imgs.ImageAutoGroupUI" />
         <!-- 拍摄一个头像 -->
         <activity android:name=".ui.imgs.TakeIconUI" />
+        <activity android:name=".ui.imgs.ImageInfosUI" />
         <!-- 應用程序管理界面 -->
         <activity android:name=".ui.apps.AppManagerUI" />
         <!-- 所有應用程序 -->
@@ -271,6 +272,8 @@
         <activity android:name=".ui.apps.SysAppsUI" />
         <!-- 获取应用程序大小 -->
         <activity android:name=".ui.apps.AppSizeUI" />
+        <!--  -->
+        <activity android:name=".ui.apps.StartOtherAppUI" />
         <!-- 反编译 -->
         <activity android:name=".ui.security.SecurityUI" />
         <activity android:name=".ui.security.Antidex2JarUI" />

@@ -20,7 +20,9 @@ public class NormalDownloadUI extends BaseUI {
 	private TextView btnStart;
 	private TextView btnStop;
 	// String url = "http://dl.m.jd.com/download/android/360buy.apk";
-	String url = "http://nokee.qiniudn.com/6406556c-f608-451e-997d-912b9875215dIMG_20141030_123003.jpg?imageView2/2/h/768/q/85";
+	// String url =
+	// "http://nokee.qiniudn.com/6406556c-f608-451e-997d-912b9875215dIMG_20141030_123003.jpg?imageView2/2/h/768/q/85";
+	String url = "http://7oxk1g.com2.z0.glb.clouddn.com/04a254433010328eae651c258d1c1e6fcurrentImage.png";
 	private AsyncHttpClient client;
 
 	@Override
@@ -59,7 +61,7 @@ public class NormalDownloadUI extends BaseUI {
 
 	private void normalDownload() {
 		// TODO Auto-generated method stub
-		File file = new File(FileUtils.getDownloadDir(), "360buy.apk");
+		File file = new File(FileUtils.getDownloadDir(), "currentImage.png");
 		AsyncHttpClient client = new AsyncHttpClient();
 		client.setTimeout(5000);
 

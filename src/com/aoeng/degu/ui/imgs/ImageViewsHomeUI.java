@@ -39,6 +39,7 @@ public class ImageViewsHomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnPicIcon).setOnClickListener(this);
 		this.findViewById(R.id.btnImgCrop).setOnClickListener(this);
 		this.findViewById(R.id.btnImageAutoGroup).setOnClickListener(this);
+		this.findViewById(R.id.btnImgInfo).setOnClickListener(this);
 	}
 
 	/*
@@ -76,6 +77,9 @@ public class ImageViewsHomeUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnImageAutoGroup:
 			startActivity(new Intent(ImageViewsHomeUI.this, ImageAutoGroupUI.class));
+			break;
+		case R.id.btnImgInfo:
+			startActivity(new Intent(ImageViewsHomeUI.this, ImageInfosUI.class));
 			break;
 		default:
 			break;
