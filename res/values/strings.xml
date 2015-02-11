@@ -58,5 +58,6 @@
     <string name="tempfile_del_success">临时文件删除成功</string>
     <string name="str_mobile_manager">手机管理</string>
     <string name="str_get_mobile_no">获取手机号</string>
+    <string name="str_ble">蓝牙低功耗</string>
 
 </resources>

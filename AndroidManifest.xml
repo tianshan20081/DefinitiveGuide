@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aoeng.degu"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="11" />
+        android:minSdkVersion="18"
+        android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -311,10 +311,11 @@
         <activity android:name=".ui.phonegap.PhoneGapBarcodeUI" />
         <activity android:name=".ui.mp.MpRequestInfoUI" />
 
+        <!-- bluetooth -->
+        <activity android:name=".ui.bl.BlHomeUI" />
+
         <!-- Mobile Manager -->
         <activity android:name=".ui.mm.MobileManagerHomeUI" />
-        
-        
         <activity
             android:name="com.phonegap.DroidGap"
             android:configChanges="keyboardHidden|orientation" >

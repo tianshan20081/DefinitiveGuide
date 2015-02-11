@@ -44,8 +44,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>2.7</source>
+					<target>2.7</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -54,7 +54,7 @@
 				<configuration>
 					<sdk>
 						<path>${env.Android_SDK_HOME}</path>
-						<platform>17</platform>
+						<platform>19</platform>
 					</sdk>
 					<deleteConflictingFiles>true</deleteConflictingFiles>
 				</configuration>

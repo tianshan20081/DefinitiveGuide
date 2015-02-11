@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import com.aoeng.degu.R;
 import com.aoeng.degu.receiver.ReceiverUI;
 import com.aoeng.degu.ui.apps.AppManagerUI;
+import com.aoeng.degu.ui.bl.BlHomeUI;
 import com.aoeng.degu.ui.cd.CoordinatesUI;
 import com.aoeng.degu.ui.chartengine.ChartEngineHomeUI;
 import com.aoeng.degu.ui.cp.ContentProviderUI;
@@ -137,6 +138,9 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		case R.id.btnMobileManager:// 手机管理
 			intent = new Intent(HomeUI.this, MobileManagerHomeUI.class);
 			break;
+		case R.id.btnBleHome:// 手机管理
+			intent = new Intent(HomeUI.this, BlHomeUI.class);
+			break;
 		}
 
 		startActivity(intent);
@@ -198,6 +202,7 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		this.findViewById(R.id.btnPhoneGap).setOnClickListener(this);
 		this.findViewById(R.id.btnChartEngine).setOnClickListener(this);
 		this.findViewById(R.id.btnMobileManager).setOnClickListener(this);
+		this.findViewById(R.id.btnBleHome).setOnClickListener(this);
 
 	}
 

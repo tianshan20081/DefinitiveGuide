@@ -284,6 +284,10 @@
                     android:id="@+id/btnMobileManager"
                     style="@style/btnItem"
                     android:text="@string/str_mobile_manager" />
+                <Button
+                    android:id="@+id/btnBleHome"
+                    style="@style/btnItem"
+                    android:text="@string/str_ble" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
