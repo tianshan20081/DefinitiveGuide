@@ -52,6 +52,9 @@
     <string name="no_storage_card">No storage card</string>
     <string name="not_enough_space">Not enough space</string>
     <string name="recorderVoice">录音</string>
+    <string name="broadcasting_station">电台</string>
+    <string name="chosebrosta">选择电台</string>
+    <string name="start">开始</string>
     <string name="pressTalk">按住说话</string>
     <string name="voiceDel">确定删除该语音？</string>
     <string name="sure">确认 </string>

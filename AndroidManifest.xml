@@ -296,6 +296,7 @@
         <activity android:name=".ui.media.CameraUI" />
         <activity android:name=".ui.media.IntentVideoCameraUI" />
         <activity android:name=".ui.media.MediaRecorderedVoiceUI" />
+        <activity android:name=".ui.media.BroadCastStatitonUI" />
         <activity android:name=".ui.internet.UpDownloadHomeUI" />
         <activity android:name=".ui.internet.DomParserUI" />
         <activity android:name=".ui.internet.download.NormalDownloadUI" />

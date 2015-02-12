@@ -52,6 +52,9 @@ public class MediaHomeUI extends BaseUI {
 		case R.id.btnRecorderVoidce:
 			startActivity(new Intent(this, MediaRecorderedVoiceUI.class));
 			break;
+		case R.id.btnBroSta:
+			startActivity(new Intent(this, BroadCastStatitonUI.class));
+			break;
 		default:
 			break;
 		}
@@ -81,6 +84,7 @@ public class MediaHomeUI extends BaseUI {
 		findView(R.id.btnCamera).setOnClickListener(this);
 		findView(R.id.btnIntentVideoCamera).setOnClickListener(this);
 		findView(R.id.btnRecorderVoidce).setOnClickListener(this);
+		findView(R.id.btnBroSta).setOnClickListener(this);
 		
 	}
 
