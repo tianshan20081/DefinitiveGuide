@@ -9,13 +9,9 @@
             <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
-                    android:id="@+id/btnBleCheck"
+                    android:id="@+id/btnWifiInfo"
                     style="@style/btnItem"
-                    android:text="BleCheck" />
-                <Button
-                    android:id="@+id/btnShiYun"
-                    style="@style/btnItem"
-                    android:text="@string/ble_shiyun" />
+                    android:text="@string/str_wifi_info" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -289,6 +289,13 @@
                     style="@style/btnItem"
                     android:text="@string/str_ble" />
             </LinearLayout>
+            <LinearLayout style="@style/lyItem" >
+
+                <Button
+                    android:id="@+id/btnShell"
+                    style="@style/btnItem"
+                    android:text="@string/str_shell_command" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

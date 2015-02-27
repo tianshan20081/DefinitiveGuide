@@ -26,6 +26,7 @@ import com.aoeng.degu.ui.nt.NetWorkUI;
 import com.aoeng.degu.ui.phonegap.PhoneGapHomeUI;
 import com.aoeng.degu.ui.security.SecurityUI;
 import com.aoeng.degu.ui.services.ServiceUI;
+import com.aoeng.degu.ui.shell.ShellHomeUI;
 import com.aoeng.degu.ui.uis.GroupMainUI;
 import com.aoeng.degu.ui.uis.UIsUI;
 import com.aoeng.degu.ui.views.ViewsUI;
@@ -141,6 +142,9 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		case R.id.btnBleHome:// 手机管理
 			intent = new Intent(HomeUI.this, BlHomeUI.class);
 			break;
+		case R.id.btnShell:// run shell command
+			intent = new Intent(HomeUI.this, ShellHomeUI.class);
+			break;
 		}
 
 		startActivity(intent);
@@ -203,6 +207,7 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		this.findViewById(R.id.btnChartEngine).setOnClickListener(this);
 		this.findViewById(R.id.btnMobileManager).setOnClickListener(this);
 		this.findViewById(R.id.btnBleHome).setOnClickListener(this);
+		this.findViewById(R.id.btnShell).setOnClickListener(this);
 
 	}
 

@@ -8,6 +8,7 @@
 
         <LinearLayout style="@style/lyVerticalStyle" >
 
+        </LinearLayout>
             <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
@@ -20,7 +21,10 @@
                     style="@style/btnStyle"
                     android:text="ProgressDialog" />
             </LinearLayout>
-        </LinearLayout>
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+
+            </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

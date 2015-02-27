@@ -28,6 +28,7 @@ import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.Logger;
 import com.aoeng.degu.utils.common.UIUtils;
 import com.aoeng.degu.utils.qiniu.QNApi;
+import com.chronocloud.ryfibluetoothlibrary.BluetoothOpration;
 
 /**
  * May 21, 2014 4:54:26 PM
@@ -44,6 +45,8 @@ public class DGApplication extends Application {
 	private static int mMainThreadId;
 
 	private List<Activity> records = new ArrayList<Activity>();
+
+	public static BluetoothOpration _BluetoothOpration;
 
 	private static ThreadPoolManager mThreadPoolManager;
 
@@ -72,6 +75,7 @@ public class DGApplication extends Application {
 		getContext().startService(intent);
 
 		printCommonInfo();
+		_BluetoothOpration=new BluetoothOpration(this);
 	}
 
 	private void initJpush() {

@@ -313,6 +313,8 @@
 
         <!-- bluetooth -->
         <activity android:name=".ui.bl.BlHomeUI" />
+        <!-- shell Command -->
+        <activity android:name=".ui.shell.ShellHomeUI" />
 
         <!-- Mobile Manager -->
         <activity android:name=".ui.mm.MobileManagerHomeUI" />

@@ -1,7 +1,5 @@
 package com.aoeng.degu.ui.bl;
 
-import java.util.UUID;
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothAdapter.LeScanCallback;
 import android.bluetooth.BluetoothDevice;
@@ -33,7 +31,7 @@ public class BlHomeUI extends BaseUI {
 	private Handler mHandler = new Handler();
 	private boolean mScanning = true;
 	private int mConnectionState = STATE_DISCONNECTED;
-
+	private Button btnShiYun;
 	private static final int STATE_DISCONNECTED = 0;
 	private static final int STATE_CONNECTING = 1;
 	private static final int STATE_CONNECTED = 2;
@@ -44,7 +42,8 @@ public class BlHomeUI extends BaseUI {
 	public final static String ACTION_DATA_AVAILABLE = "com.example.bluetooth.le.ACTION_DATA_AVAILABLE";
 	public final static String EXTRA_DATA = "com.example.bluetooth.le.EXTRA_DATA";
 
-//	public final static UUID UUID_HEART_RATE_MEASUREMENT = UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
+	// public final static UUID UUID_HEART_RATE_MEASUREMENT =
+	// UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
 
 	// Stops scanning after 10 seconds.
 	private static final long SCAN_PERIOD = 1000000;
@@ -119,7 +118,7 @@ public class BlHomeUI extends BaseUI {
 
 		// This is special handling for the Heart Rate Measurement profile. Data
 		// parsing is carried out as per profile specifications.
-		if ("".equals(characteristic.getUuid())) {//UUID_HEART_RATE_MEASUREMENT
+		if ("".equals(characteristic.getUuid())) {// UUID_HEART_RATE_MEASUREMENT
 			int flag = characteristic.getProperties();
 			int format = -1;
 			if ((flag & 0x01) != 0) {
@@ -151,19 +150,19 @@ public class BlHomeUI extends BaseUI {
 			final String action = intent.getAction();
 			if (BlHomeUI.ACTION_GATT_CONNECTED.equals(action)) {
 				mConnected = true;
-//				updateConnectionState("connection");
+				// updateConnectionState("connection");
 				invalidateOptionsMenu();
 			} else if (BlHomeUI.ACTION_GATT_DISCONNECTED.equals(action)) {
 				mConnected = false;
-//				updateConnectionState(R.string.disconnected);
+				// updateConnectionState(R.string.disconnected);
 				invalidateOptionsMenu();
-//				clearUI();
+				// clearUI();
 			} else if (BlHomeUI.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
 				// Show all the supported services and characteristics on the
 				// user interface.
-//				displayGattServices(mBluetoothLeService.getSupportedGattServices());
+				// displayGattServices(mBluetoothLeService.getSupportedGattServices());
 			} else if (BlHomeUI.ACTION_DATA_AVAILABLE.equals(action)) {
-//				displayData(intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
+				// displayData(intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
 			}
 		}
 	};
@@ -181,6 +180,18 @@ public class BlHomeUI extends BaseUI {
 				isSuportBle = true;
 				UIUtils.toastShow("Great your phone is  suport ble ");
 				isSuportBle();
+			}
+			break;
+		case R.id.btnShiYun:
+			if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+				// Toast.makeText(this, R.string.ble_not_supported,
+				// Toast.LENGTH_SHORT).show();
+				UIUtils.toastShow("Not suport ble ");
+			} else {
+				isSuportBle = true;
+				UIUtils.toastShow("Great your phone is  suport ble ");
+				Intent shiyunIntent = new Intent(BlHomeUI.this, ShiYunHomeUI.class);
+				startActivity(shiyunIntent);
 			}
 			break;
 
@@ -234,6 +245,7 @@ public class BlHomeUI extends BaseUI {
 	protected void findViewById() {
 		// TODO Auto-generated method stub
 		btnBleCheck = (Button) findView(R.id.btnBleCheck);
+		btnShiYun = (Button) findView(R.id.btnShiYun);
 	}
 
 	@Override

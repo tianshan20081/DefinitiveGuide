@@ -32,6 +32,8 @@ public class DialogUI extends BaseUI {
 		};
 	};
 
+	private View vPogres;
+
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -50,6 +52,7 @@ public class DialogUI extends BaseUI {
 	protected void findViewById() {
 		// TODO Auto-generated method stub
 
+		vPogres = findView(R.id.vPogres);
 	}
 
 	@Override
