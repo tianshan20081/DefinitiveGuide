@@ -8,15 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+        <LinearLayout style="@style/lyVerticalStyle" >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/chapter1"
@@ -34,9 +30,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/widget"
@@ -54,9 +49,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnSystemUI"
@@ -74,9 +68,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnGroupUI"
@@ -94,9 +87,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnContentProvider"
@@ -114,9 +106,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnWebView"
@@ -134,9 +125,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnCoordinates"
@@ -154,9 +144,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnCustomerUI"
@@ -174,9 +163,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnLoginUIs"
@@ -194,9 +182,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnImgs"
@@ -213,7 +200,9 @@
                     android:text="AppsManager" />
             </LinearLayout>
 
-            <LinearLayout style="@style/lyItem" >
+            <LinearLayout
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnSecurity"
@@ -226,7 +215,9 @@
                     android:text="Games" />
             </LinearLayout>
 
-            <LinearLayout style="@style/lyItem" >
+            <LinearLayout
+                style="@style/lyHorizontalStyle"
+                 >
 
                 <Button
                     android:id="@+id/btnMedia"
@@ -284,11 +275,13 @@
                     android:id="@+id/btnMobileManager"
                     style="@style/btnItem"
                     android:text="@string/str_mobile_manager" />
+
                 <Button
                     android:id="@+id/btnBleHome"
                     style="@style/btnItem"
                     android:text="@string/str_ble" />
             </LinearLayout>
+
             <LinearLayout style="@style/lyItem" >
 
                 <Button

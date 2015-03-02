@@ -313,6 +313,9 @@
 
         <!-- bluetooth -->
         <activity android:name=".ui.bl.BlHomeUI" />
+        <activity android:name=".ui.bl.ShiYunHomeUI" />
+        <activity android:name=".ui.bl.MiLeHomeUI" />
+        <activity android:name=".ui.bl.BleYcHomeUI" />
         <!-- shell Command -->
         <activity android:name=".ui.shell.ShellHomeUI" />
 

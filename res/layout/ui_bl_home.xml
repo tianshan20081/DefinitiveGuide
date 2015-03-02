@@ -2,22 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/lyVerticalStyle" >
 
-    <ScrollView style="@style/scrollViewStyle" >
+    <LinearLayout style="@style/lyHorizontalStyle" >
 
-        <LinearLayout style="@style/lyVerticalStyle" >
+        <Button
+            android:id="@+id/btnBleCheck"
+            style="@style/btnItem"
+            android:text="@string/ble_check" />
 
-            <LinearLayout style="@style/lyHorizontalStyle" >
+        <Button
+            android:id="@+id/btnBleStart"
+            style="@style/btnItem"
+            android:text="@string/ble_start_scan" />
+    </LinearLayout>
 
-                <Button
-                    android:id="@+id/btnBleCheck"
-                    style="@style/btnItem"
-                    android:text="BleCheck" />
-                <Button
-                    android:id="@+id/btnShiYun"
-                    style="@style/btnItem"
-                    android:text="@string/ble_shiyun" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+    <ListView
+        android:id="@+id/lvBles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -11,19 +11,25 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.application.DGApplication;
+import com.aoeng.degu.domain.OperationData;
 import com.aoeng.degu.domain.TestData;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.common.LogUtils;
+import com.aoeng.degu.utils.common.UIUtils;
 import com.chronocloud.ryfibluetoothlibrary.BluetoothOpration;
 import com.chronocloud.ryfibluetoothlibrary.entity.TestDataInfo;
 import com.chronocloud.ryfibluetoothlibrary.entity.User;
@@ -31,6 +37,9 @@ import com.chronocloud.ryfibluetoothlibrary.listener.BluetoothOprationCallback;
 
 public class ShiYunHomeUI extends BaseUI {
 
+	public static final String NO = "no";
+	public static final String ORDER = "order";
+	public static final String NAME = "name";
 	private BluetoothOpration mBluetoothOpration;
 	private ListView lvData;
 	private RadioGroup rg_sex;
@@ -46,15 +55,38 @@ public class ShiYunHomeUI extends BaseUI {
 	private ArrayList<Map<String, String>> data;
 	private SimpleAdapter adapter;
 	private BluetoothDevice mBluetoothDevice;
+	protected String sex;
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.btnShiYunConnect :
+		case R.id.btn_read:
+			mBluetoothOpration.ReadNumber();
+			break;
+		case R.id.btn_write:
+			mBluetoothOpration.writeNumber(et_number.getText().toString().trim());
+			break;
+		case R.id.btn_send:
+			String height = et_height.getText().toString();
+			String age = et_age.getText().toString();
+			if (mBluetoothOpration != null && (!height.equals("") && !age.equals("")) && (Integer.parseInt(height) >= 100 && Integer.parseInt(height) <= 220)
+					&& (Integer.parseInt(age) >= 10 && Integer.parseInt(age) <= 80)) {
+				mBluetoothOpration.selectUserScale("09", height, age, sex);
+			} else {
+				Toast.makeText(context, R.string.age_height, Toast.LENGTH_SHORT).show();
+			}
+			break;
+		case R.id.btnConnect:
 			if (mBluetoothDevice != null) {
 				mBluetoothOpration.connect(mBluetoothDevice);
 			}
+			LogUtils.e("onclick connection");
+			break;
+		case R.id.btnDisConnect:
+			mBluetoothOpration.disconnect();
+			LogUtils.e("onclick disconnection");
+			break;
 		default:
 			break;
 		}
@@ -88,11 +120,71 @@ public class ShiYunHomeUI extends BaseUI {
 		data = new ArrayList<Map<String, String>>();
 		adapter = new SimpleAdapter(context, data, android.R.layout.simple_list_item_1, new String[] { "name" }, new int[] { android.R.id.text1 });
 		lvData.setAdapter(adapter);
+
+		Intent intent = getIntent();
+		if (null == intent) {
+			finish();
+			return;
+
+		}
+		mBluetoothDevice = intent.getParcelableExtra("deviceInfo");
+		if (null == mBluetoothDevice) {
+			finish();
+			return;
+		}
+		LogUtils.e(mBluetoothDevice.getName());
+		LogUtils.e(mBluetoothDevice.getAddress());
+		UIUtils.toastShow(mBluetoothDevice.getName());
 	}
 
 	@Override
 	protected void setListener() {
 		// TODO Auto-generated method stub
+
+		btn_read.setOnClickListener(this);
+		btn_send.setOnClickListener(this);
+		btn_write.setOnClickListener(this);
+		findView(R.id.btnConnect).setOnClickListener(this);
+		findView(R.id.btnDisConnect).setOnClickListener(this);
+		lvData.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				// TODO Auto-generated method stub
+				HashMap<String, String> map = (HashMap<String, String>) parent.getAdapter().getItem(position);
+				String order = map.get(ORDER);
+				if (order.equals(OperationData.VIEW_ALL_USERS)) {
+					Intent intent1 = new Intent(context, BleShiYunUserUI.class);
+					startActivity(intent1);
+				} else if (order.equals(OperationData.PURE_GUEST_MODE)) {
+					mBluetoothOpration.pureGestMode();
+				} else if (order.equals(OperationData.QUIT_PURE_GUEST_MODE)) {
+					mBluetoothOpration.quitPureGuestMode();
+				} else if (order.equals(OperationData.READ_MAC_ADDRESS)) {
+					mBluetoothOpration.readMacAddress();
+				} else if (order.equals(OperationData.RESET_SCALE_PARAM)) {
+					mBluetoothOpration.resetScaleParam();
+				} else if (order.equals(OperationData.ZERO)) {
+					mBluetoothOpration.zero();
+				}
+			}
+		});
+
+		rg_sex.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (group.getCheckedRadioButtonId()) {
+				case R.id.rb_man:
+					sex = "01";
+					break;
+				case R.id.rb_woman:
+					sex = "00";
+					break;
+				}
+			}
+		});
 	}
 
 	@Override
@@ -100,6 +192,7 @@ public class ShiYunHomeUI extends BaseUI {
 		// TODO Auto-generated method stub
 
 	}
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
@@ -108,6 +201,7 @@ public class ShiYunHomeUI extends BaseUI {
 		mBluetoothOpration.onDestroy();
 		Log.d(TAG, "We are in destroy");
 	}
+
 	BluetoothOprationCallback BOcallback = new BluetoothOprationCallback() {
 
 		private boolean isPause;
@@ -195,7 +289,7 @@ public class ShiYunHomeUI extends BaseUI {
 			mConnected = false;
 			invalidateOptionsMenu();
 			data.clear();
-//			setData(NO, "No Connection");
+			// setData(NO, "No Connection");
 			ll_test.setVisibility(View.GONE);
 			adapter.notifyDataSetChanged();
 		}
@@ -222,16 +316,16 @@ public class ShiYunHomeUI extends BaseUI {
 		public void onConnectSuccess(Context context, Intent intent) {
 			// TODO Auto-generated method stub
 			mConnected = true;
-//			ShowDialog();
-//			invalidateOptionsMenu();
-//
-//			data.clear();
-//			setData(OperationData.VIEW_ALL_USERS, "View all users");
-//			setData(OperationData.PURE_GUEST_MODE, "Pure guest mode");
-//			setData(OperationData.QUIT_PURE_GUEST_MODE, "Quit Pure guest mode");
-//			setData(OperationData.READ_MAC_ADDRESS, "Read MAC address");
-//			setData(OperationData.RESET_SCALE_PARAM, "Reset scale param");
-//			setData(OperationData.ZERO, "Zero");
+			ShowDialog();
+			invalidateOptionsMenu();
+
+			data.clear();
+			setData(OperationData.VIEW_ALL_USERS, "View all users");
+			setData(OperationData.PURE_GUEST_MODE, "Pure guest mode");
+			setData(OperationData.QUIT_PURE_GUEST_MODE, "Quit Pure guest mode");
+			setData(OperationData.READ_MAC_ADDRESS, "Read MAC address");
+			setData(OperationData.RESET_SCALE_PARAM, "Reset scale param");
+			setData(OperationData.ZERO, "Zero");
 			// setData("00","ReaderUpdateValue");
 			adapter.notifyDataSetChanged();
 			ll_test.setVisibility(View.VISIBLE);
@@ -299,13 +393,29 @@ public class ShiYunHomeUI extends BaseUI {
 
 	};
 
+	private List<Map<String, String>> setData(String order, String name) {
+		if (data == null) {
+			data = new ArrayList<Map<String, String>>();
+		}
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put(ORDER, order);
+		map.put(NAME, name);
+		data.add(map);
+
+		return data;
+	}
+
+	private void ShowDialog() {
+		Toast.makeText(this, R.string.connection_successful, Toast.LENGTH_SHORT).show();
+	}
+
 	private void startTestActivity() {
-//		btn_send.setClickable(true);
-//		btn_send.setTextColor(getResources().getColor(android.R.color.white));
-//		Intent intent = new Intent(context, TestDataActivity.class);
-//		Bundle bundle = new Bundle();
-//		bundle.putSerializable("testMap", (Serializable) testMap);
-//		intent.putExtra("bundle", bundle);
-//		startActivity(intent);
+		// btn_send.setClickable(true);
+		// btn_send.setTextColor(getResources().getColor(android.R.color.white));
+		// Intent intent = new Intent(context, TestDataActivity.class);
+		// Bundle bundle = new Bundle();
+		// bundle.putSerializable("testMap", (Serializable) testMap);
+		// intent.putExtra("bundle", bundle);
+		// startActivity(intent);
 	}
 }

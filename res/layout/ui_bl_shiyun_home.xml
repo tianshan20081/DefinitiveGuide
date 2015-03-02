@@ -20,13 +20,18 @@
     android:layout_height="fill_parent"
     android:background="#FFFFFFFF"
     android:orientation="vertical" >
-    
-    <Button
-        android:id="@+id/btnShiYunConnect"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Connection"
-        />
+
+    <LinearLayout style="@style/lyHorizontalStyle" >
+
+        <Button
+            android:id="@+id/btnConnect"
+            style="@style/btnItem"
+            android:text="@string/str_connect" />
+        <Button
+            android:id="@+id/btnDisConnect"
+            style="@style/btnItem"
+            android:text="@string/str_disconnect" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lv_data"

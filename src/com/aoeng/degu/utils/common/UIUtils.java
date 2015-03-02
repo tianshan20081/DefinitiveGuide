@@ -11,6 +11,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
 import com.aoeng.degu.R;
@@ -152,5 +154,10 @@ public class UIUtils {
 			dialog.dismiss();
 			dialog = null;
 		}
+	}
+
+	public static View inflate(int layoutId) {
+		// TODO Auto-generated method stub
+		return LayoutInflater.from(getContext()).inflate(layoutId, null);
 	}
 }

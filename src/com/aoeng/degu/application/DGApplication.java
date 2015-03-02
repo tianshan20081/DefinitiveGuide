@@ -75,6 +75,7 @@ public class DGApplication extends Application {
 		getContext().startService(intent);
 
 		printCommonInfo();
+		//全局创建一次
 		_BluetoothOpration=new BluetoothOpration(this);
 	}
 

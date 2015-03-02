@@ -36,6 +36,10 @@
     <string name="JsCallJava">webview &amp;&amp; js</string>
     <string name="pbWebView">带进度条的 webview</string>
     <string name="chosePicFromStore">从图库选择图片</string>
+    <string name="str_name">名称：</string>
+    <string name="str_steps">步数：</string>
+    <string name="str_battery">电量：</string>
+    <string name="str_params">参数：</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
     <string name="saving_image">Saving image</string>
@@ -62,7 +66,14 @@
     <string name="str_shell_command">shell</string>
     <string name="str_wifi_info">WifiInfo</string>
     <string name="ble_shiyun">时云智能设备</string>
+    <string name="ble_open">打开Ble</string>
+    <string name="ble_close">关闭Ble</string>
+    <string name="ble_check">Ble检测</string>
+    <string name="ble_start_scan">开始扫描Ble</string>
+    <string name="ble_stop_scan">停止扫描Ble</string>
     <string name="shiyun_find_device">设备连接</string>
+    <string name="str_connect">链接</string>
+    <string name="str_disconnect">断开连接</string>
     <string name="ble_not_supported">Your device does not support BLE</string>
     <string name="label_data">Data:</string>
     <string name="label_device_address">Device address:</string>
@@ -122,7 +133,6 @@
     <string name="visceral_fat">Visceral fat:</string>
     <string name="body_age">Body Age:</string>
     <string name="dismiss">Dismiss</string>
-
 
     <!-- Menu items -->
     <string name="menu_connect">connect</string>
