@@ -38,17 +38,19 @@ public class BlHomeUI extends BaseUI {
 	private boolean isBleOpen = false;
 	private BluetoothAdapter mBluetoothAdapter;
 	private Handler mHandler = new Handler();
-	private boolean mScanning = true;
+	private boolean mScanning = false;
 	private int mConnectionState = STATE_DISCONNECTED;
 	private static final int STATE_DISCONNECTED = 0;
 	private static final int STATE_CONNECTING = 1;
 	private static final int STATE_CONNECTED = 2;
 
+	private long startScan = 0;
+
 	// public final static UUID UUID_HEART_RATE_MEASUREMENT =
 	// UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
 
 	// Stops scanning after 10 seconds.
-	private static final long SCAN_PERIOD = 1000000;
+	private static final long SCAN_PERIOD = 100 * 10000;
 	private BluetoothGatt mBluetoothGatt;
 	private ListView lvBles;
 	private BleAdapter mBleAdapter;
@@ -72,6 +74,8 @@ public class BlHomeUI extends BaseUI {
 
 					// mBluetoothGatt = device.connectGatt(BlHomeUI.this, false,
 					// mGattCallback);
+					LogUtils.e("find device take " + (System.currentTimeMillis() - startScan) / 1000 + "'s");
+					startScan = System.currentTimeMillis();
 					mBleAdapter.add(device, rssi, scanRecord);
 
 				}
@@ -115,17 +119,21 @@ public class BlHomeUI extends BaseUI {
 			}
 			break;
 		case R.id.btnBleStart:
-			if (mScanning) {
+			if (!mScanning) {
+				mBluetoothAdapter.startLeScan(mLeScanCallback);
+				startScan = System.currentTimeMillis();
 				scanLeDevice();
 				btnBleStart.setText(R.string.ble_stop_scan);
+				mScanning = true;
 			} else {
 				btnBleStart.setText(R.string.ble_start_scan);
-				if (mScanning) {
-					mBluetoothAdapter.stopLeScan(mLeScanCallback);
-					mScanning = false;
-				}
+				mBluetoothAdapter.stopLeScan(mLeScanCallback);
+				mScanning = false;
 			}
 
+			break;
+		case R.id.btnFinish:
+			finish();
 			break;
 		default:
 			break;
@@ -146,9 +154,6 @@ public class BlHomeUI extends BaseUI {
 				});
 			}
 		}, SCAN_PERIOD);
-
-		mScanning = true;
-		mBluetoothAdapter.startLeScan(mLeScanCallback);
 	}
 
 	@Override
@@ -163,6 +168,7 @@ public class BlHomeUI extends BaseUI {
 		// TODO Auto-generated method stub
 		btnBleCheck = (Button) findView(R.id.btnBleCheck);
 		btnBleStart = (Button) findView(R.id.btnBleStart);
+		findView(R.id.btnFinish).setOnClickListener(this);
 		lvBles = (ListView) findView(R.id.lvBles);
 		btnBleStart.setEnabled(false);
 	}
@@ -181,12 +187,8 @@ public class BlHomeUI extends BaseUI {
 				if (null == device) {
 					return;
 				}
-				if (mScanning) {
-
-					mBluetoothAdapter.stopLeScan(mLeScanCallback);
-					mScanning = false;
-					btnBleStart.setText(R.string.ble_start_scan);
-				}
+				mBluetoothAdapter.stopLeScan(mLeScanCallback);
+				btnBleStart.setText(R.string.ble_start_scan);
 				int deviceType = BleUtils.getBleType(device);
 				Intent bleItemIntent = null;
 				switch (deviceType) {

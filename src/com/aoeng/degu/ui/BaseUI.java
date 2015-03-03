@@ -78,7 +78,7 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 		// TODO Auto-generated method stub
 		this.mCurrentShowUI = this;
 		super.onResume();
-		JPushInterface.onResume(UIUtils.getContext());
+		JPushInterface.onResume(BaseUI.this);
 
 	}
 
@@ -86,7 +86,7 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		JPushInterface.onPause(UIUtils.getContext());
+		JPushInterface.onPause(BaseUI.this);
 	}
 
 	@Override

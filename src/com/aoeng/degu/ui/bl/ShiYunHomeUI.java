@@ -79,9 +79,13 @@ public class ShiYunHomeUI extends BaseUI {
 			break;
 		case R.id.btnConnect:
 			if (mBluetoothDevice != null) {
+				LogUtils.e("mBluetoothOpration.connect(mBluetoothDevice)");
+				LogUtils.e(mBluetoothDevice.getName());
+				LogUtils.e(mBluetoothDevice.getAddress());
+				UIUtils.toastShow(mBluetoothDevice.getName());
 				mBluetoothOpration.connect(mBluetoothDevice);
 			}
-			LogUtils.e("onclick connection");
+
 			break;
 		case R.id.btnDisConnect:
 			mBluetoothOpration.disconnect();
@@ -96,9 +100,8 @@ public class ShiYunHomeUI extends BaseUI {
 	protected void loadViewLayout() {
 		// TODO Auto-generated method stub
 
-		setContentView(R.layout.ui_bl_shiyun_home);
-		mBluetoothOpration = DGApplication._BluetoothOpration;
-		mBluetoothOpration.addBluetoothOprationCallback(BOcallback);
+		setContentView(R.layout.ui_ble_shiyun_home);
+
 	}
 
 	@Override
@@ -132,9 +135,7 @@ public class ShiYunHomeUI extends BaseUI {
 			finish();
 			return;
 		}
-		LogUtils.e(mBluetoothDevice.getName());
-		LogUtils.e(mBluetoothDevice.getAddress());
-		UIUtils.toastShow(mBluetoothDevice.getName());
+
 	}
 
 	@Override
@@ -190,7 +191,8 @@ public class ShiYunHomeUI extends BaseUI {
 	@Override
 	protected void processLogic() {
 		// TODO Auto-generated method stub
-
+		mBluetoothOpration = DGApplication._BluetoothOpration;
+		mBluetoothOpration.addBluetoothOprationCallback(BOcallback);
 	}
 
 	@Override
@@ -199,7 +201,7 @@ public class ShiYunHomeUI extends BaseUI {
 		mBluetoothOpration.removeBluetoothOprationCallback(BOcallback);
 		mBluetoothOpration.disconnect();
 		mBluetoothOpration.onDestroy();
-		Log.d(TAG, "We are in destroy");
+		LogUtils.e("We are in destroy");
 	}
 
 	BluetoothOprationCallback BOcallback = new BluetoothOprationCallback() {
@@ -280,7 +282,7 @@ public class ShiYunHomeUI extends BaseUI {
 		@Override
 		public void onGetUserInfo(User user) {
 			// TODO Auto-generated method stub
-
+			LogUtils.e("UserInfo " + user.toString());
 		}
 
 		@Override
@@ -315,6 +317,9 @@ public class ShiYunHomeUI extends BaseUI {
 		@Override
 		public void onConnectSuccess(Context context, Intent intent) {
 			// TODO Auto-generated method stub
+
+			LogUtils.e("onConnectSuccess");
+			UIUtils.toastShow("onConnectSuccess");
 			mConnected = true;
 			ShowDialog();
 			invalidateOptionsMenu();

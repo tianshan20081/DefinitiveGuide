@@ -14,6 +14,14 @@
             style="@style/btnItem"
             android:text="@string/ble_start_scan" />
     </LinearLayout>
+    <LinearLayout style="@style/lyHorizontalStyle" >
+
+        <Button
+            android:id="@+id/btnFinish"
+            style="@style/btnItem"
+            android:text="@string/finish" />
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lvBles"

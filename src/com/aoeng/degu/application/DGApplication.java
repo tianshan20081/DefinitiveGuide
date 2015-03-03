@@ -56,7 +56,8 @@ public class DGApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-
+		// 全局创建一次
+		_BluetoothOpration = new BluetoothOpration(this);
 		this.mApplication = this;
 		this.mMainThreadLooper = getMainThreadLooper();
 		this.mMainThreadId = android.os.Process.myPid();
@@ -64,7 +65,6 @@ public class DGApplication extends Application {
 
 		mThreadPoolManager = ThreadPoolManager.getInstance();
 		initJpush();
-		initCacheDirPath();
 		CrashHandler mCrashHandler = CrashHandler.getInstance();
 		mCrashHandler.init();
 		// Intent intent = new Intent(UIUtils.getContext(),
@@ -75,8 +75,7 @@ public class DGApplication extends Application {
 		getContext().startService(intent);
 
 		printCommonInfo();
-		//全局创建一次
-		_BluetoothOpration=new BluetoothOpration(this);
+
 	}
 
 	private void initJpush() {
@@ -106,18 +105,7 @@ public class DGApplication extends Application {
 		return cacheDir;
 	}
 
-	private void initCacheDirPath() {
-		File f;
-		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-			f = new File(Environment.getExternalStorageDirectory() + "/.huigush/");
-			if (!f.exists()) {
-				f.mkdir();
-			}
-		} else {
-			f = getApplicationContext().getCacheDir();
-		}
-		cacheDir = f.getAbsolutePath();
-	}
+	
 
 	private class ECServiceConnection implements ServiceConnection {
 

@@ -21,8 +21,14 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- Ble permission -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+    <!-- Ble permission -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -316,6 +322,12 @@
         <activity android:name=".ui.bl.ShiYunHomeUI" />
         <activity android:name=".ui.bl.MiLeHomeUI" />
         <activity android:name=".ui.bl.BleYcHomeUI" />
+        <activity android:name=".ui.bl.BleShiYunUserUI" />
+        <activity android:name=".ui.bl.BleSyUserUI" />
+
+        <service
+            android:name="com.chronocloud.ryfibluetoothlibrary.service.BluetoothService"
+            android:enabled="true" />
         <!-- shell Command -->
         <activity android:name=".ui.shell.ShellHomeUI" />
 

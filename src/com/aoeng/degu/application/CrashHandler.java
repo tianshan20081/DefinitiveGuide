@@ -107,6 +107,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		LogUtils.i("crashInfo------" + sb.toString());
 		try {
 			FileOutputStream fos = new FileOutputStream(logFile, true);
+			LogUtils.e(sb.toString());
 			fos.write(sb.toString().getBytes());
 			fos.flush();
 			fos.close();

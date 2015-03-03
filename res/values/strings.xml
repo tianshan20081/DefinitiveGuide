@@ -70,6 +70,7 @@
     <string name="ble_close">关闭Ble</string>
     <string name="ble_check">Ble检测</string>
     <string name="ble_start_scan">开始扫描Ble</string>
+    <string name="finish">Back</string>
     <string name="ble_stop_scan">停止扫描Ble</string>
     <string name="shiyun_find_device">设备连接</string>
     <string name="str_connect">链接</string>
