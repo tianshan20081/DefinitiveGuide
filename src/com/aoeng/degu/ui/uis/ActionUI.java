@@ -27,7 +27,8 @@ public class ActionUI extends Activity implements OnClickListener {
 		Intent intent = null;
 		switch (v.getId()) {
 		case R.id.btnOpenUI:
-			//注意在定义 Activity 时候加上了 mimeType  在使用的时候一定要传递 putType() ;否则会报出无法找到 action 的异常
+			// 注意在定义 Activity 时候加上了 mimeType 在使用的时候一定要传递 putType() ;否则会报出无法找到
+			// action 的异常
 			intent = new Intent("com.aoeng.degu.ui.uis.ACTION_UIS");
 			intent.putExtra("data", "参数值");
 			intent.setType("audio/*");

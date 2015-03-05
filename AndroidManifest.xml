@@ -126,6 +126,15 @@
         <activity android:name=".ui.uis.Group1UI" />
         <activity android:name=".ui.uis.Group2UI" />
         <activity android:name=".ui.uis.Group3UI" />
+        <activity android:name=".ui.uis.FileInfosUI" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
 
         <service
             android:name=".receiver.ShortMessageReceiver"
@@ -336,8 +345,6 @@
         <activity
             android:name="com.phonegap.DroidGap"
             android:configChanges="keyboardHidden|orientation" >
-            <intent-filter>
-            </intent-filter>
         </activity>
 
         <!-- PhoneGap -->

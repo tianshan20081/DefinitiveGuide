@@ -1512,20 +1512,21 @@ containing a value of this type.
         public static final int ui_shell_home=0x7f030082;
         public static final int ui_uis=0x7f030083;
         public static final int ui_uis_action=0x7f030084;
-        public static final int ui_uis_group_1=0x7f030085;
-        public static final int ui_uis_group_2=0x7f030086;
-        public static final int ui_uis_group_3=0x7f030087;
-        public static final int ui_uis_group_main=0x7f030088;
-        public static final int ui_views=0x7f030089;
-        public static final int ui_views_dialog=0x7f03008a;
-        public static final int ui_views_home=0x7f03008b;
-        public static final int ui_views_tablelayout=0x7f03008c;
-        public static final int ui_viewsmergeview=0x7f03008d;
-        public static final int ui_wigets=0x7f03008e;
-        public static final int ui_wv_home=0x7f03008f;
-        public static final int ui_wv_jscalljava=0x7f030090;
-        public static final int ui_wv_pbar=0x7f030091;
-        public static final int ui_wv_simplewv=0x7f030092;
+        public static final int ui_uis_actions=0x7f030085;
+        public static final int ui_uis_group_1=0x7f030086;
+        public static final int ui_uis_group_2=0x7f030087;
+        public static final int ui_uis_group_3=0x7f030088;
+        public static final int ui_uis_group_main=0x7f030089;
+        public static final int ui_views=0x7f03008a;
+        public static final int ui_views_dialog=0x7f03008b;
+        public static final int ui_views_home=0x7f03008c;
+        public static final int ui_views_tablelayout=0x7f03008d;
+        public static final int ui_viewsmergeview=0x7f03008e;
+        public static final int ui_wigets=0x7f03008f;
+        public static final int ui_wv_home=0x7f030090;
+        public static final int ui_wv_jscalljava=0x7f030091;
+        public static final int ui_wv_pbar=0x7f030092;
+        public static final int ui_wv_simplewv=0x7f030093;
     }
     public static final class menu {
         public static final int home_ui=0x7f0b0000;
