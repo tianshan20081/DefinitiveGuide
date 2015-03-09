@@ -19,6 +19,7 @@ import com.aoeng.degu.R;
 import com.aoeng.degu.domain.Battery;
 import com.aoeng.degu.domain.LeParams;
 import com.aoeng.degu.ui.BaseUI;
+import com.aoeng.degu.utils.common.LogUtils;
 import com.aoeng.degu.utils.common.StringUtils;
 
 public class MiLeHomeUI extends BaseUI {
@@ -33,6 +34,7 @@ public class MiLeHomeUI extends BaseUI {
 	private TextView tvSteps;
 	private TextView tvBattery;
 	private TextView tvName;
+	private TextView tvParams;
 	private BluetoothDevice mMiLeDevice;
 	private BluetoothGatt mGatt;
 	private static final int UPDATE_STEPS = 100;
@@ -84,13 +86,15 @@ public class MiLeHomeUI extends BaseUI {
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 	}
 
 	@Override
 	protected void loadViewLayout() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 		setContentView(R.layout.ui_ble_mile_home);
 
@@ -98,9 +102,10 @@ public class MiLeHomeUI extends BaseUI {
 
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		super.onResume();
-		mGatt = mMiLeDevice.connectGatt(MiLeHomeUI.this, false, mGattCallBack);
+		mGatt = mMiLeDevice.connectGatt(MiLeHomeUI.this, true, mGattCallBack);
 		mGatt.connect();
 	}
 
@@ -125,20 +130,26 @@ public class MiLeHomeUI extends BaseUI {
 
 		@Override
 		public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
-			// this is called tight after pair()
-			// setColor((byte)127, (byte)0, (byte)0);
-			request(UUID_CHAR_REALTIME_STEPS); // start with steps
+			// this is called tight
+			// after pair()
+			// setColor((byte)127,
+			// (byte)0, (byte)0);
+			request(UUID_CHAR_REALTIME_STEPS); // start
+												// with
+												// steps
 		}
 
 		@Override
 		public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
 			byte[] b = characteristic.getValue();
-			Log.i(characteristic.getUuid().toString(), "state: " + state + " value:" + Arrays.toString(b));
+			LogUtils.e(characteristic.getUuid().toString() + "state: " + state + " value:" + Arrays.toString(b));
 
 			Message message = mHandler.obtainMessage();
 			// handle value
 			if (characteristic.getUuid().equals(UUID_CHAR_REALTIME_STEPS)) {
-				// mMiBand.setSteps(0xff & b[0] | (0xff & b[1]) << 8);
+				// mMiBand.setSteps(0xff
+				// & b[0] | (0xff &
+				// b[1]) << 8);
 				message.what = UPDATE_STEPS;
 				message.obj = (0xff & b[0] | (0xff & b[1]) << 8) + "";
 				mHandler.sendMessage(message);
@@ -149,7 +160,8 @@ public class MiLeHomeUI extends BaseUI {
 				message.obj = battery;
 				mHandler.sendMessage(message);
 			} else if (characteristic.getUuid().equals(UUID_CHAR_DEVICE_NAME)) {
-				// mMiBand.setName(new String(b));
+				// mMiBand.setName(new
+				// String(b));
 				message.what = UPDATE_NAME;
 				message.obj = new String(b);
 				mHandler.sendMessage(message);
@@ -161,11 +173,13 @@ public class MiLeHomeUI extends BaseUI {
 				mHandler.sendMessage(message);
 			}
 
-			// proceed with state machine (called in the beginning)
+			// proceed with state
+			// machine (called in the
+			// beginning)
 			state++;
 			switch (state) {
 			case 0:
-				request(UUID_CHAR_REALTIME_STEPS);
+				// request(UUID_CHAR_REALTIME_STEPS);
 				break;
 			case 1:
 				request(UUID_CHAR_BATTERY);
@@ -177,11 +191,11 @@ public class MiLeHomeUI extends BaseUI {
 				request(UUID_CHAR_LE_PARAMS);
 				break;
 			}
+			// 实时更新步数
+			request(UUID_CHAR_REALTIME_STEPS);
 		}
 
 	};
-
-	private TextView tvParams;
 
 	private void pair() {
 
@@ -190,7 +204,7 @@ public class MiLeHomeUI extends BaseUI {
 		chrt.setValue(new byte[] { 2 });
 
 		mGatt.writeCharacteristic(chrt);
-		System.out.println("pair sent");
+		LogUtils.e("pair sent");
 	}
 
 	private BluetoothGattService getMiliService() {
@@ -204,7 +218,8 @@ public class MiLeHomeUI extends BaseUI {
 
 	@Override
 	protected void findViewById() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		tvSteps = (TextView) findView(R.id.tvSteps);
 		tvBattery = (TextView) findView(R.id.tvBattery);
 		tvName = (TextView) findView(R.id.tvName);
@@ -215,13 +230,15 @@ public class MiLeHomeUI extends BaseUI {
 
 	@Override
 	protected void setListener() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 	}
 
 	@Override
 	protected void processLogic() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 	}
 

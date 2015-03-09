@@ -198,7 +198,7 @@ public class BlHomeUI extends BaseUI {
 					startActivity(bleItemIntent);
 					break;
 				case BleUtils.BLE_SHIYUN:
-					bleItemIntent = new Intent(BlHomeUI.this, ShiYunHomeUI.class);
+					bleItemIntent = new Intent(BlHomeUI.this, BleShiYunHomeUI.class);
 					bleItemIntent.putExtra("deviceInfo", device);
 					startActivity(bleItemIntent);
 					break;

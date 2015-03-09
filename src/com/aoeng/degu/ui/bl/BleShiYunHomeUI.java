@@ -35,7 +35,7 @@ import com.chronocloud.ryfibluetoothlibrary.entity.TestDataInfo;
 import com.chronocloud.ryfibluetoothlibrary.entity.User;
 import com.chronocloud.ryfibluetoothlibrary.listener.BluetoothOprationCallback;
 
-public class ShiYunHomeUI extends BaseUI {
+public class BleShiYunHomeUI extends BaseUI {
 
 	public static final String NO = "no";
 	public static final String ORDER = "order";
@@ -59,7 +59,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		switch (v.getId()) {
 		case R.id.btn_read:
 			mBluetoothOpration.ReadNumber();
@@ -70,7 +71,8 @@ public class ShiYunHomeUI extends BaseUI {
 		case R.id.btn_send:
 			String height = et_height.getText().toString();
 			String age = et_age.getText().toString();
-			if (mBluetoothOpration != null && (!height.equals("") && !age.equals("")) && (Integer.parseInt(height) >= 100 && Integer.parseInt(height) <= 220)
+			if (mBluetoothOpration != null && (!height.equals("") && !age.equals(""))
+					&& (Integer.parseInt(height) >= 100 && Integer.parseInt(height) <= 220)
 					&& (Integer.parseInt(age) >= 10 && Integer.parseInt(age) <= 80)) {
 				mBluetoothOpration.selectUserScale("09", height, age, sex);
 			} else {
@@ -98,7 +100,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 	@Override
 	protected void loadViewLayout() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 		setContentView(R.layout.ui_ble_shiyun_home);
 
@@ -106,7 +109,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 	@Override
 	protected void findViewById() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		lvData = (ListView) findViewById(R.id.lv_data);
 		rg_sex = (RadioGroup) findViewById(R.id.rg_sex);
 		et_height = (EditText) findViewById(R.id.et_height);
@@ -115,8 +119,10 @@ public class ShiYunHomeUI extends BaseUI {
 		ll_test = (LinearLayout) findViewById(R.id.ll_test);
 		scale_weight = (TextView) findViewById(R.id.scale_weight);
 		tv_mac_address = (TextView) findViewById(R.id.tv_mac_address);
-		// et_value = (EditText) findViewById(R.id.et_value);
-		// btn_send1 = (Button) findViewById(R.id.btn_send1);
+		// et_value = (EditText)
+		// findViewById(R.id.et_value);
+		// btn_send1 = (Button)
+		// findViewById(R.id.btn_send1);
 		btn_read = (Button) findViewById(R.id.btn_read);
 		btn_write = (Button) findViewById(R.id.btn_write);
 		et_number = (EditText) findViewById(R.id.et_number);
@@ -140,7 +146,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 	@Override
 	protected void setListener() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 		btn_read.setOnClickListener(this);
 		btn_send.setOnClickListener(this);
@@ -151,7 +158,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				// TODO Auto-generated method stub
+				// TODO Auto-generated
+				// method stub
 				HashMap<String, String> map = (HashMap<String, String>) parent.getAdapter().getItem(position);
 				String order = map.get(ORDER);
 				if (order.equals(OperationData.VIEW_ALL_USERS)) {
@@ -175,7 +183,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				// TODO Auto-generated method stub
+				// TODO Auto-generated
+				// method stub
 				switch (group.getCheckedRadioButtonId()) {
 				case R.id.rb_man:
 					sex = "01";
@@ -190,7 +199,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 	@Override
 	protected void processLogic() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		mBluetoothOpration = DGApplication._BluetoothOpration;
 		mBluetoothOpration.addBluetoothOprationCallback(BOcallback);
 	}
@@ -212,7 +222,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onWeight(int staut, double weight) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			scale_weight.setText(weight + "kg");
 			if (staut == 0) {
 				scale_weight.setTextColor(Color.RED);
@@ -223,19 +234,22 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onUserIsExist(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 		}
 
 		@Override
 		public void onUpdateUser(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 		}
 
 		@Override
 		public void onTestDataInfo(TestDataInfo dataInfo) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			if (isPause) {
 				return;
 			}
@@ -255,13 +269,15 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onSelectUserScale(List<TestDataInfo> listDataInfo) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 		}
 
 		@Override
 		public void onSelectUserScale(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			if (staut == 0) {
 				btn_send.setClickable(false);
 				btn_send.setTextColor(getResources().getColor(android.R.color.black));
@@ -275,48 +291,56 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onSelectAllUser(Context context, Intent intent, List<User> listUser) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 		}
 
 		@Override
 		public void onGetUserInfo(User user) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			LogUtils.e("UserInfo " + user.toString());
 		}
 
 		@Override
 		public void onDisconnected(Context context, Intent intent) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			mConnected = false;
 			invalidateOptionsMenu();
 			data.clear();
-			// setData(NO, "No Connection");
+			// setData(NO,
+			// "No Connection");
 			ll_test.setVisibility(View.GONE);
 			adapter.notifyDataSetChanged();
 		}
 
 		@Override
 		public void onDeleteUserScale(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 		}
 
 		@Override
 		public void onDeleteUser(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 		}
 
 		@Override
 		public void onCreateNewUser(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 		}
 
 		@Override
 		public void onConnectSuccess(Context context, Intent intent) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 
 			LogUtils.e("onConnectSuccess");
 			UIUtils.toastShow("onConnectSuccess");
@@ -338,7 +362,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onPureGuestMode(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			if (staut == 0) {
 				Toast.makeText(context, "Setting Pure guest mode success!", Toast.LENGTH_SHORT).show();
 			} else {
@@ -348,7 +373,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onQuitPureGuestMode(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			if (staut == 0) {
 				Toast.makeText(context, "Quit Pure guest mode success!", Toast.LENGTH_SHORT).show();
 			} else {
@@ -358,13 +384,15 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onReadMacAddress(String macAddress) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			tv_mac_address.setText("Mac:" + macAddress);
 		}
 
 		@Override
 		public void onResetScaleParam(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			if (staut == 0) {
 				Toast.makeText(context, "Reset Success!", Toast.LENGTH_SHORT).show();
 			} else {
@@ -374,7 +402,8 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onZero(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			if (staut == 0) {
 				Toast.makeText(context, "Zero success!", Toast.LENGTH_SHORT).show();
 			} else if (staut == 1) {
@@ -384,13 +413,15 @@ public class ShiYunHomeUI extends BaseUI {
 
 		@Override
 		public void onReadNumber(String number) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			et_number.setText(number);
 		}
 
 		@Override
 		public void onWriteNumber(int staut) {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated
+			// method stub
 			if (staut == 4) {
 				Toast.makeText(context, "write success!", Toast.LENGTH_SHORT).show();
 			}
@@ -417,10 +448,14 @@ public class ShiYunHomeUI extends BaseUI {
 	private void startTestActivity() {
 		// btn_send.setClickable(true);
 		// btn_send.setTextColor(getResources().getColor(android.R.color.white));
-		// Intent intent = new Intent(context, TestDataActivity.class);
+		// Intent intent = new
+		// Intent(context,
+		// TestDataActivity.class);
 		// Bundle bundle = new Bundle();
-		// bundle.putSerializable("testMap", (Serializable) testMap);
-		// intent.putExtra("bundle", bundle);
+		// bundle.putSerializable("testMap",
+		// (Serializable) testMap);
+		// intent.putExtra("bundle",
+		// bundle);
 		// startActivity(intent);
 	}
 }
