@@ -34,6 +34,9 @@ public class ViewsUI extends BaseUI {
 		case R.id.btnProgressView:
 			UIUtils.startActivity(ProgressUI.class);
 			break;
+		case R.id.btnNumProgressBar:
+			UIUtils.startActivity(NumProgressBarUI.class);
+			break;
 		default:
 			break;
 		}

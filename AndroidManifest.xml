@@ -321,6 +321,7 @@
         <activity android:name=".ui.views.ViewsUI" />
         <activity android:name=".ui.views.TableLayoutUI" />
         <activity android:name=".ui.views.ProgressUI" />
+        <activity android:name=".ui.views.NumProgressBarUI" />
         <activity android:name=".ui.encryption.EncHomeUI" />
         <!-- 事件分发 -->
         <activity android:name=".ui.eventdispatch.EventDispatchUI" />

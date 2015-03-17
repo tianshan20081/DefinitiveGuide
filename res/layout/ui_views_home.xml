@@ -20,6 +20,11 @@
             </LinearLayout>
 
             <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnNumProgressBar"
+                    style="@style/btnItem"
+                    android:text="NumProgressBar" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
