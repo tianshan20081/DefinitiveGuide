@@ -82,6 +82,7 @@ public class ViewsUI extends BaseUI {
 		// stub
 		findView(R.id.btnTableLayout).setOnClickListener(this);
 		findView(R.id.btnProgressView).setOnClickListener(this);
+		findView(R.id.btnNumProgressBar).setOnClickListener(this);
 	}
 
 	/*
