@@ -65,21 +65,33 @@ public class DGApplication extends Application {
 
 		mThreadPoolManager = ThreadPoolManager.getInstance();
 		initJpush();
-		CrashHandler mCrashHandler = CrashHandler.getInstance();
-		mCrashHandler.init();
-		// Intent intent = new Intent(UIUtils.getContext(),
+		// CrashHandler mCrashHandler =
+		// CrashHandler.getInstance();
+		// mCrashHandler.init();
+		
+		
+		
+		// Intent intent = new
+		// Intent(UIUtils.getContext(),
 		// LogFileUploadServices.class);
-		// Intent intent = new Intent(UIUtils.getContext(),
+		// Intent intent = new
+		// Intent(UIUtils.getContext(),
 		// MulityLogFileUploadServices.class);
-		Intent intent = new Intent(UIUtils.getContext(), QiNiuFileUploadService.class);
-		getContext().startService(intent);
+		
+		
+		
+		// Intent intent = new
+		// Intent(UIUtils.getContext(),
+		// QiNiuFileUploadService.class);
+		// getContext().startService(intent);
 
 		printCommonInfo();
 
 	}
 
 	private void initJpush() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		JPushInterface.setDebugMode(true);
 		JPushInterface.init(this);
 
@@ -87,14 +99,16 @@ public class DGApplication extends Application {
 
 			@Override
 			public void gotResult(int arg0, String arg1, Set<String> arg2) {
-				// TODO Auto-generated method stub
+				// TODO Auto-generated
+				// method stub
 				LogUtils.i(arg1);
 			}
 		});
 	}
 
 	private void printCommonInfo() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		LogUtils.e("---AppKey----" + AppUtils.getAppKey(this.mApplication));
 		LogUtils.i("FileUtils.getAppRootPath() --" + FileUtils.getAppRootPath());
 
@@ -104,8 +118,6 @@ public class DGApplication extends Application {
 	public static String getCacheDirPath() {
 		return cacheDir;
 	}
-
-	
 
 	private class ECServiceConnection implements ServiceConnection {
 
@@ -141,17 +153,20 @@ public class DGApplication extends Application {
 	}
 
 	public static Context getContext() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return mApplication;
 	}
 
 	public static Looper getMainThreadLooper() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return mMainThreadLooper;
 	}
 
 	public static int getMainThreadId() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return mMainThreadId;
 	}
 
@@ -160,7 +175,8 @@ public class DGApplication extends Application {
 	}
 
 	public static ThreadPoolManager getThreadPoolManager() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return mThreadPoolManager;
 	}
 }

@@ -10,5 +10,6 @@ package com.aoeng.degu.constant;
 public class Constants {
 
 	public static final long GroupMaxMillisecond = 1000 * 60 * 60;
+	public static final int IMAGE_SIDE_MIN_VALUE = 768;
 
 }

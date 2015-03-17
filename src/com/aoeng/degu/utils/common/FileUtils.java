@@ -22,13 +22,14 @@ import com.aoeng.degu.utils.AppUtils;
 
 public class FileUtils {
 	private static String ROOT_DIR = "df";
-	private static String ROOT_CRASH = "crash";
+	private static String CRASH_DIR = "crash";
 	private static String ROOT_IMG = "img";
 	public static final String DOWNLOAD_DIR = "download";
 	public static final String CACHE_DIR = "cache";
 	public static final String ICON_DIR = "icon";
 	private static final String ARM_DIR = "arm";
 	private static final String TEMP_DIR = "temp";
+	private static final String IMG_DIR = "img";
 
 	/**
 	 * 用当前时间给取得的图片命名
@@ -41,27 +42,33 @@ public class FileUtils {
 	}
 
 	public static String getAppCrashPath() {
-		// TODO Auto-generated method stub
-		return getDir(ROOT_CRASH);
+		// TODO Auto-generated method
+		// stub
+		return getDir(CRASH_DIR);
 	}
 
 	public static File getPhonePhotoFolder() {
-		// TODO Auto-generated method stub
-		LogUtils.i("Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsoluteFile());
+		// TODO Auto-generated method
+		// stub
+		LogUtils.i("Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+"
+				+ Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsoluteFile());
 		LogUtils.i("Environment.getDataDirectory()" + Environment.getDataDirectory().getAbsolutePath());
-		// LogUtils.i("Environment.getDataDirectory()" +
+		// LogUtils.i("Environment.getDataDirectory()"
+		// +
 		// Environment.getExternalStoragePublicDirectory(Environment.));
 
 		return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
 	}
 
 	private static boolean isSDCardAvailiable() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
 	}
 
 	/**
-	 * 读取文件 并将文件中保存的 Properties 中的 键为 key 的数据
+	 * 读取文件 并将文件中保存的 Properties 中的 键为
+	 * key 的数据
 	 * 
 	 * @param filePath
 	 *            文件保存地址
@@ -69,7 +76,8 @@ public class FileUtils {
 	 *            需要获取的 值得键
 	 * @param defaultValue
 	 *            取不到 键对应的值 则返回默认值
-	 * @return 返回需要获得 Properties 中的 key 对应的 值，取不到 则返回 默认值
+	 * @return 返回需要获得 Properties 中的 key
+	 *         对应的 值，取不到 则返回 默认值
 	 */
 	public static String readProperties(String filePath, String key, String defaultValue) {
 		if (StringUtils.isEmpty(key) || StringUtils.isEmpty(filePath)) {
@@ -137,7 +145,8 @@ public class FileUtils {
 	}
 
 	public static String getAppRootPath() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		StringBuilder sb = new StringBuilder();
 		if (isSDCardAvailable()) {
 			sb.append(getExternalStoragePath());
@@ -154,13 +163,15 @@ public class FileUtils {
 	}
 
 	/**
-	 * 獲取應用目錄，當 SD 卡存在時 ，獲取 SD 卡上的目錄，當 SD卡不存在，獲取應用程序的 cache 目錄
+	 * 獲取應用目錄，當 SD 卡存在時 ，獲取 SD 卡上的目錄，當
+	 * SD卡不存在，獲取應用程序的 cache 目錄
 	 * 
 	 * @param downloadDir
 	 * @return downloadDir/
 	 */
 	private static String getDir(String name) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		if (StringUtils.isEmpty(name)) {
 			LogUtils.e(" folder name is null");
 			return null;
@@ -182,7 +193,8 @@ public class FileUtils {
 	 * @return
 	 */
 	private static String getExternalStoragePath() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		StringBuilder sb = new StringBuilder();
 		sb.append(Environment.getExternalStorageDirectory().getAbsolutePath());
 		return sb.toString();
@@ -195,7 +207,8 @@ public class FileUtils {
 	 * @return
 	 */
 	private static boolean createDirs(String dirPath) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		File file = new File(dirPath);
 		if (!file.exists() || !file.isDirectory()) {
 			return file.mkdirs();
@@ -209,7 +222,8 @@ public class FileUtils {
 	 * @return
 	 */
 	private static String getCachePath() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		File file = UIUtils.getContext().getCacheDir();
 		if (null == file) {
 			return null;
@@ -241,7 +255,8 @@ public class FileUtils {
 	 * @return
 	 */
 	private static boolean copyFile(File srcFile, File destFile, boolean deleteSrc) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		if (!srcFile.exists() || !srcFile.isFile()) {
 			return false;
 		}
@@ -322,7 +337,8 @@ public class FileUtils {
 	 * @return 是否写入成功
 	 */
 	public static boolean write2File(String content, String path, boolean append) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return write2File(content.getBytes(), path, append);
 	}
 
@@ -338,7 +354,8 @@ public class FileUtils {
 	 * @return 是否写入成功
 	 */
 	private static boolean write2File(byte[] content, String path, boolean append) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		boolean res = false;
 		File file = new File(path);
 		RandomAccessFile raf = null;
@@ -382,8 +399,7 @@ public class FileUtils {
 		File file = new File(path);
 		FileOutputStream fos = null;
 		try {
-			if (reCreate && file.exists())
-				file.delete();
+			if (reCreate && file.exists()) file.delete();
 			if (!file.exists() && null != is) {
 				File parentFile = new File(file.getParent());
 				parentFile.mkdirs();
@@ -470,7 +486,8 @@ public class FileUtils {
 			Properties properties = new Properties();
 			if (append) {
 				fis = new FileInputStream(file);
-				properties.load(fis);// 先读取文件，再将键值对 追加到后面
+				properties.load(fis);// 先读取文件，再将键值对
+										// 追加到后面
 			}
 			properties.putAll(map);
 			fos = new FileOutputStream(file);
@@ -491,7 +508,8 @@ public class FileUtils {
 	 *            文件路径
 	 * @param defauleValue
 	 *            保存信息 注释
-	 * @return 从键值对文件中 返回的 map<String,String>
+	 * @return 从键值对文件中 返回的
+	 *         map<String,String>
 	 */
 	public static Map<String, String> readMap(String filePath, String defauleValue) {
 		if (StringUtils.isEmpty(filePath)) {
@@ -507,7 +525,8 @@ public class FileUtils {
 			fis = new FileInputStream(file);
 			Properties properties = new Properties();
 			properties.load(fis);
-			// 因为 Properties 继承了 Map ,所以通过 properties 构造一个 map
+			// 因为 Properties 继承了 Map
+			// ,所以通过 properties 构造一个 map
 			map = new HashMap<String, String>((Map) properties);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -561,19 +580,26 @@ public class FileUtils {
 		return true;
 	}
 
-	public static String getFileName() {
-		// TODO Auto-generated method stub
-		return DateUtil.yyyyMMdd_HHmmss.format(new Date()).toString();
+	/**
+	 * 用当前时间给取得的图片命名
+	 * 
+	 */
+	public static String getFileName(FileType fileType) {
+		Date date = new Date(System.currentTimeMillis());
+		SimpleDateFormat dateFormat = new SimpleDateFormat("_yyMMdd_HHmmssSSS", Locale.CHINA);
+		return dateFormat.format(date) + fileType.getValue();
 	}
 
 	public static String getArmDir() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return getDir(ARM_DIR);
 	}
 
 	public static List<String> getCarshFiles() {
 
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		ArrayList<String> files = new ArrayList<String>();
 		String path = FileUtils.getAppCrashPath();
 		LogUtils.i("appcrashpath " + path);
@@ -599,10 +625,11 @@ public class FileUtils {
 	}
 
 	public static File getCrashFile() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 		String crashPath = FileUtils.getAppCrashPath();
-		String logName = AppUtils.getDeviceName() + "-crash-" + getFileName() + ".log";
+		String logName = AppUtils.getDeviceName() + "-crash-" + getFileName(FileType.LOG);
 
 		return getFile(crashPath, logName);
 	}
@@ -615,7 +642,9 @@ public class FileUtils {
 				try {
 					logFile.createNewFile();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
+					// TODO
+					// Auto-generated
+					// catch block
 					LogUtils.e(e);
 					return null;
 				}
@@ -626,9 +655,10 @@ public class FileUtils {
 	}
 
 	public static File getTempleFile(String infos) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		String tempPath = getTempPath();
-		String fileName = AppUtils.getDeviceName().toUpperCase() + "-apps-" + getFileName() + ".log";
+		String fileName = AppUtils.getDeviceName().toUpperCase() + "-apps-" + getFileName(FileType.LOG);
 		File file = getFile(tempPath, fileName);
 		if (file.exists()) {
 			try {
@@ -637,7 +667,8 @@ public class FileUtils {
 				fos.flush();
 				fos.close();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
+				// TODO Auto-generated
+				// catch block
 				LogUtils.e(e);
 			}
 		}
@@ -645,12 +676,14 @@ public class FileUtils {
 	}
 
 	private static String getTempPath() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return getDir(TEMP_DIR);
 	}
 
 	public static String getTempleFilePath(String infos) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return getTempleFile(infos).getAbsolutePath();
 	}
 
@@ -662,7 +695,8 @@ public class FileUtils {
 	 * @return
 	 */
 	public static List<String> getFileLists(String folderName) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		List<String> filePaths = new ArrayList<String>();
 		if (StringUtils.isEmpty(folderName)) {
 			throw new IllegalArgumentException("the folder name is empty !!! ");
@@ -692,8 +726,12 @@ public class FileUtils {
 	 * 
 	 * @param dir
 	 *            将要删除的文件目录
-	 * @return boolean Returns "true" if all deletions were successful. If a
-	 *         deletion fails, the method stops attempting to delete and returns
+	 * @return boolean Returns "true" if
+	 *         all deletions were
+	 *         successful. If a
+	 *         deletion fails, the
+	 *         method stops attempting
+	 *         to delete and returns
 	 *         "false".
 	 */
 	public static boolean deleteDir(String dirPath) {
@@ -716,6 +754,47 @@ public class FileUtils {
 		}
 		// 目录此时为空，可以删除
 		return dir.delete();
+	}
+
+	/**
+	 * @return
+	 */
+	public static String getImgFile() {
+		// TODO Auto-generated method
+		// stub
+		return getImgDir().concat(File.separator).concat(getFileName(FileType.IMG));
+	}
+
+	public static String getArmFile() {
+		// TODO Auto-generated method
+		// stub
+		return getImgDir().concat(File.separator).concat(getFileName(FileType.AMR));
+	}
+
+	private static String getImgDir() {
+		// TODO Auto-generated method
+		// stub
+		return getDir(IMG_DIR);
+	}
+
+	enum FileType {
+		IMG(".jpg"), AMR(".amr"), APK(".apk"), LOG(".log");
+
+		private String value;
+
+		private String getValue() {
+			return this.value;
+		}
+
+		/**
+		 * 
+		 */
+		private FileType(String value) {
+			// TODO Auto-generated
+			// constructor stub
+			this.value = value;
+		}
+
 	}
 
 }

@@ -281,6 +281,8 @@
         <activity android:name=".ui.imgs.ImageAutoGroupUI" />
         <!-- 拍摄一个头像 -->
         <activity android:name=".ui.imgs.TakeIconUI" />
+        <activity android:name=".ui.imgs.XutilsBitMapUtilsUI" />
+        <activity android:name=".ui.imgs.ImagePlayerUI" />
         <!-- 應用程序管理界面 -->
         <activity android:name=".ui.apps.AppManagerUI" />
         <!-- 所有應用程序 -->
@@ -318,7 +320,7 @@
         <activity android:name=".ui.internet.QnSingleUploadUI" />
         <activity android:name=".ui.views.ViewsUI" />
         <activity android:name=".ui.views.TableLayoutUI" />
-        <activity android:name=".ui.views.DialogUI" />
+        <activity android:name=".ui.views.ProgressUI" />
         <activity android:name=".ui.encryption.EncHomeUI" />
         <!-- 事件分发 -->
         <activity android:name=".ui.eventdispatch.EventDispatchUI" />

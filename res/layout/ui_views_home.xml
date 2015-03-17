@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    style="@style/lyVerticalStyle" >
 
     <ScrollView style="@style/scrollViewStyle" >
 
         <LinearLayout style="@style/lyVerticalStyle" >
 
-        </LinearLayout>
             <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
@@ -17,14 +14,14 @@
                     android:text="TableLayout" />
 
                 <Button
-                    android:id="@+id/btnProgressDialog"
+                    android:id="@+id/btnProgressView"
                     style="@style/btnStyle"
                     android:text="ProgressDialog" />
             </LinearLayout>
+
             <LinearLayout style="@style/lyHorizontalStyle" >
-
-
             </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

@@ -19,17 +19,20 @@ public class ViewsUI extends BaseUI {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 * @see
+	 * android.view.View.OnClickListener
+	 * #onClick(android.view.View)
 	 */
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		switch (v.getId()) {
 		case R.id.btnTableLayout:
 			startActivity(new Intent(ViewsUI.this, TableLayoutUI.class));
 			break;
-		case R.id.btnProgressDialog:
-			UIUtils.startActivity(DialogUI.class);
+		case R.id.btnProgressView:
+			UIUtils.startActivity(ProgressUI.class);
 			break;
 		default:
 			break;
@@ -39,45 +42,56 @@ public class ViewsUI extends BaseUI {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#loadViewLayout()
+	 * @see com.aoeng.degu.ui.BaseUI#
+	 * loadViewLayout()
 	 */
 	@Override
 	protected void loadViewLayout() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		setContentView(R.layout.ui_views_home);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#findViewById()
+	 * @see
+	 * com.aoeng.degu.ui.BaseUI#findViewById
+	 * ()
 	 */
 	@Override
 	protected void findViewById() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#setListener()
+	 * @see
+	 * com.aoeng.degu.ui.BaseUI#setListener
+	 * ()
 	 */
 	@Override
 	protected void setListener() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		findView(R.id.btnTableLayout).setOnClickListener(this);
-		findView(R.id.btnProgressDialog).setOnClickListener(this);
+		findView(R.id.btnProgressView).setOnClickListener(this);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.aoeng.degu.ui.BaseUI#processLogic()
+	 * @see
+	 * com.aoeng.degu.ui.BaseUI#processLogic
+	 * ()
 	 */
 	@Override
 	protected void processLogic() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 	}
 

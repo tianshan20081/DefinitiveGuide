@@ -24,13 +24,14 @@ import com.aoeng.degu.utils.ThreadPoolManager;
 public class UIUtils {
 
 	public static Context getContext() {
-		// TODO Auto-generated method stub
-
+		// TODO Auto-generated method
+		// stub
 		return DGApplication.getContext();
 	}
 
 	public static void startActivity(Intent intent) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		BaseUI ui = BaseUI.getCurrenthowUI();
 		if (null != ui) {
 			ui.startActivity(intent);
@@ -45,12 +46,14 @@ public class UIUtils {
 	}
 
 	public static String getString(int resId) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return getContext().getString(resId);
 	}
 
 	public static void getToastSafe(final String msg) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		if (isRunInMainThread()) {
 			toastShow(msg);
 		} else {
@@ -58,7 +61,9 @@ public class UIUtils {
 
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
+					// TODO
+					// Auto-generated
+					// method stub
 					toastShow(msg);
 				}
 
@@ -67,20 +72,23 @@ public class UIUtils {
 	}
 
 	private static boolean isRunInMainThread() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 
 		return android.os.Process.myPid() == DGApplication.getMainThreadId();
 	}
 
 	private static Handler getHandler() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		Looper mainLooper = DGApplication.getMainThreadLooper();
 		Handler mainHandler = new Handler(mainLooper);
 		return mainHandler;
 	}
 
 	public static void toastShow(String msg) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
 	}
 
@@ -89,7 +97,8 @@ public class UIUtils {
 	}
 
 	public static void runInMainThread(Runnable run) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		if (isRunInMainThread()) {
 			run.run();
 		} else {
@@ -99,7 +108,8 @@ public class UIUtils {
 	}
 
 	public static void startActivity(Class clazz) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		startActivity(new Intent(getContext(), clazz));
 	}
 
@@ -108,26 +118,39 @@ public class UIUtils {
 	}
 
 	public static void notify(String extrs) {
-		// TODO Auto-generated method stub
-		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getContext()).setSmallIcon(R.drawable.ic_launcher).setContentTitle("来自京东服务器的通知").setContentText(extrs);
-		// Creates an explicit intent for an Activity in your app
+		// TODO Auto-generated method
+		// stub
+		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getContext()).setSmallIcon(R.drawable.ic_launcher)
+				.setContentTitle("来自京东服务器的通知").setContentText(extrs);
+		// Creates an explicit intent
+		// for an Activity in your app
 		Intent resultIntent = new Intent(getContext(), MpRequestInfoUI.class);
 		resultIntent.putExtra("extras", extrs);
 
-		// The stack builder object will contain an artificial back stack for
+		// The stack builder object will
+		// contain an artificial back
+		// stack for
 		// the
 		// started Activity.
-		// This ensures that navigating backward from the Activity leads out of
-		// your application to the Home screen.
+		// This ensures that navigating
+		// backward from the Activity
+		// leads out of
+		// your application to the Home
+		// screen.
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(getContext());
-		// Adds the back stack for the Intent (but not the Intent itself)
+		// Adds the back stack for the
+		// Intent (but not the Intent
+		// itself)
 		stackBuilder.addParentStack(MpRequestInfoUI.class);
-		// Adds the Intent that starts the Activity to the top of the stack
+		// Adds the Intent that starts
+		// the Activity to the top of
+		// the stack
 		stackBuilder.addNextIntent(resultIntent);
 		PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 		mBuilder.setContentIntent(resultPendingIntent);
 		NotificationManager mNotificationManager = (NotificationManager) UIUtils.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
-		// mId allows you to update the notification later on.
+		// mId allows you to update the
+		// notification later on.
 
 		mBuilder.setDefaults(Notification.DEFAULT_LIGHTS);
 		mBuilder.setLights(0xff00ff00, 300, 1000);
@@ -142,7 +165,8 @@ public class UIUtils {
 	 * @return
 	 */
 	public static Dialog showProgressDialog(String msg) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		ProgressDialog dialog = new ProgressDialog(getContext());
 		dialog.setMessage(msg);
 		dialog.setCancelable(false);
@@ -157,7 +181,8 @@ public class UIUtils {
 	}
 
 	public static View inflate(int layoutId) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		return LayoutInflater.from(getContext()).inflate(layoutId, null);
 	}
 }

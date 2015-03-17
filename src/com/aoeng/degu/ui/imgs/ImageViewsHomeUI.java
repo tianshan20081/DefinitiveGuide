@@ -21,11 +21,14 @@ public class ImageViewsHomeUI extends Activity implements OnClickListener {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 * @see
+	 * android.app.Activity#onCreate
+	 * (android.os.Bundle)
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.ui_imgs_home);
@@ -39,16 +42,20 @@ public class ImageViewsHomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnPicIcon).setOnClickListener(this);
 		this.findViewById(R.id.btnImgCrop).setOnClickListener(this);
 		this.findViewById(R.id.btnImageAutoGroup).setOnClickListener(this);
+		this.findViewById(R.id.btnImagePlay).setOnClickListener(this);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 * @see
+	 * android.view.View.OnClickListener
+	 * #onClick(android.view.View)
 	 */
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method
+		// stub
 		switch (v.getId()) {
 		case R.id.btnTakeIcon:
 			UIUtils.startActivity(TakeIconUI.class);
@@ -76,6 +83,9 @@ public class ImageViewsHomeUI extends Activity implements OnClickListener {
 			break;
 		case R.id.btnImageAutoGroup:
 			startActivity(new Intent(ImageViewsHomeUI.this, ImageAutoGroupUI.class));
+			break;
+		case R.id.btnImagePlay:
+			startActivity(new Intent(this, ImagePlayerUI.class));
 			break;
 		default:
 			break;

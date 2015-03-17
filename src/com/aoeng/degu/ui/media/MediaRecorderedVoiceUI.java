@@ -118,7 +118,7 @@ public class MediaRecorderedVoiceUI extends BaseUI {
 	@Override
 	protected void setListener() {
 		// TODO Auto-generated method stub
-		File voiceFile = new File(FileUtils.getArmDir(), FileUtils.getFileName() + ".amr");
+		File voiceFile = new File(FileUtils.getArmFile());
 		try {
 			if (voiceFile.exists()) {
 				voiceFile.delete();

@@ -64,6 +64,11 @@
                     android:id="@+id/btnImageAutoGroup"
                     style="@style/btnItem"
                     android:text="@string/images_auto_group" />
+
+                <Button
+                    android:id="@+id/btnImagePlay"
+                    style="@style/btnItem"
+                    android:text="ImagePlay" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
