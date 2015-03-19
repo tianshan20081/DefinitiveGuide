@@ -11,7 +11,7 @@
                 <Button
                     android:id="@+id/btnCircleImg"
                     style="@style/btnItem"
-                    android:text="圆角图片" />
+                    android:text="圆形图片" />
 
                 <Button
                     android:id="@+id/btnShapeImg"
