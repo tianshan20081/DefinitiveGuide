@@ -70,6 +70,28 @@
                     style="@style/btnItem"
                     android:text="ImagePlay" />
             </LinearLayout>
+
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnGraffiti"
+                    style="@style/btnItem"
+                    android:text="画板" />
+
+                <Button
+                    android:id="@+id/btnMitoPic"
+                    style="@style/btnItem"
+                    android:text="美图" />
+            </LinearLayout>
+            <LinearLayout style="@style/lyHorizontalStyle" >
+
+                <Button
+                    android:id="@+id/btnMesh"
+                    style="@style/btnItem"
+                    android:text="正弦图" />
+
+               
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

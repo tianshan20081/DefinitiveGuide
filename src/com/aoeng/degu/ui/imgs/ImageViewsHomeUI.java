@@ -43,6 +43,9 @@ public class ImageViewsHomeUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnImgCrop).setOnClickListener(this);
 		this.findViewById(R.id.btnImageAutoGroup).setOnClickListener(this);
 		this.findViewById(R.id.btnImagePlay).setOnClickListener(this);
+		this.findViewById(R.id.btnGraffiti).setOnClickListener(this);
+		this.findViewById(R.id.btnMitoPic).setOnClickListener(this);
+		this.findViewById(R.id.btnMesh).setOnClickListener(this);
 	}
 
 	/*
@@ -57,6 +60,15 @@ public class ImageViewsHomeUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method
 		// stub
 		switch (v.getId()) {
+		case R.id.btnMitoPic:
+			UIUtils.startActivity(MiToUI.class);
+			break;
+		case R.id.btnMesh:
+			UIUtils.startActivity(MeshUI.class);
+			break;
+		case R.id.btnGraffiti:
+			UIUtils.startActivity(GraffitiUI.class);
+			break;
 		case R.id.btnTakeIcon:
 			UIUtils.startActivity(TakeIconUI.class);
 			break;

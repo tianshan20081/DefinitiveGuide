@@ -279,6 +279,9 @@
         <activity android:name=".ui.imgs.PicCropUI" />
         <activity android:name=".ui.imgs.CropImage" />
         <activity android:name=".ui.imgs.ImageAutoGroupUI" />
+        <activity android:name=".ui.imgs.GraffitiUI" />
+        <activity android:name=".ui.imgs.MiToUI" />
+        <activity android:name=".ui.imgs.MeshUI" />
         <!-- 拍摄一个头像 -->
         <activity android:name=".ui.imgs.TakeIconUI" />
         <activity android:name=".ui.imgs.XutilsBitMapUtilsUI" />
