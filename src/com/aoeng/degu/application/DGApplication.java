@@ -14,6 +14,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Debug;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.Looper;
@@ -85,7 +86,12 @@ public class DGApplication extends Application {
 		// QiNiuFileUploadService.class);
 		// getContext().startService(intent);
 
+		
 		printCommonInfo();
+		
+	
+		Debug.startMethodTracing("filename");
+		Debug.stopMethodTracing();
 
 	}
 
