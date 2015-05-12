@@ -10,199 +10,137 @@
 
         <LinearLayout style="@style/lyVerticalStyle" >
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/chapter1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="chapter1" />
 
                 <Button
                     android:id="@+id/chapter2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="chapter2" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/widget"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="Widget" />
 
                 <Button
                     android:id="@+id/dataSave"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="dataSave" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnSystemUI"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="SystemActivity" />
 
                 <Button
                     android:id="@+id/btnUserUI"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="UserActivity" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnGroupUI"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="GroupActivity" />
 
                 <Button
                     android:id="@+id/btnReceiver"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="BroadcastReceiver" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnContentProvider"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="ContentProvider" />
 
                 <Button
                     android:id="@+id/btnServices"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="Services" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnWebView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="WebView" />
 
                 <Button
                     android:id="@+id/btnNetWork"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="NetWork" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnCoordinates"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="Coordinates" />
 
                 <Button
                     android:id="@+id/btnJNI"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="JNI" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnCustomerUI"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="CustomerUI" />
 
                 <Button
                     android:id="@+id/btnListViews"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="ListViews" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnLoginUIs"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="LoginUIs" />
 
                 <Button
                     android:id="@+id/btnLocations"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="Location" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnImgs"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="ImageViews" />
 
                 <Button
                     android:id="@+id/btnApp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    style="@style/btnItem"
                     android:text="AppsManager" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnSecurity"
@@ -215,9 +153,7 @@
                     android:text="Games" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/lyHorizontalStyle"
-                 >
+            <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
                     android:id="@+id/btnMedia"
@@ -288,6 +224,11 @@
                     android:id="@+id/btnShell"
                     style="@style/btnItem"
                     android:text="@string/str_shell_command" />
+
+                <Button
+                    android:id="@+id/btnAnim"
+                    style="@style/btnItem"
+                    android:text="Animation" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

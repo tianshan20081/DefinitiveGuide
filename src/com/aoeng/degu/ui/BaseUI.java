@@ -43,7 +43,6 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	private ThreadPoolManager threadPoolManager;
 	/** 登录请求码 */
 	public static final int NOT_LOGIN = 403;
-
 	/** 登录结果码 */
 	public static final int LOGIN_SUCCESS = 10000000;
 	/** ContentView */
@@ -52,13 +51,14 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	private ProgressDialog progressDialog;
 
 	public BaseUI() {
-
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 * @see
+	 * android.app.Activity#onCreate
+	 * (android.os.Bundle)
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,6 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 		application = (DGApplication) getApplication();
 		application.addActvity(this);
 		super.setContentView(R.layout.ui_base);
-
 		fmContent = (LinearLayout) super.findViewById(R.id.fmContent);
 		context = getApplicationContext();
 		initView();
@@ -79,7 +78,6 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 		this.mCurrentShowUI = this;
 		super.onResume();
 		JPushInterface.onResume(BaseUI.this);
-
 	}
 
 	@Override
@@ -106,7 +104,6 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 		setListener();
 		processLogic();
 		int i = position(3);
-
 		// toast(String.valueOf(i));
 	}
 
@@ -119,7 +116,6 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 	 */
 	protected <T extends View> T getViewById(int i) {
 		// TODO Auto-generated method stub
-
 		return (T) findViewById(i);
 	}
 
@@ -254,7 +250,6 @@ public abstract class BaseUI extends Activity implements View.OnClickListener {
 
 	protected void toast(String str) {
 		Toast.makeText(context, str, Toast.LENGTH_LONG).show();
-
 	}
 
 	protected void log(String msg) {

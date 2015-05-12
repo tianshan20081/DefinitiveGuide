@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageView;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.domain.Person;
@@ -37,12 +38,9 @@ public class DataSaveUI extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.ui_data_sp);
-
 		etDataInfo = (EditText) this.findViewById(R.id.etDataInfo);
 		imageView = (ImageView) this.findViewById(R.id.imIcon);
-
 		this.findViewById(R.id.saveData).setOnClickListener(this);
 		this.findViewById(R.id.saveObjectData).setOnClickListener(this);
 		this.findViewById(R.id.getData).setOnClickListener(this);
@@ -53,10 +51,8 @@ public class DataSaveUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.fileSaveDataSD).setOnClickListener(this);
 		this.findViewById(R.id.fileCompression).setOnClickListener(this);
 		this.findViewById(R.id.btnSqlLiteDb).setOnClickListener(this);
-
 		simpleDataSp = getSharedPreferences("simpleDataSave", Activity.MODE_PRIVATE);
 		simpleDataEditor = simpleDataSp.edit();
-
 	}
 
 	@Override
@@ -81,11 +77,9 @@ public class DataSaveUI extends Activity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.prefActivity:
-
 			intent = new Intent(this, PreferenceUI.class);
 			startActivity(intent);
 			break;
-
 		case R.id.clearData:
 			Toaster.toast(this, "数据已经被清空", false);
 			simpleDataEditor.clear();
@@ -95,7 +89,6 @@ public class DataSaveUI extends Activity implements OnClickListener {
 			try {
 				ByteArrayOutputStream bos = new ByteArrayOutputStream();
 				BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher).compress(CompressFormat.JPEG, 50, bos);
-
 				imgBase64Str = Base64.encodeToString(bos.toByteArray(), Base64.DEFAULT);
 				simpleDataEditor.putString("img", imgBase64Str);
 				simpleDataEditor.putString("simpledate", etDataInfo.getText().toString().trim());
@@ -117,11 +110,9 @@ public class DataSaveUI extends Activity implements OnClickListener {
 				BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher).compress(CompressFormat.PNG, 100, bos1);
 				String iconStr = Base64.encodeToString(bos1.toByteArray(), Base64.DEFAULT);
 				person.setIcon(iconStr);
-
 				ByteArrayOutputStream bos = new ByteArrayOutputStream();
 				ObjectOutputStream oos = new ObjectOutputStream(bos);
 				oos.writeObject(person);
-
 				personBase64Str = Base64.encodeToString(bos.toByteArray(), Base64.DEFAULT);
 				simpleDataEditor.putString("personBase64", personBase64Str);
 				simpleDataEditor.commit();
@@ -132,7 +123,6 @@ public class DataSaveUI extends Activity implements OnClickListener {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-
 			break;
 		case R.id.getData:
 			try {
@@ -159,7 +149,6 @@ public class DataSaveUI extends Activity implements OnClickListener {
 				ByteArrayInputStream bis1 = new ByteArrayInputStream(iconByte);
 				Drawable drawable = Drawable.createFromStream(bis1, "image");
 				imageView.setBackgroundDrawable(drawable);
-
 				/**
 				 * // Drawable---->Bitmap BitmapDrawable bitmapDrawable =
 				 * (BitmapDrawable) drawable; Bitmap bitmap =
@@ -180,4 +169,17 @@ public class DataSaveUI extends Activity implements OnClickListener {
 		}
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
 }

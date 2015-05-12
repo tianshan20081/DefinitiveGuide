@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.views.CircleCanvasView;
@@ -21,13 +22,10 @@ public class Chapter1UI extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		//装载布局
-		ViewGroup viewGroup = (ViewGroup) getLayoutInflater().inflate(R.layout.ui_chap1,null);
+		ViewGroup viewGroup = (ViewGroup) getLayoutInflater().inflate(R.layout.ui_chap1, null);
 		mCircleCanvas = new CircleCanvasView(this);
-		viewGroup.addView(mCircleCanvas,new LayoutParams(LayoutParams.FILL_PARENT,700));
+		viewGroup.addView(mCircleCanvas, new LayoutParams(LayoutParams.FILL_PARENT, 700));
 		setContentView(viewGroup);
-		
-		
-		
 		//setContentView(R.layout.ui_chap1);
 	}
 
@@ -42,8 +40,7 @@ public class Chapter1UI extends Activity {
 		if (random.nextInt(100) > 50) {
 			randomColor = Color.BLUE;
 		} else {
-			if (random.nextInt(100) > 50)
-				randomColor = Color.RED;
+			if (random.nextInt(100) > 50) randomColor = Color.RED;
 			else
 				randomColor = Color.GREEN;
 		}
@@ -61,4 +58,17 @@ public class Chapter1UI extends Activity {
 		mCircleCanvas.invalidate();
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
 }

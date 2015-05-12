@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.common.Logger;
@@ -29,15 +30,11 @@ public class FrameUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ui_views);
-
 		this.findViewById(R.id.mergeView).setOnClickListener(this);
 		str1 = "　一书，除了生动还原纪录片之外。一书，除了生动还原纪录片之外一书，除了生动还原纪录片之外";
 		str2 = "纪录片的延伸与互补";
-
 		style1();
-
 		style2();
-
 	}
 
 	/**
@@ -47,10 +44,8 @@ public class FrameUI extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		tv1 = (TextView) this.findViewById(R.id.tv1);
 		tv2 = (TextView) this.findViewById(R.id.tv2);
-
 		tv1.setText(str1);
 		tv2.setText(str2);
-
 		we = getWindowManager().getDefaultDisplay().getWidth();
 		TextPaint paint1 = tv1.getPaint();
 		TextPaint paint2 = tv2.getPaint();
@@ -64,7 +59,6 @@ public class FrameUI extends Activity implements OnClickListener {
 			LayoutParams param2 = new LayoutParams((int) ((len2 * we) / (len1 + len2)), LayoutParams.WRAP_CONTENT);
 			param2.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
 			tv2.setLayoutParams(param2);
-
 		}
 	}
 
@@ -86,11 +80,9 @@ public class FrameUI extends Activity implements OnClickListener {
 			param3.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
 			tv3.setLayoutParams(param3);
 			LayoutParams param4 = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-
 			param4.addRule(RelativeLayout.BELOW, R.id.tv3);
 			param4.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
 			tv4.setLayoutParams(param4);
-
 		}
 	}
 
@@ -102,10 +94,22 @@ public class FrameUI extends Activity implements OnClickListener {
 			Intent intent = new Intent(this, MergeView.class);
 			startActivity(intent);
 			break;
-
 		default:
 			break;
 		}
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
 }

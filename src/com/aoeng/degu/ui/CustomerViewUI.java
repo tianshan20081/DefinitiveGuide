@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.ui.cv.BidirSlidingUI;
@@ -27,14 +28,15 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 * @see
+	 * android.app.Activity#onCreate
+	 * (android.os.Bundle)
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ui_cv_home);
-
 		this.findViewById(R.id.btnBiDirSlid).setOnClickListener(this);
 		this.findViewById(R.id.btnPhotoWall).setOnClickListener(this);
 		this.findViewById(R.id.btnContacts1).setOnClickListener(this);
@@ -43,13 +45,14 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 		this.findViewById(R.id.btnPhotoWaterfall).setOnClickListener(this);
 		this.findViewById(R.id.btnIconSmall2Big).setOnClickListener(this);
 		this.findViewById(R.id.btnTabsByGroupUI).setOnClickListener(this);
-
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 * @see
+	 * android.view.View.OnClickListener
+	 * #onClick(android.view.View)
 	 */
 	@Override
 	public void onClick(View v) {
@@ -93,4 +96,17 @@ public class CustomerViewUI extends Activity implements OnClickListener {
 		}
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
 }

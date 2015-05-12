@@ -3,6 +3,7 @@ package com.aoeng.degu.ui;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.receiver.ReceiverUI;
@@ -34,7 +35,6 @@ import com.aoeng.degu.ui.wv.WebViewUI;
 import com.aoeng.degu.utils.common.UIUtils;
 
 public class HomeUI extends BaseUI implements OnClickListener {
-
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -106,7 +106,6 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		case R.id.chapter1:
 			intent = new Intent(HomeUI.this, Chapter1UI.class);
 			break;
-
 		case R.id.chapter2:
 			intent = new Intent(this, FrameUI.class);
 			break;
@@ -119,7 +118,6 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		case R.id.btnCustomerUI:
 			// 自定义控件
 			intent = new Intent(HomeUI.this, CustomerViewUI.class);
-
 			break;
 		case R.id.btnLoginUIs:
 			intent = new Intent(HomeUI.this, LoginUIs.class);
@@ -145,10 +143,24 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		case R.id.btnShell:// run shell command
 			intent = new Intent(HomeUI.this, ShellHomeUI.class);
 			break;
+		case R.id.btnAnim:
+			break;
 		}
-
 		startActivity(intent);
+	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
 	}
 
 	@Override
@@ -160,13 +172,11 @@ public class HomeUI extends BaseUI implements OnClickListener {
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	protected void setListener() {
 		// TODO Auto-generated method stub
-
 		this.findViewById(R.id.chapter1).setOnClickListener(this);
 		this.findViewById(R.id.chapter2).setOnClickListener(this);
 		this.findViewById(R.id.widget).setOnClickListener(this);
@@ -179,19 +189,14 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		this.findViewById(R.id.btnServices).setOnClickListener(this);
 		this.findViewById(R.id.btnNetWork).setOnClickListener(this);
 		this.findViewById(R.id.btnWebView).setOnClickListener(this);
-
 		this.findViewById(R.id.btnJNI).setOnClickListener(this);
 		this.findViewById(R.id.btnCoordinates).setOnClickListener(this);
-
 		this.findViewById(R.id.btnCustomerUI).setOnClickListener(this);
 		this.findViewById(R.id.btnListViews).setOnClickListener(this);
-
 		this.findViewById(R.id.btnLoginUIs).setOnClickListener(this);
 		this.findViewById(R.id.btnLocations).setOnClickListener(this);
-
 		this.findViewById(R.id.btnImgs).setOnClickListener(this);
 		this.findViewById(R.id.btnApp).setOnClickListener(this);
-
 		// 反编译与安全
 		this.findViewById(R.id.btnSecurity).setOnClickListener(this);
 		this.findViewById(R.id.btnGames).setOnClickListener(this);
@@ -199,21 +204,18 @@ public class HomeUI extends BaseUI implements OnClickListener {
 		this.findViewById(R.id.btnInternet).setOnClickListener(this);
 		this.findViewById(R.id.btnViews).setOnClickListener(this);
 		this.findViewById(R.id.btnEnc).setOnClickListener(this);
-
 		this.findViewById(R.id.btnHandler).setOnClickListener(this);
 		this.findViewById(R.id.btnEventDistribution).setOnClickListener(this);
-
 		this.findViewById(R.id.btnPhoneGap).setOnClickListener(this);
 		this.findViewById(R.id.btnChartEngine).setOnClickListener(this);
 		this.findViewById(R.id.btnMobileManager).setOnClickListener(this);
 		this.findViewById(R.id.btnBleHome).setOnClickListener(this);
 		this.findViewById(R.id.btnShell).setOnClickListener(this);
-
+		this.findViewById(R.id.btnAnim).setOnClickListener(this);
 	}
 
 	@Override
 	protected void processLogic() {
 		// TODO Auto-generated method stub
-
 	}
 }

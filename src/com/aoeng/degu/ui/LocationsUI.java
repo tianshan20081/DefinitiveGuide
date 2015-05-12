@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.baidu.location.BDLocation;
@@ -29,15 +30,15 @@ public class LocationsUI extends Activity implements OnClickListener {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 * @see
+	 * android.app.Activity#onCreate
+	 * (android.os.Bundle)
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.ui_locations);
-
 		this.findViewById(R.id.btnSysLocation).setOnClickListener(this);
 		this.findViewById(R.id.btnBaiduLocation).setOnClickListener(this);
 		tvLocationInfo = (TextView) this.findViewById(R.id.tvLocationInfo);
@@ -46,14 +47,15 @@ public class LocationsUI extends Activity implements OnClickListener {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 * @see
+	 * android.view.View.OnClickListener
+	 * #onClick(android.view.View)
 	 */
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.btnSysLocation:
-
 			LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 			Location location = getLocationProvider(locationManager);
 			if (location != null) {
@@ -61,7 +63,6 @@ public class LocationsUI extends Activity implements OnClickListener {
 				buffer.append("Latitude:").append(Double.valueOf(location.getLatitude()));
 				buffer.append("\n");
 				buffer.append("Longitude:").append(Double.valueOf(location.getLongitude()));
-
 				tvLocationInfo.setText(buffer.toString());
 			} else {
 				tvLocationInfo.setText("获取经纬度失败");
@@ -92,8 +93,7 @@ public class LocationsUI extends Activity implements OnClickListener {
 		mLocationClient.registerLocationListener(new BDLocationListener() {
 			@Override
 			public void onReceiveLocation(BDLocation location) {
-				if (location == null)
-					return;
+				if (location == null) return;
 				StringBuffer sb = new StringBuffer(256);
 				sb.append("time : ");
 				sb.append(location.getTime());
@@ -113,7 +113,6 @@ public class LocationsUI extends Activity implements OnClickListener {
 				} else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {
 					sb.append("\naddr : ");
 					sb.append(location.getAddrStr());
-
 					sb.append("\nProvince  :").append(location.getProvince() + location.getPoi());
 					sb.append("\nCity  :").append(location.getCity() + location.getCityCode());
 					sb.append("\nDistrict  :").append(location.getDistrict());
@@ -142,11 +141,22 @@ public class LocationsUI extends Activity implements OnClickListener {
 		criteria.setAccuracy(Criteria.ACCURACY_FINE);
 		criteria.setBearingRequired(false);
 		criteria.setPowerRequirement(Criteria.POWER_LOW);
-
 		String reLocationProvider = locationManager.getBestProvider(criteria, true);
-
 		location = locationManager.getLastKnownLocation(reLocationProvider);
 		return location;
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
 }

@@ -22,7 +22,6 @@ import com.aoeng.degu.ui.mp.MpRequestInfoUI;
 import com.aoeng.degu.utils.ThreadPoolManager;
 
 public class UIUtils {
-
 	public static Context getContext() {
 		// TODO Auto-generated method
 		// stub
@@ -58,15 +57,11 @@ public class UIUtils {
 			toastShow(msg);
 		} else {
 			getHandler().post(new Runnable() {
-
 				@Override
 				public void run() {
 					// TODO
-					// Auto-generated
-					// method stub
 					toastShow(msg);
 				}
-
 			});
 		}
 	}
@@ -74,7 +69,6 @@ public class UIUtils {
 	private static boolean isRunInMainThread() {
 		// TODO Auto-generated method
 		// stub
-
 		return android.os.Process.myPid() == DGApplication.getMainThreadId();
 	}
 
@@ -104,7 +98,6 @@ public class UIUtils {
 		} else {
 			post(run);
 		}
-
 	}
 
 	public static void startActivity(Class clazz) {
@@ -126,7 +119,6 @@ public class UIUtils {
 		// for an Activity in your app
 		Intent resultIntent = new Intent(getContext(), MpRequestInfoUI.class);
 		resultIntent.putExtra("extras", extrs);
-
 		// The stack builder object will
 		// contain an artificial back
 		// stack for
@@ -151,7 +143,6 @@ public class UIUtils {
 		NotificationManager mNotificationManager = (NotificationManager) UIUtils.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
 		// mId allows you to update the
 		// notification later on.
-
 		mBuilder.setDefaults(Notification.DEFAULT_LIGHTS);
 		mBuilder.setLights(0xff00ff00, 300, 1000);
 		long[] pattern = { 0, 100, 200, 300 };

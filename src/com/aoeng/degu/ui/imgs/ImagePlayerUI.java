@@ -33,10 +33,8 @@ public class ImagePlayerUI extends BaseUI {
 			moiveImageView.setPosRight();
 			break;
 		case R.id.btnTop:
-
 			break;
 		case R.id.btnBottom:
-
 			break;
 		default:
 			break;
@@ -48,7 +46,6 @@ public class ImagePlayerUI extends BaseUI {
 		// TODO Auto-generated method
 		// stub
 		setContentView(R.layout.ui_imgs_play);
-
 	}
 
 	@Override
@@ -56,14 +53,12 @@ public class ImagePlayerUI extends BaseUI {
 		// TODO Auto-generated method
 		// stub
 		lyBase = (LinearLayout) findViewById(R.id.lyBase);
-
 		findView(R.id.btnLeft).setOnClickListener(this);
 		findView(R.id.btnRight).setOnClickListener(this);
 		findView(R.id.btnTop).setOnClickListener(this);
 		findView(R.id.btnBottom).setOnClickListener(this);
 		moiveImageView = new MoiveImageView(this);
 		lyBase.addView(moiveImageView);
-
 	}
 
 	@Override
@@ -76,7 +71,6 @@ public class ImagePlayerUI extends BaseUI {
 	protected void processLogic() {
 		// TODO Auto-generated method
 		// stub
-
 	}
 
 	@Override
@@ -86,7 +80,6 @@ public class ImagePlayerUI extends BaseUI {
 		if (requestCode == CodeUtils.REQUEST_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
 			Uri selectedImage = data.getData();
 			String[] filePathColumn = { MediaStore.Images.Media.DATA };
-
 			Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
 			String path = "";
 			while (cursor.moveToNext()) {
@@ -94,7 +87,6 @@ public class ImagePlayerUI extends BaseUI {
 			}
 			cursor.close();
 			if (!StringUtils.isEmpty(path)) {
-
 			}
 		}
 	}

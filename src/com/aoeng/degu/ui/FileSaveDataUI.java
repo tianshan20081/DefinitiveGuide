@@ -10,12 +10,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.common.Toaster;
 
 public class FileSaveDataUI extends Activity implements OnClickListener {
-
 	private EditText etDataInfo;
 	private TextView tvDataInfo;
 
@@ -23,9 +23,7 @@ public class FileSaveDataUI extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.ui_data_file);
-
 		this.findViewById(R.id.btnSaveData).setOnClickListener(this);
 		this.findViewById(R.id.btnGetData).setOnClickListener(this);
 		etDataInfo = (EditText) this.findViewById(R.id.etDataInfo);
@@ -64,8 +62,21 @@ public class FileSaveDataUI extends Activity implements OnClickListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 			break;
 		}
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
 	}
 }

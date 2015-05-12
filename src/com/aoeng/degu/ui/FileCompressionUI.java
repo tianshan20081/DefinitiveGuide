@@ -15,19 +15,17 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 import com.aoeng.degu.utils.common.Toaster;
 
 public class FileCompressionUI extends Activity implements OnClickListener {
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.ui_file_comm);
-
 		this.findViewById(R.id.btnCom).setOnClickListener(this);
 		this.findViewById(R.id.btnComMore).setOnClickListener(this);
 		this.findViewById(R.id.btnDeCom).setOnClickListener(this);
@@ -66,7 +64,6 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				log(e.getMessage());
 				Toaster.toast(this, e.getMessage(), false);
 			}
-
 			break;
 		case R.id.btnDeComMore:
 			try {
@@ -79,7 +76,8 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				ZipInputStream zis = new ZipInputStream(fis);
 				ZipEntry zipEntry = null;
 				while ((zipEntry = zis.getNextEntry()) != null) {
-					FileOutputStream fos = new FileOutputStream(android.os.Environment.getExternalStorageDirectory() + File.separator + zipEntry.getName());
+					FileOutputStream fos = new FileOutputStream(android.os.Environment.getExternalStorageDirectory() + File.separator
+							+ zipEntry.getName());
 					byte[] buffer = new byte[1024];
 					int count = 0;
 					while ((count = zis.read(buffer)) >= 0) {
@@ -95,7 +93,6 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				Toaster.toast(this, e.getMessage(), false);
 			}
 			break;
-
 		case R.id.btnCom:
 			try {
 				FileOutputStream fos = new FileOutputStream(android.os.Environment.getExternalStorageDirectory() + File.separator + "file.jar");
@@ -116,7 +113,6 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				log(e.getMessage());
 				Toaster.toast(this, e.getMessage(), false);
 			}
-
 			break;
 		case R.id.btnDeCom:
 			try {
@@ -129,7 +125,8 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				FileInputStream fis = new FileInputStream(filePath);
 				JarInputStream jis = new JarInputStream(fis);
 				JarEntry jarEntry = jis.getNextJarEntry();
-				FileOutputStream fos = new FileOutputStream(android.os.Environment.getExternalStorageDirectory() + File.separator + jarEntry.getName());
+				FileOutputStream fos = new FileOutputStream(android.os.Environment.getExternalStorageDirectory() + File.separator
+						+ jarEntry.getName());
 				byte[] buffer = new byte[1024];
 				int count = 0;
 				while ((count = jis.read(buffer)) >= 0) {
@@ -139,7 +136,6 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 				jis.close();
 				fos.close();
 				Toaster.toast(this, " Jar File DeCompress Success", false);
-
 			} catch (Exception e) {
 				log(e.getMessage());
 				Toaster.toast(this, e.getMessage(), false);
@@ -153,4 +149,17 @@ public class FileCompressionUI extends Activity implements OnClickListener {
 		Toaster.log(FileCompressionUI.class.getName().toUpperCase(), message);
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
 }

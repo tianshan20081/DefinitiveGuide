@@ -6,6 +6,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import cn.jpush.android.api.JPushInterface;
 
 import com.aoeng.degu.R;
 
@@ -51,5 +52,17 @@ public class PreferenceUI extends PreferenceActivity implements OnPreferenceChan
 		}
 		return true;
 	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
 
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
 }
