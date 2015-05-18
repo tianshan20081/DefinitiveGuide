@@ -1,5 +1,6 @@
 package com.aoeng.degu.ui.handler;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -20,11 +21,13 @@ public class ThreadHandlerUI extends BaseUI {
 		case R.id.btnHandlerHeelo:
 			toast("HELLO");
 			mHandler.obtainMessage(SEND_HELLO, "hello").sendToTarget();
-
-			Logger.i(TAG, "HELLO" + Thread.currentThread().getName());
-			Logger.i(TAG, "HELLO" + Thread.currentThread().getId());
+			Logger.e(TAG, "HELLO" + Thread.currentThread().getName());
+			Logger.e(TAG, "HELLO" + Thread.currentThread().getId());
 			break;
-
+		case R.id.btnRefHandler:
+			Intent intent = new Intent(ThreadHandlerUI.this, ReferenceHandlerUI.class);
+			startActivity(intent);
+			break;
 		default:
 			break;
 		}
@@ -33,14 +36,12 @@ public class ThreadHandlerUI extends BaseUI {
 	@Override
 	protected void loadViewLayout() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	protected void findViewById() {
 		// TODO Auto-generated method stub
 		setContentView(R.layout.ui_handler_thread);
-
 		new CustomerThread().start();
 	}
 
@@ -48,16 +49,15 @@ public class ThreadHandlerUI extends BaseUI {
 	protected void setListener() {
 		// TODO Auto-generated method stub
 		findView(R.id.btnHandlerHeelo).setOnClickListener(this);
+		findView(R.id.btnRefHandler).setOnClickListener(this);
 	}
 
 	@Override
 	protected void processLogic() {
 		// TODO Auto-generated method stub
-
 	}
 
 	public class CustomerThread extends Thread {
-
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
@@ -68,22 +68,16 @@ public class ThreadHandlerUI extends BaseUI {
 					// TODO Auto-generated method stub
 					switch (msg.what) {
 					case SEND_HELLO:
-						toast((String) msg.obj
-								+ Thread.currentThread().getName());
-						Logger.i(TAG, (String) msg.obj
-								+ Thread.currentThread().getName());
-						Logger.i(TAG, (String) msg.obj
-								+ Thread.currentThread().getId());
+						toast((String) msg.obj + Thread.currentThread().getName());
+						Logger.e(TAG, (String) msg.obj + Thread.currentThread().getName());
+						Logger.e(TAG, (String) msg.obj + Thread.currentThread().getId());
 						break;
-
 					default:
 						break;
 					}
 					super.handleMessage(msg);
 				}
 			};
-
 		}
-
 	}
 }

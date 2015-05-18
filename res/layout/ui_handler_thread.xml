@@ -9,6 +9,11 @@
             <LinearLayout style="@style/lyHorizontalStyle" >
 
                 <Button
+                    android:id="@+id/btnRefHandler"
+                    style="@style/btnItem"
+                    android:text="RefHandler" />
+
+                <Button
                     android:id="@+id/btnHandlerHeelo"
                     style="@style/btnItem"
                     android:text="HandlerHeelo" />

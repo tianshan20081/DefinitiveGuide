@@ -347,6 +347,8 @@
         <activity android:name=".ui.bl.BleYcHomeUI" />
         <activity android:name=".ui.bl.BleShiYunUserUI" />
         <activity android:name=".ui.bl.BleSyUserUI" />
+        <activity android:name=".ui.handler.ThreadHandlerUI" />
+        <activity android:name=".ui.handler.ReferenceHandlerUI" />
 
         <service
             android:name="com.chronocloud.ryfibluetoothlibrary.service.BluetoothService"
