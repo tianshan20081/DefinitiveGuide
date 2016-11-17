@@ -2,3 +2,9 @@ bin/**
 gen/**
 target/**
 /target/
+/.gradle/
+/build/
+/gen/
+/.idea/
+/.settings/
+/DefinitiveGuide.iml
